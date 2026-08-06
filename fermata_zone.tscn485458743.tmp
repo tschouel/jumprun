@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bu7b8tsdrhlon"]
+
+[ext_resource type="Script" uid="uid://bwndis181t13f" path="res://fermata_zone.gd" id="1_7bu0m"]
+[ext_resource type="PackedScene" uid="uid://bkkbs5vanudom" path="res://MusicTrigger.tscn" id="1_gbd3w"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_k4imu"]
+[ext_resource type="Texture2D" uid="uid://b2kgvcvdn6jqk" path="res://Schanze.png" id="3_gbd3w"]
+[ext_resource type="Script" uid="uid://cty7kqxs41mvv" path="res://fermate_music_trigger.gd" id="5_wwa0v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwa0v"]
+size = Vector2(37.073147, 0.32019794)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8yc8"]
+size = Vector2(47.44458, 37.43201)
+
+[node name="Fermata" type="Area2D" unique_id=581118332]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=569426787]
+bank_paths = ["res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank"]
+
+[node name="FmodStart" parent="." unique_id=1835574014 node_paths=PackedStringArray("music_emitter") instance=ExtResource("1_gbd3w")]
+position = Vector2(73, -673)
+scale = Vector2(9.717604, 33145.973)
+music_emitter = NodePath("../FermataMusic")
+
+[node name="FermataMusic" type="FmodEventEmitter2D" parent="." unique_id=562510055]
+event_name = "event:/Fermate"
+event_guid = "{31bb35f9-d80a-4b77-93f2-c382903edb5f}"
+fmod_parameters/Impuls/id = -2328761403915076052
+fmod_parameters/Impuls = 0.0
+fmod_parameters/Impuls/variant_type = 3
+rotation = 3.1415927
+scale = Vector2(5.24491, 25.835808)
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_k4imu")]
+scale = Vector2(0.2, 0.2)
+units_per_bar = 400.0
+
+[node name="Safe" type="StaticBody2D" parent="." unique_id=888117011]
+position = Vector2(69, 1.0000038)
+scale = Vector2(6.911407, 0.28396)
+
+[node name="Schanze" type="Sprite2D" parent="Safe" unique_id=2064919238]
+position = Vector2(51.66062, 25.921646)
+rotation = 1.0912042
+scale = Vector2(1.6327019, 3.227883)
+skew = -0.98568946
+texture = ExtResource("3_gbd3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe" unique_id=41759525]
+position = Vector2(47.86575, -0.6499748)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_wwa0v")
+
+[node name="Fermata" type="Area2D" parent="." unique_id=365810102]
+position = Vector2(358, -57)
+scale = Vector2(15.800002, 5.6799994)
+script = ExtResource("1_7bu0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fermata" unique_id=876189310]
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="FermateFmodTrigger" type="Area2D" parent="." unique_id=912746436 node_paths=PackedStringArray("fmod_emitter")]
+position = Vector2(261, -47)
+rotation = -0.05117941
+scale = Vector2(0.04020995, 1.6000004)
+script = ExtResource("5_wwa0v")
+fmod_parameter_name = "Impuls"
+fmod_emitter = NodePath("../FermataMusic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FermateFmodTrigger" unique_id=1423629753]
+position = Vector2(18.539063, 20.175083)
+shape = SubResource("RectangleShape2D_c8yc8")
+
+[node name="ColorRect" type="ColorRect" parent="FermateFmodTrigger" unique_id=2089463287]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1460541297]
+position = Vector2(203, -4)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1005547592]
+offset_left = 61.0
+offset_top = -9.0
+offset_right = 101.0
+offset_bottom = 31.0
+scale = Vector2(0.3200003, 0.3200003)

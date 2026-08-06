@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cjp0ae7bl8whw"]
+
+[ext_resource type="PackedScene" uid="uid://bkkbs5vanudom" path="res://MusicTrigger.tscn" id="1_0kk5v"]
+[ext_resource type="Script" uid="uid://po6n5cj12ooh" path="res://mechanics/Pathfollower/spiralepath.gd" id="3_dc1im"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="4_loc1g"]
+[ext_resource type="Texture2D" uid="uid://cgpwnbny2hlh4" path="res://mechanics/Pathfollower/spirale.svg" id="5_wp2oq"]
+[ext_resource type="Texture2D" uid="uid://cywae0qdn1w4w" path="res://hindo.png" id="6_aw6kc"]
+[ext_resource type="Texture2D" uid="uid://ch4ehncnj58oo" path="res://HInger.png" id="7_m1mh6"]
+
+[sub_resource type="Curve2D" id="Curve2D_obtqq"]
+bake_interval = 0.2
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4, 0, -99.20742, -5.6689954, 99.20742, 5.6689954, 1982, -8, 15.589737, -89.286674, -15.589737, 89.286674, 2282, 208, 53.855457, -79.36594, -53.855457, 79.36594, 1919, 393, -7.7948694, -109.128174, 7.7948694, 109.128174, 2337, 656, -38.974346, -91.97946, 38.974346, 91.97946, 1979, 866, -112.28801, -4.84, 112.28801, 4.84, 2408, 1056, 0, 0, 0, 0, 3808, 1029)
+}
+point_count = 8
+
+[node name="Spirale" type="Node2D" unique_id=682912839]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=790483966]
+bank_paths = ["res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank"]
+
+[node name="FmodStart" parent="." unique_id=1835574014 node_paths=PackedStringArray("music_emitter") instance=ExtResource("1_0kk5v")]
+position = Vector2(124, 120.99999)
+rotation = 3.1415927
+scale = Vector2(23.706991, 109.54381)
+music_emitter = NodePath("../Spirale2")
+
+[node name="Spirale2" type="FmodEventEmitter2D" parent="." unique_id=385055600]
+event_name = "event:/Spirale"
+event_guid = "{141326c6-728b-45f5-b188-2b2ef56dd559}"
+position = Vector2(-0.785, 0)
+scale = Vector2(-5.24491, -25.835808)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=476897295]
+curve = SubResource("Curve2D_obtqq")
+
+[node name="Spiralepath" type="PathFollow2D" parent="Path2D" unique_id=1579295796]
+position = Vector2(4, 0)
+rotation = -0.007275286
+rotates = false
+script = ExtResource("3_dc1im")
+units_per_bar = 2000.0
+
+[node name="Player" parent="Path2D/Spiralepath" unique_id=1969377440 instance=ExtResource("4_loc1g")]
+z_index = 1
+position = Vector2(1.0290742, -3.9926188)
+rotation = 0.0072752857
+scale = Vector2(0.2, 0.2)
+is_on_path = true
+bpm = 150.0
+units_per_bar = 500.0
+
+[node name="Spirale" type="Sprite2D" parent="." unique_id=2052287076]
+z_index = 1
+position = Vector2(1907, 546)
+texture = ExtResource("5_wp2oq")
+
+[node name="Hindo" type="Sprite2D" parent="." unique_id=1599114773]
+position = Vector2(2093, 718)
+texture = ExtResource("6_aw6kc")
+
+[node name="vorderstand" type="Sprite2D" parent="." unique_id=1069439062]
+z_index = 2
+position = Vector2(2184.9998, 218.00002)
+rotation = -4.726958
+scale = Vector2(0.07999998, 0.15999022)
+texture = ExtResource("6_aw6kc")
+
+[node name="vorderstand2" type="Sprite2D" parent="." unique_id=119232876]
+z_index = 2
+position = Vector2(1995.0001, 428)
+rotation = -4.728591
+scale = Vector2(0.07999998, 0.12064452)
+texture = ExtResource("6_aw6kc")
+
+[node name="hinterstand" type="Sprite2D" parent="." unique_id=1354762677]
+visible = false
+z_index = -2
+position = Vector2(2147, 283.00018)
+rotation = -7.2906504
+scale = Vector2(0.07999998, 0.07999998)
+texture = ExtResource("6_aw6kc")
+
+[node name="HInger" type="Sprite2D" parent="." unique_id=395607682]
+z_index = 2
+position = Vector2(2093, 558)
+texture = ExtResource("7_m1mh6")

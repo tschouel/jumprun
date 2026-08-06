@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cx5mekkpxln7g"]
+
+[ext_resource type="Script" uid="uid://b65cs04wqjk0c" path="res://fall_trigger.gd" id="1_0t4r8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vggu"]
+size = Vector2(49.595, 3)
+
+[node name="Area2D" type="Area2D" unique_id=2120690932]
+script = ExtResource("1_0t4r8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933230245]
+position = Vector2(25, -1)
+shape = SubResource("RectangleShape2D_4vggu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1120969748]
+offset_top = -3.0
+offset_right = 50.0
+color = Color(0.8117647, 0, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

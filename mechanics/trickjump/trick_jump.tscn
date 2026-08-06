@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bpa5n41t3vlnk"]
+
+[ext_resource type="Script" uid="uid://gf84uahm5ke3" path="res://mechanics/trickjump/trickjump.gd" id="1_fcd22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdadj"]
+
+[node name="TrickJump" type="Area2D" unique_id=1745158615]
+script = ExtResource("1_fcd22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=294115488]
+shape = SubResource("RectangleShape2D_xdadj")

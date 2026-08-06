@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bpdrtnlcrh07g"]
+
+[ext_resource type="Script" uid="uid://bpn2upro8e5he" path="res://flying_zone.gd" id="1_xmk23"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_of4gg"]
+[ext_resource type="Texture2D" uid="uid://b2kgvcvdn6jqk" path="res://Schanze.png" id="2_qhhs4"]
+[ext_resource type="Texture2D" uid="uid://c6k8vwvrlwmlj" path="res://cloudsy.jpg" id="3_ekee1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekee1"]
+size = Vector2(37.073147, 0.32019794)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+
+[node name="Flying" type="Area2D" unique_id=72004305]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1089180509]
+bank_paths = ["res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank"]
+
+[node name="Safe" type="StaticBody2D" parent="." unique_id=392514441]
+position = Vector2(2875, -1.5258789e-05)
+scale = Vector2(54.07888, 1.1838393)
+
+[node name="Schanze" type="Sprite2D" parent="Safe" unique_id=203724954]
+position = Vector2(51.66062, 25.921646)
+rotation = 1.0912042
+scale = Vector2(1.6327019, 3.227883)
+skew = -0.98568946
+texture = ExtResource("2_qhhs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe" unique_id=79214308]
+position = Vector2(47.86575, -0.6499748)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_ekee1")
+
+[node name="Cloudsy" type="Sprite2D" parent="." unique_id=1416354886]
+position = Vector2(1572, -745)
+scale = Vector2(1.3047045, 0.6724494)
+texture = ExtResource("3_ekee1")
+
+[node name="FlyingZone" type="Area2D" parent="." unique_id=108265718]
+position = Vector2(1611.9999, -1227)
+scale = Vector2(122.70925, 125.13514)
+script = ExtResource("1_xmk23")
+fmod_sparkle_param = null
+sparkle_duration = null
+zone_type = null
+hover_arc_height = null
+line_spacing = null
+current_lane = null
+flight_speed = null
+high_zone_y = null
+low_zone_y = null
+solo_interval = null
+solo_fmod_param = null
+updates_fmod_parameter = null
+fmod_param_name = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyingZone" unique_id=1055853289]
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_of4gg")]
+position = Vector2(17, -3)
+scale = Vector2(0.3, 0.3)
+is_on_path = null
+keep_upright = null
+bpm = null
+units_per_bar = null
+beats_per_jump = null
+jump_height = null
+fermata_right_jump_height = null
+fermata_friction = null
+fermata_acceleration = null
+fly_max_speed = null
+fly_acceleration = null
+fly_friction = null
+fly_gravity = null
+fly_boost_force = null
+fly_up_speed_factor = null
+
+[node name="Safe2" type="StaticBody2D" parent="." unique_id=802299190]
+position = Vector2(69, 1.0000038)
+scale = Vector2(6.911407, 0.28396)
+
+[node name="Schanze" type="Sprite2D" parent="Safe2" unique_id=1176506049]
+position = Vector2(51.66062, 25.921646)
+rotation = 1.0912042
+scale = Vector2(1.6327019, 3.227883)
+skew = -0.98568946
+texture = ExtResource("2_qhhs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe2" unique_id=1515674337]
+position = Vector2(47.86575, -0.6499748)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_ekee1")
+
+[node name="Trickjump" type="FmodEventEmitter2D" parent="." unique_id=53111934]
+event_name = "event:/Trickjump"
+event_guid = "{dc35ee5e-5435-466f-9469-9914fa2b9133}"
+fmod_parameters/Yeah/id = 7748776436775836390
+fmod_parameters/Yeah = 0.0
+fmod_parameters/Yeah/variant_type = 3
+scale = Vector2(-5.24491, -25.835808)

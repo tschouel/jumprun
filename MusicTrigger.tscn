@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bkkbs5vanudom"]
+
+[ext_resource type="Script" uid="uid://cuggpajrcvib" path="res://music_trigger.gd" id="1_uyh0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyh0f"]
+size = Vector2(94, 1)
+
+[node name="Trigger" type="Area2D" unique_id=1835574014]
+script = ExtResource("1_uyh0f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1255944899]
+position = Vector2(0.5000005, -9)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_uyh0f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1296569629]
+offset_top = -58.0
+offset_right = 1.0
+offset_bottom = 40.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

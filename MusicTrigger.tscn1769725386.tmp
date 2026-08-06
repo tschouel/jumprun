@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bkkbs5vanudom"]
+
+[ext_resource type="Script" uid="uid://cuggpajrcvib" path="res://music_trigger.gd" id="1_uyh0f"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u0jqh"]
+
+[node name="Trigger" type="Area2D" unique_id=1835574014]
+script = ExtResource("1_uyh0f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1255944899]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_u0jqh")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1688392654]
+event_name = "event:/Go"
+event_guid = "{a07db5fb-129d-4577-9c4e-dbf02d3b58d0}"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ge0v44j4g66l"]
+
+[ext_resource type="Script" uid="uid://cxlsvhuopu84j" path="res://parameter_trigger.gd" id="1_h3q3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(7, 214)
+
+[node name="ParameterTrigger" type="Area2D" unique_id=1222435139]
+script = ExtResource("1_h3q3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1056047984]
+position = Vector2(3.5, -68)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=270312625]
+offset_top = -175.0
+offset_right = 7.0
+offset_bottom = 40.0
+color = Color(0.6995438, 0.21157792, 0.39617443, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

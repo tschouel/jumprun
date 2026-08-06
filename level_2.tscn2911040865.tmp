@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b4npqbol3vwaq"]
+
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_jg0dc"]
+[ext_resource type="PackedScene" uid="uid://bpa5n41t3vlnk" path="res://trick_jump.tscn" id="2_nmjpi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg0dc"]
+size = Vector2(28.33333, 0.32019794)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nmjpi"]
+
+[node name="Level2" type="Node2D" unique_id=1907743839]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=433072948]
+bank_paths = ["res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank"]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=268648538]
+position = Vector2(16, -6)
+rotation = -0.4238992
+scale = Vector2(0.623, 0.189)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=476062278]
+position = Vector2(4.166667, -0.6499939)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_jg0dc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=419103517]
+position = Vector2(4.5088983, 0.17125416)
+scale = Vector2(283.439, -3.6575148)
+texture = SubResource("PlaceholderTexture2D_nmjpi")
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_jg0dc")]
+scale = Vector2(0.08, 0.08)
+
+[node name="TrickJump" parent="." unique_id=1745158615 instance=ExtResource("2_nmjpi")]
+position = Vector2(145, -64)
+scale = Vector2(4.52, 4.2399993)

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cqkt7t7buduub"]
+
+[ext_resource type="Script" uid="uid://bg6ufj546tj83" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://dvyt1qp83nx03" path="res://Dotted_quarter_note_with_upwards_stem.svg.webp" id="2_onrkg"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1969377440]
+script = ExtResource("1_4flbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=889319295]
+position = Vector2(15.160007, 29.180008)
+rotation = -3.1415927
+scale = Vector2(0.092, 0.092)
+texture = ExtResource("2_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
+position = Vector2(21.160006, -6.819992)
+zoom = Vector2(6, 6)
+position_smoothing_enabled = true
+
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=236994846]
+position = Vector2(21.160006, -6.819992)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=963911059]
+position = Vector2(27.160006, -15.819992)
+scale = Vector2(3.77, 3.77)
+polygon = PackedVector2Array(-5.30504, 0.7957561, -4.509284, 1.3262601, -3.448276, 1.5915121, -2.387268, 1.8567641, -1.32626, 1.8567641, 0, 1.8567641, 2.917772, 1.0610081, 4.509284, 0, 6.896552, -1.8567638)

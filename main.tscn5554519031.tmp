@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://o2h3mw3w0rmb"]
+
+[ext_resource type="Script" uid="uid://cbc2ojp0g1fo1" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://jqinau76unro" path="res://node.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bkkbs5vanudom" path="res://MusicTrigger.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ge0v44j4g66l" path="res://parameter_trigger.tscn" id="6_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(28.33333, 0.32019794)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u0jqh"]
+
+[node name="main" type="Node2D" unique_id=1815425322]
+script = ExtResource("1_h2yge")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1913888350]
+bank_paths = ["res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank"]
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_0xm2m")]
+position = Vector2(11, -18)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=319649614]
+position = Vector2(45, 1)
+scale = Vector2(0.72, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=265982596]
+position = Vector2(4.166667, -0.6499939)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=695516114]
+position = Vector2(4.5088983, 0.17125416)
+scale = Vector2(283.439, -3.6575148)
+texture = SubResource("PlaceholderTexture2D_u0jqh")
+
+[node name="Ground2" type="StaticBody2D" parent="." unique_id=1678345745]
+position = Vector2(261, 1)
+scale = Vector2(0.5184, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2" unique_id=228466037]
+position = Vector2(4.166667, -0.6499939)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2" unique_id=1595102748]
+position = Vector2(4.5088983, 0.17125416)
+scale = Vector2(283.439, -3.6575148)
+texture = SubResource("PlaceholderTexture2D_u0jqh")
+
+[node name="Ground3" type="StaticBody2D" parent="." unique_id=1464658151]
+position = Vector2(166, 1)
+scale = Vector2(-0.04160244, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3" unique_id=608680483]
+position = Vector2(4.166667, -0.6499939)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground3" unique_id=1111554425]
+position = Vector2(4.5088983, 0.17125416)
+scale = Vector2(283.439, -3.6575148)
+texture = SubResource("PlaceholderTexture2D_u0jqh")
+
+[node name="Node" type="Node" parent="." unique_id=1929328267]
+script = ExtResource("4_1bvp3")
+
+[node name="FmodStart" parent="." unique_id=1835574014 node_paths=PackedStringArray("music_emitter") instance=ExtResource("5_lquwl")]
+position = Vector2(50, -6)
+rotation = -6.2831855
+music_emitter = NodePath("../Level1")
+
+[node name="ParameterTrigger" parent="." unique_id=1222435139 node_paths=PackedStringArray("music_emitter") instance=ExtResource("6_7mycd")]
+position = Vector2(152, 2.9999998)
+rotation = 1.5707964
+scale = Vector2(0.135, 0.043)
+music_emitter = NodePath("../Level1")
+parameter_name = "Go"
+
+[node name="ParameterTrigger2" parent="." unique_id=452987411 node_paths=PackedStringArray("music_emitter") instance=ExtResource("6_7mycd")]
+position = Vector2(173, 2.9999995)
+rotation = 1.5707964
+scale = Vector2(0.135, 0.043)
+music_emitter = NodePath("../Level1")
+parameter_name = "Go"
+
+[node name="Level1" type="FmodEventEmitter2D" parent="." unique_id=1917867297]
+event_name = "event:/Level1"
+event_guid = "{40377c11-15c3-4b2f-9c8a-25809550d8b1}"
+fmod_parameters/Go/id = -3197992968451423652
+fmod_parameters/Go = 0.0
+fmod_parameters/Go/variant_type = 3

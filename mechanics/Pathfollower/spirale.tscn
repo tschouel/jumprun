@@ -26,7 +26,7 @@ scale = Vector2(23.706991, 109.54381)
 music_emitter = NodePath("../Spirale2")
 
 [node name="Spirale2" type="FmodEventEmitter2D" parent="." unique_id=385055600]
-event_name = "event:/Spirale"
+event_name = "event:/spirale"
 event_guid = "{141326c6-728b-45f5-b188-2b2ef56dd559}"
 position = Vector2(-0.785, 0)
 scale = Vector2(-5.24491, -25.835808)
@@ -43,9 +43,9 @@ units_per_bar = 2000.0
 
 [node name="Player" parent="Path2D/Spiralepath" unique_id=1969377440 instance=ExtResource("4_loc1g")]
 z_index = 1
-position = Vector2(1.0290742, -3.9926188)
+position = Vector2(56.602367, -82.5904)
 rotation = 0.0072752857
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.525, 0.525)
 is_on_path = true
 bpm = 150.0
 units_per_bar = 500.0

@@ -16,3 +16,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_moving:
 		progress += forward_speed * delta
+
+## Hilfsmethode: Wird aufgerufen, wenn der Player auf den Pfad steigt
+func attach_player(player: Node2D) -> void:
+	if player is CharacterBody2D:
+		if "is_on_path" in player:
+			player.is_on_path = true
+		if player.has_method("show_only_sprite") and "sliding_sprite" in player:
+			player.show_only_sprite(player.sliding_sprite)
+
+## Hilfsmethode: Wird aufgerufen, wenn der Player den Pfad verlässt
+func detach_player(player: Node2D) -> void:
+	if player is CharacterBody2D:
+		if "is_on_path" in player:
+			player.is_on_path = false
+		if player.has_method("show_only_sprite") and "walking_sprite" in player:
+			player.show_only_sprite(player.walking_sprite)

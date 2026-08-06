@@ -15,7 +15,7 @@ size = Vector2(1960, 2327.5)
 position = Vector2(368, 0)
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_0hxnh")]
-position = Vector2(-258, -169)
+position = Vector2(-314, -2)
 units_per_bar = 1000.0
 
 [node name="Safe" type="StaticBody2D" parent="." unique_id=391971331]

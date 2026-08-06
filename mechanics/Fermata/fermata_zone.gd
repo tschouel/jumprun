@@ -20,12 +20,20 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D and "is_fermata_active" in body:
 		body.is_fermata_active = true
 		print("[FERMATA ZONE] Betreten: Handsteuerung AKTIV")
+		
+		# Lauf-/Boden-Sprite aktivieren
+		if body.has_method("show_only_sprite") and "walking_sprite" in body:
+			body.show_only_sprite(body.walking_sprite)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D and "is_fermata_active" in body:
 		body.is_fermata_active = false
 		print("[FERMATA ZONE] Verlassen: Auto-Scroll AKTIV")
+
+		# Sicherstellen, dass nach der Fermate weiterhin das Lauf-Sprite aktiv ist
+		if body.has_method("show_only_sprite") and "walking_sprite" in body:
+			body.show_only_sprite(body.walking_sprite)
 
 		if one_shot:
 			_has_been_triggered = true

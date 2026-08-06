@@ -37,7 +37,7 @@ rotation = 3.1415927
 scale = Vector2(5.24491, 25.835808)
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_k4imu")]
-scale = Vector2(0.2, 0.2)
+position = Vector2(134, -168)
 units_per_bar = 400.0
 jump_height = 50.0
 
@@ -57,12 +57,12 @@ position = Vector2(47.86575, -0.6499748)
 scale = Vector2(10, 4.06)
 shape = SubResource("RectangleShape2D_wwa0v")
 
-[node name="Fermata" type="Area2D" parent="." unique_id=365810102]
+[node name="WalkZone" type="Area2D" parent="." unique_id=365810102]
 position = Vector2(328.00003, -57)
 scale = Vector2(15.800002, 5.6799994)
 script = ExtResource("1_7bu0m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fermata" unique_id=876189310]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WalkZone" unique_id=876189310]
 shape = SubResource("RectangleShape2D_u0jqh")
 
 [node name="FermateFmodTrigger" type="Area2D" parent="." unique_id=912746436 node_paths=PackedStringArray("fmod_emitter")]

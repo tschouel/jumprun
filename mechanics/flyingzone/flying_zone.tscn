@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://drrjahdfadhgx"]
+
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_0hxnh"]
+[ext_resource type="Texture2D" uid="uid://b2kgvcvdn6jqk" path="res://Schanze.png" id="2_wofiw"]
+[ext_resource type="Script" uid="uid://bpn2upro8e5he" path="res://mechanics/flyingzone/flying_zone.gd" id="3_web8d"]
+[ext_resource type="Texture2D" uid="uid://c6k8vwvrlwmlj" path="res://cloudsy.jpg" id="4_sjnig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hrny"]
+size = Vector2(172.66917, 118.99868)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(1960, 2327.5)
+
+[node name="FlyingTest" type="Area2D" unique_id=2046766703]
+position = Vector2(368, 0)
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_0hxnh")]
+position = Vector2(-314, -2)
+
+[node name="Safe" type="StaticBody2D" parent="." unique_id=391971331]
+position = Vector2(383, -52.000015)
+rotation = 0.008080572
+scale = Vector2(0.5114063, 0.28396)
+
+[node name="Schanze" type="Sprite2D" parent="Safe" unique_id=1391502724]
+position = Vector2(475.5438, 517.81824)
+rotation = 1.0912042
+scale = Vector2(17.295729, 34.193985)
+skew = -0.98568946
+texture = ExtResource("2_wofiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe" unique_id=142345100]
+position = Vector2(-613.98505, 442.10925)
+scale = Vector2(10.000002, 4.06)
+shape = SubResource("RectangleShape2D_4hrny")
+
+[node name="FlyingZone" type="Area2D" parent="." unique_id=992099370]
+position = Vector2(-299, -101)
+script = ExtResource("3_web8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyingZone" unique_id=518465744]
+position = Vector2(914, -1066)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="Cloudsy" type="Sprite2D" parent="FlyingZone" unique_id=709881626]
+z_index = -1
+position = Vector2(831, -1026)
+texture = ExtResource("4_sjnig")

@@ -23,12 +23,20 @@ config/icon="res://icon.svg"
 run/size/viewport_height=648
 run/size/viewport_width=3840
 
+[autoload]
+
+FmodManager="*uid://cds10pm7hwn3p"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [physics]
 

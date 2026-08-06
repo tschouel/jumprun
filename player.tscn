@@ -14,7 +14,6 @@ texture = ExtResource("2_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
 position = Vector2(21.160006, -6.819992)
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=236994846]

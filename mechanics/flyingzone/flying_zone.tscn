@@ -39,10 +39,10 @@ position = Vector2(-299, -101)
 script = ExtResource("3_web8d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlyingZone" unique_id=518465744]
-position = Vector2(914, -1066)
+position = Vector2(1212, -1074)
 shape = SubResource("RectangleShape2D_u0jqh")
 
 [node name="Cloudsy" type="Sprite2D" parent="FlyingZone" unique_id=709881626]
 z_index = -1
-position = Vector2(831, -1026)
+position = Vector2(1132, -1032)
 texture = ExtResource("4_sjnig")

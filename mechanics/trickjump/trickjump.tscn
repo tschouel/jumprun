@@ -48,6 +48,7 @@ scale = Vector2(10, 4.06)
 shape = SubResource("RectangleShape2D_jg0dc")
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_pyu71")]
+position = Vector2(38.999996, -60.999996)
 scale = Vector2(0.2, 0.2)
 units_per_bar = 800.0
 
@@ -63,6 +64,7 @@ event_guid = "{dc35ee5e-5435-466f-9469-9914fa2b9133}"
 fmod_parameters/Yeah/id = 7748776436775836390
 fmod_parameters/Yeah = 0.0
 fmod_parameters/Yeah/variant_type = 3
+position = Vector2(-3, -14.000001)
 scale = Vector2(-5.24491, -25.835808)
 
 [node name="FmodStart" parent="." unique_id=1835574014 node_paths=PackedStringArray("music_emitter") instance=ExtResource("4_x2ckk")]

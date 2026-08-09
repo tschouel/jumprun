@@ -26,6 +26,29 @@
 [ext_resource type="Texture2D" uid="uid://dqjwravkd7qag" path="res://animation/batch_Schlitten4.png" id="24_2wuci"]
 [ext_resource type="Texture2D" uid="uid://cdja53560x7ue" path="res://animation/batch_Schlitten5.png" id="25_iruf7"]
 [ext_resource type="Script" uid="uid://bl4bbun8sosdj" path="res://path_movement.gd" id="26_7hik5"]
+[ext_resource type="Texture2D" uid="uid://ssf1cupm3v5g" path="res://animation/trans_walk_schlitten_Trans1.png" id="27_ibah8"]
+[ext_resource type="Texture2D" uid="uid://dy8axvncaoshk" path="res://animation/trans_walk_schlitten_Trans2.png" id="28_3iwfv"]
+[ext_resource type="Texture2D" uid="uid://c1t776acrs3is" path="res://animation/trans_walk_schlitten_Trans3.png" id="29_qwsg1"]
+[ext_resource type="Texture2D" uid="uid://8m3ga11gb33s" path="res://animation/trans_walk_schlitten_Trans4.png" id="30_1xqrm"]
+[ext_resource type="Texture2D" uid="uid://d1ae32fc218ce" path="res://animation/trans_walk_schlitten_Trans5.png" id="31_bfour"]
+[ext_resource type="Texture2D" uid="uid://b14iffid2gm0q" path="res://animation/trans_walk_schlitten_Trans6.png" id="32_8gr2b"]
+[ext_resource type="Texture2D" uid="uid://ynjvnokm6std" path="res://animation/trans_walk_schlitten_Trans7.png" id="33_vl8ci"]
+[ext_resource type="Texture2D" uid="uid://bhypr6wk2ayow" path="res://animation/trans_walk_schlitten_Trans14.png" id="34_3iwfv"]
+[ext_resource type="Texture2D" uid="uid://q15vphati41q" path="res://animation/trans_walk_schlitten_Trans8.png" id="34_ieltc"]
+[ext_resource type="Texture2D" uid="uid://nsrxhkfplcg7" path="res://animation/trans_walk_schlitten_Trans9.png" id="35_ieltc"]
+[ext_resource type="Texture2D" uid="uid://i5yk2phk7f4i" path="res://animation/trans_walk_schlitten_Trans15.png" id="35_qwsg1"]
+[ext_resource type="Texture2D" uid="uid://v1aurcl3gyug" path="res://animation/trans_walk_schlitten_Trans16.png" id="36_1xqrm"]
+[ext_resource type="Texture2D" uid="uid://dv7lces84wnd" path="res://animation/trans_walk_schlitten_Trans10.png" id="36_fddr8"]
+[ext_resource type="Texture2D" uid="uid://cb6125551v0s3" path="res://animation/trans_walk_schlitten_Trans11.png" id="37_oybyf"]
+[ext_resource type="Texture2D" uid="uid://8m2tx3yfcnty" path="res://animation/trans_walk_schlitten_Trans12.png" id="38_ajfva"]
+[ext_resource type="Texture2D" uid="uid://8f7yfiulq5i4" path="res://animation/trans_walk_schlitten_Trans13.png" id="39_5ef02"]
+[ext_resource type="Texture2D" uid="uid://d0qh3cx6gni2o" path="res://animation/trans_walk_schlitten_Trans17.png" id="43_pfmca"]
+[ext_resource type="Texture2D" uid="uid://22rokrqtj2st" path="res://animation/trans_walk_schlitten_Trans18.png" id="44_76oay"]
+[ext_resource type="Texture2D" uid="uid://b4x11p5q6lb0e" path="res://animation/trans_walk_schlitten_Trans19.png" id="45_b4uyv"]
+[ext_resource type="Texture2D" uid="uid://2ygpfs6gvhae" path="res://animation/trans_walk_schlitten_Trans20.png" id="46_tw8ou"]
+[ext_resource type="Texture2D" uid="uid://bxy1vddjscvd8" path="res://animation/trans_walk_schlitten_Trans21.png" id="47_ygbnx"]
+[ext_resource type="Texture2D" uid="uid://durtpidhstrt2" path="res://animation/trans_walk_schlitten_Trans22.png" id="48_v2t6f"]
+[ext_resource type="Texture2D" uid="uid://v5nowpwadchs" path="res://animation/trans_walk_schlitten_Trans23.png" id="49_l3lcn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
 animations = [{
@@ -122,6 +145,83 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_shhik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_ibah8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3iwfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qwsg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_1xqrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_bfour")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_8gr2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vl8ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ieltc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ieltc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fddr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_oybyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ajfva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_5ef02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3iwfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_qwsg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1xqrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_pfmca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_76oay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_b4uyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_tw8ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ygbnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_v2t6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_l3lcn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 13.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1969377440]
 script = ExtResource("1_4flbx")
 
@@ -173,3 +273,8 @@ frame_progress = 0.09262883
 
 [node name="PathMovement" type="Node" parent="." unique_id=2095524511]
 script = ExtResource("26_7hik5")
+
+[node name="WalkToSlide" type="AnimatedSprite2D" parent="." unique_id=1951580179]
+sprite_frames = SubResource("SpriteFrames_shhik")
+frame_progress = 0.14041167
+speed_scale = 1.5

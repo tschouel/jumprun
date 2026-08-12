@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="72.258896mm"
+   height="442.23843mm"
+   viewBox="0 0 72.258895 442.23843"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d, 2026-05-05)"
+   sodipodi:docname="Stopp.svg"
+   inkscape:export-batch-name="Stopp"
+   inkscape:export-batch-path="/Users/joelschoch/Documents/jumprun/animation"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.036172506"
+     inkscape:cx="-4851.7512"
+     inkscape:cy="-4478.5396"
+     inkscape:window-width="1512"
+     inkscape:window-height="945"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-74.568463,196.15354)">
+    <path
+       d="m -2703.0891,-3897.1272 c 0.8731,0 1.5875,-0.8467 1.5875,-1.905 0,-1.0584 -0.7144,-1.905 -1.5875,-1.905 -0.8732,0 -1.5875,0.8466 -1.5875,1.905 0,1.0318 0.7143,1.905 1.5875,1.905 z m -9.6838,17.2243 h 3.4661 v -30.9033 h -3.4661 z m 5.5563,0 h 0.6614 v -30.9033 h -0.6614 z m 4.1275,-13.0968 c -0.8732,0 -1.5875,0.8466 -1.5875,1.905 0,1.0583 0.7143,1.905 1.5875,1.905 0.8731,0 1.5875,-0.8467 1.5875,-1.905 0,-1.0584 -0.7144,-1.905 -1.5875,-1.905 z"
+       id="path620"
+       style="stroke-width:0.264583" />
+    <path
+       d="M 74.568463,246.08489 H 114.84904 V -196.15354 H 74.568463 Z m 64.571767,0 h 7.68713 v -442.23843 h -7.68713 z"
+       id="path620-3"
+       style="stroke-width:3.41206"
+       sodipodi:nodetypes="cccccccccc" />
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://7by1huu71xq6"]
+
+[ext_resource type="Script" uid="uid://c6dmljpsnoct3" path="res://lane_movement.gd" id="1_vpljl"]
+
+[node name="LaneMovement" type="Node2D" unique_id=651999445]
+script = ExtResource("1_vpljl")

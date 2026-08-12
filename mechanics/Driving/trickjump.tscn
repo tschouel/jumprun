@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2kgvcvdn6jqk" path="res://Schanze.png" id="1_f38fb"]
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_pyu71"]
-[ext_resource type="PackedScene" uid="uid://bpa5n41t3vlnk" path="res://mechanics/trickjump/trick_jump.tscn" id="3_g3hiv"]
+[ext_resource type="PackedScene" uid="uid://bpa5n41t3vlnk" path="res://mechanics/Driving/trick_jump.tscn" id="3_g3hiv"]
 [ext_resource type="PackedScene" uid="uid://bkkbs5vanudom" path="res://MusicTrigger.tscn" id="4_x2ckk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jg0dc"]

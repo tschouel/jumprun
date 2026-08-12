@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bu7b8tsdrhlon"]
 
-[ext_resource type="Script" uid="uid://bwndis181t13f" path="res://mechanics/Fermata/fermata_zone.gd" id="1_7bu0m"]
+[ext_resource type="Script" uid="uid://bwndis181t13f" path="res://mechanics/Walking/fermata_zone.gd" id="1_7bu0m"]
 [ext_resource type="PackedScene" uid="uid://bkkbs5vanudom" path="res://MusicTrigger.tscn" id="1_gbd3w"]
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_k4imu"]
 [ext_resource type="Texture2D" uid="uid://b2kgvcvdn6jqk" path="res://Schanze.png" id="3_gbd3w"]
-[ext_resource type="Script" uid="uid://cty7kqxs41mvv" path="res://mechanics/Fermata/fermate_music_trigger.gd" id="5_wwa0v"]
+[ext_resource type="Script" uid="uid://cty7kqxs41mvv" path="res://mechanics/Walking/fermate_music_trigger.gd" id="5_wwa0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwa0v"]
 size = Vector2(37.073147, 0.32019794)

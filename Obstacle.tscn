@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://bq15ektprqr7j"]
 
-[ext_resource type="Script" uid="uid://cebl3rkpi7i5e" path="res://Obstacle.gd" id="1_nfn2k"]
+[ext_resource type="Script" uid="uid://cebl3rkpi7i5e" path="res://obstacle.gd" id="1_aubd6"]
+[ext_resource type="Texture2D" uid="uid://htxkkv4lnfdy" path="res://animation/Stopp.png" id="2_vcivv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
+size = Vector2(142.23193, 20)
 
-[node name="Area2D" type="Area2D" unique_id=416600068]
-script = ExtResource("1_nfn2k")
-target_value = 0.0
+[node name="Obstacle" type="Area2D" unique_id=789483625]
+script = ExtResource("1_aubd6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490107440]
-shape = SubResource("RectangleShape2D_u0jqh")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616318608]
+position = Vector2(-6.9999995, 0)
+rotation = -3.1415925
+scale = Vector2(0.120999984, 9.960989)
+shape = SubResource("RectangleShape2D_3gcn6")
 
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=527853372]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-color = Color(0.24678957, 0.179964, 0.12078733, 1)
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Stopp" type="Sprite2D" parent="." unique_id=356444555]
+rotation = -3.1415925
+scale = Vector2(0.121, 0.121)
+texture = ExtResource("2_vcivv")

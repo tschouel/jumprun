@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpa5n41t3vlnk"]
 
-[ext_resource type="Script" uid="uid://gf84uahm5ke3" path="res://mechanics/trickjump/trickjump.gd" id="1_fcd22"]
+[ext_resource type="Script" uid="uid://gf84uahm5ke3" path="res://mechanics/Driving/trickjump.gd" id="1_fcd22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdadj"]
 

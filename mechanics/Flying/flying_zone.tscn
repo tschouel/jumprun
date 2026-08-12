@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_0hxnh"]
 [ext_resource type="Texture2D" uid="uid://b2kgvcvdn6jqk" path="res://Schanze.png" id="2_wofiw"]
-[ext_resource type="Script" uid="uid://bpn2upro8e5he" path="res://mechanics/flyingzone/flying_zone.gd" id="3_web8d"]
+[ext_resource type="Script" uid="uid://bpn2upro8e5he" path="res://mechanics/Flying/flying_zone.gd" id="3_web8d"]
 [ext_resource type="Texture2D" uid="uid://c6k8vwvrlwmlj" path="res://cloudsy.jpg" id="4_sjnig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hrny"]

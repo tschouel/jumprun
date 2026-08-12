@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://brl47adbc5r2i"]
+
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_rmf86"]
+[ext_resource type="Texture2D" uid="uid://b2kgvcvdn6jqk" path="res://Schanze.png" id="2_xs07r"]
+[ext_resource type="Script" uid="uid://crxt067oe6mye" path="res://mechanics/Driving/driving_zone.gd" id="3_0ycb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siori"]
+size = Vector2(37.073147, 0.32019794)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
+size = Vector2(6857, 213.75)
+
+[node name="DrivingTest" type="Area2D" unique_id=625830314]
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_rmf86")]
+position = Vector2(51, -75)
+scale = Vector2(0.5, 0.5)
+units_per_bar = 1000.0
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=859639102]
+position = Vector2(232.00002, 0)
+scale = Vector2(32.920044, 1.0637577)
+
+[node name="Schanze" type="Sprite2D" parent="Ground" unique_id=1292780319]
+position = Vector2(51.66062, 25.921646)
+rotation = 1.0899197
+scale = Vector2(1.6327019, 3.227883)
+skew = -0.98568946
+texture = ExtResource("2_xs07r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=203390393]
+position = Vector2(47.86575, -0.6499748)
+scale = Vector2(10, 4.06)
+shape = SubResource("RectangleShape2D_siori")
+
+[node name="Driving" type="Area2D" parent="." unique_id=1906122780]
+script = ExtResource("3_0ycb4")
+units_per_bar = 600.0
+boost_force = 800.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Driving" unique_id=1267059509]
+position = Vector2(3948.5, -67)
+shape = SubResource("RectangleShape2D_shhik")

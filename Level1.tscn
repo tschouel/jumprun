@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bpv286acvj2r"]
+
+[ext_resource type="Script" uid="uid://dj42nvbyu2rbj" path="res://beat_grid_visualizer.gd" id="1_kyxg0"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_mc20k"]
+[ext_resource type="Script" uid="uid://cg7swidbhofvu" path="res://lane_zone.gd" id="3_cove1"]
+[ext_resource type="PackedScene" uid="uid://bq15ektprqr7j" path="res://obstacle.tscn" id="4_dwyiq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
+
+[node name="Node2D" type="Node2D" unique_id=578857236]
+metadata/_edit_group_ = true
+
+[node name="Backgroundlines" type="Node2D" parent="." unique_id=1057040448]
+
+[node name="Line2D5" type="Line2D" parent="Backgroundlines" unique_id=1274130740]
+points = PackedVector2Array(0, 140, 17250, 140)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D6" type="Line2D" parent="Backgroundlines" unique_id=1006731935]
+points = PackedVector2Array(0, 340, 17250, 340)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D7" type="Line2D" parent="Backgroundlines" unique_id=1921718127]
+points = PackedVector2Array(0, 540, 17250, 540)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D8" type="Line2D" parent="Backgroundlines" unique_id=658241404]
+points = PackedVector2Array(0, 740, 17250, 740)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D9" type="Line2D" parent="Backgroundlines" unique_id=798431133]
+points = PackedVector2Array(0, 940, 17250, 940)
+default_color = Color(0, 0, 0, 1)
+
+[node name="BeatGridVisualizer" type="Node2D" parent="." unique_id=1216128247]
+script = ExtResource("1_kyxg0")
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_mc20k")]
+position = Vector2(458, -145)
+scale = Vector2(1.2, 1.2)
+bpm = 115.0
+units_per_bar = 400.0
+
+[node name="lane" type="Area2D" parent="." unique_id=1769419308]
+visible = false
+position = Vector2(8230, 375.99997)
+scale = Vector2(1234.1243, -121.251976)
+script = ExtResource("3_cove1")
+units_per_bar = 1600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lane" unique_id=1955752289]
+position = Vector2(3.1090882, 0.04948348)
+shape = SubResource("RectangleShape2D_shhik")
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=33360143]
+position = Vector2(1600, 0)
+
+[node name="Obstacle" parent="Obstacles" unique_id=789483625 instance=ExtResource("4_dwyiq")]
+position = Vector2(1619, 445)
+scale = Vector2(0.9756098, 3.1199982)
+
+[node name="Obstacle2" parent="Obstacles" unique_id=2088280843 instance=ExtResource("4_dwyiq")]
+position = Vector2(2011, 830)

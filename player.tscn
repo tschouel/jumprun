@@ -20,11 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://8vbquqs0rp30" path="res://animation/Hubschrauber_Hub7.png" id="9_606se"]
 [ext_resource type="Script" uid="uid://dsgmxxyb0lkwl" path="res://mechanics/Flying/flying_movement.gd" id="16_u1c27"]
 [ext_resource type="Script" uid="uid://ktwod4vnctw6" path="res://ground_movement.gd" id="20_pbfsw"]
-[ext_resource type="Texture2D" uid="uid://blxabj076a06v" path="res://animation/batch_Schlitten1.png" id="21_jm5j8"]
-[ext_resource type="Texture2D" uid="uid://dwyxplys77pao" path="res://animation/batch_Schlitten2.png" id="22_7hik5"]
-[ext_resource type="Texture2D" uid="uid://bqpxtys14s1a4" path="res://animation/batch_Schlitten3.png" id="23_qtqh7"]
-[ext_resource type="Texture2D" uid="uid://dqjwravkd7qag" path="res://animation/batch_Schlitten4.png" id="24_2wuci"]
-[ext_resource type="Texture2D" uid="uid://cdja53560x7ue" path="res://animation/batch_Schlitten5.png" id="25_iruf7"]
 [ext_resource type="Script" uid="uid://bl4bbun8sosdj" path="res://path_movement.gd" id="26_7hik5"]
 [ext_resource type="Texture2D" uid="uid://dwj54ncn0jx4a" path="res://animation/FastCar_FastCarDrive1.png" id="27_dn2kn"]
 [ext_resource type="Texture2D" uid="uid://ba7hocjf6m718" path="res://animation/FastCar_FastCarDrive2.png" id="28_4tmhn"]
@@ -36,15 +31,33 @@
 [ext_resource type="Texture2D" uid="uid://cgedlsho8kvc5" path="res://animation/FastCar_FastCarDrive5.png" id="31_6o2m3"]
 [ext_resource type="Texture2D" uid="uid://b3dhmh5pgvho" path="res://mechanics/Driving/FastCar_FastCarBoost4.png" id="31_feeoa"]
 [ext_resource type="Texture2D" uid="uid://blmr412je74pw" path="res://animation/FastCar_FastCarDrive6.png" id="32_2hmo1"]
+[ext_resource type="Texture2D" uid="uid://52kksdocmpr3" path="res://animation/FastCar_Crash1.png" id="32_77e46"]
+[ext_resource type="Texture2D" uid="uid://b3mhlrcdbrnwv" path="res://animation/FastCar_Crash2.png" id="33_cy2ki"]
 [ext_resource type="Texture2D" uid="uid://cd8rgyujgn5em" path="res://animation/FastCar_FastCarDrive7.png" id="33_uygay"]
+[ext_resource type="Texture2D" uid="uid://bqcc5nqjy7r13" path="res://animation/FastCar_Crash3.png" id="34_04cqw"]
 [ext_resource type="Texture2D" uid="uid://bc78dssbqcria" path="res://animation/FastCar_FastCarDrive8.png" id="34_rpay4"]
+[ext_resource type="Texture2D" uid="uid://c2b0ye7fsl5a6" path="res://animation/FastCar_Crash4.png" id="35_vihdy"]
 [ext_resource type="Texture2D" uid="uid://7mgk0w7nlm4j" path="res://animation/FastCar_WalktoCar1.png" id="35_xfa3h"]
 [ext_resource type="Texture2D" uid="uid://8eyk8qcfc2si" path="res://animation/FastCar_WalktoCar2.png" id="36_04g4e"]
+[ext_resource type="Texture2D" uid="uid://bytkdxdk7njj2" path="res://animation/FastCar_Crash5.png" id="36_7c55y"]
+[ext_resource type="Texture2D" uid="uid://b64abjkwxb5wb" path="res://animation/FastCar_Crash6.png" id="37_hoal8"]
 [ext_resource type="Texture2D" uid="uid://bo6mofwlctjpa" path="res://animation/FastCar_WalktoCar3.png" id="37_lx1qc"]
+[ext_resource type="Texture2D" uid="uid://dauhscgdlk2lj" path="res://animation/__Up1.png" id="38_04cqw"]
 [ext_resource type="Texture2D" uid="uid://vsmwqese66lc" path="res://animation/FastCar_WalktoCar4.png" id="38_elm0x"]
+[ext_resource type="Texture2D" uid="uid://w4j8ryy8cu84" path="res://animation/__Down1.png" id="38_he65s"]
+[ext_resource type="Texture2D" uid="uid://b3ovc4asdtuhc" path="res://animation/FastCar_Crash7.png" id="38_htija"]
+[ext_resource type="Texture2D" uid="uid://dnmfdvd4o70y" path="res://animation/__Down2.png" id="39_c0yt3"]
+[ext_resource type="Texture2D" uid="uid://bimaiea1r3264" path="res://animation/FastCar_Crash8.png" id="39_he65s"]
 [ext_resource type="Texture2D" uid="uid://djv0hxfydhneu" path="res://animation/FastCar_WalktoCar5.png" id="39_k7vj2"]
+[ext_resource type="Texture2D" uid="uid://bykbemqw2edeb" path="res://animation/__Up2.png" id="39_vihdy"]
+[ext_resource type="Texture2D" uid="uid://bt6vixh4s3csa" path="res://animation/__Up3.png" id="40_7c55y"]
 [ext_resource type="Texture2D" uid="uid://srk7voccuyn6" path="res://animation/FastCar_WalktoCar6.png" id="40_dtw5u"]
+[ext_resource type="Texture2D" uid="uid://depfh8ympk3lg" path="res://animation/__Down3.png" id="40_uckl6"]
+[ext_resource type="Texture2D" uid="uid://bj50q21c0onn3" path="res://animation/FastCar_Crash08.png" id="40_vihdy"]
+[ext_resource type="Texture2D" uid="uid://best7qhtvbsrp" path="res://animation/FastCar_Crash09.png" id="41_7c55y"]
 [ext_resource type="Texture2D" uid="uid://bnoqglq1e5ub" path="res://animation/FastCar_WalktoCar7.png" id="41_f37gn"]
+[ext_resource type="Texture2D" uid="uid://chrfjho0gpimw" path="res://animation/__Up4.png" id="41_hoal8"]
+[ext_resource type="Texture2D" uid="uid://dokvs62ueqaof" path="res://animation/FastCar_Crash10.png" id="42_hoal8"]
 [ext_resource type="Texture2D" uid="uid://b258dx03blmk0" path="res://animation/FastCar_WalktoCar08.png" id="42_jccjf"]
 [ext_resource type="Texture2D" uid="uid://dfgpjtjc1v7ps" path="res://animation/FastCar_WalktoCar09.png" id="43_qhi2v"]
 [ext_resource type="Texture2D" uid="uid://dvw5lkjy5txq2" path="res://animation/FastCar_WalktoCar10.png" id="44_ipvpa"]
@@ -148,19 +161,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_jm5j8")
+"texture": ExtResource("2_pylmc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_7hik5")
+"texture": ExtResource("3_pbfsw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_qtqh7")
+"texture": ExtResource("4_5tmop")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_2wuci")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_iruf7")
+"texture": ExtResource("5_7ahtn")
 }],
 "loop": 1,
 "name": &"default",
@@ -184,7 +194,59 @@ animations = [{
 }],
 "loop": 1,
 "name": &"boost",
-"speed": 5.0
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_77e46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cy2ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_04cqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_vihdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_7c55y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_hoal8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_htija")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_he65s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_vihdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_7c55y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_hoal8")
+}],
+"loop": 0,
+"name": &"crash",
+"speed": 50.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_he65s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_c0yt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_uckl6")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 35.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -213,7 +275,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"drive",
-"speed": 5.0
+"speed": 35.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -311,7 +373,24 @@ animations = [{
 }],
 "loop": 0,
 "name": &"trans",
-"speed": 6.0
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_04cqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_vihdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_7c55y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_hoal8")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 35.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1969377440]
@@ -319,21 +398,23 @@ script = ExtResource("1_4flbx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
 position = Vector2(21.160006, -6.819992)
-zoom = Vector2(0.5, 0.5)
+offset = Vector2(600, 0)
+zoom = Vector2(0.8, 0.8)
+limit_enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 17250
 limit_bottom = 1080
 position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=236994846]
 position = Vector2(21.160006, -6.819992)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=963911059]
-position = Vector2(-42, 63)
-rotation = 0.28797933
+position = Vector2(144, 63.000004)
 scale = Vector2(3.77, 3.77)
-polygon = PackedVector2Array(-5.30504, 0.7957561, -4.509284, 1.3262601, -3.448276, 1.5915121, -2.387268, 1.8567641, -1.32626, 1.8567641, 0, 1.8567641, 2.917772, 1.0610081, 4.509284, 0, 6.896552, -1.8567638, 2.4596176, -0.8922157)
+polygon = PackedVector2Array(-5.30504, 0.7957561, -3.448276, 1.5915121, -2.387268, 1.8567641, -1.32626, 1.8567641, 0, 1.8567641, 2.917772, 1.0610081, 6.2897224, -1.6507692, 3.9665833, -5.5155697, 2.4596176, -0.8922157)
 
 [node name="FlyingMovement" type="Node2D" parent="." unique_id=291982134]
 script = ExtResource("16_u1c27")
@@ -361,6 +442,13 @@ frame_progress = 0.9094173
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false
+position = Vector2(8, -18)
+scale = Vector2(0.09241157, 0.092411555)
+sprite_frames = SubResource("SpriteFrames_c8yc8")
+frame_progress = 0.09262883
+
+[node name="Slide" type="AnimatedSprite2D" parent="." unique_id=853094658]
+visible = false
 position = Vector2(0, -61.99)
 scale = Vector2(0.09241157, 0.092411555)
 sprite_frames = SubResource("SpriteFrames_c8yc8")
@@ -376,7 +464,7 @@ script = ExtResource("93_4tmhn")
 visible = false
 scale = Vector2(0.08237434, 0.08237434)
 sprite_frames = SubResource("SpriteFrames_shhik")
-animation = &"drive"
+animation = &"trans"
 autoplay = "trans"
 speed_scale = 4.0
 
@@ -388,6 +476,4 @@ scale = Vector2(1.2, 1.2)
 visible = false
 scale = Vector2(0.08237434, 0.08237434)
 sprite_frames = SubResource("SpriteFrames_shhik")
-animation = &"trans"
-autoplay = "trans"
-speed_scale = 4.0
+animation = &"down"

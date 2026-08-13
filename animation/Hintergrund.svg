@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="8485.4395mm"
+   height="3524.8499mm"
+   viewBox="0 0 8485.4393 3524.8497"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d, 2026-05-05)"
+   sodipodi:docname="Hintergrund.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.01"
+     inkscape:cx="3050"
+     inkscape:cy="-3200"
+     inkscape:window-width="1512"
+     inkscape:window-height="917"
+     inkscape:window-x="0"
+     inkscape:window-y="65"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(11512.558,280.73047)"
+     inkscape:export-filename="BG.png"
+     inkscape:export-xdpi="5.4734006"
+     inkscape:export-ydpi="5.4734006">
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke-width:7.42998"
+       id="path1"
+       cx="-8652.7178"
+       cy="1454.1097"
+       rx="2859.8398"
+       ry="1734.8402" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke-width:7.42998"
+       id="path1-9"
+       cx="-5886.9585"
+       cy="1509.2792"
+       rx="2859.8398"
+       ry="1734.8402"
+       inkscape:export-filename="BW.png"
+       inkscape:export-xdpi="5.4734006"
+       inkscape:export-ydpi="5.4734006" />
+  </g>
+</svg>

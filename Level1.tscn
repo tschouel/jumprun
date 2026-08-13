@@ -1,63 +1,146 @@
 [gd_scene format=3 uid="uid://bpv286acvj2r"]
 
 [ext_resource type="Script" uid="uid://dj42nvbyu2rbj" path="res://beat_grid_visualizer.gd" id="1_kyxg0"]
+[ext_resource type="Script" uid="uid://kvj7tbpjm8e4" path="res://level.gd" id="1_lmyl5"]
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_mc20k"]
 [ext_resource type="Script" uid="uid://cg7swidbhofvu" path="res://lane_zone.gd" id="3_cove1"]
-[ext_resource type="PackedScene" uid="uid://bq15ektprqr7j" path="res://obstacle.tscn" id="4_dwyiq"]
+[ext_resource type="PackedScene" uid="uid://bq15ektprqr7j" path="res://Obstacle.tscn" id="4_dwyiq"]
+[ext_resource type="Texture2D" uid="uid://f50lmb0gipk8" path="res://animation/BW.png" id="5_dn5ey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
 
-[node name="Node2D" type="Node2D" unique_id=578857236]
+[sub_resource type="ViewportTexture" id="ViewportTexture_shhik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
+size = Vector2(20, 81)
+
+[node name="Level1" type="Node2D" unique_id=578857236]
+script = ExtResource("1_lmyl5")
+level_limit_right = 138000
 metadata/_edit_group_ = true
 
 [node name="Backgroundlines" type="Node2D" parent="." unique_id=1057040448]
 
 [node name="Line2D5" type="Line2D" parent="Backgroundlines" unique_id=1274130740]
-points = PackedVector2Array(0, 140, 17250, 140)
+points = PackedVector2Array(0, 140, 138000, 140)
 default_color = Color(0, 0, 0, 1)
 
 [node name="Line2D6" type="Line2D" parent="Backgroundlines" unique_id=1006731935]
-points = PackedVector2Array(0, 340, 17250, 340)
+points = PackedVector2Array(0, 340, 138000, 340)
 default_color = Color(0, 0, 0, 1)
 
 [node name="Line2D7" type="Line2D" parent="Backgroundlines" unique_id=1921718127]
-points = PackedVector2Array(0, 540, 17250, 540)
+points = PackedVector2Array(0, 540, 138000, 540)
 default_color = Color(0, 0, 0, 1)
 
 [node name="Line2D8" type="Line2D" parent="Backgroundlines" unique_id=658241404]
-points = PackedVector2Array(0, 740, 17250, 740)
+points = PackedVector2Array(0, 740, 138000, 740)
 default_color = Color(0, 0, 0, 1)
 
 [node name="Line2D9" type="Line2D" parent="Backgroundlines" unique_id=798431133]
-points = PackedVector2Array(0, 940, 17250, 940)
+points = PackedVector2Array(0, 940, 138000, 940)
 default_color = Color(0, 0, 0, 1)
 
 [node name="BeatGridVisualizer" type="Node2D" parent="." unique_id=1216128247]
 script = ExtResource("1_kyxg0")
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_mc20k")]
-position = Vector2(458, -145)
-scale = Vector2(1.2, 1.2)
+position = Vector2(966.00006, -146)
+scale = Vector2(1.4, 1.4)
 bpm = 115.0
 units_per_bar = 400.0
 
-[node name="lane" type="Area2D" parent="." unique_id=1769419308]
-visible = false
-position = Vector2(8230, 375.99997)
-scale = Vector2(1234.1243, -121.251976)
+[node name="lane" type="Area2D" parent="." unique_id=1769419308 node_paths=PackedStringArray("startblock_collision", "background_lines")]
+position = Vector2(79973, 698.00006)
+scale = Vector2(8000, -154.872)
 script = ExtResource("3_cove1")
-units_per_bar = 1600.0
+units_per_bar = 3200.0
+startblock_collision = NodePath("../StartBlock/Startblock")
+background_lines = NodePath("../Backgroundlines")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lane" unique_id=1955752289]
-position = Vector2(3.1090882, 0.04948348)
 shape = SubResource("RectangleShape2D_shhik")
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=33360143]
 position = Vector2(1600, 0)
 
 [node name="Obstacle" parent="Obstacles" unique_id=789483625 instance=ExtResource("4_dwyiq")]
-position = Vector2(1619, 445)
+position = Vector2(2817, 444.00003)
 scale = Vector2(0.9756098, 3.1199982)
 
 [node name="Obstacle2" parent="Obstacles" unique_id=2088280843 instance=ExtResource("4_dwyiq")]
-position = Vector2(2011, 830)
+position = Vector2(3611, 854)
+
+[node name="Obstacle3" parent="Obstacles" unique_id=1001001757 instance=ExtResource("4_dwyiq")]
+position = Vector2(4817, 441)
+
+[node name="Obstacle4" parent="Obstacles" unique_id=536917455 instance=ExtResource("4_dwyiq")]
+position = Vector2(4810, 846)
+
+[node name="Obstacle5" parent="Obstacles" unique_id=959492395 instance=ExtResource("4_dwyiq")]
+position = Vector2(4810, 846)
+
+[node name="Obstacle6" parent="Obstacles" unique_id=1052714889 instance=ExtResource("4_dwyiq")]
+position = Vector2(4810, 846)
+
+[node name="Obstacle8" parent="Obstacles" unique_id=497469189 instance=ExtResource("4_dwyiq")]
+position = Vector2(8825, 644)
+
+[node name="Obstacle9" parent="Obstacles" unique_id=1409070288 instance=ExtResource("4_dwyiq")]
+position = Vector2(8418, 442)
+
+[node name="Obstacle10" parent="Obstacles" unique_id=1892753717 instance=ExtResource("4_dwyiq")]
+position = Vector2(8011, 241)
+
+[node name="Obstacle11" parent="Obstacles" unique_id=29258964 instance=ExtResource("4_dwyiq")]
+position = Vector2(7216, 446)
+
+[node name="Obstacle12" parent="Obstacles" unique_id=1765697280 instance=ExtResource("4_dwyiq")]
+position = Vector2(6804, 640)
+
+[node name="Obstacle13" parent="Obstacles" unique_id=1518841060 instance=ExtResource("4_dwyiq")]
+position = Vector2(6413, 828)
+
+[node name="Start" type="Area2D" parent="." unique_id=1570894674]
+position = Vector2(1605, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="Start" unique_id=1348068983]
+position = Vector2(1600, 0)
+texture = SubResource("ViewportTexture_shhik")
+
+[node name="Line2D" type="Line2D" parent="Start/Sprite2D" unique_id=610773916]
+points = PackedVector2Array(0, 0, 0, 1000)
+
+[node name="BG2" type="Sprite2D" parent="." unique_id=1667178067]
+texture_repeat = 2
+position = Vector2(18, 945)
+texture = ExtResource("5_dn5ey")
+centered = false
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 138000, 500)
+
+[node name="BG3" type="Sprite2D" parent="." unique_id=1723994253]
+texture_repeat = 2
+position = Vector2(4, -365)
+texture = ExtResource("5_dn5ey")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 138000, 500)
+
+[node name="StartBlock" type="StaticBody2D" parent="." unique_id=134559216]
+position = Vector2(3225, 527)
+
+[node name="Startblock" type="CollisionShape2D" parent="StartBlock" unique_id=1017717515]
+position = Vector2(24, 19)
+rotation = 1.553343
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_3gcn6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1333592843]
+position = Vector2(-825, 560)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=657607511]
+position = Vector2(28, 19)
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_3gcn6")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq15ektprqr7j"]
 
-[ext_resource type="Script" uid="uid://cebl3rkpi7i5e" path="res://obstacle.gd" id="1_aubd6"]
+[ext_resource type="Script" uid="uid://cebl3rkpi7i5e" path="res://Obstacle.gd" id="1_aubd6"]
 [ext_resource type="Texture2D" uid="uid://htxkkv4lnfdy" path="res://animation/Stopp.png" id="2_vcivv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
@@ -10,7 +10,7 @@ size = Vector2(142.23193, 20)
 script = ExtResource("1_aubd6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616318608]
-position = Vector2(-6.9999995, 0)
+position = Vector2(-9.000001, 1)
 rotation = -3.1415925
 scale = Vector2(0.120999984, 9.960989)
 shape = SubResource("RectangleShape2D_3gcn6")

@@ -33,9 +33,6 @@ extends CharacterBody2D
 @export var fermata_friction: float = 600.0
 @export var fermata_acceleration: float = 1200.0
 
-@export_group("FMOD Einstellungen")
-@export var music_emitter: Node2D
-
 var gravity: float
 var JUMP_VELOCITY: float
 var FERMATA_RIGHT_JUMP_VELOCITY: float
@@ -46,6 +43,7 @@ var is_fermata_active: bool = false
 var is_flying_active: bool = false
 var is_driving_active: bool = false
 var is_lane_active: bool = false
+var is_ground_active: bool = false
 
 # Modul-Referenzen
 @onready var flying_module = $FlyingMovement
@@ -128,10 +126,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 ## Steuert das Sprite ausserhalb von Spezialzonen: Fermata = Walking, sonst IMMER Sliding
+## Steuert das Grund-Sprite: Wenn Ground oder Fermata aktiv ist -> Walking, sonst Sliding
 func _check_default_sprite_state() -> void:
 	var target_sprite: Node2D = null
 
-	if is_fermata_active:
+	if is_ground_active or is_fermata_active:
 		if not walking_sprite or not is_instance_valid(walking_sprite):
 			walking_sprite = get_node_or_null("Walking")
 		target_sprite = walking_sprite

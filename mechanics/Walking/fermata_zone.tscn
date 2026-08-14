@@ -22,14 +22,14 @@ size = Vector2(13, 13)
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=569426787]
 bank_paths = ["res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank"]
 
-[node name="FmodStart" parent="." unique_id=1835574014 node_paths=PackedStringArray("music_emitter") instance=ExtResource("1_gbd3w")]
+[node name="FmodStart" parent="." unique_id=1835574014 instance=ExtResource("1_gbd3w")]
 position = Vector2(73, -673)
 scale = Vector2(9.717604, 33145.973)
-music_emitter = NodePath("../FermataMusic")
 
 [node name="FermataMusic" type="FmodEventEmitter2D" parent="." unique_id=562510055]
 event_name = "event:/Fermate"
 event_guid = "{31bb35f9-d80a-4b77-93f2-c382903edb5f}"
+autoplay = true
 fmod_parameters/Impuls/id = -2328761403915076052
 fmod_parameters/Impuls = 0.0
 fmod_parameters/Impuls/variant_type = 3
@@ -37,7 +37,7 @@ rotation = 3.1415927
 scale = Vector2(5.24491, 25.835808)
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_k4imu")]
-position = Vector2(134, -168)
+position = Vector2(54, -121)
 units_per_bar = 400.0
 jump_height = 50.0
 

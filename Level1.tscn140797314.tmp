@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://bpv286acvj2r"]
 
+[ext_resource type="Script" uid="uid://dj42nvbyu2rbj" path="res://beat_grid_visualizer.gd" id="1_kyxg0"]
 [ext_resource type="Script" uid="uid://kvj7tbpjm8e4" path="res://level.gd" id="1_lmyl5"]
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_mc20k"]
 [ext_resource type="Script" uid="uid://cg7swidbhofvu" path="res://lane_zone.gd" id="3_cove1"]
 [ext_resource type="PackedScene" uid="uid://bq15ektprqr7j" path="res://Obstacle.tscn" id="4_dwyiq"]
 [ext_resource type="Texture2D" uid="uid://f50lmb0gipk8" path="res://animation/BW.png" id="5_dn5ey"]
-[ext_resource type="Script" uid="uid://c6pbaq1mrv0bf" path="res://audiocontroller.gd" id="7_s3sxq"]
-[ext_resource type="PackedScene" uid="uid://bkkbs5vanudom" path="res://MusicTrigger.tscn" id="8_s3sxq"]
-[ext_resource type="Texture2D" uid="uid://dum8eltion0bu" path="res://Papier.png" id="9_5py54"]
+[ext_resource type="Script" uid="uid://ucp2ntqq12ap" path="res://fmodevent.gd" id="8_s3sxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
-size = Vector2(1.3720088, 20)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_shhik"]
 
@@ -47,84 +45,59 @@ default_color = Color(0, 0, 0, 1)
 points = PackedVector2Array(0, 940, 138000, 940)
 default_color = Color(0, 0, 0, 1)
 
+[node name="BeatGridVisualizer" type="Node2D" parent="." unique_id=1216128247]
+script = ExtResource("1_kyxg0")
+
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_mc20k")]
 position = Vector2(966.00006, -146)
 scale = Vector2(1.4, 1.4)
 bpm = 115.0
 units_per_bar = 400.0
 
-[node name="lane" type="Area2D" parent="." unique_id=1769419308 node_paths=PackedStringArray("startblock_collision", "background_lines", "audio_controller")]
+[node name="lane" type="Area2D" parent="." unique_id=1769419308 node_paths=PackedStringArray("startblock_collision", "background_lines")]
 position = Vector2(79973, 698.00006)
 scale = Vector2(8000, -154.872)
 script = ExtResource("3_cove1")
 units_per_bar = 2000.0
 startblock_collision = NodePath("../StartBlock/Startblock")
 background_lines = NodePath("../Backgroundlines")
-audio_controller = NodePath("../AudioController")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lane" unique_id=1955752289]
-position = Vector2(-13.676624, 1.2009922)
-scale = Vector2(7.837, 1.264)
 shape = SubResource("RectangleShape2D_shhik")
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=33360143]
 position = Vector2(1600, 0)
 
-[node name="Obstacle" parent="Obstacles" unique_id=789483625 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
+[node name="Obstacle" parent="Obstacles" unique_id=789483625 instance=ExtResource("4_dwyiq")]
 position = Vector2(2817, 444.00003)
 scale = Vector2(0.9756098, 3.1199982)
-audio_controller = NodePath("../../AudioController")
-parameter_name = "fail"
 
-[node name="Obstacle2" parent="Obstacles" unique_id=2088280843 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
+[node name="Obstacle2" parent="Obstacles" unique_id=2088280843 instance=ExtResource("4_dwyiq")]
 position = Vector2(3611, 854)
-audio_controller = NodePath("../../AudioController")
-parameter_name = "fail"
 
-[node name="Obstacle3" parent="Obstacles" unique_id=1001001757 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
+[node name="Obstacle3" parent="Obstacles" unique_id=1001001757 instance=ExtResource("4_dwyiq")]
 position = Vector2(4817, 441)
-audio_controller = NodePath("../../AudioController")
-parameter_name = "fail"
 
-[node name="Obstacle4" parent="Obstacles" unique_id=536917455 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
+[node name="Obstacle4" parent="Obstacles" unique_id=536917455 instance=ExtResource("4_dwyiq")]
 position = Vector2(4810, 849)
-audio_controller = NodePath("../../AudioController")
-parameter_name = "fail"
 
-[node name="TreppeHoch" type="Node2D" parent="Obstacles" unique_id=768230293]
+[node name="Obstacle8" parent="Obstacles" unique_id=497469189 instance=ExtResource("4_dwyiq")]
+position = Vector2(8825, 644)
+
+[node name="Obstacle9" parent="Obstacles" unique_id=1409070288 instance=ExtResource("4_dwyiq")]
+position = Vector2(8418, 442)
+
+[node name="Obstacle10" parent="Obstacles" unique_id=1892753717 instance=ExtResource("4_dwyiq")]
+position = Vector2(8011, 241)
+
+[node name="Obstacle11" parent="Obstacles" unique_id=29258964 instance=ExtResource("4_dwyiq")]
 position = Vector2(7216, 446)
 
-[node name="Obstacle11" parent="Obstacles/TreppeHoch" unique_id=29258964 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
-audio_controller = NodePath("../../../AudioController")
-parameter_name = "fail"
+[node name="Obstacle12" parent="Obstacles" unique_id=1765697280 instance=ExtResource("4_dwyiq")]
+position = Vector2(6804, 640)
 
-[node name="Obstacle12" parent="Obstacles/TreppeHoch" unique_id=1765697280 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
-position = Vector2(-412, 194)
-audio_controller = NodePath("../../../AudioController")
-parameter_name = "fail"
-
-[node name="Obstacle13" parent="Obstacles/TreppeHoch" unique_id=1518841060 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
-position = Vector2(-802, 401)
-audio_controller = NodePath("../../../AudioController")
-parameter_name = "fail"
-
-[node name="TreppeRunt" type="Node2D" parent="Obstacles" unique_id=1504687493]
-position = Vector2(7216, 446)
-
-[node name="Obstacle8" parent="Obstacles/TreppeRunt" unique_id=497469189 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
-position = Vector2(1609, 198)
-audio_controller = NodePath("../../../AudioController")
-parameter_name = "fail"
-
-[node name="Obstacle9" parent="Obstacles/TreppeRunt" unique_id=1409070288 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
-position = Vector2(1202, -4)
-audio_controller = NodePath("../../../AudioController")
-parameter_name = "fail"
-
-[node name="Obstacle10" parent="Obstacles/TreppeRunt" unique_id=1892753717 node_paths=PackedStringArray("audio_controller") instance=ExtResource("4_dwyiq")]
-position = Vector2(795, -205)
-audio_controller = NodePath("../../../AudioController")
-parameter_name = "fail"
+[node name="Obstacle13" parent="Obstacles" unique_id=1518841060 instance=ExtResource("4_dwyiq")]
+position = Vector2(6414, 847)
 
 [node name="Start" type="Area2D" parent="." unique_id=1570894674]
 position = Vector2(1605, 16)
@@ -170,40 +143,10 @@ position = Vector2(28, 19)
 scale = Vector2(400, 1)
 shape = SubResource("RectangleShape2D_3gcn6")
 
-[node name="Boden2" type="StaticBody2D" parent="." unique_id=1339404995]
-position = Vector2(14952, 784)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden2" unique_id=1745263110]
-position = Vector2(28, 19)
-scale = Vector2(400, 1)
-shape = SubResource("RectangleShape2D_3gcn6")
-
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=964003670]
-event_name = "event:/Level1"
+event_name = "event:/Nuttesohn"
 event_guid = "{27a3a8c5-4268-4a01-9bb6-0ec21bb27c43}"
 fmod_parameters/Go/id = -7329762464691285237
-fmod_parameters/Go = 1
+fmod_parameters/Go = 0.0
 fmod_parameters/Go/variant_type = 2
-fmod_parameters/Fail/id = -2537409970261784164
-fmod_parameters/Fail = 0.0
-fmod_parameters/Fail/variant_type = 3
-
-[node name="AudioController" type="Node" parent="." unique_id=117847382 node_paths=PackedStringArray("fmod_emitter")]
-script = ExtResource("7_s3sxq")
-fmod_emitter = NodePath("../FmodEventEmitter2D")
-
-[node name="FmodStart" parent="." unique_id=1835574014 instance=ExtResource("8_s3sxq")]
-position = Vector2(3199, 727)
-scale = Vector2(4.52, 16.4)
-
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=191499163]
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1361226669]
-z_index = -2
-texture_repeat = 2
-position = Vector2(1026, 538.00006)
-rotation = 1.5707964
-scale = Vector2(0.083, 0.913)
-texture = ExtResource("9_5py54")
-region_enabled = true
-region_rect = Rect2(0, 0, 10000, 138000)
+script = ExtResource("8_s3sxq")

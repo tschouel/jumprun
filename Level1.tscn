@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://cg7swidbhofvu" path="res://lane_zone.gd" id="3_cove1"]
 [ext_resource type="PackedScene" uid="uid://bq15ektprqr7j" path="res://Obstacle.tscn" id="4_dwyiq"]
 [ext_resource type="Texture2D" uid="uid://f50lmb0gipk8" path="res://animation/BW.png" id="5_dn5ey"]
+[ext_resource type="PackedScene" uid="uid://bkkbs5vanudom" path="res://MusicTrigger.tscn" id="7_mlbie"]
+[ext_resource type="Script" uid="uid://dh30mvdusl6r3" path="res://fmodevent_starter.gd" id="8_s3sxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
 
@@ -18,6 +20,9 @@ size = Vector2(20, 81)
 script = ExtResource("1_lmyl5")
 level_limit_right = 138000
 metadata/_edit_group_ = true
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=725326697]
+bank_paths = ["res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank"]
 
 [node name="Backgroundlines" type="Node2D" parent="." unique_id=1057040448]
 
@@ -54,7 +59,7 @@ units_per_bar = 400.0
 position = Vector2(79973, 698.00006)
 scale = Vector2(8000, -154.872)
 script = ExtResource("3_cove1")
-units_per_bar = 3200.0
+units_per_bar = 2000.0
 startblock_collision = NodePath("../StartBlock/Startblock")
 background_lines = NodePath("../Backgroundlines")
 
@@ -75,13 +80,7 @@ position = Vector2(3611, 854)
 position = Vector2(4817, 441)
 
 [node name="Obstacle4" parent="Obstacles" unique_id=536917455 instance=ExtResource("4_dwyiq")]
-position = Vector2(4810, 846)
-
-[node name="Obstacle5" parent="Obstacles" unique_id=959492395 instance=ExtResource("4_dwyiq")]
-position = Vector2(4810, 846)
-
-[node name="Obstacle6" parent="Obstacles" unique_id=1052714889 instance=ExtResource("4_dwyiq")]
-position = Vector2(4810, 846)
+position = Vector2(4810, 849)
 
 [node name="Obstacle8" parent="Obstacles" unique_id=497469189 instance=ExtResource("4_dwyiq")]
 position = Vector2(8825, 644)
@@ -99,7 +98,7 @@ position = Vector2(7216, 446)
 position = Vector2(6804, 640)
 
 [node name="Obstacle13" parent="Obstacles" unique_id=1518841060 instance=ExtResource("4_dwyiq")]
-position = Vector2(6413, 828)
+position = Vector2(6414, 847)
 
 [node name="Start" type="Area2D" parent="." unique_id=1570894674]
 position = Vector2(1605, 16)
@@ -137,10 +136,23 @@ rotation = 1.553343
 scale = Vector2(400, 1)
 shape = SubResource("RectangleShape2D_3gcn6")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1333592843]
+[node name="Boden" type="StaticBody2D" parent="." unique_id=1333592843]
 position = Vector2(-825, 560)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=657607511]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=657607511]
 position = Vector2(28, 19)
 scale = Vector2(400, 1)
 shape = SubResource("RectangleShape2D_3gcn6")
+
+[node name="FmodStart" parent="." unique_id=1835574014 instance=ExtResource("7_mlbie")]
+position = Vector2(3201, 638.00006)
+rotation = -6.2831855
+scale = Vector2(5.32, 9.279999)
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=80116663]
+event_name = "event:/Level2"
+event_guid = "{27a3a8c5-4268-4a01-9bb6-0ec21bb27c43}"
+fmod_parameters/Go/id = -7329762464691285237
+fmod_parameters/Go = 0.0
+fmod_parameters/Go/variant_type = 3
+script = ExtResource("8_s3sxq")

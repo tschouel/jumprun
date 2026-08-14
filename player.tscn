@@ -57,6 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://best7qhtvbsrp" path="res://animation/FastCar_Crash09.png" id="41_7c55y"]
 [ext_resource type="Texture2D" uid="uid://bnoqglq1e5ub" path="res://animation/FastCar_WalktoCar7.png" id="41_f37gn"]
 [ext_resource type="Texture2D" uid="uid://chrfjho0gpimw" path="res://animation/__Up4.png" id="41_hoal8"]
+[ext_resource type="Texture2D" uid="uid://ur823scrpv6n" path="res://animation/__Down4.png" id="41_htija"]
 [ext_resource type="Texture2D" uid="uid://dokvs62ueqaof" path="res://animation/FastCar_Crash10.png" id="42_hoal8"]
 [ext_resource type="Texture2D" uid="uid://b258dx03blmk0" path="res://animation/FastCar_WalktoCar08.png" id="42_jccjf"]
 [ext_resource type="Texture2D" uid="uid://dfgpjtjc1v7ps" path="res://animation/FastCar_WalktoCar09.png" id="43_qhi2v"]
@@ -243,6 +244,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("40_uckl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_htija")
 }],
 "loop": 1,
 "name": &"down",

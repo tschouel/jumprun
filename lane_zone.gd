@@ -10,10 +10,14 @@ extends Area2D
 @export var default_start_lane: int = 1
 
 @export_group("Blockaden & Visuelles")
-## Ziehe hier die CollisionShape2D deines Startblocks aus dem Szenenbaum rein
+## Ziehe hier die CollisionShape2D deines Startblocks rein
 @export var startblock_collision: CollisionShape2D 
-## Ziehe hier deine Backgroundlines-Node rein (falls leer, wird in der Szene nach "Backgroundlines" gesucht)
+## Ziehe hier deine Backgroundlines-Node rein (falls leer, wird gesucht)
 @export var background_lines: Node2D 
+
+@export_group("FMOD / Audio")
+## Ziehe hier die Node 'FmodEventEmitter2D' rein
+@export var audio_controller: Node 
 
 var _is_player_inside: bool = false
 var _is_crashing: bool = false
@@ -23,21 +27,25 @@ var _active_player: CharacterBody2D = null
 
 func _ready() -> void:
 	add_to_group("lane_zones")
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
+	if not body_exited.is_connected(_on_body_exited):
+		body_exited.connect(_on_body_exited)
 	
-	# Startblock zu Beginn sicherheitshalber AKTIV schalten
+	# Startblock zu Beginn AKTIV schalten
 	if startblock_collision:
 		startblock_collision.set_deferred("disabled", false)
 		
-	# Falls im Inspector nicht zugewiesen, suche automatisch nach der Node "Backgroundlines"
+	# Backgroundlines vorbereiten (Alpha 0.5)
 	if not background_lines:
-		background_lines = get_tree().current_scene.get_node_or_null("Backgroundlines") as Node2D
-		
-	# Backgroundlines beim Start HALB TRANSPARENT schalten (Alpha = 0.5)
+		background_lines = get_tree().current_scene.find_child("Backgroundlines", true, false) as Node2D
 	if background_lines:
 		background_lines.visible = true
 		background_lines.modulate.a = 0.5
+		
+	# Emitter automatisch finden falls nicht manuell zugewiesen
+	if not audio_controller:
+		audio_controller = get_tree().current_scene.find_child("FmodEventEmitter2D", true, false)
 	
 	await get_tree().process_frame
 	for body in get_overlapping_bodies():
@@ -45,9 +53,9 @@ func _ready() -> void:
 			_on_body_entered(body)
 			break
 
-func _unhandled_input(event: InputEvent) -> void:
-	if _is_player_inside and _active_player and not _is_transitioning and not _is_driving:
-		if event.is_action_pressed("interact") or (event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E):
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
+		if _is_player_inside and _active_player and not _is_transitioning and not _is_driving:
 			_start_lane_sequence()
 
 func _on_body_entered(body: Node2D) -> void:
@@ -95,11 +103,15 @@ func _start_lane_sequence() -> void:
 
 	_is_transitioning = true
 
-	# 1. Startblock deaktivieren
+	# 1. FMOD Go = 1 über den Controller setzen
+	if audio_controller and audio_controller.has_method("set_go"):
+		audio_controller.set_go(1.0)
+
+	# 2. Startblock deaktivieren
 	if startblock_collision:
 		startblock_collision.set_deferred("disabled", true)
 
-	# 2. Transition im LaneMovement auslösen
+	# 3. Transition im LaneMovement auslösen
 	var lane_module = _active_player.get_node_or_null("LaneMovement")
 	var anim_duration: float = 0.5
 	
@@ -113,18 +125,16 @@ func _start_lane_sequence() -> void:
 			if fps > 0:
 				anim_duration = float(frame_count) / fps
 
-	# 3. Warten für die Dauer der Animation
+	# 4. Warten für Animationsdauer
 	await get_tree().create_timer(anim_duration).timeout
 
-	# 4. Backgroundlines VOLL SICHTBAR schalten (Alpha = 1.0)
+	# 5. Backgroundlines auf 100% einblenden
 	if not background_lines:
-		background_lines = get_tree().current_scene.get_node_or_null("Backgroundlines") as Node2D
+		background_lines = get_tree().current_scene.find_child("Backgroundlines", true, false) as Node2D
 
 	if background_lines:
-		# Falls du einen weichen Übergang möchtest, kannst du hier ein Tween nutzen:
 		var tween = create_tween()
 		tween.tween_property(background_lines, "modulate:a", 1.0, 0.2)
-		# Alternativ ohne Animation einfach: background_lines.modulate.a = 1.0
 
 	_is_transitioning = false
 	_is_driving = true

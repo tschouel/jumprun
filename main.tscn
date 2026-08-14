@@ -284,31 +284,26 @@ script = ExtResource("10_4c57u")
 position = Vector2(645, -25)
 scale = Vector2(0.31998044, 0.31998044)
 music_emitter = NodePath("../Level1")
-target_value = 1.0
 
 [node name="Obstacle2" parent="." unique_id=244165466 node_paths=PackedStringArray("music_emitter") instance=ExtResource("11_efxa6")]
 position = Vector2(693, -12)
 scale = Vector2(0.31998044, 0.31998044)
 music_emitter = NodePath("../Level1")
-target_value = 1.0
 
 [node name="Obstacle3" parent="." unique_id=1868792223 node_paths=PackedStringArray("music_emitter") instance=ExtResource("11_efxa6")]
 position = Vector2(667, -7)
 scale = Vector2(0.31998044, 0.31998044)
 music_emitter = NodePath("../Level1")
-target_value = 1.0
 
 [node name="Obstacle4" parent="." unique_id=1348035969 node_paths=PackedStringArray("music_emitter") instance=ExtResource("11_efxa6")]
 position = Vector2(680, -18)
 scale = Vector2(0.31998044, 0.31998044)
 music_emitter = NodePath("../Level1")
-target_value = 1.0
 
 [node name="Obstacle5" parent="." unique_id=1696147263 node_paths=PackedStringArray("music_emitter") instance=ExtResource("11_efxa6")]
 position = Vector2(627, -3)
 scale = Vector2(0.31998044, 0.31998044)
 music_emitter = NodePath("../Level1")
-target_value = 1.0
 
 [node name="FlightBG" type="Sprite2D" parent="." unique_id=1265226160]
 z_index = -10

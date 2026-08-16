@@ -664,6 +664,4 @@ scale = Vector2(1.2, 1.2)
 
 [node name="LaneSprite" type="AnimatedSprite2D" parent="LaneMovement" unique_id=1647952448]
 sprite_frames = SubResource("SpriteFrames_shhik")
-animation = &"trans"
-frame = 30
-frame_progress = 1.0
+animation = &"toFly"

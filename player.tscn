@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://cqkt7t7buduub"]
 
 [ext_resource type="Script" uid="uid://bg6ufj546tj83" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://c42le4d78br7p" path="res://animation/batch_Walk1.png" id="2_pylmc"]
 [ext_resource type="Texture2D" uid="uid://bl3tqfxsr2ib5" path="res://animation/Hubschrauber_HubBoost1.png" id="3_606se"]
 [ext_resource type="Texture2D" uid="uid://eleq2bnlkb0a" path="res://animation/Hubschrauber_Hub1.png" id="3_b26j0"]
-[ext_resource type="Texture2D" uid="uid://cybojex4axacs" path="res://animation/batch_Walk2.png" id="3_pbfsw"]
-[ext_resource type="Texture2D" uid="uid://bfnffvqnaf83p" path="res://animation/batch_Walk3.png" id="4_5tmop"]
 [ext_resource type="Texture2D" uid="uid://cbg4m4hijv823" path="res://animation/Hubschrauber_Hub2.png" id="4_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://dmy0nyfnrkb4q" path="res://animation/Hubschrauber_HubBoost3.png" id="4_u1c27"]
-[ext_resource type="Texture2D" uid="uid://cgm5hvnct1d5k" path="res://animation/batch_Walk4.png" id="5_7ahtn"]
 [ext_resource type="Texture2D" uid="uid://dam6qltg40fm5" path="res://animation/Hubschrauber_Hub3.png" id="5_nvl01"]
 [ext_resource type="Texture2D" uid="uid://cp4qhv74niufa" path="res://animation/Hubschrauber_HubBoost4.png" id="5_op7ga"]
 [ext_resource type="Texture2D" uid="uid://c03vgfuhksnj2" path="res://animation/Hubschrauber_Hub4.png" id="6_ivps1"]
@@ -19,7 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://cf0l5860ki53r" path="res://animation/Hubschrauber_HubBoost7.png" id="8_pbfsw"]
 [ext_resource type="Texture2D" uid="uid://8vbquqs0rp30" path="res://animation/Hubschrauber_Hub7.png" id="9_606se"]
 [ext_resource type="Script" uid="uid://dsgmxxyb0lkwl" path="res://mechanics/Flying/flying_movement.gd" id="16_u1c27"]
+[ext_resource type="Texture2D" uid="uid://b7dw1yvgwn4ef" path="res://animation/__Walk1.png" id="17_rk5q0"]
+[ext_resource type="Texture2D" uid="uid://de3b66ty7b4q8" path="res://animation/__jump1.png" id="17_w3a0q"]
+[ext_resource type="Texture2D" uid="uid://o0bp3dj14251" path="res://animation/__Walk2.png" id="18_0xmk7"]
+[ext_resource type="Texture2D" uid="uid://dyt45egbjocwo" path="res://animation/__jump2.png" id="18_yskhe"]
+[ext_resource type="Texture2D" uid="uid://o47126uq4wcd" path="res://animation/__Walk3.png" id="19_cmmdq"]
+[ext_resource type="Texture2D" uid="uid://87jh5ixrjvoh" path="res://animation/__jump3.png" id="19_lxrty"]
+[ext_resource type="Texture2D" uid="uid://pngqc6k1fwfo" path="res://animation/__jump4.png" id="20_66i60"]
+[ext_resource type="Texture2D" uid="uid://cev7y8m3sy57" path="res://animation/__Walk4.png" id="20_lhxi5"]
 [ext_resource type="Script" uid="uid://ktwod4vnctw6" path="res://ground_movement.gd" id="20_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://d3ufv0y8h1db0" path="res://animation/__jump5.png" id="21_mqy1v"]
 [ext_resource type="Script" uid="uid://bl4bbun8sosdj" path="res://path_movement.gd" id="26_7hik5"]
 [ext_resource type="Texture2D" uid="uid://dwj54ncn0jx4a" path="res://animation/FastCar_FastCarDrive1.png" id="27_dn2kn"]
 [ext_resource type="Texture2D" uid="uid://ba7hocjf6m718" path="res://animation/FastCar_FastCarDrive2.png" id="28_4tmhn"]
@@ -143,6 +148,9 @@
 [ext_resource type="Script" uid="uid://b877gqsf7fwd5" path="res://mechanics/Driving/driving_movement.gd" id="93_4tmhn"]
 [ext_resource type="Texture2D" uid="uid://dhsci2im425l1" path="res://animation/__toFly12.png" id="93_vxixj"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3a0q"]
+polygon = PackedVector2Array(528.96643, -198.56097, 569.47284, -218.41705, 614.74475, -234.96384, 655.2512, -225.03577, 683.844, -211.79837, 693.3749, -188.63293, 698.1404, -148.92072, 469.39813, -92.661804, 495.60822, -152.2301)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1c27"]
 animations = [{
 "frames": [{
@@ -199,36 +207,94 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pylmc")
+"texture": ExtResource("17_w3a0q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_pbfsw")
+"texture": ExtResource("18_yskhe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_5tmop")
+"texture": ExtResource("19_lxrty")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7ahtn")
+"texture": ExtResource("20_66i60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_mqy1v")
 }],
 "loop": 1,
-"name": &"Walking",
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}],
+"loop": 1,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_rk5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0xmk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cmmdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lhxi5")
+}],
+"loop": 1,
+"name": &"walking",
 "speed": 5.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4itt3"]
+load_path = "res://.godot/imported/batch_Walk1.png-b111bb0efc0eb1ecc51dd5c4df89f3b6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w3a0q"]
+load_path = "res://.godot/imported/batch_Walk2.png-cfe123a0eb27ce078a58ee4a129825e6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yskhe"]
+load_path = "res://.godot/imported/batch_Walk3.png-e3ee1c438821f0d3931cb7da7f3fa3c5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lxrty"]
+load_path = "res://.godot/imported/batch_Walk4.png-dfbefdb63416915bd445e9210cd9f17b.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8yc8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pylmc")
+"texture": SubResource("CompressedTexture2D_4itt3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_pbfsw")
+"texture": SubResource("CompressedTexture2D_w3a0q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_5tmop")
+"texture": SubResource("CompressedTexture2D_yskhe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7ahtn")
+"texture": SubResource("CompressedTexture2D_lxrty")
 }],
 "loop": 1,
 "name": &"default",
@@ -643,8 +709,13 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=1969377440]
 script = ExtResource("1_4flbx")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1578364868]
+position = Vector2(-70, -127)
+scale = Vector2(0.41968638, 0.3021742)
+occluder = SubResource("OccluderPolygon2D_w3a0q")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
-position = Vector2(21.160006, -6.819992)
+position = Vector2(493, -452)
 offset = Vector2(600, 0)
 zoom = Vector2(0.8, 0.8)
 limit_enabled = false
@@ -678,14 +749,13 @@ speed_scale = 5.0
 [node name="GroundMovement" type="Node2D" parent="." unique_id=1863156067]
 script = ExtResource("20_pbfsw")
 
-[node name="Walking" type="AnimatedSprite2D" parent="GroundMovement" unique_id=68145425]
-visible = false
-position = Vector2(-32, -82)
-scale = Vector2(0.092, 0.092)
+[node name="Walk" type="AnimatedSprite2D" parent="GroundMovement" unique_id=68145425]
+position = Vector2(99, -77)
+scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"Walking"
-frame = 3
-frame_progress = 0.9094173
+animation = &"walking"
+frame = 1
+frame_progress = 0.36269113
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false
@@ -708,7 +778,6 @@ script = ExtResource("26_7hik5")
 script = ExtResource("93_4tmhn")
 
 [node name="DrivingSprite" type="AnimatedSprite2D" parent="DrivingMovement" unique_id=431097681]
-visible = false
 scale = Vector2(0.08237434, 0.08237434)
 sprite_frames = SubResource("SpriteFrames_shhik")
 animation = &"trans"
@@ -720,6 +789,7 @@ position = Vector2(8, -14)
 scale = Vector2(1.2, 1.2)
 
 [node name="LaneSprite" type="AnimatedSprite2D" parent="LaneMovement" unique_id=1647952448]
+visible = false
 sprite_frames = SubResource("SpriteFrames_shhik")
 animation = &"toFly"
 frame = 7

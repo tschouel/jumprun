@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfnffvqnaf83p"
-path="res://.godot/imported/batch_Walk3.png-e3ee1c438821f0d3931cb7da7f3fa3c5.ctex"
+uid="uid://pngqc6k1fwfo"
+path="res://.godot/imported/__jump4.png-1402b3714aad420b6ebda93f1dbad08d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/batch_Walk3.png"
-dest_files=["res://.godot/imported/batch_Walk3.png-e3ee1c438821f0d3931cb7da7f3fa3c5.ctex"]
+source_file="res://animation/__jump4.png"
+dest_files=["res://.godot/imported/__jump4.png-1402b3714aad420b6ebda93f1dbad08d.ctex"]
 
 [params]
 

@@ -149,7 +149,7 @@
 [ext_resource type="Texture2D" uid="uid://dhsci2im425l1" path="res://animation/__toFly12.png" id="93_vxixj"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3a0q"]
-polygon = PackedVector2Array(528.96643, -198.56097, 569.47284, -218.41705, 614.74475, -234.96384, 655.2512, -225.03577, 683.844, -211.79837, 693.3749, -188.63293, 698.1404, -148.92072, 469.39813, -92.661804, 495.60822, -152.2301)
+polygon = PackedVector2Array(85.778336, -211.79834, 188.23581, -191.94226, 200.14946, -145.61139, 0, -142.302)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1c27"]
 animations = [{
@@ -270,16 +270,12 @@ animations = [{
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4itt3"]
-load_path = "res://.godot/imported/batch_Walk1.png-b111bb0efc0eb1ecc51dd5c4df89f3b6.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w3a0q"]
-load_path = "res://.godot/imported/batch_Walk2.png-cfe123a0eb27ce078a58ee4a129825e6.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yskhe"]
-load_path = "res://.godot/imported/batch_Walk3.png-e3ee1c438821f0d3931cb7da7f3fa3c5.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lxrty"]
-load_path = "res://.godot/imported/batch_Walk4.png-dfbefdb63416915bd445e9210cd9f17b.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8yc8"]
 animations = [{
@@ -710,7 +706,7 @@ animations = [{
 script = ExtResource("1_4flbx")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1578364868]
-position = Vector2(-70, -127)
+position = Vector2(-1, -195)
 scale = Vector2(0.41968638, 0.3021742)
 occluder = SubResource("OccluderPolygon2D_w3a0q")
 
@@ -730,9 +726,9 @@ position_smoothing_speed = 15.0
 position = Vector2(21.160006, -6.819992)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=963911059]
-position = Vector2(144, 63.000004)
+position = Vector2(12, -6)
 scale = Vector2(3.77, 3.77)
-polygon = PackedVector2Array(-5.30504, 0.7957561, -3.448276, 1.5915121, -2.387268, 1.8567641, -1.32626, 1.8567641, 0, 1.8567641, 2.917772, 1.0610081, 6.2897224, -1.6507692, 3.9665833, -5.5155697, 2.4596176, -0.8922157)
+polygon = PackedVector2Array(-5.30504, 0.7957561, -3.448276, 1.5915121, -2.387268, 1.8567641, -1.32626, 1.8567641, 0, 2.387268, 2.9177718, 2.9177718, 5.5702915, 1.856764, 3.7135277, 0.265252, 2.122016, -0.265252)
 
 [node name="FlyingMovement" type="Node2D" parent="." unique_id=291982134]
 script = ExtResource("16_u1c27")
@@ -750,7 +746,7 @@ speed_scale = 5.0
 script = ExtResource("20_pbfsw")
 
 [node name="Walk" type="AnimatedSprite2D" parent="GroundMovement" unique_id=68145425]
-position = Vector2(99, -77)
+position = Vector2(-42, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"walking"
@@ -791,6 +787,4 @@ scale = Vector2(1.2, 1.2)
 [node name="LaneSprite" type="AnimatedSprite2D" parent="LaneMovement" unique_id=1647952448]
 visible = false
 sprite_frames = SubResource("SpriteFrames_shhik")
-animation = &"toFly"
-frame = 7
-frame_progress = 0.9806596
+animation = &"boost"

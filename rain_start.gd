@@ -37,17 +37,4 @@ func sink_into_ground() -> void:
 func _on_block_fully_sunk() -> void:
 	if not rain_particles:
 		return
-
-	var mat = rain_particles.process_material as ParticleProcessMaterial
-	var rain_tween = create_tween().set_parallel(true)
-
-	if mat:
-		var target_scale_min = mat.scale_min * 2.0
-		var target_scale_max = mat.scale_max * 2.0
-		rain_tween.tween_property(mat, "scale_min", target_scale_min, 1.0)\
-			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		rain_tween.tween_property(mat, "scale_max", target_scale_max, 1.0)\
-			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
-	rain_tween.tween_property(rain_particles, "speed_scale", 0.3, 1.0)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	rain_particles.emitting = true

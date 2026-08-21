@@ -3,14 +3,12 @@ class_name Lift
 ## Lift, der dauerhaft zwischen eingefahrener und ausgefahrener Position
 ## hin- und herfährt.
 ##
-## Der Sprite (AccLiftAnim) läuft komplett eigenständig im Loop - das wird
-## direkt im SpriteFrames-Panel eingestellt (Loop-Icon bei der 130-Frame-
-## Animation aktivieren), kein Umweg über den AnimationPlayer nötig.
-##
-## Der AnimationPlayer (AccliftAn) kümmert sich NUR noch um die Position
-## der Plattform (AccLift) - über einen einzigen Property-Track, dessen
-## Länge exakt zur Sprite-Animation passt (130 Frames / FPS = Sekunden),
-## damit Collider und Optik synchron bleiben.
+## Sowohl das Sprite-Frame (AccLiftAnim:frame) als auch die Plattform-
+## Position (AccLift:position) stecken als Property-Tracks in EINER
+## AnimationPlayer-Animation ("lift") - dadurch bleiben beide zu jedem
+## Zeitpunkt exakt synchron, und man kann im Editor durch Scrubben der
+## Zeitleiste direkt sehen, wo der Sprite gerade steht, um die Position-
+## Keyframes passend zu setzen.
 ##
 ## Setup: Node-Struktur siehe Anleitung. AccLiftAnim (Sprite), AccLift
 ## (Platform/Collider-Body) und AccliftAn (AnimationPlayer) müssen als
@@ -22,24 +20,18 @@ class_name Lift
 ## Optionaler Zeitversatz in Sekunden, damit mehrere Lift-Instanzen im
 ## selben Level phasenverschoben laufen statt exakt synchron.
 @export var start_offset: float = 0.0
-@export var animation_name: String = "cycle"
+@export var animation_name: String = "lift"
 
 func _ready() -> void:
 	if not autoplay:
 		return
-	# Sprite startet seine eigene (im SpriteFrames-Panel geloopte) Animation.
-	var sprite := %AccLiftAnim as AnimatedSprite2D
-	sprite.play()  # spielt die aktuell im Inspector gesetzte Default-Animation
-
-	# AnimationPlayer bewegt parallel dazu die Plattform.
 	var anim_player := %AccliftAn as AnimationPlayer
+	if not anim_player:
+		push_warning("Lift: 'AccliftAn' (AnimationPlayer) nicht gefunden - ist die Node als Scene Unique Name (%) markiert und heisst sie exakt 'AccliftAn'?")
+		return
 	if not anim_player.has_animation(animation_name):
 		push_warning("Lift: Animation '%s' nicht im AnimationPlayer gefunden." % animation_name)
 		return
 	anim_player.play(animation_name)
-
 	if start_offset > 0.0:
 		anim_player.seek(start_offset, true)
-		# Hinweis: Der Sprite selbst läuft unabhängig weiter und wird hier
-		# nicht mitverschoben - für den ersten Test einfach start_offset
-		# bei 0.0 belassen, das können wir später verfeinern.

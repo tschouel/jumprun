@@ -538,41 +538,93 @@ animations = [{
 size = Vector2(573, 20)
 
 [sub_resource type="Animation" id="Animation_0qcv0"]
-resource_name = "Acclift_Cycle"
-length = 5.2
-loop_mode = 1
-tracks/0/type = "method"
+length = 0.001
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AccLiftAnim")
+tracks/0/path = NodePath("AccLiftAnim:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [130]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AccLift:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4tb0w"]
-_data = {
-&"Acclift_Cycle": SubResource("Animation_0qcv0")
+[sub_resource type="Animation" id="Animation_4tb0w"]
+resource_name = "lift"
+length = 4.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AccLiftAnim:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 130]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AccLift:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 0.38, 0.71, 1.6666666, 1.88, 2.52, 3.05, 4.4),
+"transitions": PackedFloat32Array(0.9659365, 1, 0.63728076, 0.9012519, 1.1486983, 0.9659361, 0.5743493, 1),
+"update": 0,
+"values": [Vector2(-32, 230), Vector2(-28, -124), Vector2(-23.743402, -767.397), Vector2(-12, -2186), Vector2(-7, -2139), Vector2(-13.421446, -1651.3845), Vector2(-43, -980), Vector2(-38, 215)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_amjpe"]
+_data = {
+&"RESET": SubResource("Animation_0qcv0"),
+&"lift": SubResource("Animation_4tb0w")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(21, 796)
 
 [node name="AccLift" type="Node2D" unique_id=317700877]
 script = ExtResource("1_0qcv0")
 
 [node name="AccLiftAnim" type="AnimatedSprite2D" parent="." unique_id=965355489]
 unique_name_in_owner = true
+position = Vector2(337, -1915)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"Accord"
+frame = 130
 
 [node name="AccLift" type="AnimatableBody2D" parent="." unique_id=1001983717]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AccLift" unique_id=359450082]
-position = Vector2(-27, 1555)
+position = Vector2(326, -1039)
 shape = SubResource("RectangleShape2D_amjpe")
 
-[node name="AcclIftAn" type="AnimationPlayer" parent="." unique_id=1190714753]
-unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_4tb0w")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1181451768]
+libraries/ = SubResource("AnimationLibrary_amjpe")
+autoplay = &"lift"
+
+[node name="Eingangblock" type="Area2D" parent="." unique_id=1482184803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eingangblock" unique_id=584867597]
+position = Vector2(13.5, -409)
+shape = SubResource("RectangleShape2D_u0jqh")

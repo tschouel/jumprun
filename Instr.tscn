@@ -106,6 +106,7 @@
 [ext_resource type="Texture2D" uid="uid://cld3ajwac6sqj" path="res://animation/valvedown107.png" id="104_alw6l"]
 [ext_resource type="Texture2D" uid="uid://bxtjwvbllo23m" path="res://animation/valvedown108.png" id="105_v6jop"]
 [ext_resource type="Texture2D" uid="uid://b5lr5uqg6ahpw" path="res://animation/valvedown109.png" id="106_krwtk"]
+[ext_resource type="PackedScene" uid="uid://dwfp1mlixwp5b" path="res://acc_lift.tscn" id="107_1lc88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
 size = Vector2(320, 4.999954)
@@ -531,3 +532,7 @@ offset_top = 6380.0005
 offset_right = -148.25378
 offset_bottom = 6423.0166
 scale = Vector2(2068.0898, -573.68787)
+
+[node name="AccLift" parent="." unique_id=317700877 instance=ExtResource("107_1lc88")]
+position = Vector2(1427, 197)
+scale = Vector2(0.3, 0.3)

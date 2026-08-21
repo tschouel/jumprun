@@ -1,0 +1,435 @@
+[gd_scene format=3 uid="uid://coi36aaueugq2"]
+
+[ext_resource type="PackedScene" uid="uid://5dg5vqe7a3fc" path="res://maskturntable.tscn" id="1_jr2xm"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_oc0er"]
+[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="1_upikb"]
+[ext_resource type="Texture2D" uid="uid://cqh4qkmoihpvr" path="res://animation/Key.svg" id="3_dns6j"]
+[ext_resource type="Script" uid="uid://cbs6u0qeu54hp" path="res://keytrig_4poss.gd" id="4_doq0o"]
+[ext_resource type="Script" uid="uid://dj7u0cxuoaf4e" path="res://mill_move.gd" id="5_8qlfg"]
+[ext_resource type="Script" uid="uid://rdsfw8gurykb" path="res://mill.gd" id="6_doq0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v544p"]
+size = Vector2(11.8675, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_doq0o"]
+size = Vector2(446.9568, 12.019371)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(75.15474, 7.681053)
+
+[node name="Area2D" type="Area2D" unique_id=1496625046]
+script = ExtResource("1_upikb")
+start_position = Vector2(-250, -250)
+zoom = 0.5
+
+[node name="Turntable" parent="." unique_id=526785979 node_paths=PackedStringArray("shape_triggers", "style_triggers", "pattern_triggers", "rotation_triggers") instance=ExtResource("1_jr2xm")]
+z_index = 5
+position = Vector2(2095, -12)
+scale = Vector2(0.35, 0.35)
+rotation_mode = null
+bpm = null
+beat_turn_fraction = null
+shape_triggers = [NodePath("../mill/KeytrigMainform2/Keytrig1/KeytrigMain1"), NodePath("../mill/KeytrigMainform2/Keytrig2/KeytrigMain2"), NodePath("../mill/KeytrigMainform2/Keytrig3/KeytrigMain3"), NodePath("../mill/KeytrigMainform2/Keytrig4/KeytrigMain4")]
+style_triggers = []
+pattern_triggers = []
+rotation_triggers = []
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_oc0er")]
+
+[node name="Boden" type="StaticBody2D" parent="." unique_id=1245820097]
+position = Vector2(-825, 560)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=2029624767]
+position = Vector2(-227.5, -519)
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_v544p")
+
+[node name="ColorRect" type="ColorRect" parent="Boden" unique_id=709310147]
+offset_left = 255.0
+offset_top = -558.0
+offset_right = 295.0
+offset_bottom = -518.0
+scale = Vector2(47.43999, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="KeytrigMoveR" type="AnimatableBody2D" parent="." unique_id=10134476]
+position = Vector2(1113, -18)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="KeytrigMoveR" unique_id=401693264]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMainL" type="Area2D" parent="KeytrigMoveR" unique_id=560158348]
+position = Vector2(8.695801, 8.695651)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("5_8qlfg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeytrigMoveR/KeytrigMainL" unique_id=353202352]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="KeytrigMoveL" type="AnimatableBody2D" parent="." unique_id=1824974073]
+position = Vector2(842, -16)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="KeytrigMoveL" unique_id=279206791]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMainR" type="Area2D" parent="KeytrigMoveL" unique_id=2047086316]
+position = Vector2(8.695801, 8.695651)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("5_8qlfg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeytrigMoveL/KeytrigMainR" unique_id=2093515310]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="mill" type="Node2D" parent="." unique_id=632513942]
+position = Vector2(2099, -9)
+script = ExtResource("6_doq0o")
+
+[node name="KeytrigMainform2" type="Node2D" parent="mill" unique_id=1423122772]
+
+[node name="Boden2" type="StaticBody2D" parent="mill/KeytrigMainform2" unique_id=1184555400]
+position = Vector2(2, 3)
+scale = Vector2(0.49127483, 1)
+
+[node name="ColorRect" type="ColorRect" parent="mill/KeytrigMainform2/Boden2" unique_id=447189909]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(-39.059044, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform2/Boden2" unique_id=1345028434]
+position = Vector2(-778.9099, 22.782345)
+scale = Vector2(20.494312, -4.743531)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="Keytrig1" type="AnimatableBody2D" parent="mill/KeytrigMainform2" unique_id=1680821599]
+position = Vector2(-657, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform2/Keytrig1" unique_id=1958270896]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain1" type="Area2D" parent="mill/KeytrigMainform2/Keytrig1" unique_id=1485351218 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform2/Keytrig1/KeytrigMain1" unique_id=2086399781]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig2" type="AnimatableBody2D" parent="mill/KeytrigMainform2" unique_id=1878937095]
+position = Vector2(-481, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform2/Keytrig2" unique_id=2008854640]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain2" type="Area2D" parent="mill/KeytrigMainform2/Keytrig2" unique_id=775169419 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform2/Keytrig2/KeytrigMain2" unique_id=722670688]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig3" type="AnimatableBody2D" parent="mill/KeytrigMainform2" unique_id=1442615818]
+position = Vector2(-321, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform2/Keytrig3" unique_id=977306997]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain3" type="Area2D" parent="mill/KeytrigMainform2/Keytrig3" unique_id=1949786355 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+press_duration = 0.5
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform2/Keytrig3/KeytrigMain3" unique_id=374521722]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig4" type="AnimatableBody2D" parent="mill/KeytrigMainform2" unique_id=817955664]
+position = Vector2(-171, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform2/Keytrig4" unique_id=22895232]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain4" type="Area2D" parent="mill/KeytrigMainform2/Keytrig4" unique_id=984134789]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform2/Keytrig4/KeytrigMain4" unique_id=816988090]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="KeytrigMainform3" type="Node2D" parent="mill" unique_id=72326631]
+rotation = 1.5707964
+
+[node name="Keytrig1" type="AnimatableBody2D" parent="mill/KeytrigMainform3" unique_id=1305402841]
+position = Vector2(-657, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform3/Keytrig1" unique_id=1930652062]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain1" type="Area2D" parent="mill/KeytrigMainform3/Keytrig1" unique_id=2064180548 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform3/Keytrig1/KeytrigMain1" unique_id=1405947494]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig2" type="AnimatableBody2D" parent="mill/KeytrigMainform3" unique_id=2114627156]
+position = Vector2(-481, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform3/Keytrig2" unique_id=1566426623]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain2" type="Area2D" parent="mill/KeytrigMainform3/Keytrig2" unique_id=87856146 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform3/Keytrig2/KeytrigMain2" unique_id=593282539]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig3" type="AnimatableBody2D" parent="mill/KeytrigMainform3" unique_id=1954810719]
+position = Vector2(-321, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform3/Keytrig3" unique_id=1970652215]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain3" type="Area2D" parent="mill/KeytrigMainform3/Keytrig3" unique_id=594440838 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+press_duration = 0.5
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform3/Keytrig3/KeytrigMain3" unique_id=1970256337]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig4" type="AnimatableBody2D" parent="mill/KeytrigMainform3" unique_id=1630896608]
+position = Vector2(-171, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform3/Keytrig4" unique_id=1891674026]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain4" type="Area2D" parent="mill/KeytrigMainform3/Keytrig4" unique_id=2107043989]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform3/Keytrig4/KeytrigMain4" unique_id=862829588]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Area2D" type="Area2D" parent="mill/KeytrigMainform3" unique_id=1072316461]
+
+[node name="KeytrigMainform4" type="Node2D" parent="mill" unique_id=989044503]
+rotation = 3.1415927
+
+[node name="Keytrig1" type="AnimatableBody2D" parent="mill/KeytrigMainform4" unique_id=1649357235]
+position = Vector2(-657, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform4/Keytrig1" unique_id=2111969514]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain1" type="Area2D" parent="mill/KeytrigMainform4/Keytrig1" unique_id=720127347 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform4/Keytrig1/KeytrigMain1" unique_id=624480687]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig2" type="AnimatableBody2D" parent="mill/KeytrigMainform4" unique_id=623711252]
+position = Vector2(-481, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform4/Keytrig2" unique_id=1403970488]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain2" type="Area2D" parent="mill/KeytrigMainform4/Keytrig2" unique_id=1388052465 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform4/Keytrig2/KeytrigMain2" unique_id=732442057]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig3" type="AnimatableBody2D" parent="mill/KeytrigMainform4" unique_id=420041418]
+position = Vector2(-321, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform4/Keytrig3" unique_id=1072882391]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain3" type="Area2D" parent="mill/KeytrigMainform4/Keytrig3" unique_id=775173274 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+press_duration = 0.5
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform4/Keytrig3/KeytrigMain3" unique_id=683313589]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig4" type="AnimatableBody2D" parent="mill/KeytrigMainform4" unique_id=2022919450]
+position = Vector2(-171, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform4/Keytrig4" unique_id=1979479521]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain4" type="Area2D" parent="mill/KeytrigMainform4/Keytrig4" unique_id=2055202538]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform4/Keytrig4/KeytrigMain4" unique_id=1869794371]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Area2D" type="Area2D" parent="mill/KeytrigMainform4" unique_id=1406840757]
+
+[node name="KeytrigMainform5" type="Node2D" parent="mill" unique_id=2027485507]
+rotation = 4.712389
+
+[node name="Keytrig1" type="AnimatableBody2D" parent="mill/KeytrigMainform5" unique_id=582985377]
+position = Vector2(-657, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform5/Keytrig1" unique_id=1282837149]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain1" type="Area2D" parent="mill/KeytrigMainform5/Keytrig1" unique_id=710915408 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform5/Keytrig1/KeytrigMain1" unique_id=1001630600]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig2" type="AnimatableBody2D" parent="mill/KeytrigMainform5" unique_id=490805507]
+position = Vector2(-481, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform5/Keytrig2" unique_id=1691193769]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain2" type="Area2D" parent="mill/KeytrigMainform5/Keytrig2" unique_id=908164905 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform5/Keytrig2/KeytrigMain2" unique_id=603706966]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig3" type="AnimatableBody2D" parent="mill/KeytrigMainform5" unique_id=1308812573]
+position = Vector2(-321, -17)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform5/Keytrig3" unique_id=1460090084]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain3" type="Area2D" parent="mill/KeytrigMainform5/Keytrig3" unique_id=1681944041 node_paths=PackedStringArray("valve")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+valve = NodePath("..")
+press_distance = 35.0
+press_duration = 0.5
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform5/Keytrig3/KeytrigMain3" unique_id=563359667]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Keytrig4" type="AnimatableBody2D" parent="mill/KeytrigMainform5" unique_id=869285268]
+position = Vector2(-171, -15)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="mill/KeytrigMainform5/Keytrig4" unique_id=1468964269]
+texture = ExtResource("3_dns6j")
+
+[node name="KeytrigMain4" type="Area2D" parent="mill/KeytrigMainform5/Keytrig4" unique_id=945122540]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_doq0o")
+key_group = "mainform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mill/KeytrigMainform5/Keytrig4/KeytrigMain4" unique_id=1481592762]
+position = Vector2(-8.695549, -165.21738)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_doq0o")
+
+[node name="Area2D" type="Area2D" parent="mill/KeytrigMainform5" unique_id=330790087]

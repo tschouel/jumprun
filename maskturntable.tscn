@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://5dg5vqe7a3fc"]
+
+[ext_resource type="Script" uid="uid://boejxypnwqt0y" path="res://disk.gd" id="1_4delw"]
+[ext_resource type="Shader" uid="uid://uensl1gcocvo" path="res://maskturntable.gdshader" id="1_4tlhv"]
+[ext_resource type="Texture2D" uid="uid://dfgdtfsw2kmnh" path="res://animation/turntable__3fat.png" id="2_jp7sx"]
+[ext_resource type="Texture2D" uid="uid://ck8ch3voutes1" path="res://animation/turntable__3thin.png" id="3_ibbw0"]
+[ext_resource type="Texture2D" uid="uid://b203oq483rl37" path="res://animation/turntable__3norm.png" id="3_q2v4w"]
+[ext_resource type="Texture2D" uid="uid://d3l8l66dfg0wx" path="res://animation/turntable__3spez.png" id="5_nbgvh"]
+[ext_resource type="Texture2D" uid="uid://bulkh171an818" path="res://animation/turntable__4fat.png" id="6_gdhe0"]
+[ext_resource type="Texture2D" uid="uid://ds15rslirukba" path="res://animation/turntable__4norm.png" id="7_frsfn"]
+[ext_resource type="Texture2D" uid="uid://68pkq7vxiyq8" path="res://animation/turntable__4thin.png" id="8_tvc78"]
+[ext_resource type="Texture2D" uid="uid://bjyg6qevnfk8y" path="res://animation/turntable__4spez.png" id="9_iiync"]
+[ext_resource type="Texture2D" uid="uid://ct25iafs7gvgf" path="res://animation/turntable__5fat.png" id="10_xckl0"]
+[ext_resource type="Texture2D" uid="uid://dor5pgsor0pl" path="res://animation/turntable__5norm.png" id="11_gyj55"]
+[ext_resource type="Texture2D" uid="uid://d3aahj2s8tnvj" path="res://animation/turntable__5thin.png" id="12_n7e5l"]
+[ext_resource type="Texture2D" uid="uid://2521nq2aov0k" path="res://animation/turntable__5spez.png" id="13_hl36x"]
+[ext_resource type="Texture2D" uid="uid://d0qk265rs4xhb" path="res://animation/turntable__6fat.png" id="14_fhqov"]
+[ext_resource type="Texture2D" uid="uid://depuu5urgj0gl" path="res://animation/turntable__6norm.png" id="15_kwnf3"]
+[ext_resource type="Texture2D" uid="uid://bcono12c5turr" path="res://animation/turntable__6thin.png" id="16_5a6pf"]
+[ext_resource type="Texture2D" uid="uid://gc4po0huskrk" path="res://animation/turntable__6spez.png" id="17_d35b1"]
+[ext_resource type="Texture2D" uid="uid://u8o4i0w34m7r" path="res://animation/turntable__text1.png" id="18_jp7sx"]
+[ext_resource type="Texture2D" uid="uid://dfmeor2b7wy6g" path="res://animation/turntable__text2.png" id="19_q2v4w"]
+[ext_resource type="Texture2D" uid="uid://chstotqwkw7r3" path="res://animation/turntable__text3.png" id="20_nbgvh"]
+[ext_resource type="Texture2D" uid="uid://dwuwh7x4hcrhs" path="res://animation/turntable__text4.png" id="21_gdhe0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0jqh"]
+shader = ExtResource("1_4tlhv")
+shader_parameter/mask_texture = ExtResource("3_ibbw0")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i2yta"]
+
+[node name="Turntable" type="Node2D" unique_id=526785979 node_paths=PackedStringArray("pattern_sprite")]
+script = ExtResource("1_4delw")
+pattern_sprite = NodePath("Sprite2D")
+rotation_speed_degrees = 200.0
+mask_textures = Array[Texture2D]([ExtResource("2_jp7sx"), ExtResource("3_q2v4w"), ExtResource("3_ibbw0"), ExtResource("5_nbgvh"), ExtResource("6_gdhe0"), ExtResource("7_frsfn"), ExtResource("8_tvc78"), ExtResource("9_iiync"), ExtResource("10_xckl0"), ExtResource("11_gyj55"), ExtResource("12_n7e5l"), ExtResource("13_hl36x"), ExtResource("14_fhqov"), ExtResource("15_kwnf3"), ExtResource("16_5a6pf"), ExtResource("17_d35b1")])
+pattern_1 = ExtResource("18_jp7sx")
+pattern_2 = ExtResource("19_q2v4w")
+pattern_3 = ExtResource("20_nbgvh")
+pattern_4 = ExtResource("21_gdhe0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1536258782]
+material = SubResource("ShaderMaterial_u0jqh")
+texture = SubResource("CompressedTexture2D_i2yta")

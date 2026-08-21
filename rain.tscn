@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://bctm03jewamfc" path="res://steptrigger.gd" id="3_agfoc"]
 [ext_resource type="Script" uid="uid://d2jbn4qnx6i4q" path="res://rainreverse.gd" id="4_6wwtt"]
 [ext_resource type="Script" uid="uid://bkdmlwfn8341x" path="res://rain_start.gd" id="4_vy4dc"]
+[ext_resource type="Texture2D" uid="uid://bex5afsd33yfi" path="res://animation/__Ventil1.png" id="5_qyfq5"]
 [ext_resource type="Script" uid="uid://bxk013oxcg04s" path="res://color_invert.gd" id="6_baj4n"]
 [ext_resource type="Shader" uid="uid://1koapqy3v72p" path="res://invert.gdshader" id="7_w4igq"]
+[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="8_5nvcl"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ci28e"]
 polygon = PackedVector2Array(10.190994, -20.45107, 2106.4937, -26.84203, 2101.509, 235.82642, -4.7628174, 233.90912)
@@ -19,7 +21,7 @@ size = Vector2(28.33333, 0.32019794)
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_shhik"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(960, 1, 1)
+emission_box_extents = Vector3(4000, 1, 1)
 angle_min = -14.9999895
 angle_max = 15.0000105
 spread = 10.121
@@ -30,14 +32,12 @@ collision_mode = 1
 collision_friction = 0.05
 collision_bounce = 0.2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
-size = Vector2(41, 40)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8yc8"]
 size = Vector2(40, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u0jqh"]
 shader = ExtResource("7_w4igq")
+shader_parameter/mix_factor = 0.0
 
 [node name="Rain" type="Node2D" unique_id=1703588818]
 
@@ -70,11 +70,13 @@ color = Color(0, 0, 0, 1)
 position = Vector2(0, -126.99999)
 scale = Vector2(0.6, 0.6)
 
-[node name="Rain" type="GPUParticles2D" parent="." unique_id=753640632]
+[node name="Node" type="Node" parent="Player" unique_id=1998542940]
+
+[node name="Raineins" type="GPUParticles2D" parent="." unique_id=210415901]
 position = Vector2(1195, -1066)
 scale = Vector2(1.6000025, 1)
 emitting = false
-amount = 2000
+amount = 4000
 texture = ExtResource("2_ci28e")
 lifetime = 5.0
 preprocess = 2.0
@@ -84,127 +86,137 @@ collision_base_size = 0.0
 visibility_rect = Rect2(-100, -100, 10000, 4000)
 process_material = SubResource("ParticleProcessMaterial_shhik")
 
-[node name="RegenExpand" type="AnimatableBody2D" parent="." unique_id=94129962]
-position = Vector2(670, -45)
+[node name="StartRain" type="AnimatableBody2D" parent="." unique_id=884042567]
+position = Vector2(341, -44)
 
-[node name="ColorRect" type="ColorRect" parent="RegenExpand" unique_id=90537963]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.36508796, 0.36508796, 0.36508796, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RegenExpand" unique_id=657939576]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_u0jqh")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="RegenExpand" unique_id=1256374236]
-position = Vector2(-1309, 175)
-scale = Vector2(1.4725838, 1.0602604)
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="StartRain" unique_id=1331103032]
+position = Vector2(-0.64001083, -4.080002)
+scale = Vector2(0.02, 0.008)
 occluder = SubResource("OccluderPolygon2D_ci28e")
 
-[node name="StepTrigger" type="Area2D" parent="RegenExpand" unique_id=1199396750 node_paths=PackedStringArray("block", "rain_particles", "ground_node")]
-script = ExtResource("3_agfoc")
-block = NodePath("..")
-rain_particles = NodePath("../../Rain")
-ground_node = NodePath("../../Boden")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RegenExpand/StepTrigger" unique_id=1977829529]
-position = Vector2(20, -0.5)
-shape = SubResource("RectangleShape2D_c8yc8")
-
-[node name="Start" type="AnimatableBody2D" parent="." unique_id=884042567]
-position = Vector2(341, -46)
-
-[node name="ColorRect" type="ColorRect" parent="Start" unique_id=1524340706]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Start" unique_id=1625354477]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_u0jqh")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Start" unique_id=1806027376]
-position = Vector2(-1309, 175)
-scale = Vector2(1.4725838, 1.0602604)
-occluder = SubResource("OccluderPolygon2D_ci28e")
-
-[node name="StepTrigger" type="Area2D" parent="Start" unique_id=1477906010 node_paths=PackedStringArray("block", "rain_particles", "ground_node")]
+[node name="StepTrigger" type="Area2D" parent="StartRain" unique_id=1477906010 node_paths=PackedStringArray("block", "rain_particles", "ground_node")]
+position = Vector2(1, -4)
 script = ExtResource("4_vy4dc")
 block = NodePath("..")
-rain_particles = NodePath("../../Rain")
+rain_particles = NodePath("../../Raineins")
 ground_node = NodePath("../../Boden")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/StepTrigger" unique_id=768840772]
-position = Vector2(20, -0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRain/StepTrigger" unique_id=768840772]
+position = Vector2(20, -0.51)
 shape = SubResource("RectangleShape2D_c8yc8")
 
-[node name="Rainhead" type="AnimatableBody2D" parent="." unique_id=512689130]
-position = Vector2(995, -45)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StartRain" unique_id=441796998]
+position = Vector2(20.359985, 17.92)
+scale = Vector2(0.099999994, 0.099999994)
+polygon = PackedVector2Array(144.70001, -224.5, -139.6, -224.5, -154.6, -223.5, -165.7, -223.5, -184.9, -219.5, -188.3, -219.5, -200.4, -208.5, -201.8, -208.5, -208.5, -194.2, -208.5, -145.6, -203.5, -137.1, -203.5, -134.5, -190.5, -125.6, -190.5, -123.9, -170.5, -119.9, -170.5, -118.7, -134.6, -115.5, -77.5, -115.5, -77.5, 219.6, -102.5, 221.70001, -102.5, 224.5, 79.20001, 224.5, 79.899994, 223, 77.5, 220.6, 77.5, -115.5, 138.6, -115.5, 169.79999, -119.5, 174.9, -119.5, 188.79999, -125.5, 191.29999, -125.5, 196.29999, -130.5, 198.6, -130.5, 208.5, -146.4, 208.5, -195.5, 207.5, -197.1, 207.5, -199.4, 194.5, -211.5, 194.5, -212.9, 173.5, -220, 173.5, -221.3)
 
-[node name="ColorRect" type="ColorRect" parent="Rainhead" unique_id=1204768564]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.3172787, 0.31727865, 0.31727865, 1)
+[node name="Sprite2D" type="Sprite2D" parent="StartRain" unique_id=886777286]
+position = Vector2(20.359983, 17.92)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_qyfq5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rainhead" unique_id=60478684]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_u0jqh")
+[node name="RainSlowExpand" type="AnimatableBody2D" parent="." unique_id=94129962]
+position = Vector2(670, -43)
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Rainhead" unique_id=1007224084]
-position = Vector2(-1309, 175)
-scale = Vector2(1.4725838, 1.0602604)
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="RainSlowExpand" unique_id=365933402]
+position = Vector2(0.35998535, -5.0800014)
+scale = Vector2(0.02, 0.008)
 occluder = SubResource("OccluderPolygon2D_ci28e")
 
-[node name="RainReverse" type="Area2D" parent="Rainhead" unique_id=1056610632 node_paths=PackedStringArray("block", "rain_particles", "ground_node")]
-script = ExtResource("4_6wwtt")
-block = NodePath("..")
-rain_particles = NodePath("../../Rain")
-ground_node = NodePath("../../Boden")
-reverse_duration = 0.0
-emission_offset = Vector2(15, -160)
-reverse_amount_factor = 0.1
-hidden_duration = 0.1
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RainSlowExpand" unique_id=1057818748]
+position = Vector2(21.359985, 16.92)
+scale = Vector2(0.099999994, 0.099999994)
+polygon = PackedVector2Array(144.70001, -224.5, -139.6, -224.5, -154.6, -223.5, -165.7, -223.5, -184.9, -219.5, -188.3, -219.5, -200.4, -208.5, -201.8, -208.5, -208.5, -194.2, -208.5, -145.6, -203.5, -137.1, -203.5, -134.5, -190.5, -125.6, -190.5, -123.9, -170.5, -119.9, -170.5, -118.7, -134.6, -115.5, -77.5, -115.5, -77.5, 219.6, -102.5, 221.70001, -102.5, 224.5, 79.20001, 224.5, 79.899994, 223, 77.5, 220.6, 77.5, -115.5, 138.6, -115.5, 169.79999, -119.5, 174.9, -119.5, 188.79999, -125.5, 191.29999, -125.5, 196.29999, -130.5, 198.6, -130.5, 208.5, -146.4, 208.5, -195.5, 207.5, -197.1, 207.5, -199.4, 194.5, -211.5, 194.5, -212.9, 173.5, -220, 173.5, -221.3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rainhead/RainReverse" unique_id=2031898025]
+[node name="Sprite2D2" type="Sprite2D" parent="RainSlowExpand" unique_id=2147395579]
+position = Vector2(21.359957, 16.920002)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_qyfq5")
+
+[node name="StepTrigger" type="Area2D" parent="RainSlowExpand" unique_id=1199396750 node_paths=PackedStringArray("block", "rain_particles", "ground_node")]
+position = Vector2(0, -5)
+script = ExtResource("3_agfoc")
+block = NodePath("..")
+rain_particles = NodePath("../../Raineins")
+ground_node = NodePath("../../Boden")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RainSlowExpand/StepTrigger" unique_id=1977829529]
 position = Vector2(20, -0.5)
 shape = SubResource("RectangleShape2D_c8yc8")
 
 [node name="Colorinvert" type="AnimatableBody2D" parent="." unique_id=933752069]
-position = Vector2(995, -45)
-
-[node name="ColorRect" type="ColorRect" parent="Colorinvert" unique_id=1830371868]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.3172787, 0.31727865, 0.31727865, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colorinvert" unique_id=880833634]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_u0jqh")
+position = Vector2(1197, -43)
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Colorinvert" unique_id=1298100733]
 position = Vector2(-1309, 175)
 scale = Vector2(1.4725838, 1.0602604)
 occluder = SubResource("OccluderPolygon2D_ci28e")
 
-[node name="RainReverse" type="Area2D" parent="Colorinvert" unique_id=1854686971]
-script = ExtResource("6_baj4n")
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Colorinvert" unique_id=52640381]
+position = Vector2(20.359985, 16.92)
+scale = Vector2(0.099999994, 0.099999994)
+polygon = PackedVector2Array(144.70001, -224.5, -139.6, -224.5, -154.6, -223.5, -165.7, -223.5, -184.9, -219.5, -188.3, -219.5, -200.4, -208.5, -201.8, -208.5, -208.5, -194.2, -208.5, -145.6, -203.5, -137.1, -203.5, -134.5, -190.5, -125.6, -190.5, -123.9, -170.5, -119.9, -170.5, -118.7, -134.6, -115.5, -77.5, -115.5, -77.5, 219.6, -102.5, 221.70001, -102.5, 224.5, 79.20001, 224.5, 79.899994, 223, 77.5, 220.6, 77.5, -115.5, 138.6, -115.5, 169.79999, -119.5, 174.9, -119.5, 188.79999, -125.5, 191.29999, -125.5, 196.29999, -130.5, 198.6, -130.5, 208.5, -146.4, 208.5, -195.5, 207.5, -197.1, 207.5, -199.4, 194.5, -211.5, 194.5, -212.9, 173.5, -220, 173.5, -221.3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colorinvert/RainReverse" unique_id=2092297886]
+[node name="Sprite2D3" type="Sprite2D" parent="Colorinvert" unique_id=1847924173]
+position = Vector2(20.359924, 16.920002)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_qyfq5")
+
+[node name="Colorinvert" type="Area2D" parent="Colorinvert" unique_id=1854686971 node_paths=PackedStringArray("block", "ground_node", "invert_rect")]
+position = Vector2(1, -6)
+script = ExtResource("6_baj4n")
+block = NodePath("..")
+ground_node = NodePath("../../Boden")
+invert_rect = NodePath("../../InvertLayer/ColorRect")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colorinvert/Colorinvert" unique_id=2092297886]
 position = Vector2(20, -0.5)
 shape = SubResource("RectangleShape2D_c8yc8")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=500167246]
+[node name="HeadRain" type="AnimatableBody2D" parent="." unique_id=512689130]
+position = Vector2(1975, -43)
+
+[node name="Sprite2D2" type="Sprite2D" parent="HeadRain" unique_id=582753500]
+position = Vector2(17.999863, 17.000002)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_qyfq5")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="HeadRain" unique_id=1087116224]
+position = Vector2(19.359985, 16.92)
+scale = Vector2(0.099999994, 0.099999994)
+polygon = PackedVector2Array(144.70001, -224.5, -139.6, -224.5, -154.6, -223.5, -165.7, -223.5, -184.9, -219.5, -188.3, -219.5, -200.4, -208.5, -201.8, -208.5, -208.5, -194.2, -208.5, -145.6, -203.5, -137.1, -203.5, -134.5, -190.5, -125.6, -190.5, -123.9, -170.5, -119.9, -170.5, -118.7, -134.6, -115.5, -77.5, -115.5, -77.5, 219.6, -102.5, 221.70001, -102.5, 224.5, 79.20001, 224.5, 79.899994, 223, 77.5, 220.6, 77.5, -115.5, 138.6, -115.5, 169.79999, -119.5, 174.9, -119.5, 188.79999, -125.5, 191.29999, -125.5, 196.29999, -130.5, 198.6, -130.5, 208.5, -146.4, 208.5, -195.5, 207.5, -197.1, 207.5, -199.4, 194.5, -211.5, 194.5, -212.9, 173.5, -220, 173.5, -221.3)
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="HeadRain" unique_id=1007224084]
+position = Vector2(-1309, 175)
+scale = Vector2(1.4725838, 1.0602604)
+occluder = SubResource("OccluderPolygon2D_ci28e")
+
+[node name="RainReverse" type="Area2D" parent="HeadRain" unique_id=1056610632 node_paths=PackedStringArray("block", "rain_particles", "ground_node")]
+position = Vector2(-1, -5)
+script = ExtResource("4_6wwtt")
+block = NodePath("..")
+rain_particles = NodePath("../../Raineins")
+ground_node = NodePath("../../Boden")
+reverse_duration = 0.0
+emission_offset = Vector2(15, -160)
+reverse_amount_factor = 0.1
+hidden_duration = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadRain/RainReverse" unique_id=2031898025]
+position = Vector2(20, -0.5)
+shape = SubResource("RectangleShape2D_c8yc8")
+
+[node name="BG" type="ColorRect" parent="." unique_id=500167246]
 z_index = -1
 custom_minimum_size = Vector2(2.9, 0)
 offset_left = -325.0
 offset_top = -1058.0
 offset_right = -285.0
 offset_bottom = -1018.0
-scale = Vector2(79.55999, 29.36)
+scale = Vector2(200.8, 29.36)
 
 [node name="InvertLayer" type="CanvasLayer" parent="." unique_id=1613297235]
 layer = 100
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="InvertLayer" unique_id=1030156092]
 material = SubResource("ShaderMaterial_u0jqh")
@@ -213,3 +225,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Node" type="Node" parent="." unique_id=189276973]
+script = ExtResource("8_5nvcl")
+start_position = Vector2(0, -500)

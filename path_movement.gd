@@ -7,10 +7,12 @@ var player: CharacterBody2D
 # Speichert die vorherige Position, um die Neigung zu berechnen
 var _last_global_pos: Vector2 = Vector2.ZERO
 
+
 func setup(p_player: CharacterBody2D) -> void:
 	player = p_player
 	if player:
 		_last_global_pos = player.global_position
+
 
 func process_movement(_delta: float) -> void:
 	if not player or not player.is_on_path:
@@ -20,7 +22,14 @@ func process_movement(_delta: float) -> void:
 	player.keep_upright = false
 
 	# 1. Schlitten-Sprite holen, sichtbar schalten & animieren
-	var sliding_sprite = player.get_node_or_null("Sliding") as AnimatedSprite2D
+	#    WICHTIG: Pfad muss "Sliding/Slide" sein (wie in player.gd), nicht nur
+	#    "Sliding" - das ist nur der Container-Node und kein AnimatedSprite2D.
+	#    "Sliding" as AnimatedSprite2D" gab wegen des Typ-Mismatch immer null
+	#    zurück, wodurch show_only_sprite() während der GESAMTEN Pfad-Fahrt nie
+	#    aufgerufen wurde - der Player blieb dadurch in seinem letzten
+	#    Sichtbarkeitszustand von vor dem Pfad-Einstieg hängen (im Zweifel
+	#    unsichtbar).
+	var sliding_sprite = player.get_node_or_null("Sliding/Slide") as AnimatedSprite2D
 	if sliding_sprite:
 		player.show_only_sprite(sliding_sprite)
 		_update_sliding_animation(sliding_sprite)
@@ -31,33 +40,48 @@ func process_movement(_delta: float) -> void:
 	# 3. Ausrichtung, Neigung & Spiegelung
 	_handle_path_orientation(sliding_sprite)
 
+
 func _update_sliding_animation(sliding_sprite: AnimatedSprite2D) -> void:
 	if not sliding_sprite.sprite_frames:
 		return
-
 	var anim_names = sliding_sprite.sprite_frames.get_animation_names()
 	if anim_names.is_empty():
 		return
-
 	var anim_to_play = "Sliding" if sliding_sprite.sprite_frames.has_animation("Sliding") else anim_names[0]
 	if not sliding_sprite.is_playing() or sliding_sprite.animation != anim_to_play:
 		sliding_sprite.play(anim_to_play)
 
+
 func _handle_path_orientation(sliding_sprite: AnimatedSprite2D) -> void:
 	var current_pos = player.global_position
-	var move_vector = current_pos - _last_global_pos
+
+	# WICHTIG: Vorher wurde move_vector aus der rohen Positions-Differenz zum
+	# letzten Frame berechnet (current_pos - _last_global_pos). Das ist in
+	# Kurvenabschnitten mit fast senkrechter Bewegung (move_vector.x nahe 0)
+	# anfällig für kleinstes Rauschen/Rundung: Kippt move_vector.x dadurch
+	# mehrfach hintereinander knapp über/unter 0, kippt auch die
+	# "angle += PI"-Korrektur jedes Mal mit um - macht als sichtbaren
+	# 180°-Rotations-Ruckler. Deshalb stattdessen die von der PathFollow2D
+	# bereits sauber (glatt, ohne Rauschen) berechnete Kurventangente nutzen,
+	# solange der Player wirklich auf dem Pfad ist.
+	var move_vector: Vector2
+	var parent_path_follow := player.get_parent() as PathFollow2D
+	if player.is_on_path and parent_path_follow:
+		move_vector = Vector2.RIGHT.rotated(parent_path_follow.rotation)
+	else:
+		move_vector = current_pos - _last_global_pos
 
 	# 1. Prüfen, ob eine Bewegung stattfindet
 	if move_vector.length_squared() > 0.001:
-		
+
 		# keep_upright kurz aushebeln/prüfen
 		if not player.keep_upright:
 			var angle = move_vector.angle()
-			
+
 			# Korrektur bei Linksfahrt (wegen flip_h)
 			if move_vector.x < 0.0:
 				angle += PI
-				
+
 			player.global_rotation = angle
 		else:
 			# Testweise: Zeigt im Output an, falls keep_upright die Rotation blockiert

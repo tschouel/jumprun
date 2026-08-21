@@ -1,0 +1,533 @@
+[gd_scene format=3 uid="uid://tphbkttbhdif"]
+
+[ext_resource type="Texture2D" uid="uid://bex5afsd33yfi" path="res://animation/__Ventil1.png" id="1_li2yw"]
+[ext_resource type="Script" uid="uid://bvvdek8dsx7wf" path="res://valve_trigger.gd" id="2_bsdvv"]
+[ext_resource type="Texture2D" uid="uid://bb3kh7blxbarp" path="res://animation/__Trumpet.png" id="2_tq20r"]
+[ext_resource type="Script" uid="uid://bshx7nph3qx7e" path="res://valvetrigger_video.gd" id="3_6wgcc"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="3_bsdvv"]
+[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="7_2nba0"]
+[ext_resource type="Texture2D" uid="uid://b2oosujh0hj4g" path="res://animation/Trump00.png" id="8_c1bxu"]
+[ext_resource type="Texture2D" uid="uid://7k2aqh8kxgex" path="res://animation/Trump01.png" id="9_nx3i3"]
+[ext_resource type="Texture2D" uid="uid://dom5hpg6438n4" path="res://animation/Trump02.png" id="10_gbasx"]
+[ext_resource type="Texture2D" uid="uid://qupajthu2jjn" path="res://animation/Trump03.png" id="11_smeqy"]
+[ext_resource type="Texture2D" uid="uid://biuuu7uclbwnx" path="res://animation/Trump04.png" id="12_3id20"]
+[ext_resource type="Texture2D" uid="uid://bdki076fmhmp3" path="res://animation/Trump05.png" id="13_n0378"]
+[ext_resource type="Texture2D" uid="uid://14xtd7wfcmsa" path="res://animation/Trump06.png" id="14_d4kie"]
+[ext_resource type="Texture2D" uid="uid://b52u2rqnvoam7" path="res://animation/Trump07.png" id="15_yf604"]
+[ext_resource type="Texture2D" uid="uid://cercc7jf41os2" path="res://animation/Trump08.png" id="16_p6oly"]
+[ext_resource type="Texture2D" uid="uid://b1qgh8i4waouk" path="res://animation/Trump09.png" id="17_urpqn"]
+[ext_resource type="Texture2D" uid="uid://cq3wqpai7yl7p" path="res://animation/Trump10.png" id="18_vt2nl"]
+[ext_resource type="Texture2D" uid="uid://bl6n6lqyqr74g" path="res://animation/Trump11.png" id="19_n6mkd"]
+[ext_resource type="Texture2D" uid="uid://c6u0ygajflo4l" path="res://animation/Trump12.png" id="20_6ivh6"]
+[ext_resource type="Texture2D" uid="uid://bhrj85g14gja8" path="res://animation/Trump13.png" id="21_wra21"]
+[ext_resource type="Texture2D" uid="uid://c41h56m147gks" path="res://animation/Trump14.png" id="22_v5em4"]
+[ext_resource type="Texture2D" uid="uid://bnrbwthfvul3c" path="res://animation/Trump15.png" id="23_ad2lq"]
+[ext_resource type="Texture2D" uid="uid://b18ueqg8pmob" path="res://animation/Trump16.png" id="24_fk82g"]
+[ext_resource type="Texture2D" uid="uid://dump5lnsv2yyp" path="res://animation/Trump17.png" id="25_tgt81"]
+[ext_resource type="Texture2D" uid="uid://baukfe1ken1o7" path="res://animation/Trump18.png" id="26_e3xyp"]
+[ext_resource type="Texture2D" uid="uid://dpmybkrooqq0c" path="res://animation/Trump19.png" id="27_3yt0w"]
+[ext_resource type="Texture2D" uid="uid://bv1xkofqoy05f" path="res://animation/Trump20.png" id="28_bg2jt"]
+[ext_resource type="Texture2D" uid="uid://dtnptivt6dk3v" path="res://animation/Trump21.png" id="29_5lexr"]
+[ext_resource type="Texture2D" uid="uid://dyyhve3d7vtg8" path="res://animation/Trump22.png" id="30_jhwjm"]
+[ext_resource type="Texture2D" uid="uid://bcm3ypm5qy6ng" path="res://animation/Trump23.png" id="31_6y54y"]
+[ext_resource type="Texture2D" uid="uid://ds111m6e6ans1" path="res://animation/Trump24.png" id="32_ylx8d"]
+[ext_resource type="Texture2D" uid="uid://gp2l5xns72cq" path="res://animation/Trump25.png" id="33_yxibu"]
+[ext_resource type="Texture2D" uid="uid://d4a8yf13d5edw" path="res://animation/Trump26.png" id="34_7usug"]
+[ext_resource type="Texture2D" uid="uid://c84e2gbyupy5m" path="res://animation/Trump27.png" id="35_uv42d"]
+[ext_resource type="Texture2D" uid="uid://x1el18rh3e5y" path="res://animation/Trump28.png" id="36_bqpi7"]
+[ext_resource type="Texture2D" uid="uid://cewlu7v8cpiby" path="res://animation/Trump29.png" id="37_54w45"]
+[ext_resource type="Texture2D" uid="uid://em8ur6u3jdn5" path="res://animation/Trump30.png" id="38_03luc"]
+[ext_resource type="Texture2D" uid="uid://bfknu02ryvla6" path="res://animation/Trump31.png" id="39_fqn5o"]
+[ext_resource type="Texture2D" uid="uid://blyhweqdftifx" path="res://animation/Trump32.png" id="40_h0owf"]
+[ext_resource type="Texture2D" uid="uid://dguuf116fu7sm" path="res://animation/Trump33.png" id="41_vvbn6"]
+[ext_resource type="Texture2D" uid="uid://c74xpc770ssmu" path="res://animation/Trump34.png" id="42_bwpft"]
+[ext_resource type="Texture2D" uid="uid://d3eyjkw0j3itd" path="res://animation/Trump35.png" id="43_k4uss"]
+[ext_resource type="Texture2D" uid="uid://dfnb8ka1ilu87" path="res://animation/Trump36.png" id="44_qfqae"]
+[ext_resource type="Texture2D" uid="uid://cn3voa8m4f1yy" path="res://animation/Trump37.png" id="45_fa8lu"]
+[ext_resource type="Texture2D" uid="uid://c3cj1knsqn37p" path="res://animation/Trump38.png" id="46_1ka3p"]
+[ext_resource type="Texture2D" uid="uid://dn0vgwg2f7t3k" path="res://animation/Trump39.png" id="47_14ulm"]
+[ext_resource type="Texture2D" uid="uid://bpr4fe1a54wbk" path="res://animation/Trump40.png" id="48_44up0"]
+[ext_resource type="Texture2D" uid="uid://b3j3n42yb77ph" path="res://animation/Trump41.png" id="49_x5gjc"]
+[ext_resource type="Texture2D" uid="uid://cwmp620xd0ecj" path="res://animation/Trump42.png" id="50_1oje6"]
+[ext_resource type="Texture2D" uid="uid://erinmko8fa87" path="res://animation/Trump43.png" id="51_dcn3h"]
+[ext_resource type="Texture2D" uid="uid://gdeacbykcst8" path="res://animation/Trump44.png" id="52_a16ue"]
+[ext_resource type="Texture2D" uid="uid://bcnbvoseoijvl" path="res://animation/Trump45.png" id="53_whiqk"]
+[ext_resource type="Texture2D" uid="uid://c2pan5hkc6uaj" path="res://animation/Trump46.png" id="54_s8nn5"]
+[ext_resource type="Texture2D" uid="uid://o21bttvxpgvr" path="res://animation/Trump47.png" id="55_cosyh"]
+[ext_resource type="Texture2D" uid="uid://ds8ojdonk8d8a" path="res://animation/Trump48.png" id="56_bqj8q"]
+[ext_resource type="Texture2D" uid="uid://0hl0n5xxqof2" path="res://animation/valvedown060.png" id="57_1lc88"]
+[ext_resource type="Texture2D" uid="uid://bnikotcml5x33" path="res://animation/Trump49.png" id="57_q4kta"]
+[ext_resource type="Texture2D" uid="uid://di60oos1rljw3" path="res://animation/valvedown061.png" id="58_0j5ab"]
+[ext_resource type="Texture2D" uid="uid://drwnl1g8pfquq" path="res://animation/valvedown062.png" id="59_ytbca"]
+[ext_resource type="Texture2D" uid="uid://d3tfc66arh0vp" path="res://animation/valvedown063.png" id="60_siw2b"]
+[ext_resource type="Texture2D" uid="uid://qneaqulpsbgq" path="res://animation/valvedown064.png" id="61_l80ba"]
+[ext_resource type="Texture2D" uid="uid://drn2jdqsa3i0i" path="res://animation/valvedown065.png" id="62_p2eu3"]
+[ext_resource type="Texture2D" uid="uid://db5eh058u1r42" path="res://animation/valvedown066.png" id="63_r1cvc"]
+[ext_resource type="Texture2D" uid="uid://dxwgth01n4nml" path="res://animation/valvedown067.png" id="64_sx0f8"]
+[ext_resource type="Texture2D" uid="uid://3a5xogbtyr6c" path="res://animation/valvedown068.png" id="65_67ux0"]
+[ext_resource type="Texture2D" uid="uid://df0rllf13yu0t" path="res://animation/valvedown069.png" id="66_t7vvh"]
+[ext_resource type="Texture2D" uid="uid://dp6burvaqmx2s" path="res://animation/valvedown070.png" id="67_36gwp"]
+[ext_resource type="Texture2D" uid="uid://cr78yglwrfqpq" path="res://animation/valvedown071.png" id="68_hvmjx"]
+[ext_resource type="Texture2D" uid="uid://ddp7ld1d2xnks" path="res://animation/valvedown072.png" id="69_f0d3h"]
+[ext_resource type="Texture2D" uid="uid://dacgcsp8fq0aw" path="res://animation/valvedown073.png" id="70_cra3e"]
+[ext_resource type="Texture2D" uid="uid://jfa4qurml530" path="res://animation/valvedown074.png" id="71_ktcuf"]
+[ext_resource type="Texture2D" uid="uid://c6rdfs3wp28io" path="res://animation/valvedown075.png" id="72_3wo4k"]
+[ext_resource type="Texture2D" uid="uid://bkljud638rng7" path="res://animation/valvedown076.png" id="73_73mid"]
+[ext_resource type="Texture2D" uid="uid://c41yvo26gb4g0" path="res://animation/valvedown077.png" id="74_lxui3"]
+[ext_resource type="Texture2D" uid="uid://7k5647tx5v6u" path="res://animation/valvedown078.png" id="75_qmk4j"]
+[ext_resource type="Texture2D" uid="uid://doq8mcn7jmdmi" path="res://animation/valvedown079.png" id="76_hro7a"]
+[ext_resource type="Texture2D" uid="uid://doogy7di5eilx" path="res://animation/valvedown080.png" id="77_7e5q6"]
+[ext_resource type="Texture2D" uid="uid://bt3i2lyab6gpi" path="res://animation/valvedown081.png" id="78_3vqag"]
+[ext_resource type="Texture2D" uid="uid://cphbgsnq01y55" path="res://animation/valvedown082.png" id="79_63fbl"]
+[ext_resource type="Texture2D" uid="uid://bqvm3diw58csp" path="res://animation/valvedown083.png" id="80_3nmeu"]
+[ext_resource type="Texture2D" uid="uid://ddr5yfdij5nr2" path="res://animation/valvedown084.png" id="81_kwlph"]
+[ext_resource type="Texture2D" uid="uid://chp5uidqvg0j1" path="res://animation/valvedown085.png" id="82_nwpba"]
+[ext_resource type="Texture2D" uid="uid://cokovviigsnd" path="res://animation/valvedown086.png" id="83_0joqo"]
+[ext_resource type="Texture2D" uid="uid://bfmvsuecciujo" path="res://animation/valvedown087.png" id="84_ftpkd"]
+[ext_resource type="Texture2D" uid="uid://c34h1h7ntcq8o" path="res://animation/valvedown088.png" id="85_t2qqw"]
+[ext_resource type="Texture2D" uid="uid://btjl0b32ys324" path="res://animation/valvedown089.png" id="86_mf6wd"]
+[ext_resource type="Texture2D" uid="uid://d0lv0t18euhu4" path="res://animation/valvedown090.png" id="87_jj4mk"]
+[ext_resource type="Texture2D" uid="uid://bnshuw7yl188y" path="res://animation/valvedown091.png" id="88_w0qs8"]
+[ext_resource type="Texture2D" uid="uid://phh34qqs7kbu" path="res://animation/valvedown092.png" id="89_o4l6u"]
+[ext_resource type="Texture2D" uid="uid://drqjhbmsa04q7" path="res://animation/valvedown093.png" id="90_8opg3"]
+[ext_resource type="Texture2D" uid="uid://c1yg32ry3gqrf" path="res://animation/valvedown094.png" id="91_a1doe"]
+[ext_resource type="Texture2D" uid="uid://bmbqw4qjfwy0p" path="res://animation/valvedown095.png" id="92_46jn8"]
+[ext_resource type="Texture2D" uid="uid://dxdexe3hl3fpy" path="res://animation/valvedown096.png" id="93_4ob22"]
+[ext_resource type="Texture2D" uid="uid://ov58b7vohsx7" path="res://animation/valvedown097.png" id="94_0d7uv"]
+[ext_resource type="Texture2D" uid="uid://cxitfxtk1y4xv" path="res://animation/valvedown098.png" id="95_hlp3n"]
+[ext_resource type="Texture2D" uid="uid://dcmbusteh5lff" path="res://animation/valvedown099.png" id="96_u4gl0"]
+[ext_resource type="Texture2D" uid="uid://durywldehmfn" path="res://animation/valvedown100.png" id="97_7hosh"]
+[ext_resource type="Texture2D" uid="uid://cm4kngn1beycn" path="res://animation/valvedown101.png" id="98_lisks"]
+[ext_resource type="Texture2D" uid="uid://btl0mpy3fox8" path="res://animation/valvedown102.png" id="99_kuakj"]
+[ext_resource type="Texture2D" uid="uid://xcp13a8vpupa" path="res://animation/valvedown103.png" id="100_y5vyj"]
+[ext_resource type="Texture2D" uid="uid://cpgaxssofk67d" path="res://animation/valvedown104.png" id="101_uhmhk"]
+[ext_resource type="Texture2D" uid="uid://ct7r4vmjiuqk" path="res://animation/valvedown105.png" id="102_yjpyx"]
+[ext_resource type="Texture2D" uid="uid://7lb0pp144eit" path="res://animation/valvedown106.png" id="103_7n7g8"]
+[ext_resource type="Texture2D" uid="uid://cld3ajwac6sqj" path="res://animation/valvedown107.png" id="104_alw6l"]
+[ext_resource type="Texture2D" uid="uid://bxtjwvbllo23m" path="res://animation/valvedown108.png" id="105_v6jop"]
+[ext_resource type="Texture2D" uid="uid://b5lr5uqg6ahpw" path="res://animation/valvedown109.png" id="106_krwtk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(320, 4.999954)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_c1bxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nx3i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gbasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_smeqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3id20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n0378")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d4kie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yf604")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p6oly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_urpqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vt2nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_n6mkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6ivh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wra21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_v5em4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ad2lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_fk82g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tgt81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_e3xyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3yt0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_bg2jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5lexr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_jhwjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6y54y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ylx8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_yxibu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7usug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_uv42d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bqpi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_54w45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_03luc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_fqn5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_h0owf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_vvbn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_bwpft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_k4uss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_qfqae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fa8lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_1ka3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_14ulm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_44up0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_x5gjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1oje6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_dcn3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_a16ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_whiqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_s8nn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_cosyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_bqj8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_q4kta")
+}],
+"loop": 0,
+"name": &"aufbau",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_q4kta")
+}],
+"loop": 1,
+"name": &"stand",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_1lc88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_0j5ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ytbca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_siw2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_l80ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_p2eu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_r1cvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_sx0f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_67ux0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_t7vvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_36gwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_hvmjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_f0d3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_cra3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ktcuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_3wo4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_73mid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_lxui3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_qmk4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_hro7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_7e5q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3vqag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_63fbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_3nmeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_kwlph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_nwpba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_0joqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_ftpkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_t2qqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_mf6wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_jj4mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_w0qs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_o4l6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_8opg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_a1doe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_46jn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_4ob22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_0d7uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_hlp3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_u4gl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_7hosh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_lisks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_kuakj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_y5vyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_uhmhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_yjpyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_7n7g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_alw6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_v6jop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_krwtk")
+}],
+"loop": 0,
+"name": &"ventdown",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("106_krwtk")
+}],
+"loop": 1,
+"name": &"ventil",
+"speed": 25.0
+}]
+
+[node name="Instr" type="Area2D" unique_id=1548950956]
+
+[node name="ValvePlay" type="AnimatableBody2D" parent="." unique_id=136468049]
+position = Vector2(534, -51)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="ValvePlay" unique_id=2129657375]
+texture = ExtResource("1_li2yw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ValvePlay" unique_id=553734953]
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(144.70001, -224.5, -139.6, -224.5, -154.6, -223.5, -165.7, -223.5, -184.9, -219.5, -188.3, -219.5, -200.4, -208.5, -201.8, -208.5, -208.5, -194.2, -208.5, -145.6, -203.5, -137.1, -203.5, -134.5, -190.5, -125.6, -190.5, -123.9, -170.5, -119.9, -170.5, -118.7, -134.6, -115.5, -77.5, -115.5, -77.5, 219.6, -102.5, 221.70001, -102.5, 224.5, 79.20001, 224.5, 79.899994, 223, 77.5, 220.6, 77.5, -115.5, 138.6, -115.5, 169.79999, -119.5, 174.9, -119.5, 188.79999, -125.5, 191.29999, -125.5, 196.29999, -130.5, 198.6, -130.5, 208.5, -146.4, 208.5, -195.5, 207.5, -197.1, 207.5, -199.4, 194.5, -211.5, 194.5, -212.9, 173.5, -220, 173.5, -221.3)
+
+[node name="Valvetrigger" type="Area2D" parent="ValvePlay" unique_id=1823858609 node_paths=PackedStringArray("valve", "target_sprite")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("2_bsdvv")
+valve = NodePath("..")
+press_distance = 40.0
+press_duration = 0.3
+target_sprite = NodePath("../../TrumpetOrch/TrumpetOrchAnim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ValvePlay/Valvetrigger" unique_id=1162651922]
+position = Vector2(0, -223.215)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="ValveTrump" type="AnimatableBody2D" parent="." unique_id=977596686]
+position = Vector2(657, -49.999996)
+scale = Vector2(0.115, 0.115)
+
+[node name="Sprite2D" type="Sprite2D" parent="ValveTrump" unique_id=1781726904]
+texture = ExtResource("1_li2yw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ValveTrump" unique_id=1748315995]
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(144.70001, -224.5, -139.6, -224.5, -154.6, -223.5, -165.7, -223.5, -184.9, -219.5, -188.3, -219.5, -200.4, -208.5, -201.8, -208.5, -208.5, -194.2, -208.5, -145.6, -203.5, -137.1, -203.5, -134.5, -190.5, -125.6, -190.5, -123.9, -170.5, -119.9, -170.5, -118.7, -134.6, -115.5, -77.5, -115.5, -77.5, 219.6, -102.5, 221.70001, -102.5, 224.5, 79.20001, 224.5, 79.899994, 223, 77.5, 220.6, 77.5, -115.5, 138.6, -115.5, 169.79999, -119.5, 174.9, -119.5, 188.79999, -125.5, 191.29999, -125.5, 196.29999, -130.5, 198.6, -130.5, 208.5, -146.4, 208.5, -195.5, 207.5, -197.1, 207.5, -199.4, 194.5, -211.5, 194.5, -212.9, 173.5, -220, 173.5, -221.3)
+
+[node name="ValvetriggerVideo" type="Area2D" parent="ValveTrump" unique_id=1212928670 node_paths=PackedStringArray("valve", "target_sprite")]
+position = Vector2(8.695801, 0)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("3_6wgcc")
+valve = NodePath("..")
+press_distance = 40.0
+target_sprite = NodePath("../../TrumpetOrch/TrumpetOrchAnim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ValveTrump/ValvetriggerVideo" unique_id=947890191]
+position = Vector2(0, -223.215)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("3_bsdvv")]
+position = Vector2(10, -114)
+
+[node name="TrumpetBody" type="StaticBody2D" parent="." unique_id=1165565316]
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TrumpetBody" unique_id=708534012]
+position = Vector2(2331, 249.095)
+scale = Vector2(0.35, 0.35)
+polygon = PackedVector2Array(6489.4004, -2168.5, 6461, -2168.5, 6453.3, -2161.5, 6451.8, -2161.5, 6446.8, -2151.5, 6445.5, -2151.5, 6428.5, -2094.5, 6427.3, -2094.5, 6413.3, -2010.5, 6412.2, -2010.5, 6401, -1887.6, 6401, -1876.5, 6396, -1846.7, 6396, -1840.8, 6387, -1813.8, 6387, -1811, 6373, -1787, 6373, -1785.4, 6324, -1724.2, 6324, -1722.3, 6264, -1654.3, 6264, -1652.3, 6155, -1540.3, 6155, -1539.4, 6052, -1450.4, 6052, -1449.6, 5980, -1396.5, 5980, -1395.7, 5934, -1365.6, 5934, -1364.7, 5821, -1299.7, 5821, -1298.8, 5712, -1247.8, 5712, -1247, 5583, -1197.9, 5583, -1197, 5455, -1158, 5455, -1157.1, 5277, -1114.1, 5277, -1113.2, 5124, -1084.2, 5124, -1083.3, 4942, -1055.2, 4942, -1054.3, 4715, -1026.3, 4715, -1025.4, 4165, -969.30005, 4165, -968.4, 3621, -923.30005, 3621, -922.4, 3251, -897.4, 3251, -896.4, 2957, -879.4, 2957, -878.5, 2413, -851.4, 2413, -850.5, 1849, -828.4, 1849, -827.5, 1053, -801.4, 1053, -800.5, 991.2998, -800.5, 934, -810.30005, 934, -811.4, 846, -816.4, 846, -817.4, 517, -829.5, 501.2002, -829.5, 457.1001, -834.5, 449.1001, -834.5, 418.2998, -842.5, 415.5, -842.5, 382.6001, -862.5, 380.8999, -862.5, 344.7998, -895.5, 344.1001, -895.5, 322.1001, -928.5, 321.3999, -928.5, 306.3999, -968.5, 305.7998, -968.5, 301.7998, -999.5, 301.2002, -999.5, 305, -1039.4, 305, -1044.1, 317, -1074.1, 317, -1077, 335, -1102.9, 335, -1104.7, 360, -1128.6, 360, -1129.4, 386, -1146.4, 386, -1147.3, 414, -1159.2, 414, -1160, 458, -1170.9, 458, -1171.8, 553.2002, -1182.5, 561.2998, -1182.5, 587.2998, -1190.5, 589.8999, -1190.5, 597.8999, -1199.5, 599.2998, -1199.5, 604.2998, -1210.5, 605.5, -1210.5, 618.5, -1257.5, 620.3999, -1257.5, 617, -1274.9, 617, -1277.6, 609, -1282.7, 609, -1284.1, 598.2002, -1286.5, 574.8999, -1286.5, 518.7998, -1279.5, 510.7998, -1279.5, 462.6001, -1269.5, 457.7002, -1269.5, 413.7002, -1254.5, 410.6001, -1254.5, 369.6001, -1235.5, 366.5, -1235.5, 336.5, -1218.5, 334.2998, -1218.5, 300.2998, -1191.5, 298.1001, -1191.5, 273.1001, -1164.5, 271.8999, -1164.5, 249.8999, -1131.5, 248.7002, -1131.5, 235.7998, -1103.5, 234.5, -1103.5, 226.5, -1078.5, 225.2998, -1078.5, 215, -1021.69995, 215, -983.30005, 224, -935.1, 224, -931.1, 238, -895.1, 238, -891.9, 266, -845.1, 266, -842.80005, 306.1001, -794.5, 306.7998, -794.5, 311.7998, -784.5, 312, -784, 309, -782.9, 309, -782.30005, 282, -778.19995, 282, -777.5, 153, -772.4, 153, -771.5, 33, -770.5, 33, -769.6, -65, -770.5, -114.799805, -770.5, -144.3999, -773.19995, -142, -774.19995, -119.799805, -776.5, -113.299805, -776.5, -104.299805, -783.5, -101.799805, -783.5, -103, -795.69995, -103, -799.1, -113, -814.19995, -113, -816.30005, -122, -826.30005, -122, -828.4, -144, -847.4, -144, -849, -162, -854, -162, -855.30005, -186.8999, -857.5, -256, -857.5, -256, -907.80005, -258, -913.80005, -258, -917.19995, -264, -924.30005, -264, -926.19995, -282, -929.30005, -282, -930.5, -442, -931.5, -470.1001, -931.5, -505.2998, -926.5, -510.6001, -926.5, -518.6001, -921.5, -521.1001, -921.5, -528.1001, -910.5, -529.7002, -910.5, -535, -876.69995, -535, -871.19995, -541.8999, -860.4, -590.2002, -856.5, -602.2002, -856.5, -620.3999, -852.5, -625.3999, -852.5, -650.3999, -842.5, -652.7998, -842.5, -669.8999, -826.5, -671.2998, -826.5, -678.2002, -811.5, -680, -811.5, -680, -789.69995, -671, -780.69995, -671, -778.9, -651.2002, -774.5, -647.7002, -774.5, -642.7002, -770.5, -641.8999, -770.5, -641, -759.30005, -664, -754.1, -713, -754.5, -720.7002, -754.5, -733.8999, -760.19995, -733, -769.4, -733, -770.30005, -722, -775.19995, -722, -775.80005, -706.7002, -778.5, -704.1001, -778.5, -698.1001, -785.5, -696.3999, -785.5, -694.5, -793.5, -692.7998, -793.5, -694, -804.69995, -694, -810, -700, -821.19995, -700, -823.30005, -717, -840.30005, -717, -841.80005, -736, -849.80005, -736, -851.19995, -754, -854.30005, -754, -855.30005, -777.8999, -857.5, -821.7002, -857.5, -831.7002, -860.5, -833.7998, -860.5, -838.7998, -870.5, -844, -903.80005, -844, -908.19995, -855, -921.30005, -855, -923.1, -867, -926.1, -867, -927.30005, -902, -930.4, -902, -931.6, -933.1001, -930.5, -1090.2002, -930.5, -1101.3999, -928.5, -1104.7998, -928.5, -1112.7002, -921.5, -1114.7002, -921.5, -1119, -894.69995, -1119, -857.5, -1205, -855.5, -1213.3999, -855.5, -1235.3999, -847.5, -1237.7998, -847.5, -1249.7998, -835.5, -1251.2002, -835.5, -1273, -794, -1273, -783.4, -1265, -778.4, -1265, -776.80005, -1257.2002, -775.5, -1235.3999, -775.5, -1226.3999, -771.5, -1225.2002, -771.5, -1223, -767, -1223, -755.19995, -1229, -747.19995, -1247, -740.9, -1247, -740.30005, -1302.2998, -732.5, -1313.6001, -732.5, -1324.6001, -736.5, -1325.5, -736.5, -1326.3999, -740.5, -1326, -768.5, -1326, -770.4, -1320, -774.4, -1300.6001, -778.5, -1298.2002, -778.5, -1293.2002, -783.5, -1291.6001, -783.5, -1288.6001, -791.5, -1286.7998, -791.5, -1289, -810.69995, -1289, -814.1, -1298, -827.1, -1298, -829.4, -1308, -838.4, -1308, -839.69995, -1324, -847.80005, -1324, -849.1, -1342, -853.19995, -1342, -854.30005, -1370.8999, -857.5, -1415.7002, -857.5, -1427.7002, -861.5, -1428.7002, -861.5, -1433.7002, -872.5, -1438, -907.69995, -1438, -911.5, -1453, -922.6, -1453, -924.19995, -1496, -930.30005, -1496, -931.5, -1558, -932.5, -1606, -932.5, -1692.1001, -928.5, -1696.7998, -928.5, -1707.7998, -917.5, -1709.7002, -917.5, -1717, -875.69995, -1717, -872.30005, -1725, -864.30005, -1805.2998, -852.5, -1810.3999, -852.5, -1839.2998, -840.5, -1842, -840.5, -1860, -817.5, -1861.3999, -817.5, -1865.3999, -805.5, -1867, -805.5, -1867, -789.69995, -1858, -780.69995, -1858, -778.80005, -1821.2002, -772.5, -1820.5, -772.5, -1816, -753.5, -1816, -704.5, -3668, -695.5, -3668, -694.6, -4691, -695.5, -4761.9, -695.5, -4842.9, -700.5, -4855.7, -700.5, -4890.9, -705.5, -4895.5, -705.5, -4910.5, -713.5, -4917, -732.80005, -4917, -735.5, -4925, -741.5, -4925, -743.19995, -4952, -748.30005, -4952, -749.4, -5000.9, -752.5, -5016.2, -752.5, -5027.4, -750.5, -5031.5, -750.5, -5038.5, -746.5, -5041, -746.5, -5063, -715.1, -5063, -713.6, -5077, -703.5, -5077, -702.9, -5094, -695.80005, -5115, -693.30005, -5115, -692.5, -5408.1, -684.5, -5735.9, -684.5, -5832.9, -690.5, -5838.6, -690.5, -5848.6, -694.5, -5850.3, -694.5, -5861, -703.5, -5861, -704.9, -5877.7, -710.5, -5898.3, -710.5, -5913.3, -705.5, -5916.6, -705.5, -5936, -693.6, -5936, -693, -5955, -685.9, -5955, -685.30005, -5996.3, -679.5, -6014.7, -679.5, -6036.9, -682.5, -6042.7, -682.5, -6061.7, -688.5, -6064.3, -688.5, -6072.3, -694.5, -6074, -694.5, -6078, -700.19995, -6078, -702.4, -6103, -723.5, -6103, -724.80005, -6128, -735.80005, -6128, -737.1, -6144, -741.1, -6144, -742.19995, -6196, -750.30005, -6196, -751.4, -6238, -753.5, -6293.6, -753.5, -6326.8, -760.5, -6329.5, -760.5, -6357.4, -777.5, -6359.3, -777.5, -6413, -817.6, -6413, -818.6, -6437, -832.69995, -6437, -834, -6463, -842, -6463, -843.30005, -6492.9, -846.5, -6573.2, -846.5, -6589.4, -843.5, -6593.6, -843.5, -6606.5, -835.5, -6609, -835.5, -6621, -819.5, -6622.2, -819.5, -6635.2, -793.5, -6636.5, -793.5, -6646.5, -761.5, -6647.6, -761.5, -6654.7, -725.5, -6655.8, -725.5, -6663, -658.9, -6663, -449.59998, -6658, -392.30005, -6658, -382.40002, -6647, -307.19995, -6647, -301.30005, -6637, -261.5, -6637, -257.09998, -6623, -224.19995, -6623, -221.69995, -6609, -205.80005, -6609, -204.09998, -6587, -196.09998, -6587, -194.69995, -6565.1, -192.5, -6488.8, -192.5, -6458.6, -198.5, -6455.4, -198.5, -6428.4, -216.5, -6426.2, -216.5, -6348.1, -286.5, -6197.9, -286.5, -6172.8, -289.5, -6164.7, -289.5, -6142.9, -295.5, -6139.5, -295.5, -6123.5, -304.5, -6121.2, -304.5, -6103.1, -321.5, -6102, -321.5, -6060, -380.90002, -6046, -387.19995, -6035, -388.69995, -6035, -389.69995, -6020.9, -390.5, -5994.2, -390.5, -5968.1, -387.5, -5961.3, -387.5, -5934.3, -379.5, -5931.5, -379.5, -5914, -369.40002, -5914, -368.09998, -5897, -362.09998, -5897, -360.19995, -5886.8, -361.5, -5881.6, -361.5, -5852, -374.19995, -5852, -374.90002, -5829, -379.90002, -5829, -380.69995, -5755, -385.59998, -5755, -386.59998, -5502, -389.5, -5502, -390.5, -5228.1, -390.5, -5160.1, -386.5, -5152.3, -386.5, -5138.4, -380.5, -5138, -379.19995, -5138, -365.90002, -5135, -361, -5135, -358.5, -5130, -354.59998, -5130, -353.09998, -5116.3, -348.5, -5088, -348.5, -5118, -308.5, -5119.2, -308.5, -5136, -277, -5136, -265.90002, -5132, -259.90002, -5132, -257.59998, -5115, -243.59998, -5115, -242.30005, -5095, -231.30005, -5095, -229.80005, -5084, -227.80005, -5084, -225.5, -5053, -238.19995, -5044.8, -239.5, -5032.3, -239.5, -5003.1, -235.5, -4978.6, -235.5, -4961.7, -242.5, -4959.2, -242.5, -4953.2, -248.5, -4951.1, -248.5, -4932.1, -270.5, -4930.6, -270.5, -4924.6, -288.5, -4922.9, -288.5, -4926.1, -343.5, -4925.3, -352.59998, -4897.4, -339.5, -4886.3, -339.5, -4862, -359.59998, -4850, -364.09998, -4850, -364.69995, -4836, -365.59998, -4836, -366.5, -4785, -365.5, -4762.1, -365.5, -4625.1, -356.5, -4613.2, -356.5, -4697.9, -254.5, -4699.1, -254.5, -4764.1, -159.5, -4765.2, -159.5, -4795.1, -105.5, -4796.3, -105.5, -4818.3, -59.5, -4819.4, -59.5, -4857.4, 36.5, -4858.5, 36.5, -4884.5, 127.5, -4885.7, 127.5, -4893.7, 178.5, -4894.8, 178.5, -4900.8, 242.5, -4901.9, 242.5, -4907, 329.3999, -4907, 431.6001, -4900, 506.69995, -4900, 513.69995, -4887, 576.8999, -4887, 581.80005, -4868, 650.5, -4868, 654.80005, -4843, 727.80005, -4843, 730.8999, -4823, 780, -4823, 782.8999, -4794, 845.80005, -4794, 849, -4762, 911, -4762, 913, -4725, 975.8999, -4725, 978.1001, -4691, 1029.1001, -4691, 1031.2, -4645, 1092.1001, -4645, 1094.3, -4616, 1127.2, -4616, 1129.3, -4545, 1200.3, -4545, 1201.5, -4485, 1248.3999, -4485, 1249.6001, -4438, 1280.6001, -4438, 1281.7, -4390, 1308.6001, -4390, 1309.8, -4341, 1332.7, -4341, 1333.8999, -4255, 1365.8999, -4255, 1367, -4173, 1388.8999, -4173, 1390.2, -4061, 1411.2, -4061, 1412.3, -3974, 1423.2, -3974, 1424.3, -3790, 1439.3, -3790, 1440.3999, -3485, 1453.5, -3464.1, 1453.5, -3257, 1466.3, -3257, 1467.3999, -3221, 1468.5, -3067, 1468.5, -2960.9, 1465.5, -2920, 1465.5, -1895.8999, 1432.5, -1813, 1432.5, -1819, 1885.5, -1820, 1885.5, -1818, 2060.5, -1818, 2086.6, -1813, 2124.7998, -1813, 2128.2998, -1795, 2146.2998, -1795, 2147.7002, -1779, 2155.7002, -1779, 2157.1, -1742, 2165.1, -1742, 2166.2998, -1714.8999, 2168.5, -1378.2998, 2168.5, -1335.1001, 2122.5, -1333.7002, 2122.5, -1324.7002, 2101.5, -1323.2002, 2101.5, -1321, 2084.6, -1321, 2055.5, -1324.8999, 1973.5, -1237.1001, 1973.5, -1239.8999, 2038.5, -1241.1001, 2038.5, -1239, 2096.6, -1239, 2101, -1233, 2113, -1233, 2115.2998, -1224, 2125.2002, -1224, 2127.2998, -1182, 2168.2998, -884.8999, 2168.5, -798.8999, 2162.5, -792.6001, 2162.5, -781.6001, 2158.5, -778.2998, 2158.5, -767.2998, 2150.5, -765, 2150.5, -749, 2129.5, -747.6001, 2129.5, -742.6001, 2115.5, -741.2002, 2115.5, -736.2002, 2073.5, -735, 2073.5, -735, 1973.5, -645.1001, 1973.5, -648.8999, 2067.5, -650.2002, 2067.5, -647, 2099.7002, -647, 2104.9, -636, 2129.7998, -636, 2132.4, -623, 2144.4, -623, 2145.7002, -607, 2153.7002, -607, 2155.1, -568, 2164, -568, 2165.4, -524.2998, 2168.5, -227.7002, 2168.5, -197.7002, 2159.5, -195.2998, 2159.5, -149.2998, 2120.5, -147, 2120.5, -154, 1472.5, -154, 1445.3999, 147, 1437.3999, 147, 1436.3999, 528, 1433.5, 528, 1432.5, 1080.8999, 1432.5, 1188, 1436.5, 1201.7002, 1436.5, 1234.7998, 1441.5, 1239.5, 1441.5, 1257, 1449.7, 1257, 1455.8999, 1248, 1468.8999, 1248, 1470.7, 1214.1001, 1510.5, 1212.7998, 1510.5, 1200.7998, 1534.5, 1199.3999, 1534.5, 1194.2998, 1559.5, 1192.7998, 1559.5, 1196, 1587.7, 1196, 1592, 1209, 1616.1001, 1209, 1618.3, 1226, 1636.3, 1226, 1637.6001, 1253, 1653.6001, 1253, 1655.1001, 1273, 1660, 1273, 1661.2, 1281.8999, 1662.5, 1305.2998, 1662.5, 1326.2002, 1656.5, 1329.5, 1656.5, 1346.5, 1646.5, 1348.7002, 1646.5, 1379, 1620.3999, 1401, 1613, 1401, 1612.3, 1417, 1611.3999, 1417, 1610.3, 1433.1001, 1609.5, 1527.7998, 1609.5, 1561.9004, 1613.5, 1566.7002, 1613.5, 1585.5996, 1621.5, 1587.2998, 1621.5, 1621, 1646.5, 1621, 1647.8999, 1658.7002, 1660.5, 1673.2998, 1660.5, 1694.2002, 1654.5, 1697.5996, 1654.5, 1707.5, 1648.5, 1709.7002, 1648.5, 1740, 1625.5, 1740, 1624.7, 1756, 1616.7, 1756, 1616.1001, 1787, 1610.2, 1787, 1609.3999, 1894, 1604.3999, 1894, 1603.3999, 2223.0996, 1596.5, 2225, 1636.6001, 2225, 1645.1001, 2232, 1655, 2232, 1657, 2239, 1658.8999, 2239, 1660.5, 2285, 1659.5, 2289.7002, 1659.5, 2302.7002, 1649.5, 2304.5996, 1649.5, 2307.7998, 1636.2, 2338, 1631.2, 2338, 1630.5, 2402.7002, 1630.5, 2420.7998, 1633.5, 2424.5, 1633.5, 2431.5, 1637.5, 2434, 1648.5, 2434, 1651.6001, 2446.4004, 1659.5, 2476.2002, 1659.5, 2488.0996, 1656.5, 2491.7002, 1656.5, 2503.7002, 1647.5, 2505.4004, 1647.5, 2509.4004, 1636.5, 2510.7002, 1636.5, 2515, 1610.7, 2515, 1608.6001, 2524, 1602.6001, 2550, 1599.3, 2550, 1598.3999, 2633.0996, 1594.5, 2658.7002, 1594.5, 2662.7002, 1591.5, 2664.7998, 1591.5, 2669.7998, 1534.5, 2671.2998, 1534.5, 2668.7002, 1517.5, 2515.7998, 1517.5, 2510.7998, 1477.5, 2510, 1477.5, 2510, 1469.3, 2513, 1466.3, 2527.4004, 1463.5, 2578.2002, 1463.5, 2594.0996, 1459.5, 2598, 1459.5, 2605, 1450.5, 2606.7002, 1450.5, 2610, 1432.7, 2610, 1431.7, 2617, 1428.8, 2617, 1428.2, 2650, 1423.2, 2650, 1422.3, 2718.0996, 1417.5, 2732.0996, 1417.5, 2787.2998, 1410.5, 2794.2002, 1410.5, 2829.4004, 1403.5, 2834.2998, 1403.5, 2878.2998, 1389.5, 2882, 1389.5, 2871.7002, 1412.5, 2870.2998, 1412.5, 2865.2998, 1440.5, 2863.7002, 1440.5, 2866, 1458.7, 2866, 1463, 2873, 1477, 2873, 1479.3, 2886, 1492.3, 2886, 1493.7, 2896, 1498.7, 2896, 1499.8999, 2903.7002, 1502.5, 2921.4004, 1502.5, 2929.4004, 1499.5, 2934.5996, 1499.5, 2942.5996, 1502.5, 2945.2998, 1502.5, 2954.2998, 1509.5, 2956, 1509.5, 2966, 1523.5, 2968.4004, 1531.5, 2966, 1551.3999, 2966, 1554.8999, 2973, 1571.8, 2973, 1574.3999, 2992, 1592.3999, 2992, 1593.8, 3016.5996, 1604.5, 3031.4004, 1604.5, 3078.4004, 1582.5, 3080.5996, 1582.5, 3129.5, 1552.5, 3131.7002, 1552.5, 3158.7002, 1531.5, 3160.9004, 1531.5, 3179.9004, 1510.5, 3181.0996, 1510.5, 3202.0996, 1477.5, 3203.2998, 1477.5, 3222.2998, 1433.5, 3223.5, 1433.5, 3259, 1303.8, 3259, 1302.3999, 3349.0996, 1298.5, 3372.0996, 1298.5, 3413.2002, 1293.5, 3420.2998, 1293.5, 3430.2998, 1290.5, 3433.5996, 1290.5, 3448, 1281.6001, 3470, 1276.1001, 3470, 1275.2, 3552.4004, 1260.5, 3558.2002, 1260.5, 3604.0996, 1249.5, 3609.2998, 1249.5, 3677.2998, 1229.5, 3681.4004, 1229.5, 3725.4004, 1213.5, 3728.4004, 1213.5, 3837, 1165.8, 3837, 1164.8999, 3863, 1157, 3863, 1156.1001, 3866.4004, 1155.5, 3867.5996, 1155.5, 3863, 1164, 3863, 1165.5, 3847, 1177.5, 3847, 1178.2, 3828.5, 1187.5, 3824.7998, 1187.5, 3819, 1198, 3819, 1201.8, 3828, 1232.7, 3828, 1235.8999, 3860, 1318.8999, 3860, 1321.3, 3881, 1343.2, 3881, 1344.8999, 3903, 1352.8999, 3903, 1354.6001, 3927.0996, 1353.5, 3931.4004, 1353.5, 3960.4004, 1340.5, 3962.5996, 1340.5, 4071.5996, 1272.5, 4073.7002, 1272.5, 4128.7, 1231.5, 4130.7, 1231.5, 4172.7, 1195.5, 4174.8, 1195.5, 4246.8, 1122.5, 4248, 1122.5, 4305, 1046.5, 4306.2, 1046.5, 4342.2, 979.5, 4343.3, 979.5, 4365.3, 927.5, 4366.4004, 927.5, 4472, 643.8999, 4472, 640.80005, 4563.3, 419.5, 4564.5, 419.5, 4581.4004, 367.5, 4583, 367.5, 4583, 349.80005, 4579, 344.80005, 4579, 342.3999, 4567, 335.30005, 4567, 332.80005, 4554.7, 336.5, 4552.2, 336.5, 4520.2, 369.5, 4518.9004, 369.5, 4483.9004, 424.5, 4482.8, 424.5, 4454.8, 477.5, 4453.7, 477.5, 4411.7, 566.5, 4410.7, 566.5, 4296, 844.1001, 4296, 846.8999, 4279, 880, 4279, 881.80005, 4269, 894.80005, 4269, 896.3999, 4262, 901.5, 4249, 906, 4227, 905.5, 4223.5996, 905.5, 4207.5996, 895.5, 4205.8, 895.5, 4182.9004, 872.6001, 4225, 812.5, 4226.2, 812.5, 4249.0996, 772.5, 4250.2, 772.5, 4281.3, 709.5, 4282.3, 709.5, 4311.4004, 638.5, 4312.4004, 638.5, 4335.4004, 569.5, 4336.5, 569.5, 4354.5, 500.5, 4355.7, 500.5, 4367.7, 434.5, 4368.8, 434.5, 4373.8, 375.5, 4374.9004, 375.5, 4377, 329.5, 4377, 260.3999, 4374, 209.3999, 4374, 189.3999, 4367, 123.30005, 4367, 115.30005, 4355, 49.100098, 4355, 44.19995, 4338, -18.5, 4338, -22.899902, 4317, -81, 4317, -83.8999, 4290, -142.90002, 4290, -146, 4253.3, -216.40002, 4467.9004, -205.5, 4482.8, -205.5, 4683.9004, -187.5, 4694.8, -187.5, 5001.9004, -152.5, 5010.7, -152.5, 5234.8, -118.5, 5240.5996, -118.5, 5404.8, -84.5, 5409.9004, -84.5, 5541.7, -48.5, 5545.5996, -48.5, 5674.7, -3.5, 5677.7, -3.5, 5756.5996, 30.5, 5759.5, 30.5, 5816.5, 58.5, 5819.5, 58.5, 5924.5, 114.5, 5926.5, 114.5, 5984.4004, 149.5, 5986.3, 149.5, 6056.4004, 196.5, 6058.3, 196.5, 6109.3, 235.5, 6111.3, 235.5, 6187.3, 300.5, 6189.2, 300.5, 6227.2, 337.5, 6229.2, 337.5, 6298.2, 407.5, 6299.0996, 407.5, 6360.0996, 475.5, 6361, 475.5, 6424, 554.5, 6424.9004, 554.5, 6445.9004, 590.5, 6455.3, 644.5, 6456.2, 644.5, 6472, 784.69995, 6472, 791.69995, 6481, 831.8999, 6481, 835.8999, 6492, 864.8999, 6492, 868.1001, 6500, 880.1001, 6500, 882.5, 6516, 895.5, 6516, 896.8999, 6523.7, 899.5, 6537.4004, 899.5, 6548.4004, 894.5, 6550.9004, 894.5, 6570.8, 873.5, 6572.2, 873.5, 6584.2, 849.5, 6585.5, 849.5, 6604.5, 786.5, 6605.7, 786.5, 6623.7, 674.5, 6624.8, 674.5, 6637.9004, 515.5, 6638.9004, 515.5, 6654.9004, 160.5, 6656, 160.5, 6663, -134.40002, 6663, -882.9, 6662, -913.6, 6662, -953.5, 6652, -1198.6, 6652, -1220.6, 6637, -1449.6, 6637, -1462.6, 6618, -1653.7, 6618, -1662.6, 6592, -1842.8, 6592, -1849.7, 6562, -2004.9, 6562, -2009.8, 6544, -2077.5, 6544, -2081.9, 6533, -2112, 6533, -2115, 6518, -2141, 6518, -2143.3, 6499, -2162.3, 6499, -2163.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="TrumpetBody" unique_id=1066070710]
+position = Vector2(2330.9998, 240)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_tq20r")
+
+[node name="Node" type="Node" parent="." unique_id=2092304595]
+script = ExtResource("7_2nba0")
+start_position = Vector2(350, -500)
+zoom = 0.5
+
+[node name="TrumpetOrch" type="Node2D" parent="." unique_id=1651815292]
+
+[node name="TrumpetOrchAnim" type="AnimatedSprite2D" parent="TrumpetOrch" unique_id=1955254782]
+visible = false
+z_index = -1
+position = Vector2(1095.0001, -823.00006)
+rotation = -0.46251225
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+animation = &"stand"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=809083836]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=723304205]
+z_index = -100
+offset_left = -168.00003
+offset_top = 6380.0005
+offset_right = -148.25378
+offset_bottom = 6423.0166
+scale = Vector2(2068.0898, -573.68787)

@@ -719,7 +719,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 17250
 limit_bottom = 1080
-position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=236994846]
@@ -746,12 +745,10 @@ speed_scale = 5.0
 script = ExtResource("20_pbfsw")
 
 [node name="Walk" type="AnimatedSprite2D" parent="GroundMovement" unique_id=68145425]
-position = Vector2(-42, -140)
+position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"walking"
-frame = 1
-frame_progress = 0.36269113
+animation = &"jump"
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false
@@ -774,13 +771,18 @@ script = ExtResource("26_7hik5")
 script = ExtResource("93_4tmhn")
 
 [node name="DrivingSprite" type="AnimatedSprite2D" parent="DrivingMovement" unique_id=431097681]
-scale = Vector2(0.08237434, 0.08237434)
+visible = false
+position = Vector2(12, -177)
+scale = Vector2(0.10794144, 0.10794144)
 sprite_frames = SubResource("SpriteFrames_shhik")
 animation = &"trans"
 autoplay = "trans"
+frame = 30
+frame_progress = 1.0
 speed_scale = 4.0
 
 [node name="LaneMovement" parent="." unique_id=651999445 instance=ExtResource("71_fkf2u")]
+visible = false
 position = Vector2(8, -14)
 scale = Vector2(1.2, 1.2)
 

@@ -703,7 +703,7 @@ animations = [{
 "speed": 35.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1969377440]
+[node name="Player" type="CharacterBody2D" unique_id=1969377440 groups=["player"]]
 floor_snap_length = 12.0
 platform_on_leave = 2
 safe_margin = 4.0

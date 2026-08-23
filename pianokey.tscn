@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://c1yljb4qmxovq"]
+
+[ext_resource type="Texture2D" uid="uid://baiot224jhvor" path="res://animation/pianomechanic00.png" id="1_ci3bu"]
+[ext_resource type="Script" uid="uid://duuex1pwdhjb4" path="res://pianokey.gd" id="1_trbsr"]
+[ext_resource type="Texture2D" uid="uid://b32envrixmily" path="res://animation/pianomechanic01.png" id="2_p7j0c"]
+[ext_resource type="Texture2D" uid="uid://d1ycekd32kcrj" path="res://animation/pianomechanic02.png" id="3_trbsr"]
+[ext_resource type="Texture2D" uid="uid://de7oomxi6gngx" path="res://animation/pianomechanic03.png" id="4_lxvvw"]
+[ext_resource type="Texture2D" uid="uid://boem02m7vbqdl" path="res://animation/pianomechanic04.png" id="5_bxn3f"]
+[ext_resource type="Texture2D" uid="uid://dpvvn5bkt50s8" path="res://animation/pianomechanic05.png" id="6_tjf73"]
+[ext_resource type="Texture2D" uid="uid://bdpugsugwjqew" path="res://animation/pianomechanic06.png" id="7_ifqyt"]
+[ext_resource type="Texture2D" uid="uid://bcex6aqt5wvqy" path="res://animation/pianomechanic07.png" id="8_p55gf"]
+[ext_resource type="Texture2D" uid="uid://bf3d52wpwccvq" path="res://animation/pianomechanic08.png" id="9_snegc"]
+[ext_resource type="Texture2D" uid="uid://bhomw6qbqaxr2" path="res://animation/pianomechanic09.png" id="10_fssa1"]
+[ext_resource type="Texture2D" uid="uid://yb0hty1i018f" path="res://animation/pianomechanic10.png" id="11_d0y3k"]
+[ext_resource type="Texture2D" uid="uid://cqwtn602leesq" path="res://animation/pianomechanic11.png" id="12_5yc7b"]
+[ext_resource type="Texture2D" uid="uid://ccjfajatrgrgu" path="res://animation/pianomechanic12.png" id="13_uup6w"]
+[ext_resource type="Texture2D" uid="uid://dgh7m4p7tbesq" path="res://animation/pianomechanic13.png" id="14_y6i3w"]
+[ext_resource type="Texture2D" uid="uid://cveach7uwhbar" path="res://animation/pianomechanic14.png" id="15_3v4eh"]
+[ext_resource type="Texture2D" uid="uid://c15owr0yn2al8" path="res://animation/pianomechanic15.png" id="16_vq6el"]
+[ext_resource type="Texture2D" uid="uid://bmcrk6j66m7f3" path="res://animation/pianomechanic16.png" id="17_52kiw"]
+[ext_resource type="Texture2D" uid="uid://bl6lfjuq4y8si" path="res://animation/pianomechanic17.png" id="18_lv2l4"]
+[ext_resource type="Texture2D" uid="uid://c87b2qmx6aco5" path="res://animation/pianomechanic18.png" id="19_atxpe"]
+[ext_resource type="Texture2D" uid="uid://ctd0disk48uws" path="res://animation/pianomechanic19.png" id="20_kmhd4"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="21_p7j0c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ci3bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p7j0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_trbsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lxvvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bxn3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tjf73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ifqyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p55gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_snegc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fssa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d0y3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5yc7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uup6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y6i3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3v4eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vq6el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_52kiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lv2l4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_atxpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kmhd4")
+}],
+"loop": 0,
+"name": &"pianotaste",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_trbsr"]
+length = 0.666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Taste:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.06283186]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Taste:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11, -19)]
+}
+
+[sub_resource type="Animation" id="Animation_lxvvw"]
+resource_name = "taste_bewegung"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00046139956, 0.39054507),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 19]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Taste:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.05235988, 0.0, 0.0418879, 0.06283186]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Taste:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-11.999999, -7), Vector2(-11, 76), Vector2(-7.0000014, 1.0000019), Vector2(-8.999999, -0.99999905), Vector2(-11, -19)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxn3f"]
+_data = {
+&"RESET": SubResource("Animation_trbsr"),
+&"taste_bewegung": SubResource("Animation_lxvvw")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixr7o"]
+size = Vector2(118.94739, 202)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8yc8"]
+size = Vector2(119.36429, 11.063608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trbsr"]
+size = Vector2(4.71, 81)
+
+[node name="Pianokey" type="Area2D" unique_id=445377932]
+script = ExtResource("1_trbsr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=360656739]
+position = Vector2(1800, -311)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+animation = &"pianotaste"
+frame = 19
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=508041851]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_bxn3f")
+
+[node name="Taste" type="RigidBody2D" parent="AnimationPlayer" unique_id=1211649377]
+position = Vector2(-11, -19)
+rotation = 0.06283186
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Taste" unique_id=1574404166]
+position = Vector2(926, -34)
+scale = Vector2(3.8, 1)
+shape = SubResource("RectangleShape2D_ixr7o")
+
+[node name="TasteTrigger" type="Area2D" parent="AnimationPlayer/Taste/CollisionShape2D" unique_id=815465564]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Taste/CollisionShape2D/TasteTrigger" unique_id=1496076895]
+position = Vector2(-0.2631571, -9)
+scale = Vector2(1.0007207, 17.863712)
+shape = SubResource("RectangleShape2D_c8yc8")
+
+[node name="Boden" type="StaticBody2D" parent="." unique_id=685181392]
+position = Vector2(-62.999992, 168)
+rotation = -0.1734122
+scale = Vector2(0.367578, 0.2611028)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=764573332]
+position = Vector2(1204, -519)
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_trbsr")
+
+[node name="ColorRect" type="ColorRect" parent="Boden" unique_id=626126523]
+offset_left = 255.0
+offset_top = -558.0
+offset_right = 295.0
+offset_bottom = -518.0
+scale = Vector2(47.43999, 1)
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("21_p7j0c")]
+position = Vector2(334, -66)

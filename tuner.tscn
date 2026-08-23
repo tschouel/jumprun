@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bceoa1sdo5k5q"]
+
+[ext_resource type="Texture2D" uid="uid://ibb68ua80veq" path="res://animation/__Key1.png" id="1_iebq0"]
+[ext_resource type="Script" uid="uid://kgux3a78v3ks" path="res://musicstring.gd" id="1_rsy4c"]
+[ext_resource type="Texture2D" uid="uid://beww6ce42lu6v" path="res://animation/__Key2.png" id="2_rsy4c"]
+[ext_resource type="Texture2D" uid="uid://ctrnftebdqcbc" path="res://animation/__Key3.png" id="3_c7v6u"]
+[ext_resource type="Texture2D" uid="uid://cx34y036x8jgm" path="res://animation/__Key4.png" id="4_2gel1"]
+[ext_resource type="Texture2D" uid="uid://d0ls8mci38tnq" path="res://animation/__Key5.png" id="5_18hbk"]
+[ext_resource type="Texture2D" uid="uid://d2rw0mw5q1gr" path="res://animation/__Key6.png" id="6_iu005"]
+[ext_resource type="Script" uid="uid://df0h3vkd32fvv" path="res://tension_trigger.gd" id="9_c7v6u"]
+[ext_resource type="Texture2D" uid="uid://by3acwj3j61wf" path="res://animation/Violin.png" id="10_2gel1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iebq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rsy4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c7v6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2gel1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_18hbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iu005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iu005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_18hbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2gel1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c7v6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rsy4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_iebq0")
+}],
+"loop": 0,
+"name": &"turn",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7v6u"]
+size = Vector2(42.371777, 16.578377)
+
+[node name="String" type="Area2D" unique_id=1321114405]
+script = ExtResource("1_rsy4c")
+max_sag = 500.0
+solid_block_depth = 500.0
+bounce_velocity_base = 400.0
+bounce_velocity_per_tension = 350.0
+break_rope_segments = 30
+break_gravity = 200.0
+break_snap_strength = 80.0
+break_time_scale = 30.0
+
+[node name="TuningPeg" type="AnimatedSprite2D" parent="." unique_id=1723540039]
+unique_name_in_owner = true
+position = Vector2(241, -76.55884)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+animation = &"turn"
+
+[node name="HandPoint" type="Marker2D" parent="TuningPeg" unique_id=170060936]
+
+[node name="AnchorLeft" type="Marker2D" parent="." unique_id=1138421449]
+position = Vector2(261, 14.441162)
+
+[node name="AnchorRight" type="Marker2D" parent="." unique_id=176412402]
+position = Vector2(2863, 130.44116)
+
+[node name="StringLine" type="Line2D" parent="." unique_id=901622392]
+unique_name_in_owner = true
+position = Vector2(-349, 0.4411621)
+
+[node name="StringLineRight" type="Line2D" parent="." unique_id=1227340252]
+unique_name_in_owner = true
+visible = false
+
+[node name="BounceArea" type="Area2D" parent="." unique_id=299184704]
+unique_name_in_owner = true
+position = Vector2(-349, 0.4411621)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BounceArea" unique_id=292539694]
+
+[node name="TensionTrigger" type="Area2D" parent="." unique_id=1949885314 node_paths=PackedStringArray("string_node")]
+position = Vector2(128, -52)
+script = ExtResource("9_c7v6u")
+string_node = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TensionTrigger" unique_id=1416170649]
+position = Vector2(122.5, -78.09242)
+scale = Vector2(3.894102, 17.481516)
+shape = SubResource("RectangleShape2D_c7v6u")
+
+[node name="Violin" type="Sprite2D" parent="." unique_id=589289601]
+z_index = -50
+position = Vector2(1540, 230.44115)
+rotation = -0.32157204
+scale = Vector2(-2.5604699, 2.5574076)
+skew = -0.11869609
+texture = ExtResource("10_2gel1")
+
+[node name="SolidBlock" type="StaticBody2D" parent="." unique_id=1050579036]
+unique_name_in_owner = true
+position = Vector2(-349, 0.4411621)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SolidBlock" unique_id=790867579]

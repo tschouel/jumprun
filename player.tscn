@@ -147,6 +147,7 @@
 [ext_resource type="Texture2D" uid="uid://cvyrvg5d4njgf" path="res://animation/__toFly11.png" id="92_0tqd8"]
 [ext_resource type="Script" uid="uid://b877gqsf7fwd5" path="res://mechanics/Driving/driving_movement.gd" id="93_4tmhn"]
 [ext_resource type="Texture2D" uid="uid://dhsci2im425l1" path="res://animation/__toFly12.png" id="93_vxixj"]
+[ext_resource type="Script" uid="uid://ch5antkg8o5il" path="res://simple_arm.gd" id="148_yskhe"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3a0q"]
 polygon = PackedVector2Array(85.778336, -211.79834, 188.23581, -191.94226, 200.14946, -145.61139, 0, -142.302)
@@ -703,6 +704,9 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1969377440]
+floor_snap_length = 12.0
+platform_on_leave = 2
+safe_margin = 4.0
 script = ExtResource("1_4flbx")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1578364868]
@@ -713,7 +717,8 @@ occluder = SubResource("OccluderPolygon2D_w3a0q")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
 position = Vector2(493, -452)
 offset = Vector2(600, 0)
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.25, 0.25)
+process_callback = 0
 limit_enabled = false
 limit_left = 0
 limit_top = 0
@@ -727,7 +732,7 @@ position = Vector2(21.160006, -6.819992)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=963911059]
 position = Vector2(12, -6)
 scale = Vector2(3.77, 3.77)
-polygon = PackedVector2Array(-5.30504, 0.7957561, -3.448276, 1.5915121, -2.387268, 1.8567641, -1.32626, 1.8567641, 0, 2.387268, 2.9177718, 2.9177718, 5.5702915, 1.856764, 3.7135277, 0.265252, 2.122016, -0.265252)
+polygon = PackedVector2Array(-5.039788, 2.387268, 7.95756, 2.122016, 7.95756, -0.265252, 2.122016, -0.265252, -5.039788, -0.265252)
 
 [node name="FlyingMovement" type="Node2D" parent="." unique_id=291982134]
 script = ExtResource("16_u1c27")
@@ -743,12 +748,17 @@ speed_scale = 5.0
 
 [node name="GroundMovement" type="Node2D" parent="." unique_id=1863156067]
 script = ExtResource("20_pbfsw")
+speed = 600.0
+jump_velocity = -600.0
+gravity = 1300.0
+max_platform_jump_boost = 900.0
 
 [node name="Walk" type="AnimatedSprite2D" parent="GroundMovement" unique_id=68145425]
 position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"jump"
+animation = &"walking"
+frame_progress = 0.20913047
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false
@@ -790,3 +800,11 @@ scale = Vector2(1.2, 1.2)
 visible = false
 sprite_frames = SubResource("SpriteFrames_shhik")
 animation = &"boost"
+
+[node name="SimpleArm" type="Node2D" parent="." unique_id=160448129 node_paths=PackedStringArray("body_point")]
+unique_name_in_owner = true
+script = ExtResource("148_yskhe")
+body_point = NodePath("ArmPoint")
+
+[node name="ArmPoint" type="Marker2D" parent="SimpleArm" unique_id=15438377]
+position = Vector2(1, -120)

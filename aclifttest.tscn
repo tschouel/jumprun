@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://t0s8d2hx4v88"]
+
+[ext_resource type="PackedScene" uid="uid://dwfp1mlixwp5b" path="res://acc_lift.tscn" id="1_m3pk0"]
+[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="1_vv5rf"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="2_vv5rf"]
+
+[node name="Area2D" type="Area2D" unique_id=459971889 node_paths=PackedStringArray("camera")]
+script = ExtResource("1_vv5rf")
+camera = NodePath("Camera2D")
+start_position = Vector2(400, -600)
+zoom = 0.3
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("2_vv5rf")]
+position = Vector2(248, -1210)
+
+[node name="AccLift" parent="." unique_id=317700877 instance=ExtResource("1_m3pk0")]
+
+[node name="AccLift2" parent="." unique_id=99785969 instance=ExtResource("1_m3pk0")]
+position = Vector2(1125, -616)
+start_offset = 3.0
+
+[node name="AccLift4" parent="." unique_id=71304629 instance=ExtResource("1_m3pk0")]
+position = Vector2(-1000, -894)
+start_offset = 2.0
+
+[node name="AccLift5" parent="." unique_id=1726452657 instance=ExtResource("1_m3pk0")]
+position = Vector2(-1925, -617)
+start_offset = 0.3
+
+[node name="AccLift7" parent="." unique_id=179744182 instance=ExtResource("1_m3pk0")]
+position = Vector2(3233, -1180)
+start_offset = 1.0
+
+[node name="AccLift9" parent="." unique_id=2067776308 instance=ExtResource("1_m3pk0")]
+position = Vector2(2157, -380)
+start_offset = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=165768944]
+position = Vector2(3804, 3724)
+offset = Vector2(0, -900)
+zoom = Vector2(0.095, 0.095)
+process_callback = 0

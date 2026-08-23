@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cpulku5t0f6jw"]
+
+[ext_resource type="PackedScene" uid="uid://lnni6mifksry" path="res://uku.tscn" id="1_1ox3o"]
+[ext_resource type="PackedScene" uid="uid://bceoa1sdo5k5q" path="res://tuner.tscn" id="1_036uj"]
+[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="1_xu011"]
+[ext_resource type="Texture2D" uid="uid://7gf7c7grmli2" path="res://E-bass.png" id="3_nch4o"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="4_nch4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu011"]
+size = Vector2(4.71, 81)
+
+[node name="Area2D" type="Area2D" unique_id=1941508753]
+script = ExtResource("1_xu011")
+zoom = 0.5
+
+[node name="Bouncestring" parent="." unique_id=1321114405 instance=ExtResource("1_1ox3o")]
+position = Vector2(685.9999, -1379)
+rotation = 1.1493803
+
+[node name="AnchorLeft" parent="Bouncestring" index="0" unique_id=1138421449]
+position = Vector2(-315.57037, 158.80899)
+
+[node name="AnchorRight" parent="Bouncestring" index="1" unique_id=176412402]
+position = Vector2(553.83014, -49.812378)
+
+[node name="Guitar" parent="Bouncestring" index="5" unique_id=90165842]
+visible = false
+z_index = -5
+position = Vector2(467.3581, 114.22604)
+
+[node name="String" parent="." unique_id=1599221047 instance=ExtResource("1_036uj")]
+position = Vector2(0, -11)
+
+[node name="TuningPeg" parent="String" index="0" unique_id=1723540039]
+position = Vector2(534, -83)
+
+[node name="AnchorLeft" parent="String" index="1" unique_id=1138421449]
+position = Vector2(844, 19)
+
+[node name="AnchorRight" parent="String" index="2" unique_id=176412402]
+position = Vector2(1893, 46)
+
+[node name="TensionTrigger" parent="String" index="6" unique_id=1949885314 node_paths=PackedStringArray("hand_grip")]
+position = Vector2(332, -113)
+hand_grip = NodePath("../TuningPeg/HandPoint")
+
+[node name="CollisionShape2D" parent="String/TensionTrigger" index="0" unique_id=1416170649]
+position = Vector2(188.00002, -31.441162)
+scale = Vector2(4.534101, 19.641516)
+
+[node name="Violin" parent="String" index="7" unique_id=589289601]
+position = Vector2(1211, 123.000015)
+scale = Vector2(-1.36, 1.357)
+
+[node name="Bouncestring2" parent="." unique_id=229200027 instance=ExtResource("1_1ox3o")]
+position = Vector2(2188, -356)
+
+[node name="AnchorLeft" parent="Bouncestring2" index="0" unique_id=1138421449]
+position = Vector2(32, -48)
+
+[node name="AnchorRight" parent="Bouncestring2" index="1" unique_id=176412402]
+position = Vector2(956, -587)
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("4_nch4o")]
+
+[node name="Boden" type="StaticBody2D" parent="." unique_id=761121673]
+position = Vector2(-127, 243)
+rotation = -0.1734122
+scale = Vector2(0.367578, 0.2611028)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=338598099]
+position = Vector2(1204, -519)
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_xu011")
+
+[node name="ColorRect" type="ColorRect" parent="Boden" unique_id=1179966180]
+offset_left = 255.0
+offset_top = -558.0
+offset_right = 295.0
+offset_bottom = -518.0
+scale = Vector2(47.43999, 1)
+
+[node name="EBass" type="Sprite2D" parent="." unique_id=45751853]
+z_index = -50
+position = Vector2(664.99994, -1278)
+rotation = -0.6514513
+texture = ExtResource("3_nch4o")
+
+[editable path="Bouncestring"]
+[editable path="String"]
+[editable path="Bouncestring2"]

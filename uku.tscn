@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://lnni6mifksry"]
+
+[ext_resource type="Script" uid="uid://cvg0xxw5makt4" path="res://bouncestring.gd" id="1_avyl8"]
+[ext_resource type="Texture2D" uid="uid://bd6bug3kgngst" path="res://animation/Guitar.png" id="2_ml70y"]
+
+[node name="Bouncestring" type="Area2D" unique_id=1321114405]
+script = ExtResource("1_avyl8")
+sag = 0.0
+solid_block_depth = 20.0
+bounce_velocity = 2000.0
+
+[node name="AnchorLeft" type="Marker2D" parent="." unique_id=1138421449]
+position = Vector2(610, 14)
+
+[node name="AnchorRight" type="Marker2D" parent="." unique_id=176412402]
+position = Vector2(3212, 130)
+
+[node name="StringLine" type="Line2D" parent="." unique_id=901622392]
+unique_name_in_owner = true
+
+[node name="BounceArea" type="Area2D" parent="." unique_id=299184704]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BounceArea" unique_id=292539694]
+
+[node name="SolidBlock" type="StaticBody2D" parent="." unique_id=1050579036]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SolidBlock" unique_id=790867579]
+
+[node name="Guitar" type="Sprite2D" parent="." unique_id=90165842]
+z_index = -10
+position = Vector2(495, -273)
+texture = ExtResource("2_ml70y")

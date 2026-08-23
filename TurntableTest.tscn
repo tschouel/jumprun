@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="1_upikb"]
 [ext_resource type="Texture2D" uid="uid://cqh4qkmoihpvr" path="res://animation/Key.svg" id="3_dns6j"]
 [ext_resource type="Script" uid="uid://de2jdyuncm82j" path="res://diskfix.gd" id="3_mkv4a"]
+[ext_resource type="Texture2D" uid="uid://cowrh3qu23x11" path="res://animation/Turntables.png" id="4_cwiy1"]
 [ext_resource type="Script" uid="uid://cbs6u0qeu54hp" path="res://keytrig_4poss.gd" id="4_doq0o"]
-[ext_resource type="Texture2D" uid="uid://ck8ch3voutes1" path="res://animation/turntable__3thin.png" id="4_vsqi5"]
+[ext_resource type="Texture2D" uid="uid://uhurmswg854g" path="res://animation/turntable_textur.svg" id="5_5cguc"]
 [ext_resource type="Script" uid="uid://dj7u0cxuoaf4e" path="res://mill_move.gd" id="5_8qlfg"]
-[ext_resource type="Texture2D" uid="uid://dfmeor2b7wy6g" path="res://animation/turntable__text2.png" id="5_pla1h"]
 [ext_resource type="Script" uid="uid://rdsfw8gurykb" path="res://mill.gd" id="6_doq0o"]
 [ext_resource type="Script" uid="uid://eqy3ghq3wg5" path="res://diskfixL.gd" id="6_pla1h"]
 [ext_resource type="Texture2D" uid="uid://2521nq2aov0k" path="res://animation/turntable__5spez.png" id="7_5cguc"]
@@ -33,9 +33,9 @@ z_index = 10
 position = Vector2(2095, -12)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("3_mkv4a")
-target_mask_texture = ExtResource("4_vsqi5")
-target_pattern_texture = ExtResource("5_pla1h")
-rotation_mode = 1
+target_mask_texture = ExtResource("4_cwiy1")
+target_pattern_texture = ExtResource("5_5cguc")
+rotation_mode = 2
 rotation_speed_degrees = 90.0
 
 [node name="TurntablefixL" parent="." unique_id=1689889040 instance=ExtResource("1_jr2xm")]

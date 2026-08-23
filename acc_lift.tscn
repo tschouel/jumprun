@@ -535,21 +535,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amjpe"]
-size = Vector2(573, 20)
+size = Vector2(608.5625, 122)
 
 [sub_resource type="Animation" id="Animation_0qcv0"]
-length = 0.001
+length = 5.2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AccLiftAnim:frame")
+tracks/0/path = NodePath("AccLiftSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [130]
+"times": PackedFloat32Array(0, 5.1966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 130]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -558,10 +559,10 @@ tracks/1/path = NodePath("AccLift:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8333334, 1.96, 2.3433335, 3.7333336, 4.866667),
+"transitions": PackedFloat32Array(1.6817931, 0.6155722, 1, 1.3195081, 0.73204285, 1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(-1, -923), Vector2(-1, -2388), Vector2(-18, -2318), Vector2(15, -1006), Vector2(3, -69)]
 }
 
 [sub_resource type="Animation" id="Animation_4tb0w"]
@@ -571,7 +572,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AccLiftAnim:frame")
+tracks/0/path = NodePath("AccLiftSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -587,10 +588,10 @@ tracks/1/path = NodePath("AccLift:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.06666667, 0.38, 0.71, 1.6666666, 1.88, 2.52, 3.05, 4.4),
-"transitions": PackedFloat32Array(0.9659365, 1, 0.63728076, 0.9012519, 1.1486983, 0.9659361, 0.5743493, 1),
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.4666667, 0.5, 0.53333336, 0.5666667, 0.6333334, 0.6666667, 0.70000005, 0.73333335, 0.7666667, 0.8333334, 0.9333334, 1.0333334, 1.1666667, 1.2333333, 1.3333334, 1.4333334, 1.5333334, 1.6000001, 1.6668862, 1.7666668, 1.8000001, 1.8666668, 1.9333334, 2, 2.0666668, 2.1333334, 2.2, 2.266667, 2.4333334, 2.5333335, 2.6000001, 2.7, 2.8000002, 2.9, 3.0000002, 3.1000001, 3.2000003, 3.3000002, 3.4, 3.5000002, 3.6000001, 3.7333336, 3.8333335, 3.9333336, 4.033334, 4.1333337, 4.2333336, 4.3333335, 4.4),
+"transitions": PackedFloat32Array(1.624505, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-32, 230), Vector2(-28, -124), Vector2(-23.743402, -767.397), Vector2(-12, -2186), Vector2(-7, -2139), Vector2(-13.421446, -1651.3845), Vector2(-43, -980), Vector2(-38, 215)]
+"values": [Vector2(25, 14), Vector2(23, 0), Vector2(21, -14), Vector2(23, -33), Vector2(21, -55), Vector2(21, -85), Vector2(24, -118), Vector2(16, -196), Vector2(18, -238), Vector2(20, -287), Vector2(18, -339), Vector2(18, -394), Vector2(23, -509), Vector2(18, -569), Vector2(24, -631), Vector2(21, -697), Vector2(15, -832), Vector2(17, -905), Vector2(15, -974), Vector2(16, -1080), Vector2(12, -1086), Vector2(11, -1258), Vector2(17, -1488), Vector2(9, -1684), Vector2(19, -1914), Vector2(20, -2019), Vector2(18, -2170), Vector2(9, -2300), Vector2(18, -2360), Vector2(17, -2403), Vector2(22, -2388), Vector2(22, -2377), Vector2(22, -2371), Vector2(20, -2350), Vector2(23, -2320), Vector2(20, -2287), Vector2(20, -2241), Vector2(23, -2194), Vector2(23, -2140), Vector2(20, -2110), Vector2(19, -1944), Vector2(19, -1829), Vector2(22, -1755), Vector2(22, -1628), Vector2(17, -1498), Vector2(24, -1367), Vector2(24, -1231), Vector2(21, -1098), Vector2(19, -963), Vector2(14, -832), Vector2(13, -703), Vector2(15, -584), Vector2(21, -469), Vector2(18, -364), Vector2(22, -265), Vector2(20, -186), Vector2(14, -109), Vector2(23, -58), Vector2(16, -17), Vector2(19.600002, -1.9999905), Vector2(22, 8)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amjpe"]
@@ -605,25 +606,28 @@ size = Vector2(21, 796)
 [node name="AccLift" type="Node2D" unique_id=317700877]
 script = ExtResource("1_0qcv0")
 
-[node name="AccLiftAnim" type="AnimatedSprite2D" parent="." unique_id=965355489]
+[node name="AccLiftSprite" type="AnimatedSprite2D" parent="." unique_id=965355489]
 unique_name_in_owner = true
-position = Vector2(337, -1915)
+position = Vector2(340, -863)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"Accord"
-frame = 130
 
 [node name="AccLift" type="AnimatableBody2D" parent="." unique_id=1001983717]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AccLift" unique_id=359450082]
-position = Vector2(326, -1039)
+position = Vector2(316.78125, 147)
 shape = SubResource("RectangleShape2D_amjpe")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1181451768]
+[node name="AccliftAn" type="AnimationPlayer" parent="." unique_id=1181451768]
+unique_name_in_owner = true
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_amjpe")
-autoplay = &"lift"
+autoplay = &"RESET"
 
 [node name="Eingangblock" type="Area2D" parent="." unique_id=1482184803]
+position = Vector2(18, 595)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Eingangblock" unique_id=584867597]
 position = Vector2(13.5, -409)

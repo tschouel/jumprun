@@ -16,8 +16,6 @@ polygon = PackedVector2Array(10.190994, -20.45107, 2106.4937, -26.84203, 2101.50
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci28e"]
 size = Vector2(28.33333, 0.32019794)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6wwtt"]
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_shhik"]
 particle_flag_disable_z = true
 emission_shape = 3
@@ -59,7 +57,6 @@ shape = SubResource("RectangleShape2D_ci28e")
 z_index = 1
 position = Vector2(-13.220276, -6.3615623)
 scale = Vector2(150, 200)
-texture = SubResource("PlaceholderTexture2D_6wwtt")
 
 [node name="ColorRect" type="ColorRect" parent="Boden/Sprite2D" unique_id=358603303]
 offset_right = 40.0

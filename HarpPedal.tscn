@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://boc1fqnx310ww"]
+
+[ext_resource type="Script" uid="uid://3xjrhgki5d7f" path="res://harp_pedal.gd" id="1_1jcv5"]
+[ext_resource type="Texture2D" uid="uid://du6i1cjy2nm3b" path="res://Documents/jumprun/animation/Harp__Pedal1.png" id="1_1mlgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(34, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8yc8"]
+size = Vector2(20, 2)
+
+[node name="Pedal" type="Node2D" unique_id=1769086405]
+script = ExtResource("1_1jcv5")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=308852297]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1880001019]
+texture = ExtResource("1_1mlgq")
+
+[node name="TopSensor" type="Area2D" parent="AnimatableBody2D" unique_id=761116708]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/TopSensor" unique_id=872366574]
+position = Vector2(-33, 4.5)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="BottomSensor" type="Area2D" parent="AnimatableBody2D" unique_id=565053705]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/BottomSensor" unique_id=715193169]
+position = Vector2(-33, 13)
+shape = SubResource("RectangleShape2D_c8yc8")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AnimatableBody2D" unique_id=329154232]
+polygon = PackedVector2Array(49, -13, 5, -9, -16, 5, -50, 5, -50, 8, -40, 13, -26, 13, 17, -6, 49, -7)

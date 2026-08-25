@@ -42,11 +42,24 @@ var is_ground_active: bool = true
 @onready var driving_module = $DrivingMovement
 @onready var lane_module = $LaneMovement
 var _last_global_x: float = 0.0
+
+# --- Spiegelung asymmetrischer Collider bei Richtungswechsel ---
+@onready var headcoll: CollisionPolygon2D = $Headcoll
+@onready var footcoll: CollisionPolygon2D = $Footcoll
+var _headcoll_original_polygon: PackedVector2Array
+var _footcoll_original_polygon: PackedVector2Array
+var _headcoll_original_x: float
+var _footcoll_original_x: float
+var _facing: int = 1  # 1 = rechts (Standard), -1 = links
+
 func _ready() -> void:
 	_last_global_x = global_position.x
+	_headcoll_original_polygon = headcoll.polygon.duplicate()
+	_footcoll_original_polygon = footcoll.polygon.duplicate()
+	_headcoll_original_x = headcoll.position.x
+	_footcoll_original_x = footcoll.position.x
 	if not is_on_path:
 		_recalculate_physics()
-
 	if flying_module:
 		flying_module.setup(self)
 	if ground_module:
@@ -57,17 +70,35 @@ func _ready() -> void:
 		driving_module.setup(self)
 	if lane_module:
 		lane_module.setup(self)
-
 	_check_default_sprite_state()
+
+## Wird von den Movement-Modulen aufgerufen, sobald sich die Blickrichtung ändert.
+## dir: 1 = nach rechts, -1 = nach links
+func set_facing(dir: int) -> void:
+	if dir == _facing:
+		return
+	_facing = dir
+	_mirror_collider(headcoll, _headcoll_original_polygon, _headcoll_original_x)
+	_mirror_collider(footcoll, _footcoll_original_polygon, _footcoll_original_x)
+
+func _mirror_collider(node: CollisionPolygon2D, original_polygon: PackedVector2Array, original_x: float) -> void:
+	if _facing == 1:
+		node.polygon = original_polygon
+		node.position.x = original_x
+	else:
+		var mirrored := PackedVector2Array()
+		for p in original_polygon:
+			mirrored.append(Vector2(-p.x, p.y))
+		node.polygon = mirrored
+		node.position.x = -original_x
+
 func _recalculate_physics() -> void:
 	if bpm <= 0.0:
 		return
-
 	var bar_duration = (60.0 / bpm) * 4.0
 	forward_speed = units_per_bar / bar_duration
 	var beat_duration = 60.0 / bpm
 	var jump_duration = beat_duration * beats_per_jump
-
 	if jump_duration > 0.0:
 		gravity = (8.0 * jump_height) / (jump_duration * jump_duration)
 		JUMP_VELOCITY = -(4.0 * jump_height) / jump_duration

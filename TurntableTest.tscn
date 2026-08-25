@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://eqy3ghq3wg5" path="res://diskfixL.gd" id="6_pla1h"]
 [ext_resource type="Texture2D" uid="uid://2521nq2aov0k" path="res://animation/turntable__5spez.png" id="7_5cguc"]
 [ext_resource type="Texture2D" uid="uid://dwuwh7x4hcrhs" path="res://animation/turntable__text4.png" id="7_cwiy1"]
+[ext_resource type="Texture2D" uid="uid://dkgtnw1rl362e" path="res://animation/Gramo_Layer 1.png" id="14_5cguc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v544p"]
 size = Vector2(4.71, 81)
@@ -22,6 +23,8 @@ size = Vector2(446.9568, 12.019371)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
 size = Vector2(75.15474, 7.681053)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hq02e"]
 
 [node name="Area2D" type="Area2D" unique_id=1496625046]
 script = ExtResource("1_upikb")
@@ -49,8 +52,8 @@ rotation_speed_degrees = 90.0
 
 [node name="TurntableRiddleR" parent="." unique_id=1238660802 node_paths=PackedStringArray("shape_triggers", "style_triggers", "pattern_triggers", "rotation_triggers") instance=ExtResource("1_jr2xm")]
 z_index = -50
-position = Vector2(834.99994, -378.00003)
-scale = Vector2(2.5, 2.5)
+position = Vector2(357, -1100)
+scale = Vector2(2, 2)
 shape_triggers = [NodePath("../millRight/KeytrigMainform/Keytrig1/KeytrigMain1"), NodePath("../millRight/KeytrigMainform/Keytrig2/KeytrigMain2"), NodePath("../millRight/KeytrigMainform/Keytrig3/KeytrigMain3"), NodePath("../millRight/KeytrigMainform/Keytrig4/KeytrigMain4")]
 style_triggers = [NodePath("../millRight/KeytrigSubform/Keytrig1/KeytrigSub1"), NodePath("../millRight/KeytrigSubform/Keytrig2/KeytrigSub2"), NodePath("../millRight/KeytrigSubform/Keytrig3/KeytrigSub3"), NodePath("../millRight/KeytrigSubform/Keytrig4/KeytrigSub4")]
 pattern_triggers = [NodePath("../millRight/KeytrigText/Keytrig1/KeytrigText1"), NodePath("../millRight/KeytrigText/Keytrig2/KeytrigText2"), NodePath("../millRight/KeytrigText/Keytrig3/KeytrigText3"), NodePath("../millRight/KeytrigText/Keytrig4/KeytrigText4")]
@@ -969,3 +972,10 @@ offset_left = -656.869
 offset_top = 5.2884703
 offset_right = -616.869
 offset_bottom = 45.28847
+
+[node name="GramoLayer1" type="Sprite2D" parent="." unique_id=1761339420]
+z_index = -100
+material = SubResource("CanvasItemMaterial_hq02e")
+position = Vector2(545, -13592)
+scale = Vector2(25, 25)
+texture = ExtResource("14_5cguc")

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dif7i6t0g6xmr"]
+
+[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="1_oodcg"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_x2n0l"]
+[ext_resource type="Texture2D" uid="uid://ct2vs7wduy54p" path="res://Documents/jumprun/animation/Harp__Body.png" id="2_jrw0r"]
+[ext_resource type="PackedScene" uid="uid://boc1fqnx310ww" path="res://HarpPedal.tscn" id="3_yhh30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrw0r"]
+size = Vector2(4.71, 81)
+
+[node name="Pedal" type="Area2D" unique_id=1060647077]
+script = ExtResource("1_oodcg")
+zoom = 0.8
+
+[node name="Boden" type="StaticBody2D" parent="." unique_id=1728980005]
+rotation = -0.006981317
+scale = Vector2(1.0078416, 0.2611028)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=1646822983]
+position = Vector2(954.7091, -15.063599)
+scale = Vector2(400, 0.99999994)
+shape = SubResource("RectangleShape2D_jrw0r")
+
+[node name="ColorRect" type="ColorRect" parent="Boden" unique_id=1679898522]
+offset_left = 5.709244
+offset_top = -54.063538
+offset_right = 45.709244
+offset_bottom = -14.063538
+scale = Vector2(47.43999, 1)
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_x2n0l")]
+position = Vector2(569, -59)
+
+[node name="HarpBody" type="Sprite2D" parent="." unique_id=1057925039]
+position = Vector2(1193.0001, -2351.0002)
+scale = Vector2(5, 5)
+texture = ExtResource("2_jrw0r")
+
+[node name="Pedal" parent="." unique_id=1769086405 instance=ExtResource("3_yhh30")]
+position = Vector2(795, -456.00003)
+scale = Vector2(6, 6)
+step_size = 5.0

@@ -1,92 +1,277 @@
 [gd_scene format=3 uid="uid://c1yljb4qmxovq"]
 
-[ext_resource type="Texture2D" uid="uid://baiot224jhvor" path="res://animation/pianomechanic00.png" id="1_ci3bu"]
 [ext_resource type="Script" uid="uid://duuex1pwdhjb4" path="res://pianokey.gd" id="1_trbsr"]
-[ext_resource type="Texture2D" uid="uid://b32envrixmily" path="res://animation/pianomechanic01.png" id="2_p7j0c"]
-[ext_resource type="Texture2D" uid="uid://d1ycekd32kcrj" path="res://animation/pianomechanic02.png" id="3_trbsr"]
-[ext_resource type="Texture2D" uid="uid://de7oomxi6gngx" path="res://animation/pianomechanic03.png" id="4_lxvvw"]
-[ext_resource type="Texture2D" uid="uid://boem02m7vbqdl" path="res://animation/pianomechanic04.png" id="5_bxn3f"]
-[ext_resource type="Texture2D" uid="uid://dpvvn5bkt50s8" path="res://animation/pianomechanic05.png" id="6_tjf73"]
-[ext_resource type="Texture2D" uid="uid://bdpugsugwjqew" path="res://animation/pianomechanic06.png" id="7_ifqyt"]
-[ext_resource type="Texture2D" uid="uid://bcex6aqt5wvqy" path="res://animation/pianomechanic07.png" id="8_p55gf"]
-[ext_resource type="Texture2D" uid="uid://bf3d52wpwccvq" path="res://animation/pianomechanic08.png" id="9_snegc"]
-[ext_resource type="Texture2D" uid="uid://bhomw6qbqaxr2" path="res://animation/pianomechanic09.png" id="10_fssa1"]
-[ext_resource type="Texture2D" uid="uid://yb0hty1i018f" path="res://animation/pianomechanic10.png" id="11_d0y3k"]
-[ext_resource type="Texture2D" uid="uid://cqwtn602leesq" path="res://animation/pianomechanic11.png" id="12_5yc7b"]
-[ext_resource type="Texture2D" uid="uid://ccjfajatrgrgu" path="res://animation/pianomechanic12.png" id="13_uup6w"]
-[ext_resource type="Texture2D" uid="uid://dgh7m4p7tbesq" path="res://animation/pianomechanic13.png" id="14_y6i3w"]
-[ext_resource type="Texture2D" uid="uid://cveach7uwhbar" path="res://animation/pianomechanic14.png" id="15_3v4eh"]
-[ext_resource type="Texture2D" uid="uid://c15owr0yn2al8" path="res://animation/pianomechanic15.png" id="16_vq6el"]
-[ext_resource type="Texture2D" uid="uid://bmcrk6j66m7f3" path="res://animation/pianomechanic16.png" id="17_52kiw"]
-[ext_resource type="Texture2D" uid="uid://bl6lfjuq4y8si" path="res://animation/pianomechanic17.png" id="18_lv2l4"]
-[ext_resource type="Texture2D" uid="uid://c87b2qmx6aco5" path="res://animation/pianomechanic18.png" id="19_atxpe"]
-[ext_resource type="Texture2D" uid="uid://ctd0disk48uws" path="res://animation/pianomechanic19.png" id="20_kmhd4"]
+[ext_resource type="Texture2D" uid="uid://cb2s3oihfpj4x" path="res://animation/PianoHammer 00.png" id="2_dyv6b"]
+[ext_resource type="Texture2D" uid="uid://cvl6xybhvym2c" path="res://animation/PianoHammer 01.png" id="3_hl0uh"]
+[ext_resource type="Texture2D" uid="uid://fhyfq4nvvmu2" path="res://animation/PianoHammer 02.png" id="4_kxinw"]
+[ext_resource type="Texture2D" uid="uid://cgd6kunodlw2g" path="res://animation/PianoHammer 03.png" id="5_53ten"]
+[ext_resource type="Texture2D" uid="uid://h4qmcm82yqhv" path="res://animation/PianoHammer 04.png" id="6_wkgaf"]
+[ext_resource type="Texture2D" uid="uid://b2fvp2t4c031j" path="res://animation/PianoHammer 05.png" id="7_o44l0"]
+[ext_resource type="Texture2D" uid="uid://0e0uy2dutbtj" path="res://animation/PianoHammer 06.png" id="8_tthio"]
+[ext_resource type="Texture2D" uid="uid://25n3bjq4spsm" path="res://animation/PianoHammer 07.png" id="9_iw6y4"]
+[ext_resource type="Texture2D" uid="uid://dmlenc331iwjr" path="res://animation/PianoHammer 08.png" id="10_xntuf"]
+[ext_resource type="Texture2D" uid="uid://dltvvw1c1a8m7" path="res://animation/PianoHammer 09.png" id="11_bscr2"]
+[ext_resource type="Texture2D" uid="uid://q8dv6u46r7vl" path="res://animation/PianoHammer 10.png" id="12_cma1g"]
+[ext_resource type="Texture2D" uid="uid://qx0g3201x2j6" path="res://animation/PianoHammer 11.png" id="13_q0h42"]
+[ext_resource type="Texture2D" uid="uid://crc3m8unxjs66" path="res://animation/PianoHammer 12.png" id="14_2xsd4"]
+[ext_resource type="Texture2D" uid="uid://cgygkeu28ofuu" path="res://animation/PianoHammer 13.png" id="15_uydka"]
+[ext_resource type="Texture2D" uid="uid://rg6bhd7ey7ko" path="res://animation/PianoHammer 14.png" id="16_adsk3"]
+[ext_resource type="Texture2D" uid="uid://bh5br8adh5ieu" path="res://animation/PianoHammer 15.png" id="17_7tmxj"]
+[ext_resource type="Texture2D" uid="uid://dhg7ufbenvkn3" path="res://animation/PianoHammer 16.png" id="18_8eoqk"]
+[ext_resource type="Texture2D" uid="uid://1ehj7rude3fc" path="res://animation/PianoHammer 17.png" id="19_rguew"]
+[ext_resource type="Texture2D" uid="uid://7iomsiw5snua" path="res://animation/PianoHammer 18.png" id="20_rta5u"]
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="21_p7j0c"]
+[ext_resource type="Texture2D" uid="uid://kxtf2tgcxwiu" path="res://animation/PianoHammer 19.png" id="21_vrmac"]
 [ext_resource type="Texture2D" uid="uid://bq4qq0lgnia10" path="res://animation/__Vibration.png" id="23_bxn3f"]
 [ext_resource type="Script" uid="uid://20e1qr2di66p" path="res://vibration_line.gd" id="23_lxvvw"]
+[ext_resource type="Texture2D" uid="uid://ksxcfy33vqg" path="res://animation/PianoOpen013.png" id="38_fj4q5"]
+[ext_resource type="Texture2D" uid="uid://b4x1t40yj8cyj" path="res://animation/PianoOpen014.png" id="39_dw00j"]
+[ext_resource type="Texture2D" uid="uid://d3v837gug0xef" path="res://animation/PianoOpen015.png" id="40_4j2sd"]
+[ext_resource type="Texture2D" uid="uid://bjnsf1xng2j4n" path="res://animation/PianoOpen016.png" id="41_2nsik"]
+[ext_resource type="Script" uid="uid://i0e2ujduu8rl" path="res://animationtrigger_onetime.gd" id="42_15md6"]
+[ext_resource type="Texture2D" uid="uid://rr4akkrj0ogj" path="res://animation/PianoOpen017.png" id="42_73aji"]
+[ext_resource type="Texture2D" uid="uid://ru4nqtw7jv0r" path="res://animation/PianoOpen018.png" id="43_fvvat"]
+[ext_resource type="Texture2D" uid="uid://bjvxte3o6q8nr" path="res://animation/PianoOpen019.png" id="44_8bsk3"]
+[ext_resource type="Texture2D" uid="uid://d4iaffb0v1pbd" path="res://animation/PianoOpen020.png" id="45_dyv6b"]
+[ext_resource type="Texture2D" uid="uid://cqs4icx8balxs" path="res://animation/PianoOpen021.png" id="46_hl0uh"]
+[ext_resource type="Texture2D" uid="uid://b2fhr1vxsg8ir" path="res://animation/PianoOpen022.png" id="47_kxinw"]
+[ext_resource type="Texture2D" uid="uid://dod1aoujnelte" path="res://animation/PianoOpen023.png" id="48_53ten"]
+[ext_resource type="Texture2D" uid="uid://6dffqc61vepb" path="res://animation/PianoOpen024.png" id="49_wkgaf"]
+[ext_resource type="Texture2D" uid="uid://dk5j8sur7kfpt" path="res://animation/PianoOpen025.png" id="50_o44l0"]
+[ext_resource type="Texture2D" uid="uid://c4v4jeyachvlh" path="res://animation/PianoOpen026.png" id="51_tthio"]
+[ext_resource type="Texture2D" uid="uid://b2u7sj2gpqrfy" path="res://animation/PianoOpen027.png" id="52_iw6y4"]
+[ext_resource type="Texture2D" uid="uid://bjcgbhs5kcl6p" path="res://animation/PianoOpen028.png" id="53_xntuf"]
+[ext_resource type="Texture2D" uid="uid://d14ohapm8e4kx" path="res://animation/PianoOpen029.png" id="54_bscr2"]
+[ext_resource type="Texture2D" uid="uid://cdueh3qwmpvgl" path="res://animation/PianoOpen030.png" id="55_cma1g"]
+[ext_resource type="Texture2D" uid="uid://cxtxfiuawu6y2" path="res://animation/PianoOpen031.png" id="56_q0h42"]
+[ext_resource type="Texture2D" uid="uid://de26jpernsw56" path="res://animation/PianoOpen032.png" id="57_2xsd4"]
+[ext_resource type="Texture2D" uid="uid://b215paceuxpdj" path="res://animation/PianoOpen033.png" id="58_uydka"]
+[ext_resource type="Texture2D" uid="uid://di6rqkqv3rp4l" path="res://animation/PianoOpen034.png" id="59_adsk3"]
+[ext_resource type="Texture2D" uid="uid://buiqe7s2xcb7f" path="res://animation/PianoOpen035.png" id="60_7tmxj"]
+[ext_resource type="Texture2D" uid="uid://dybisaiirtkih" path="res://animation/PianoOpen036.png" id="61_8eoqk"]
+[ext_resource type="Texture2D" uid="uid://c0d1mh5mohkwu" path="res://animation/PianoOpen037.png" id="62_rguew"]
+[ext_resource type="Texture2D" uid="uid://dsatugwyj35r" path="res://animation/PianoOpen038.png" id="63_rta5u"]
+[ext_resource type="Texture2D" uid="uid://cvggptghdskdj" path="res://animation/PianoOpen039.png" id="64_vrmac"]
+[ext_resource type="Texture2D" uid="uid://dhcwwfkmte8k1" path="res://animation/PianoOpen040.png" id="65_2r2fi"]
+[ext_resource type="Texture2D" uid="uid://cpvsjar7kuubu" path="res://animation/PianoOpen041.png" id="66_7jaxq"]
+[ext_resource type="Texture2D" uid="uid://cr4j7ors0jvme" path="res://animation/PianoOpen042.png" id="67_1vbjp"]
+[ext_resource type="Texture2D" uid="uid://b42vgr10sjiht" path="res://animation/PianoOpen043.png" id="68_fxd3x"]
+[ext_resource type="Texture2D" uid="uid://o4uapwqdh2fy" path="res://animation/PianoOpen044.png" id="69_khbtw"]
+[ext_resource type="Texture2D" uid="uid://bllng302fyt01" path="res://animation/PianoOpen045.png" id="70_q5rv7"]
+[ext_resource type="Texture2D" uid="uid://y76y6c4pljrg" path="res://animation/PianoOpen046.png" id="71_ps5ou"]
+[ext_resource type="Texture2D" uid="uid://b6omm65kdb8x3" path="res://animation/PianoOpen047.png" id="72_12hlq"]
+[ext_resource type="Texture2D" uid="uid://ue4dcewjgbc4" path="res://animation/PianoOpen048.png" id="73_rlcgv"]
+[ext_resource type="Texture2D" uid="uid://bfpuo3smwoa35" path="res://animation/PianoOpen049.png" id="74_7fpck"]
+[ext_resource type="Texture2D" uid="uid://bq5nikrnh8k8f" path="res://animation/PianoOpen050.png" id="75_yvtwa"]
+[ext_resource type="Texture2D" uid="uid://qmkxtd383f3x" path="res://animation/PianoOpen051.png" id="76_o6uu4"]
+[ext_resource type="Texture2D" uid="uid://i7g84cebflxm" path="res://animation/PianoOpen052.png" id="77_1fol6"]
+[ext_resource type="Texture2D" uid="uid://dlme2rdo4ybvu" path="res://animation/PianoOpen053.png" id="78_s306v"]
+[ext_resource type="Texture2D" uid="uid://dmbyqpkwkfxrp" path="res://animation/PianoOpen054.png" id="79_tldie"]
+[ext_resource type="Texture2D" uid="uid://gnoy5np6wda8" path="res://animation/PianoOpen055.png" id="80_46aud"]
+[ext_resource type="Texture2D" uid="uid://y3taon6fcsvi" path="res://animation/PianoOpen056.png" id="81_pke4p"]
+[ext_resource type="Texture2D" uid="uid://b0tyg4tx7yp7c" path="res://animation/PianoOpen057.png" id="82_lgnpv"]
+[ext_resource type="Texture2D" uid="uid://dbxgq4xkhhryl" path="res://animation/PianoOpen058.png" id="83_g4lwo"]
+[ext_resource type="Texture2D" uid="uid://bucuutd80e5sx" path="res://animation/PianoOpen059.png" id="84_71c78"]
+[ext_resource type="Texture2D" uid="uid://cxoohjesqhheg" path="res://animation/PianoOpen060.png" id="85_vj2bs"]
+[ext_resource type="Texture2D" uid="uid://dkx7d37hneduc" path="res://animation/PianoOpen061.png" id="86_qu7qj"]
+[ext_resource type="Texture2D" uid="uid://yjee7t7m0eyh" path="res://animation/PianoOpen062.png" id="87_h0f0r"]
+[ext_resource type="Texture2D" uid="uid://4ophasj3muby" path="res://animation/PianoOpen063.png" id="88_xe6q0"]
+[ext_resource type="Texture2D" uid="uid://bt7wkk4i32rpw" path="res://animation/PianoOpen064.png" id="89_b742b"]
+[ext_resource type="Texture2D" uid="uid://cyap5wyjybeq8" path="res://animation/PianoOpen065.png" id="90_khmhf"]
+[ext_resource type="Texture2D" uid="uid://cymrh75xq18ww" path="res://animation/PianoOpen066.png" id="91_q88ks"]
+[ext_resource type="Texture2D" uid="uid://bgcwa3rxxk6xs" path="res://animation/PianoOpen067.png" id="92_lphvq"]
+[ext_resource type="Texture2D" uid="uid://d183557ldollg" path="res://animation/PianoOpen068.png" id="93_dlcy3"]
+[ext_resource type="Texture2D" uid="uid://cfl5ujswa0whg" path="res://animation/PianoOpen069.png" id="94_n2jdt"]
+[ext_resource type="Texture2D" uid="uid://gq8q30wyu2sg" path="res://animation/PianoOpen070.png" id="95_0nuka"]
+[ext_resource type="Texture2D" uid="uid://dqe51p6mpptc0" path="res://animation/PianoOpen071.png" id="96_nrsuh"]
+[ext_resource type="Texture2D" uid="uid://puqlfjbsunor" path="res://animation/PianoOpen072.png" id="97_sqbxi"]
+[ext_resource type="Texture2D" uid="uid://ch2mf3seho33e" path="res://animation/PianoOpen073.png" id="98_hgii6"]
+[ext_resource type="Texture2D" uid="uid://dbeuonkn4ukix" path="res://animation/PianoOpen074.png" id="99_txgb4"]
+[ext_resource type="Texture2D" uid="uid://5nnhl4ey34rt" path="res://animation/PianoOpen075.png" id="100_e02ui"]
+[ext_resource type="Texture2D" uid="uid://dwy5wmft7sx8s" path="res://animation/PianoOpen076.png" id="101_b86f7"]
+[ext_resource type="Texture2D" uid="uid://s6ycn6bima12" path="res://animation/PianoOpen077.png" id="102_it36y"]
+[ext_resource type="Texture2D" uid="uid://bmbo0u24ff2wu" path="res://animation/PianoOpen078.png" id="103_ve000"]
+[ext_resource type="Texture2D" uid="uid://bcorva0idb204" path="res://animation/PianoOpen079.png" id="104_u8xyd"]
+[ext_resource type="Texture2D" uid="uid://clqpqgogp3vqa" path="res://animation/PianoOpen080.png" id="105_nm8bg"]
+[ext_resource type="Texture2D" uid="uid://hoijsoa3ib0y" path="res://animation/PianoOpen081.png" id="106_oeia1"]
+[ext_resource type="Texture2D" uid="uid://c8xcjx6krmmkm" path="res://animation/PianoOpen082.png" id="107_7r7a0"]
+[ext_resource type="Texture2D" uid="uid://d1y1fmrhspqku" path="res://animation/PianoOpen083.png" id="108_vjvwa"]
+[ext_resource type="Texture2D" uid="uid://bocmti8igce8s" path="res://animation/PianoOpen084.png" id="109_nosjy"]
+[ext_resource type="Texture2D" uid="uid://niibn4v1yrre" path="res://animation/PianoOpen085.png" id="110_6agtf"]
+[ext_resource type="Texture2D" uid="uid://c2aj1maiu2cka" path="res://animation/PianoOpen086.png" id="111_ilxam"]
+[ext_resource type="Texture2D" uid="uid://cebotjerry3gx" path="res://animation/PianoOpen087.png" id="112_u07id"]
+[ext_resource type="Texture2D" uid="uid://dd1rj0a68rt75" path="res://animation/PianoOpen088.png" id="113_p4o7w"]
+[ext_resource type="Texture2D" uid="uid://4jyl8r3bhf0s" path="res://animation/PianoOpen089.png" id="114_an1dg"]
+[ext_resource type="Texture2D" uid="uid://d4ba6oiimjd7p" path="res://animation/PianoOpen090.png" id="115_eakv2"]
+[ext_resource type="Texture2D" uid="uid://dbsku66l2y6rb" path="res://animation/PianoOpen091.png" id="116_cv7lo"]
+[ext_resource type="Texture2D" uid="uid://ctb7hsxred60s" path="res://animation/PianoOpen092.png" id="117_4enoc"]
+[ext_resource type="Texture2D" uid="uid://dy2n2u0qxy23s" path="res://animation/PianoOpen093.png" id="118_8ve6g"]
+[ext_resource type="Texture2D" uid="uid://b22bciracvoog" path="res://animation/PianoOpen094.png" id="119_t6ljd"]
+[ext_resource type="Texture2D" uid="uid://d0gj0e6dodhwd" path="res://animation/PianoOpen095.png" id="120_tqla5"]
+[ext_resource type="Texture2D" uid="uid://b1fm325hc86d" path="res://animation/PianoOpen096.png" id="121_cwt00"]
+[ext_resource type="Texture2D" uid="uid://ck8amy3d0caul" path="res://animation/PianoOpen097.png" id="122_p04fv"]
+[ext_resource type="Texture2D" uid="uid://dhncu5vq63w5u" path="res://animation/PianoOpen098.png" id="123_4s7gj"]
+[ext_resource type="Texture2D" uid="uid://cer6snewc7lvc" path="res://animation/PianoOpen099.png" id="124_o2t3n"]
+[ext_resource type="Texture2D" uid="uid://c75nyybdmbol8" path="res://animation/PianoOpen100.png" id="125_th3or"]
+[ext_resource type="Texture2D" uid="uid://cjxj8pojly7eg" path="res://animation/PianoOpen101.png" id="126_cakqm"]
+[ext_resource type="Texture2D" uid="uid://ciyhy3nhbpix6" path="res://animation/PianoOpen102.png" id="127_78ygf"]
+[ext_resource type="Texture2D" uid="uid://b15n4spedvgs6" path="res://animation/PianoOpen103.png" id="128_upsqs"]
+[ext_resource type="Texture2D" uid="uid://hvtc0tn63nf" path="res://animation/PianoOpen104.png" id="129_ekttk"]
+[ext_resource type="Texture2D" uid="uid://yj5nrpt644ot" path="res://animation/PianoOpen105.png" id="130_hxxb2"]
+[ext_resource type="Texture2D" uid="uid://dq36fjl5evrul" path="res://animation/PianoOpen106.png" id="131_cnrso"]
+[ext_resource type="Texture2D" uid="uid://bj3kujmkyqcn8" path="res://animation/PianoOpen107.png" id="132_357nx"]
+[ext_resource type="Texture2D" uid="uid://b0hinssqvrsml" path="res://animation/PianoOpen108.png" id="133_dvqy7"]
+[ext_resource type="Texture2D" uid="uid://ckdylf8xxxk4f" path="res://animation/PianoOpen109.png" id="134_3c1gn"]
+[ext_resource type="Texture2D" uid="uid://0ydw30pdhvli" path="res://animation/PianoOpen110.png" id="135_gujcb"]
+[ext_resource type="Texture2D" uid="uid://uxoyd8vktwcq" path="res://animation/PianoOpen111.png" id="136_331qy"]
+[ext_resource type="Texture2D" uid="uid://cd57vehwtxinj" path="res://animation/PianoOpen112.png" id="137_l3pvg"]
+[ext_resource type="Texture2D" uid="uid://jtrgnguvkkm4" path="res://animation/PianoOpen113.png" id="138_4d2hw"]
+[ext_resource type="Texture2D" uid="uid://cpvlbmasqau6e" path="res://animation/PianoOpen114.png" id="139_n5fv2"]
+[ext_resource type="Texture2D" uid="uid://b65kujdlj4cla" path="res://animation/PianoOpen115.png" id="140_oy3h2"]
+[ext_resource type="Texture2D" uid="uid://dhc0jl5ijblbl" path="res://animation/PianoOpen116.png" id="141_ss1yr"]
+[ext_resource type="Texture2D" uid="uid://dvtmlq1bjieuw" path="res://animation/PianoOpen117.png" id="142_jaky5"]
+[ext_resource type="Texture2D" uid="uid://x8lhon77rdmp" path="res://animation/PianoOpen118.png" id="143_00tsv"]
+[ext_resource type="Texture2D" uid="uid://c86gjsl6hhdl8" path="res://animation/PianoOpen119.png" id="144_n3d37"]
+[ext_resource type="Texture2D" uid="uid://bos67j5ckxdko" path="res://animation/PianoOpen120.png" id="145_1lh0k"]
+[ext_resource type="Texture2D" uid="uid://bu173b3ui1th3" path="res://animation/PianoOpen121.png" id="146_1h203"]
+[ext_resource type="Texture2D" uid="uid://b6004ma486t8f" path="res://animation/PianoOpen122.png" id="147_5b6wy"]
+[ext_resource type="Texture2D" uid="uid://ccuhgrcrevuig" path="res://animation/PianoOpen123.png" id="148_ud2sv"]
+[ext_resource type="Texture2D" uid="uid://crmk2yo5sol1i" path="res://animation/PianoOpen124.png" id="149_ehskv"]
+[ext_resource type="Texture2D" uid="uid://bgc553kft2te4" path="res://animation/PianoOpen125.png" id="150_aemup"]
+[ext_resource type="Texture2D" uid="uid://d4h1jxy2mgxb" path="res://animation/PianoOpen126.png" id="151_4hic7"]
+[ext_resource type="Texture2D" uid="uid://d37cnjegl2fpx" path="res://animation/PianoOpen127.png" id="152_1petj"]
+[ext_resource type="Texture2D" uid="uid://c83uqv5lkccgk" path="res://animation/PianoOpen128.png" id="153_rau7t"]
+[ext_resource type="Texture2D" uid="uid://fs6obosv686c" path="res://animation/PianoOpen129.png" id="154_58s18"]
+[ext_resource type="Texture2D" uid="uid://c0vaymhv4xcb8" path="res://animation/PianoOpen130.png" id="155_g6n1x"]
+[ext_resource type="Texture2D" uid="uid://cy6e25r6x6nm0" path="res://animation/PianoOpen131.png" id="156_uq0sa"]
+[ext_resource type="Texture2D" uid="uid://cbjjuiwknrqlx" path="res://animation/PianoOpen132.png" id="157_uvrv8"]
+[ext_resource type="Texture2D" uid="uid://ovvkwrbcfleh" path="res://animation/PianoOpen133.png" id="158_8ienq"]
+[ext_resource type="Texture2D" uid="uid://c3qgjot0ob2oj" path="res://animation/PianoOpen134.png" id="159_ysxn3"]
+[ext_resource type="Texture2D" uid="uid://b5ib68d3q3jk3" path="res://animation/PianoOpen135.png" id="160_637a7"]
+[ext_resource type="Texture2D" uid="uid://1exvy3srwjpe" path="res://animation/PianoOpen136.png" id="161_jp2v8"]
+[ext_resource type="Texture2D" uid="uid://dp26n8gv75prq" path="res://animation/PianoOpen137.png" id="162_40kdm"]
+[ext_resource type="Texture2D" uid="uid://c62micxu51k2w" path="res://animation/PianoOpen138.png" id="163_1uxb5"]
+[ext_resource type="Texture2D" uid="uid://ckhyp8o7yxx8t" path="res://animation/PianoOpen139.png" id="164_bei7u"]
+[ext_resource type="Texture2D" uid="uid://cs4goscis6nah" path="res://animation/PianoOpen140.png" id="165_cgkv6"]
+[ext_resource type="Texture2D" uid="uid://bjpnin53wk16d" path="res://animation/PianoOpen141.png" id="166_2qplo"]
+[ext_resource type="Texture2D" uid="uid://csvvl8ppek1gm" path="res://animation/PianoOpen142.png" id="167_7bfpa"]
+[ext_resource type="Texture2D" uid="uid://cg8g2yns70pfv" path="res://animation/PianoOpen143.png" id="168_2clcr"]
+[ext_resource type="Texture2D" uid="uid://kxho4mu78lod" path="res://animation/PianoOpen144.png" id="169_oaw4x"]
+[ext_resource type="Texture2D" uid="uid://c3yy5dnn2dwvv" path="res://animation/PianoOpen145.png" id="170_k4pwk"]
+[ext_resource type="Texture2D" uid="uid://ocnseca8p0pp" path="res://animation/PianoOpen146.png" id="171_yg5e6"]
+[ext_resource type="Texture2D" uid="uid://scesu33sl2u1" path="res://animation/PianoOpen147.png" id="172_0konl"]
+[ext_resource type="Texture2D" uid="uid://cdrkq1ge12cp0" path="res://animation/PianoOpen148.png" id="173_ysldc"]
+[ext_resource type="Texture2D" uid="uid://b2821d8b1bk5x" path="res://animation/PianoOpen149.png" id="174_3qc6k"]
+[ext_resource type="Texture2D" uid="uid://bpy4lbckid887" path="res://animation/PianoOpen150.png" id="175_gw76o"]
+[ext_resource type="Texture2D" uid="uid://dj78pj1xnsn6s" path="res://animation/PianoOpen151.png" id="176_pycc4"]
+[ext_resource type="Texture2D" uid="uid://cw8nd3k3raijk" path="res://animation/PianoOpen152.png" id="177_70yim"]
+[ext_resource type="Texture2D" uid="uid://djsonjmlvdmyj" path="res://animation/PianoOpen153.png" id="178_2svrk"]
+[ext_resource type="Texture2D" uid="uid://bu05dm7rsqcsl" path="res://animation/PianoOpen154.png" id="179_0f5lc"]
+[ext_resource type="Texture2D" uid="uid://br1q3hqi2s5e3" path="res://animation/PianoOpen155.png" id="180_hiqmp"]
+[ext_resource type="Texture2D" uid="uid://c3df6go3t64hh" path="res://animation/PianoOpen156.png" id="181_jw85e"]
+[ext_resource type="Texture2D" uid="uid://8mb4pf0vt1vd" path="res://animation/PianoOpen157.png" id="182_7pye0"]
+[ext_resource type="Texture2D" uid="uid://w063w772p1k2" path="res://animation/PianoOpen158.png" id="183_vvrcn"]
+[ext_resource type="Texture2D" uid="uid://smkqlqo3c68d" path="res://animation/PianoOpen159.png" id="184_ibi7i"]
+[ext_resource type="Texture2D" uid="uid://bdiv2klmoxdr7" path="res://animation/PianoOpen160.png" id="185_mp088"]
+[ext_resource type="Texture2D" uid="uid://ce82ca2howof2" path="res://animation/PianoOpen161.png" id="186_si3re"]
+[ext_resource type="Texture2D" uid="uid://b6py7tomsjfjo" path="res://animation/PianoOpen162.png" id="187_51bjy"]
+[ext_resource type="Texture2D" uid="uid://b5k2kocd0687c" path="res://animation/PianoOpen163.png" id="188_ragoi"]
+[ext_resource type="Texture2D" uid="uid://dxjmermp2sbfh" path="res://animation/PianoOpen164.png" id="189_tw86c"]
+[ext_resource type="Texture2D" uid="uid://m3bewi6vwuta" path="res://animation/PianoOpen165.png" id="190_wb1xv"]
+[ext_resource type="Texture2D" uid="uid://b1r5vyamtl8d3" path="res://animation/PianoOpen166.png" id="191_5n1xl"]
+[ext_resource type="Script" uid="uid://cag4ewig06kvv" path="res://sustain_pedal.gd" id="192_2r2fi"]
+[ext_resource type="Texture2D" uid="uid://dhg0brcoalh5y" path="res://animation/PianoOpen167.png" id="192_51ah3"]
+[ext_resource type="Texture2D" uid="uid://ku0g1rq272sw" path="res://animation/PianoOpen168.png" id="193_lc6qg"]
+[ext_resource type="Texture2D" uid="uid://bt36wy1j748oo" path="res://animation/PianoOpen169.png" id="194_d1r4e"]
+[ext_resource type="Texture2D" uid="uid://drteslfkp1iw6" path="res://animation/PianoOpen170.png" id="195_nex4a"]
+[ext_resource type="Texture2D" uid="uid://cfriet4h166u" path="res://animation/PianoOpen171.png" id="196_txsqq"]
+[ext_resource type="Texture2D" uid="uid://cq0axaunxx0ew" path="res://animation/PianoOpen172.png" id="197_d1vwq"]
+[ext_resource type="Texture2D" uid="uid://deni2dqe6v8fp" path="res://animation/PianoOpen173.png" id="198_qey2a"]
+[ext_resource type="Texture2D" uid="uid://bm6rbxmen5go5" path="res://animation/PianoOpen174.png" id="199_se2cu"]
+[ext_resource type="Texture2D" uid="uid://dkfoq6a7pcrn7" path="res://animation/PianoOpen175.png" id="200_pjlvg"]
+[ext_resource type="Texture2D" uid="uid://cbmexoexf0li7" path="res://animation/PianoOpen176.png" id="201_js5hl"]
+[ext_resource type="Texture2D" uid="uid://dn7l1gpqu0y1w" path="res://animation/PianoOpen177.png" id="202_cp4gm"]
+[ext_resource type="Texture2D" uid="uid://86ghx0skiiq4" path="res://animation/PianoOpen178.png" id="203_7nxt2"]
+[ext_resource type="Texture2D" uid="uid://ck5tyi346yqhm" path="res://animation/PianoOpen179.png" id="204_qfdem"]
+[ext_resource type="Texture2D" uid="uid://cnotk8s6hljrm" path="res://animation/PianoPedal 05.png" id="209_lgnpv"]
+[ext_resource type="Texture2D" uid="uid://qaffekwrkkby" path="res://animation/PianoPedal 06.png" id="210_g4lwo"]
+[ext_resource type="Texture2D" uid="uid://cyw54ttdye3ye" path="res://animation/PianoPedal 07.png" id="211_71c78"]
+[ext_resource type="Texture2D" uid="uid://d81736repqe2" path="res://animation/PianoPedal 08.png" id="212_vj2bs"]
+[ext_resource type="Texture2D" uid="uid://b3g26imfudxe0" path="res://animation/PianoPedal 09.png" id="213_qu7qj"]
+[ext_resource type="Texture2D" uid="uid://cevn42qb0stva" path="res://animation/PianoPedal 10.png" id="214_h0f0r"]
+[ext_resource type="Texture2D" uid="uid://bfk3wu2xid4qf" path="res://animation/PianoPedal 11.png" id="215_xe6q0"]
+[ext_resource type="Texture2D" uid="uid://cbgxrrgjg5ucg" path="res://animation/PianoPedal 12.png" id="216_b742b"]
+[ext_resource type="Texture2D" uid="uid://wi5j46ahnped" path="res://animation/PianoPedal 13.png" id="217_khmhf"]
+[ext_resource type="Texture2D" uid="uid://ck0msl3ybp0to" path="res://animation/PianoPedal 14.png" id="218_q88ks"]
+[ext_resource type="Texture2D" uid="uid://dr3lcecdy5ly4" path="res://animation/PianoPedal 15.png" id="219_lphvq"]
+[ext_resource type="Texture2D" uid="uid://bnb7btsl1vj8y" path="res://animation/PianoPedal 16.png" id="220_dlcy3"]
+[ext_resource type="Texture2D" uid="uid://ch877ux62m38m" path="res://animation/PianoPedal 17.png" id="221_n2jdt"]
+[ext_resource type="Texture2D" uid="uid://66oh4cu1s6eh" path="res://animation/PianoPedal 18.png" id="222_0nuka"]
+[ext_resource type="Texture2D" uid="uid://cy48c2ik0n0si" path="res://animation/PianoPedal 19.png" id="223_nrsuh"]
+[ext_resource type="Texture2D" uid="uid://dnymvkynbfed1" path="res://animation/PianoPedal 20.png" id="224_sqbxi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ci3bu")
+"texture": ExtResource("2_dyv6b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_p7j0c")
+"texture": ExtResource("3_hl0uh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_trbsr")
+"texture": ExtResource("4_kxinw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_lxvvw")
+"texture": ExtResource("5_53ten")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_bxn3f")
+"texture": ExtResource("6_wkgaf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_tjf73")
+"texture": ExtResource("7_o44l0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_ifqyt")
+"texture": ExtResource("8_tthio")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_p55gf")
+"texture": ExtResource("9_iw6y4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_snegc")
+"texture": ExtResource("10_xntuf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_fssa1")
+"texture": ExtResource("11_bscr2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_d0y3k")
+"texture": ExtResource("12_cma1g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_5yc7b")
+"texture": ExtResource("13_q0h42")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_uup6w")
+"texture": ExtResource("14_2xsd4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_y6i3w")
+"texture": ExtResource("15_uydka")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_3v4eh")
+"texture": ExtResource("16_adsk3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_vq6el")
+"texture": ExtResource("17_7tmxj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_52kiw")
+"texture": ExtResource("18_8eoqk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_lv2l4")
+"texture": ExtResource("19_rguew")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_atxpe")
+"texture": ExtResource("20_rta5u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_kmhd4")
+"texture": ExtResource("21_vrmac")
 }],
 "loop": 0,
 "name": &"pianotaste",
@@ -94,18 +279,18 @@ animations = [{
 }]
 
 [sub_resource type="Animation" id="Animation_trbsr"]
-length = 0.666
+length = 0.8028187
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/path = NodePath("AnimationPlayer/Taste:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [19]
+"update": 0,
+"values": [Vector2(-11, -19)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -119,18 +304,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.06283186]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Taste:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-11, -19)]
-}
+
+[sub_resource type="Animation" id="Animation_h32sy"]
+resource_name = "piano_open"
 
 [sub_resource type="Animation" id="Animation_lxvvw"]
 resource_name = "taste_bewegung"
@@ -150,45 +326,764 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Taste:rotation")
+tracks/1/path = NodePath("AnimationPlayer/Taste:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0030564182, 0.10000001, 0.13333334, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.05235988, 0.0, 0.0418879, 0.06283186]
+"values": [Vector2(-11, -10.000002), Vector2(-11, -19), Vector2(-1.9999998, 95), Vector2(1.0000019, 82), Vector2(-1.0000001, 9.999996)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Taste:position")
+tracks/2/path = NodePath("AnimationPlayer/Taste:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.4),
+"times": PackedFloat32Array(0, 0.0010188054, 0.10000001, 0.13333334, 0.20000002),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-11.999999, -7), Vector2(-11, 76), Vector2(-7.0000014, 1.0000019), Vector2(-8.999999, -0.99999905), Vector2(-11, -19)]
+"values": [0.06283186, 0.06283186, -0.006981317, 0.0017453292, 0.045378562]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bxn3f"]
 _data = {
 &"RESET": SubResource("Animation_trbsr"),
+&"piano_open": SubResource("Animation_h32sy"),
 &"taste_bewegung": SubResource("Animation_lxvvw")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixr7o"]
-size = Vector2(118.94739, 202)
+size = Vector2(87.63158, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8yc8"]
-size = Vector2(119.36429, 11.063608)
+size = Vector2(86.60485, 2.495536)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trbsr"]
 size = Vector2(4.71, 81)
 
-[node name="Pianokey" type="Area2D" unique_id=445377932]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0uk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("209_lgnpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_g4lwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_71c78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_vj2bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_qu7qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_h0f0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_xe6q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_b742b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_khmhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_q88ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_lphvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_dlcy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_n2jdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_0nuka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_nrsuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_sqbxi")
+}],
+"loop": 0,
+"name": &"PedalDown",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_dyv6b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PedalSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/pedal:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1545, 1929)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/pedal:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hl0uh"]
+resource_name = "sustainpedal"
+length = 0.67648685
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PedalSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0030564144, 0.6571295),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 20]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/pedal:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.11716263, 0.0010188054, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1545, 1929), Vector2(1545, 1929), Vector2(1557.9998, 1969)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/pedal:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.13753875, 0.0030564172, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.19024089]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxinw"]
+_data = {
+&"RESET": SubResource("Animation_dyv6b"),
+&"sustainpedal": SubResource("Animation_hl0uh")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8yc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_fj4q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_dw00j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_4j2sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_2nsik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_73aji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_fvvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_8bsk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_dyv6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_hl0uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_kxinw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_53ten")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_wkgaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_o44l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_tthio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_iw6y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xntuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bscr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_cma1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_q0h42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_2xsd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_uydka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_adsk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_7tmxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_8eoqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_rguew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_rta5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_vrmac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_2r2fi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_7jaxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_1vbjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_fxd3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_khbtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_q5rv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ps5ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_12hlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_rlcgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_7fpck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_yvtwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_o6uu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_1fol6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_s306v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_tldie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_46aud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_pke4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_lgnpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_g4lwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_71c78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_vj2bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_qu7qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_h0f0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_xe6q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_b742b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_khmhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_q88ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_lphvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_dlcy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_n2jdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_0nuka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_nrsuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_sqbxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_hgii6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_txgb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_e02ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_b86f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_it36y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_ve000")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_u8xyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_nm8bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_oeia1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_7r7a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_vjvwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_nosjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_6agtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_ilxam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_u07id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_p4o7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_an1dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_eakv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_cv7lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_4enoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_8ve6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_t6ljd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_tqla5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_cwt00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_p04fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_4s7gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_o2t3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_th3or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_cakqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_78ygf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_upsqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_ekttk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_hxxb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_cnrso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_357nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_dvqy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3c1gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_gujcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_331qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_l3pvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_4d2hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_n5fv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_oy3h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_ss1yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_jaky5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_00tsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_n3d37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_1lh0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_1h203")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_5b6wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_ud2sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_ehskv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_aemup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_4hic7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_1petj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_rau7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_58s18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_g6n1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_uq0sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_uvrv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_8ienq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_ysxn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_637a7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_jp2v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_40kdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_1uxb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_bei7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_cgkv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_2qplo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_7bfpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_2clcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_oaw4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_k4pwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_yg5e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_0konl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_ysldc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_3qc6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_gw76o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_pycc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_70yim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_2svrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_0f5lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_hiqmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_jw85e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_7pye0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_vvrcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_ibi7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_mp088")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_si3re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_51bjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_ragoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_tw86c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_wb1xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_5n1xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_51ah3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_lc6qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_d1r4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_nex4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_txsqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_d1vwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_qey2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_se2cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_pjlvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_js5hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_cp4gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_7nxt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_qfdem")
+}],
+"loop": 0,
+"name": &"Sustain",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_dhetq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PianoOpen:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Area2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_15md6"]
+resource_name = "piano_open"
+length = 2.0253854
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PianoOpen:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0010188073, 1.9775015),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 150]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Area2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.023432527, 0.53283525, 1.9978776),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.19381458, 1.3334315485236674]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dhetq"]
+_data = {
+&"RESET": SubResource("Animation_dhetq"),
+&"piano_open": SubResource("Animation_15md6")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0uk2"]
+size = Vector2(1762, 566)
+
+[node name="Pianokey" type="Area2D" unique_id=445377932 node_paths=PackedStringArray("anim_player", "trigger")]
 script = ExtResource("1_trbsr")
+anim_player = NodePath("AnimationPlayer")
+trigger = NodePath("AnimationPlayer/Taste/CollisionShape2D/TasteTrigger")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=360656739]
 position = Vector2(1800, -311)
@@ -196,7 +1091,6 @@ rotation = 3.1415927
 scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"pianotaste"
-frame = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=508041851]
 callback_mode_process = 0
@@ -211,7 +1105,7 @@ contact_monitor = true
 max_contacts_reported = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Taste" unique_id=1574404166]
-position = Vector2(926, -34)
+position = Vector2(855.5808, -125.95025)
 scale = Vector2(3.8, 1)
 shape = SubResource("RectangleShape2D_ixr7o")
 
@@ -219,12 +1113,12 @@ shape = SubResource("RectangleShape2D_ixr7o")
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Taste/CollisionShape2D/TasteTrigger" unique_id=1496076895]
-position = Vector2(-0.2631571, -9)
+position = Vector2(0.67821544, -8.1460495)
 scale = Vector2(1.0007207, 17.863712)
 shape = SubResource("RectangleShape2D_c8yc8")
 
 [node name="Boden" type="StaticBody2D" parent="." unique_id=685181392]
-position = Vector2(-62.999992, 168)
+position = Vector2(-66, 129.99998)
 rotation = -0.1734122
 scale = Vector2(0.367578, 0.2611028)
 
@@ -241,9 +1135,10 @@ offset_bottom = -518.0
 scale = Vector2(47.43999, 1)
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("21_p7j0c")]
-position = Vector2(334, -66)
+position = Vector2(299, -359)
 
 [node name="VibrationLine" type="CPUParticles2D" parent="." unique_id=189764832]
+visible = false
 emitting = false
 amount = 5000
 texture = ExtResource("23_bxn3f")
@@ -254,8 +1149,8 @@ emission_colors = PackedColorArray()
 direction = Vector2(0, -1)
 spread = 20.0
 gravity = Vector2(0, 90)
-initial_velocity_min = 171.57
-initial_velocity_max = 250.46
+initial_velocity_min = 150.0
+initial_velocity_max = 220.0
 scale_amount_min = 0.01
 scale_amount_max = 0.09
 script = ExtResource("23_lxvvw")
@@ -269,3 +1164,94 @@ position = Vector2(883, -658)
 
 [node name="PointB" type="Marker2D" parent="VibrationLine" unique_id=1941886430]
 position = Vector2(2899, -672)
+
+[node name="SustainPedal" type="Area2D" parent="." unique_id=210039585]
+script = ExtResource("192_2r2fi")
+
+[node name="PedalSprite" type="AnimatedSprite2D" parent="SustainPedal" unique_id=492675583]
+position = Vector2(1842, 577)
+rotation = -3.1415925
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_y0uk2")
+animation = &"PedalDown"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SustainPedal" unique_id=996006613]
+libraries/ = SubResource("AnimationLibrary_kxinw")
+
+[node name="pedal" type="RigidBody2D" parent="SustainPedal/AnimationPlayer" unique_id=793796648]
+position = Vector2(1545, 1929)
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SustainPedal/AnimationPlayer/pedal" unique_id=1601514834]
+position = Vector2(7.5, -2)
+scale = Vector2(3.8, 1)
+shape = SubResource("RectangleShape2D_ixr7o")
+
+[node name="SustainPedalTrigger" type="Area2D" parent="SustainPedal/AnimationPlayer/pedal/CollisionShape2D" unique_id=1755548104]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SustainPedal/AnimationPlayer/pedal/CollisionShape2D/SustainPedalTrigger" unique_id=1845096619]
+position = Vector2(-1.9736843, -13)
+scale = Vector2(1.0007207, 17.863712)
+shape = SubResource("RectangleShape2D_c8yc8")
+
+[node name="Boden2" type="StaticBody2D" parent="." unique_id=158877216]
+position = Vector2(623, 2154)
+rotation = -0.1734122
+scale = Vector2(0.367578, 0.2611028)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden2" unique_id=1978785719]
+position = Vector2(1204, -519)
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_trbsr")
+
+[node name="ColorRect" type="ColorRect" parent="Boden2" unique_id=550177517]
+offset_left = 255.0
+offset_top = -558.0
+offset_right = 295.0
+offset_bottom = -518.0
+scale = Vector2(47.43999, 1)
+
+[node name="PianoOpen" type="Area2D" parent="." unique_id=693274399 node_paths=PackedStringArray("anim_player", "trigger")]
+script = ExtResource("42_15md6")
+anim_player = NodePath("AnimationPlayer")
+animation_name = "piano_open"
+trigger = NodePath("../Area2D")
+
+[node name="PianoOpen" type="AnimatedSprite2D" parent="PianoOpen" unique_id=1160418649]
+z_index = 1
+position = Vector2(1725, -258)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_c8yc8")
+animation = &"Sustain"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PianoOpen" unique_id=960465112]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_dhetq")
+
+[node name="Area2D" type="RigidBody2D" parent="PianoOpen/AnimationPlayer" unique_id=1612858218]
+position = Vector2(1063, -393)
+freeze = true
+freeze_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PianoOpen/AnimationPlayer/Area2D" unique_id=1288184652]
+polygon = PackedVector2Array(-29, -15, -79, 113, -341, 121, -379, 167, -408, 240, -373, 238, -324, 173, 10, 169, 25, -27)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1400832560]
+position = Vector2(588, -362)
+
+[node name="testi" type="CollisionShape2D" parent="Area2D" unique_id=1440365142]
+position = Vector2(-513, 241)
+scale = Vector2(9.613594, 3.2950566)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1725493001]
+position = Vector2(588, -362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=301407359]
+position = Vector2(1357, -273)
+shape = SubResource("RectangleShape2D_y0uk2")

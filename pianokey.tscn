@@ -1118,7 +1118,7 @@ scale = Vector2(1.0007207, 17.863712)
 shape = SubResource("RectangleShape2D_c8yc8")
 
 [node name="Boden" type="StaticBody2D" parent="." unique_id=685181392]
-position = Vector2(-66, 129.99998)
+position = Vector2(-66, 136.99998)
 rotation = -0.1734122
 scale = Vector2(0.367578, 0.2611028)
 
@@ -1135,7 +1135,7 @@ offset_bottom = -518.0
 scale = Vector2(47.43999, 1)
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("21_p7j0c")]
-position = Vector2(299, -359)
+position = Vector2(299, -352)
 
 [node name="VibrationLine" type="CPUParticles2D" parent="." unique_id=189764832]
 visible = false

@@ -65,6 +65,16 @@
 [ext_resource type="Texture2D" uid="uid://btfhaxpqa155q" path="res://animation/Cass 142.png" id="62_mrl0s"]
 [ext_resource type="Texture2D" uid="uid://dviierynuag6h" path="res://animation/Cass 143.png" id="63_374vp"]
 [ext_resource type="Texture2D" uid="uid://xoonah0l7856" path="res://animation/Cass 144.png" id="64_gpleq"]
+[ext_resource type="Texture2D" uid="uid://cao048g30vrc7" path="res://animation/Cass 145.png" id="65_qvk2n"]
+[ext_resource type="Texture2D" uid="uid://3hjmq8hy2vmn" path="res://animation/Cass 146.png" id="66_jkjmp"]
+[ext_resource type="Texture2D" uid="uid://dfe3mxkfwj67d" path="res://animation/Cass 147.png" id="67_klpmi"]
+[ext_resource type="Texture2D" uid="uid://6skuqrone3po" path="res://animation/Cass 148.png" id="68_7cr56"]
+[ext_resource type="Texture2D" uid="uid://lbyh42tdlgro" path="res://animation/Cass 149.png" id="69_tbys0"]
+[ext_resource type="Texture2D" uid="uid://blu4lx6tgyf5p" path="res://animation/Cass 150.png" id="70_aw0ud"]
+[ext_resource type="Texture2D" uid="uid://v1hbd8pr0gd2" path="res://animation/Cass 151.png" id="71_wo6jt"]
+[ext_resource type="Texture2D" uid="uid://cdce027wxopw1" path="res://animation/Cass 152.png" id="72_jyh3c"]
+[ext_resource type="Texture2D" uid="uid://dm27wm6hu6gjr" path="res://animation/Cass 153.png" id="73_s8vqu"]
+[ext_resource type="Texture2D" uid="uid://cncaguj8s0g30" path="res://animation/Cass 154.png" id="74_euje5"]
 [ext_resource type="Texture2D" uid="uid://dx8duj4pvm1x4" path="res://animation/Cass 000.png" id="75_elup7"]
 [ext_resource type="Texture2D" uid="uid://f51t274yiu0y" path="res://animation/Cass 001.png" id="76_2ktnx"]
 [ext_resource type="Texture2D" uid="uid://3tg8gl68rhvv" path="res://animation/Cass 002.png" id="77_8elm4"]
@@ -154,7 +164,6 @@
 [ext_resource type="Texture2D" uid="uid://bch1uuqsu2uc2" path="res://animation/Cass 160.png" id="161_rk12f"]
 [ext_resource type="Script" uid="uid://rf65ym62uspl" path="res://tonband.gd" id="163_26tw5"]
 [ext_resource type="Shader" uid="uid://bj4gmrwy4u5ck" path="res://Casseteplayer.gdshader" id="163_gl3k7"]
-[ext_resource type="Script" uid="uid://5mo8xxkbk5d2" path="res://animation_trigger.gd" id="163_kl7am"]
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="163_prul2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
@@ -351,6 +360,36 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("64_gpleq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_qvk2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_jkjmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_klpmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_7cr56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_tbys0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_aw0ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_wo6jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_jyh3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_s8vqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_euje5")
 }],
 "loop": 1,
 "name": &"cass_loop",
@@ -647,17 +686,12 @@ size = Vector2(4.71, 81)
 script = ExtResource("1_eyna6")
 zoom = 0.7
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=349072360 node_paths=PackedStringArray("trigger_1", "trigger_2")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=349072360]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"cass_loop"
-frame_progress = 0.3369965
-script = ExtResource("163_kl7am")
-trigger_1 = NodePath("../Trigger")
-animation_1 = "load"
-animation_2 = "cass_loop"
-trigger_2 = NodePath("../Trigger/Trigger2")
-animation_3 = "stop"
+animation = &"stop"
+frame = 5
+frame_progress = 1.0
 
 [node name="Tonband" type="Line2D" parent="." unique_id=1149857604 node_paths=PackedStringArray("trigger", "source_path")]
 material = SubResource("ShaderMaterial_u0jqh")
@@ -669,12 +703,10 @@ round_precision = 15
 script = ExtResource("163_26tw5")
 trigger = NodePath("../Trigger")
 target_speed = 150.0
-flutter_enabled = null
-flutter_amount = null
-flutter_speed = null
-width_base = null
-width_jitter_amount = null
-width_jitter_speed = null
+pulse_width = null
+base_width = null
+pulse_amount = null
+pulse_speed = null
 source_path = NodePath("Tapepath")
 
 [node name="Tapepath" type="Path2D" parent="Tonband" unique_id=1420701788]
@@ -706,14 +738,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(770, 80)
 
 [node name="testi" type="CollisionShape2D" parent="Trigger" unique_id=1574512771]
-position = Vector2(-513, 241)
-scale = Vector2(9.613594, 3.2950566)
-shape = SubResource("RectangleShape2D_gl3k7")
-
-[node name="Trigger2" type="Area2D" parent="Trigger" unique_id=1697840481]
-position = Vector2(-509, 105)
-
-[node name="testi" type="CollisionShape2D" parent="Trigger/Trigger2" unique_id=1015178021]
 position = Vector2(-513, 241)
 scale = Vector2(9.613594, 3.2950566)
 shape = SubResource("RectangleShape2D_gl3k7")

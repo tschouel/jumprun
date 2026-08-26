@@ -970,9 +970,7 @@ camera_look_down_offset = 500.0
 position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"lookdownLoop"
-frame = 1
-frame_progress = 0.9957369
+animation = &"stand"
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false

@@ -1,0 +1,2360 @@
+{
+    "assets": {
+        "__type__": "Assets",
+        "colors": {
+            "__type__": "NamedColorList",
+            "name": "",
+            "uuid": "e3007ce9-e1e8-47a9-9b7e-3f3d7665d2e9",
+            "values": [
+            ]
+        },
+        "compositions": {
+            "__type__": "CompositionList",
+            "name": "",
+            "uuid": "07c00ea5-f9a2-41c5-a8ba-db1ff986463d",
+            "values": [
+                {
+                    "__type__": "Composition",
+                    "animation": {
+                        "__type__": "AnimationContainer",
+                        "first_frame": 0,
+                        "last_frame": 180
+                    },
+                    "fps": 60,
+                    "group_color": "#00000000",
+                    "height": 500,
+                    "locked": false,
+                    "name": "Composition",
+                    "shapes": [
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 677.3883076731973,
+                                        "y": 357.08955610183085
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 300.44776119402985,
+                                        "y": 287.3134328358209
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.27145522832870483,
+                                        "y": 0.645967423915863
+                                    }
+                                }
+                            },
+                            "uuid": "e4711eea-fe8d-405f-a9db-b4a2611ba035",
+                            "visible": false
+                        },
+                        {
+                            "__type__": "Group",
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "name": "Ellipse 1",
+                            "opacity": {
+                                "value": 0.5
+                            },
+                            "shapes": [
+                                {
+                                    "__type__": "Fill",
+                                    "color": {
+                                        "value": "#c8c8c8"
+                                    },
+                                    "fill_rule": "NonZero",
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Fill 1",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "18bd063a-d069-4492-9e1b-d6a3677fbe19",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Stroke",
+                                    "cap": "RoundCap",
+                                    "color": {
+                                        "value": "#000000"
+                                    },
+                                    "group_color": "#00000000",
+                                    "join": "RoundJoin",
+                                    "locked": false,
+                                    "miter_limit": 4,
+                                    "name": "Stroke 1",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "3028cf42-5717-42a1-9b7c-6c15e5347fa5",
+                                    "visible": true,
+                                    "width": {
+                                        "value": 1
+                                    }
+                                },
+                                {
+                                    "__type__": "Ellipse",
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Ellipse 2",
+                                    "position": {
+                                        "value": {
+                                            "x": 350.10752688172045,
+                                            "y": 335.32258064516134
+                                        }
+                                    },
+                                    "reversed": false,
+                                    "size": {
+                                        "value": {
+                                            "height": 263.7634408602151,
+                                            "width": 262.58064516129036
+                                        }
+                                    },
+                                    "uuid": "8d9e523a-1ca4-4709-b386-63e7b5bd0a01",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 350.10752688172045,
+                                        "y": 335.32258064516134
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 540.5376344086021,
+                                        "y": 291.5591397849463
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.8980673551559448,
+                                        "y": 0.9289054870605469
+                                    }
+                                }
+                            },
+                            "uuid": "92e82b0d-f324-45cf-9074-abe817e9ee14",
+                            "visible": false
+                        },
+                        {
+                            "__type__": "PreCompLayer",
+                            "composition": "732439c6-2dfa-4ae5-a75e-92a0eb81a3b7",
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "name": "Composition Layer",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "size": {
+                                "height": 1600,
+                                "width": 1200
+                            },
+                            "timing": {
+                                "__type__": "StretchableTime",
+                                "start_time": 0,
+                                "stretch": 1
+                            },
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 133.30188215323378,
+                                        "y": 487.40506717462927
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 270
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.5,
+                                        "y": 0.5
+                                    }
+                                }
+                            },
+                            "uuid": "5ae882f6-82c6-4836-a710-3b40bb282d29",
+                            "visible": false
+                        },
+                        {
+                            "__type__": "Group",
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "name": "Ellipse 3",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "shapes": [
+                                {
+                                    "__type__": "Fill",
+                                    "color": {
+                                        "value": "#000000"
+                                    },
+                                    "fill_rule": "NonZero",
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Fill",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "b634c58c-99f4-4a1d-8470-02460797f50f",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Stroke",
+                                    "cap": "RoundCap",
+                                    "color": {
+                                        "value": "#000000"
+                                    },
+                                    "group_color": "#00000000",
+                                    "join": "RoundJoin",
+                                    "locked": false,
+                                    "miter_limit": 4,
+                                    "name": "Stroke",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "1c3155a9-e784-4845-9220-628ad0327f4c",
+                                    "visible": true,
+                                    "width": {
+                                        "value": 1
+                                    }
+                                },
+                                {
+                                    "__type__": "Ellipse",
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Ellipse 3",
+                                    "position": {
+                                        "value": {
+                                            "x": 303.38709677419354,
+                                            "y": 295.69892473118284
+                                        }
+                                    },
+                                    "reversed": false,
+                                    "size": {
+                                        "value": {
+                                            "height": 73.33333333333331,
+                                            "width": 72.15053763440864
+                                        }
+                                    },
+                                    "uuid": "36a8aaf8-5b0d-49ea-806b-2f091c69c760",
+                                    "visible": false
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 303.38709677419354,
+                                        "y": 295.69892473118284
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 293.9253154645521,
+                                        "y": 285.48020091677006
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1.1772080659866333,
+                                        "y": 1.1444370746612549
+                                    }
+                                }
+                            },
+                            "uuid": "3b260f27-af7e-45f1-b4cc-5b247cb02156",
+                            "visible": false
+                        },
+                        {
+                            "__type__": "Group",
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "name": "Ellipse 4",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "shapes": [
+                                {
+                                    "__type__": "Fill",
+                                    "color": {
+                                        "value": "#000000"
+                                    },
+                                    "fill_rule": "NonZero",
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Fill 2",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "bb3f8e8d-f971-46a5-95d2-1a5218239ae0",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Stroke",
+                                    "cap": "RoundCap",
+                                    "color": {
+                                        "value": "#000000"
+                                    },
+                                    "group_color": "#00000000",
+                                    "join": "RoundJoin",
+                                    "locked": false,
+                                    "miter_limit": 4,
+                                    "name": "Stroke 2",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "1cd75ecd-25dc-4628-941d-fbc66e161d79",
+                                    "visible": true,
+                                    "width": {
+                                        "value": 1
+                                    }
+                                },
+                                {
+                                    "__type__": "Ellipse",
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Ellipse 5",
+                                    "position": {
+                                        "value": {
+                                            "x": 303.38709677419354,
+                                            "y": 295.69892473118284
+                                        }
+                                    },
+                                    "reversed": false,
+                                    "size": {
+                                        "value": {
+                                            "height": 73.33333333333331,
+                                            "width": 72.15053763440864
+                                        }
+                                    },
+                                    "uuid": "db36e99a-81a4-4962-b76b-ffc964bc496a",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 367.53747536143834,
+                                        "y": 284.5551156445859
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 750.5970149253732,
+                                        "y": 277.7910447761194
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1.1772080659866333,
+                                        "y": 0.9002713561058044
+                                    }
+                                }
+                            },
+                            "uuid": "b8af8399-5446-4585-a223-bf1fa3fbbc9e",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "Group",
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "name": "Group",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "shapes": [
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Ellipse",
+                                    "opacity": {
+                                        "value": 0.6000000238418579
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#e4e4e4"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "78dbda6c-43fb-4b2e-837c-3ee17aa5ca68",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#ffffff"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "9a371af9-42f0-4c64-aa48-40681a4fa594",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Ellipse",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Ellipse",
+                                            "position": {
+                                                "value": {
+                                                    "x": 350.10752688172045,
+                                                    "y": 335.32258064516134
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "size": {
+                                                "value": {
+                                                    "height": 263.7634408602151,
+                                                    "width": 262.58064516129036
+                                                }
+                                            },
+                                            "uuid": "1de5022a-68d8-471f-8800-e2e3aad79938",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 350.10752688172045,
+                                                "y": 335.32258064516134
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 296.272731614256,
+                                                "y": 285.05728163413806
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 0.8980673551559448,
+                                                "y": 0.9289054870605469
+                                            }
+                                        }
+                                    },
+                                    "uuid": "c833a070-cc4f-4ff6-b453-98e4124cfe37",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Path",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#c8c8c8"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "5762f5b2-a4cd-42da-a6f1-7841e77a776c",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "f616ad3d-9741-4371-871e-41ea725e760f",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Path",
+                                            "closed": true,
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Path",
+                                            "reversed": false,
+                                            "shape": {
+                                                "value": {
+                                                    "closed": true,
+                                                    "points": [
+                                                        {
+                                                            "pos": {
+                                                                "x": 294.80918502652776,
+                                                                "y": 177.45269252702596
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 294.6646931851098,
+                                                                "y": 182.41339690226633
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 297.56316797728215,
+                                                                "y": 176.0367523594872
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 355.3071256187196,
+                                                                "y": 196.02154367401818
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 330.89562808726396,
+                                                                "y": 178.93522715165952
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 353.7935789454254,
+                                                                "y": 199.51439817608312
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 329.1334250255133,
+                                                                "y": 237.66078564000065
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 347.70678188186355,
+                                                                "y": 207.05043263573117
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 320.75096631466084,
+                                                                "y": 230.81792593154432
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 296.49726240352703,
+                                                                "y": 226.96962891900515
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 313.37803617351994,
+                                                                "y": 225.28155154200584
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 294.37484570589254,
+                                                                "y": 205.60119523964502
+                                                            },
+                                                            "type": 0
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "uuid": "9badc19b-8437-4c0b-b39b-d5d7724f3b7f",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 323.27452507413057,
+                                                "y": 207.55673908351332
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 323.27452507413057,
+                                                "y": 207.55673908351332
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "6638b7af-a04c-4d12-81f9-fc8acb08e3d4",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Path 1",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#c8c8c8"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "6b7f440b-1aac-4833-a034-321da1bd23e8",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "8dc7f5a4-6954-4982-b4d2-fccc69d6766c",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Path",
+                                            "closed": true,
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Path 1",
+                                            "reversed": false,
+                                            "shape": {
+                                                "value": {
+                                                    "closed": true,
+                                                    "points": [
+                                                        {
+                                                            "pos": {
+                                                                "x": 234.9703277584604,
+                                                                "y": 283.2565847855598
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 233.12859308826603,
+                                                                "y": 283.2764949270922
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 235.13008813538022,
+                                                                "y": 283.0263080462029
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 241.29618703171516,
+                                                                "y": 316.4819187718666
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 230.87691116026255,
+                                                                "y": 295.7858389715559
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 227.3742948278127,
+                                                                "y": 324.056956512044
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 201.8582226707611,
+                                                                "y": 339.7509754521421
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 207.10915747578144,
+                                                                "y": 335.5655530329506
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 188.5953282899751,
+                                                                "y": 331.56256293872224
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 185.71304407375683,
+                                                                "y": 281.0377882231858
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 183.5915906721896,
+                                                                "y": 292.53340951999536
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 187.59458076641798,
+                                                                "y": 280.0240654755316
+                                                            },
+                                                            "type": 0
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "uuid": "39efae61-3e1b-4885-a1b7-58a89bb3d7f9",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 213.19231482911923,
+                                                "y": 307.21654451574057
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 213.19231482911923,
+                                                "y": 307.21654451574057
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "3ea23992-cf4b-4cd8-b776-4280db04f8ec",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Path 2",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#c8c8c8"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "4ad06c78-50f7-46a5-b647-def58e981d6a",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "30cf32ef-8a19-4004-b63c-84ecb308356d",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Path",
+                                            "closed": true,
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Path 2",
+                                            "reversed": false,
+                                            "shape": {
+                                                "value": {
+                                                    "closed": true,
+                                                    "points": [
+                                                        {
+                                                            "pos": {
+                                                                "x": 324.3946394284772,
+                                                                "y": 340.1186575967639
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 324.3946394284772,
+                                                                "y": 340.1186575967639
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 324.3946394284772,
+                                                                "y": 340.1186575967639
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 347.72188753556196,
+                                                                "y": 318.7353468319362
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 340.3349256349851,
+                                                                "y": 328.84382101167296
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 352.3873371569789,
+                                                                "y": 316.01383455277636
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 390.09972159676596,
+                                                                "y": 340.50744506521534
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 377.2697351378693,
+                                                                "y": 335.06442050689554
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 376.1033727325151,
+                                                                "y": 359.5580310193346
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 345.38916272485346,
+                                                                "y": 380.94134178416226
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 368.3276233634868,
+                                                                "y": 371.22165507287696
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 338.00220082427666,
+                                                                "y": 367.72256785681424
+                                                            },
+                                                            "type": 0
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "uuid": "a653d27a-bc1c-48d9-b683-720277a03c6d",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 357.22676529163596,
+                                                "y": 349.4689734769111
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 357.22676529163596,
+                                                "y": 349.4689734769111
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "5fe654df-db48-45ea-9306-a4355d08a499",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Path 3",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#e4e4e4"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "5989b342-1146-461c-81fd-4d185f2fbefd",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#ffffff"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "b097d777-a51b-4fa6-9778-eda18c9b5bbb",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Path",
+                                            "closed": true,
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Path 3",
+                                            "reversed": false,
+                                            "shape": {
+                                                "value": {
+                                                    "closed": true,
+                                                    "points": [
+                                                        {
+                                                            "pos": {
+                                                                "x": 251.2960030020678,
+                                                                "y": 254.13572281800836
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 251.2960030020678,
+                                                                "y": 254.13572281800836
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 251.24851547838387,
+                                                                "y": 254.0772928035332
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 266.7643337619993,
+                                                                "y": 240.31295916019727
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 266.3430774983741,
+                                                                "y": 239.83616875275854
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 267.43936415086654,
+                                                                "y": 239.41470250381346
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 258.53649825139746,
+                                                                "y": 233.07246391086764
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 258.20343693201033,
+                                                                "y": 234.2942471825352
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 259.0026307289474,
+                                                                "y": 231.362529942854
+                                                            },
+                                                            "type": 1
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 244.38462117316226,
+                                                                "y": 247.88256782995097
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 245.0428480140104,
+                                                                "y": 241.3002994214695
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 246.44493111465394,
+                                                                "y": 249.84602362435604
+                                                            },
+                                                            "type": 0
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "uuid": "315ab60b-18f9-46f4-99b9-f7dbfbde5e61",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 255.55419356753728,
+                                                "y": 243.51439430082314
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 255.55419356753728,
+                                                "y": 243.51439430082314
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "70908a6f-6c73-4a08-83ff-72eca55b7e84",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Rectangle 1",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#969696"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill 3",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "c3b54c57-99a0-40ce-9dd8-0e7a92f07e1a",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke 3",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "843bd711-e2ca-4315-bc71-28bac0c1e44a",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Rect",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Rectangle 2",
+                                            "position": {
+                                                "value": {
+                                                    "x": 305.17138855913976,
+                                                    "y": 260.34265187096776
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "rounded": {
+                                                "value": 0
+                                            },
+                                            "size": {
+                                                "value": {
+                                                    "height": 5.209054967741906,
+                                                    "width": 6.201255913978457
+                                                }
+                                            },
+                                            "uuid": "5848bfb0-68ac-486c-888b-d5fa9e3c8b78",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 303.7348175404474,
+                                                "y": 264.7451145886921
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 287.4013596903265,
+                                                "y": 314.9060916301083
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 21.333768844604492
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1.1047415733337402,
+                                                "y": 1.1731418371200562
+                                            }
+                                        }
+                                    },
+                                    "uuid": "2f360548-8170-4b3f-9261-690851957670",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Rectangle 3",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#969696"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill 4",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "d2981dd9-ffb3-4116-8c63-e90387ee7e7e",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke 4",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "d376e089-aadd-41bb-bf76-679e1cd3f1a3",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Rect",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Rectangle 4",
+                                            "position": {
+                                                "value": {
+                                                    "x": 305.17138855913976,
+                                                    "y": 260.34265187096776
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "rounded": {
+                                                "value": 0
+                                            },
+                                            "size": {
+                                                "value": {
+                                                    "height": 5.209054967741906,
+                                                    "width": 6.201255913978457
+                                                }
+                                            },
+                                            "uuid": "113fd2d3-b6c9-4d92-bf42-edff9cb2a53b",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 303.7348175404474,
+                                                "y": 264.7451145886921
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 277.2809100387136,
+                                                "y": 272.24145094193625
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 46.32160568237305
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1.1047415733337402,
+                                                "y": 1.1731418371200562
+                                            }
+                                        }
+                                    },
+                                    "uuid": "50290a42-adb9-497c-bb63-5785420b1457",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Rectangle 5",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#969696"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill 5",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "742a73bc-5603-40d8-b421-279218d66cc3",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke 5",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "c8209ab3-f666-4a52-b49e-cce9f7e6e14a",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Rect",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Rectangle 6",
+                                            "position": {
+                                                "value": {
+                                                    "x": 305.17138855913976,
+                                                    "y": 260.34265187096776
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "rounded": {
+                                                "value": 0
+                                            },
+                                            "size": {
+                                                "value": {
+                                                    "height": 5.209054967741906,
+                                                    "width": 6.201255913978457
+                                                }
+                                            },
+                                            "uuid": "13383310-1367-4b7d-8651-1778946621e3",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 303.7348175404474,
+                                                "y": 264.7451145886921
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 307.8406991827996,
+                                                "y": 306.17472330322653
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 46.32160568237305
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1.1047415733337402,
+                                                "y": 1.1731418371200562
+                                            }
+                                        }
+                                    },
+                                    "uuid": "d5de9ee4-c9d5-4e1b-b5ce-a553b7def077",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Rectangle 7",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#969696"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill 6",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "c5f2cc05-5342-4498-a1bc-c2e46fa410a0",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke 6",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "33517ea1-e32c-4ed4-a682-f94bc1d1a697",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Rect",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Rectangle 8",
+                                            "position": {
+                                                "value": {
+                                                    "x": 305.17138855913976,
+                                                    "y": 260.34265187096776
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "rounded": {
+                                                "value": 0
+                                            },
+                                            "size": {
+                                                "value": {
+                                                    "height": 5.209054967741906,
+                                                    "width": 6.201255913978457
+                                                }
+                                            },
+                                            "uuid": "02e9a594-f0ad-494d-a469-733cfc443022",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 303.7348175404474,
+                                                "y": 264.7451145886921
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 274.70118757849855,
+                                                "y": 298.03867554408674
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": -14.754853248596191
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1.1047415733337402,
+                                                "y": 1.1731418371200562
+                                            }
+                                        }
+                                    },
+                                    "uuid": "966175ae-bff9-469a-8f5a-2b71e06e3dda",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Rectangle 9",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#969696"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill 7",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "8f9e50b4-37ca-4e38-b1dd-fca03fa801db",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke 7",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "401d1f82-cad8-4c07-8fc9-7f9243e097be",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Rect",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Rectangle 10",
+                                            "position": {
+                                                "value": {
+                                                    "x": 305.17138855913976,
+                                                    "y": 260.34265187096776
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "rounded": {
+                                                "value": 0
+                                            },
+                                            "size": {
+                                                "value": {
+                                                    "height": 5.209054967741906,
+                                                    "width": 6.201255913978457
+                                                }
+                                            },
+                                            "uuid": "8e1d7339-97e1-486e-9a79-76762aa8840a",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 303.7348175404474,
+                                                "y": 264.7451145886921
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 274.70118757849855,
+                                                "y": 298.03867554408674
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": -14.754853248596191
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1.1047415733337402,
+                                                "y": 1.1731418371200562
+                                            }
+                                        }
+                                    },
+                                    "uuid": "2a173e3e-2015-4d82-92a4-513d2e9f9d8e",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Rectangle",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#969696"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "3968611e-76a0-4ff8-957f-be5b1651464c",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "f17030e7-c849-483f-9dea-bb85fbc18ffd",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Rect",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Rectangle",
+                                            "position": {
+                                                "value": {
+                                                    "x": 305.17138855913976,
+                                                    "y": 260.34265187096776
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "rounded": {
+                                                "value": 0
+                                            },
+                                            "size": {
+                                                "value": {
+                                                    "height": 5.209054967741906,
+                                                    "width": 6.201255913978457
+                                                }
+                                            },
+                                            "uuid": "a28c8190-cd17-4eab-b3fb-9c628c29a834",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 305.3079461632899,
+                                                "y": 260.31421135148565
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 305.0373202538031,
+                                                "y": 264.19318272079516
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 21.333768844604492
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1.1047415733337402,
+                                                "y": 1.1731418371200562
+                                            }
+                                        }
+                                    },
+                                    "uuid": "013fb433-3841-4d59-af71-22a75ca7ba2e",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Ellipse 6",
+                                    "opacity": {
+                                        "value": 0.5
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "f065ca61-2fdd-41d1-b15d-f28de02d1b62",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "03159f4c-3e34-43d2-9cb3-bb1d359c03e7",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Ellipse",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Ellipse 6",
+                                            "position": {
+                                                "value": {
+                                                    "x": 306.535664860215,
+                                                    "y": 291.72100679569894
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "size": {
+                                                "value": {
+                                                    "height": 54.07495156989245,
+                                                    "width": 54.07495156989245
+                                                }
+                                            },
+                                            "uuid": "a867e2f9-fc91-4b41-ac1e-d603ef7d1b5c",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 306.535664860215,
+                                                "y": 291.72100679569894
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 297.3578061075268,
+                                                "y": 287.00805230107534
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "d1dbe3d3-7ad3-4af1-bed8-48d8403ef6d2",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Path 4",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#e4e4e4"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "2b13b66e-27e5-4df5-be47-be49a0dc03c8",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#ffffff"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "767ea8b2-acf9-44d7-999e-8ce499894535",
+                                            "visible": true,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Path",
+                                            "closed": true,
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Path 4",
+                                            "reversed": false,
+                                            "shape": {
+                                                "value": {
+                                                    "closed": true,
+                                                    "points": [
+                                                        {
+                                                            "pos": {
+                                                                "x": 271.245840772435,
+                                                                "y": 333.97704794678185
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 270.55581130906586,
+                                                                "y": 332.9420037517282
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 271.245840772435,
+                                                                "y": 333.97704794678185
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 290.5666657467704,
+                                                                "y": 340.187313117104
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 286.08147423487105,
+                                                                "y": 340.187313117104
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 295.05185725866977,
+                                                                "y": 340.187313117104
+                                                            },
+                                                            "type": 1
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 286.42648896655567,
+                                                                "y": 350.1927403359563
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 286.42648896655567,
+                                                                "y": 350.1927403359563
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 286.42648896655567,
+                                                                "y": 350.1927403359563
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 267.4506787239048,
+                                                                "y": 343.9824751656342
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 270.55581130906586,
+                                                                "y": 348.4676666775335
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 264.3455461387437,
+                                                                "y": 339.4972836537349
+                                                            },
+                                                            "type": 1
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "uuid": "6cc8879b-c9c5-495a-9fbb-18ddd7c0484d",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 279.22306078887607,
+                                                "y": 342.03032548482713
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 279.22306078887607,
+                                                "y": 342.03032548482713
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "d19a58e4-94fb-4840-8ca4-2d5eb0c85d3f",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Path 5",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#e4e4e4"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "e0aaf0a5-bd7f-430d-9af9-050d6b7926da",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#ffffff"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "ea972eee-f795-4747-b4c2-ed57721a6e60",
+                                            "visible": true,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Path",
+                                            "closed": true,
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Path 5",
+                                            "reversed": false,
+                                            "shape": {
+                                                "value": {
+                                                    "closed": true,
+                                                    "points": [
+                                                        {
+                                                            "pos": {
+                                                                "x": 344.7339786212467,
+                                                                "y": 264.9741016098694
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 344.7339786212467,
+                                                                "y": 264.9741016098694
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 344.7339786212467,
+                                                                "y": 264.9741016098694
+                                                            },
+                                                            "type": 0
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 350.2542143281997,
+                                                                "y": 283.25988238915124
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 348.07427324752393,
+                                                                "y": 279.5961019504465
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 351.0780178100214,
+                                                                "y": 284.64443131517066
+                                                            },
+                                                            "type": 1
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 359.9146268153674,
+                                                                "y": 283.6048971208358
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 359.9146268153674,
+                                                                "y": 283.6048971208358
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 359.9146268153674,
+                                                                "y": 283.6048971208358
+                                                            },
+                                                            "type": 1
+                                                        },
+                                                        {
+                                                            "pos": {
+                                                                "x": 355.77445003515265,
+                                                                "y": 261.5239542930238
+                                                            },
+                                                            "tan_in": {
+                                                                "x": 361.7821225550296,
+                                                                "y": 267.0187969157248
+                                                            },
+                                                            "tan_out": {
+                                                                "x": 352.0311782022678,
+                                                                "y": 261.2247575177069
+                                                            },
+                                                            "type": 0
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "uuid": "77d3f514-adda-48c6-aa4e-b9e44df29498",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 351.44237156985895,
+                                                "y": 272.5644257069298
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 351.44237156985895,
+                                                "y": 272.5644257069298
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "a5ca9115-6db6-4631-a9ad-eb1379ed9708",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Group",
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Rectangle 23",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "shapes": [
+                                        {
+                                            "__type__": "Fill",
+                                            "color": {
+                                                "value": "#969696"
+                                            },
+                                            "fill_rule": "NonZero",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Fill 22",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "88160aa6-c6bc-411b-b6fe-dd489dc03aa8",
+                                            "visible": true
+                                        },
+                                        {
+                                            "__type__": "Stroke",
+                                            "cap": "RoundCap",
+                                            "color": {
+                                                "value": "#000000"
+                                            },
+                                            "group_color": "#00000000",
+                                            "join": "RoundJoin",
+                                            "locked": false,
+                                            "miter_limit": 4,
+                                            "name": "Stroke 22",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "use": null,
+                                            "uuid": "de34565c-6a84-48b2-bf6f-329ba322767b",
+                                            "visible": false,
+                                            "width": {
+                                                "value": 1
+                                            }
+                                        },
+                                        {
+                                            "__type__": "Rect",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Rectangle 24",
+                                            "position": {
+                                                "value": {
+                                                    "x": 347.4185718835466,
+                                                    "y": 259.7982955264214
+                                                }
+                                            },
+                                            "reversed": false,
+                                            "rounded": {
+                                                "value": 0
+                                            },
+                                            "size": {
+                                                "value": {
+                                                    "height": 5.209054967741906,
+                                                    "width": 6.201255913978457
+                                                }
+                                            },
+                                            "uuid": "ecea5c26-b752-446e-b824-8c3e685c6dd6",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 303.7348175404474,
+                                                "y": 264.7451145886921
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 274.70118757849855,
+                                                "y": 298.03867554408674
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": -14.754853248596191
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1.1047415733337402,
+                                                "y": 1.1731418371200562
+                                            }
+                                        }
+                                    },
+                                    "uuid": "6ce85d42-1f24-4829-b365-c1c9662d15a5",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 298.14804538549026,
+                                        "y": 286.108504793254
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 256.4105320846557,
+                                        "y": 249.84280671482475
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1.920719861984253,
+                                        "y": 1.920719861984253
+                                    }
+                                }
+                            },
+                            "uuid": "5e32196f-a68b-4f15-accd-e93a678abdf7",
+                            "visible": true
+                        }
+                    ],
+                    "uuid": "367fae99-4bc1-4ab4-8554-19fd919935a5",
+                    "visible": true,
+                    "width": 500
+                },
+                {
+                    "__type__": "Composition",
+                    "animation": {
+                        "__type__": "AnimationContainer",
+                        "first_frame": 0,
+                        "last_frame": 180
+                    },
+                    "fps": 60,
+                    "group_color": "#00000000",
+                    "height": 1600,
+                    "locked": false,
+                    "name": "",
+                    "shapes": [
+                        {
+                            "__type__": "Image",
+                            "group_color": "#00000000",
+                            "image": "1c70f7d1-cc40-4779-acff-2ca68247ba53",
+                            "locked": false,
+                            "name": "WhatsApp Image 2026-08-26 at 16",
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 600,
+                                        "y": 800
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 600,
+                                        "y": 800
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "3c1ff7d4-7f31-49cd-b952-15eb492217ea",
+                            "visible": true
+                        }
+                    ],
+                    "uuid": "732439c6-2dfa-4ae5-a75e-92a0eb81a3b7",
+                    "visible": true,
+                    "width": 1200
+                }
+            ]
+        },
+        "fonts": {
+            "__type__": "FontList",
+            "name": "",
+            "uuid": "891ecafb-0471-4e63-a8a6-8496a3187773",
+            "values": [
+            ]
+        },
+        "gradient_colors": {
+            "__type__": "GradientColorsList",
+            "name": "",
+            "uuid": "e1eaac27-dead-48d6-af34-6df862dcaf09",
+            "values": [
+            ]
+        },
+        "gradients": {
+            "__type__": "GradientList",
+            "name": "",
+            "uuid": "a8e4145f-5b07-4c66-a4e1-4ddb5347f40a",
+            "values": [
+            ]
+        },
+        "images": {
+            "__type__": "BitmapList",
+            "name": "",
+            "uuid": "208263dd-ab7e-4d17-8d76-c9651445ea31",
+            "values": [
+                {
+                    "__type__": "Bitmap",
+                    "data": "",
+                    "filename": "/Users/joelschoch/Downloads/WhatsApp Image 2026-08-26 at 16.33.09.jpeg",
+                    "format": "jpeg",
+                    "height": 1600,
+                    "name": "",
+                    "url": "",
+                    "uuid": "1c70f7d1-cc40-4779-acff-2ca68247ba53",
+                    "width": 1200
+                }
+            ]
+        },
+        "name": "",
+        "uuid": "b8dda4b8-bfd6-4ec9-a2aa-1514cf551f04"
+    },
+    "format": {
+        "format_version": 8,
+        "generator": "Glaxnimate",
+        "generator_version": "0.6.0-git-d2da67a"
+    },
+    "info": {
+        "author": "",
+        "description": "",
+        "keywords": [
+        ]
+    },
+    "metadata": {
+    }
+}

@@ -191,3 +191,8 @@ func show_only_sprite(active_sprite: Node2D) -> void:
 				s.visible = false
 			if s is AnimatedSprite2D:
 				s.stop()
+
+## Wird vom Area2D der Leiter aufgerufen, wenn der Player in den Bereich ein-/austritt
+func set_near_ladder(value: bool, ladder: Node2D = null) -> void:
+	if ground_module:
+		ground_module.set_near_ladder(value, ladder)

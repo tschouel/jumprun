@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ceqtqvg1p3klf"]
+
+[ext_resource type="Script" uid="uid://qornioa4qsvq" path="res://wheelturning.gd" id="1_c6vch"]
+[ext_resource type="Texture2D" uid="uid://d6prrhso6yvx" path="res://Wheel3.png" id="2_w1142"]
+
+[node name="Node2D" type="Node2D" unique_id=317223483 node_paths=PackedStringArray("visual")]
+script = ExtResource("1_c6vch")
+visual = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=907049112]
+texture = ExtResource("2_w1142")

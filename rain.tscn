@@ -59,8 +59,10 @@ position = Vector2(-13.220276, -6.3615623)
 scale = Vector2(150, 200)
 
 [node name="ColorRect" type="ColorRect" parent="Boden/Sprite2D" unique_id=358603303]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.2719896
+offset_top = 0.058314316
+offset_right = 38.728012
+offset_bottom = 40.058315
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_kwfd8")]
@@ -206,11 +208,11 @@ shape = SubResource("RectangleShape2D_c8yc8")
 [node name="BG" type="ColorRect" parent="." unique_id=500167246]
 z_index = -1
 custom_minimum_size = Vector2(2.9, 0)
-offset_left = -325.0
+offset_left = -1812.0
 offset_top = -1058.0
-offset_right = -285.0
+offset_right = -1772.0
 offset_bottom = -1018.0
-scale = Vector2(200.8, 29.36)
+scale = Vector2(216.04001, 29.36)
 
 [node name="InvertLayer" type="CanvasLayer" parent="." unique_id=1613297235]
 layer = 100

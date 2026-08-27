@@ -1,0 +1,37 @@
+<svg height="793.75" inkscape:export-xdpi="96" inkscape:export-ydpi="96" style="fill:none;stroke:none;" version="1.1" viewBox="0 0 793.75 793.75" width="793.75" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Walk.svg</title>
+    <defs/>
+    <sodipodi:namedview bordercolor="#666666" borderlayer="true" inkscape:document-units="px" inkscape:pagecheckerboard="true" pagecolor="#ffffff"/>
+    <metadata>
+        <rdf:RDF>
+            <cc:Work>
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type rdf:resource="http://purl.org/dc/dcmitype/MovingImage"/>
+                <dc:title>Walk.svg</dc:title>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g id="Composition_dafc7cdbe7454223bebe9ca578978af9" inkscape:groupmode="layer" inkscape:label="Walk.svg">
+        <g id="Layer_e899d554faaf4a128645919b6271de67" inkscape:groupmode="layer" inkscape:label="Walk.svg" opacity="1" transform="matrix(1, 0, 0, 1, 0, 0)">
+            <g id="Layer_d2b6db32b9c34b17afd26e42ec22c547" inkscape:groupmode="layer" inkscape:label="Walk1" opacity="1" transform="matrix(3, 0, 0, 3, 345.788, 211.836)">
+                <g id="Group_dcc64a8557c144bfb43c3939d4f06671" inkscape:label="rect1-3" opacity="1" sodipodi:insensitive="true" transform="matrix(0.0066737, 0.999978, -0.999978, 0.0066737, -6.04167e-06, 1.875e-07)"/>
+                <g fill="#000000" fill-opacity="1" id="Fill_ebed1372d6de4e96868259a97ba1b5b3" inkscape:label="path3" opacity="1" transform="matrix(0.923061, 0.384654, 0.384654, -0.923061, -58.0942, -141.01)">
+                    <ellipse cx="168.915" cy="-262.992" rx="24.2073" ry="5.37941" style="stroke:none;"/>
+                </g>
+                <g fill="#000000" fill-opacity="1" id="Fill_901a24a791fe4f59ae2ae9e06467f5c4" inkscape:label="path3-7" opacity="1" transform="matrix(0.895577, -0.444907, -0.444907, -0.895577, -58.0942, -141.01)">
+                    <ellipse cx="-48.8555" cy="-315.429" rx="24.2073" ry="5.37941" style="stroke:none;"/>
+                </g>
+                <g fill="#000000" fill-opacity="1" id="Fill_7340cbfa9825460aabc3895a1ce99554" inkscape:label="path3-7-3" opacity="1" transform="matrix(0.895577, -0.444907, -0.444907, -0.895577, -58.0942, -141.01)">
+                    <ellipse cx="12.1401" cy="-188.708" rx="24.2073" ry="5.37941" style="stroke:none;"/>
+                </g>
+                <g fill="#000000" fill-opacity="1" id="Fill_61ef8fe6e8f0419e922916a6b0a4a6eb" inkscape:label="path3-7-3-4" opacity="1" transform="matrix(0.966972, -0.254882, -0.254882, -0.966972, -58.0942, -141.01)">
+                    <ellipse cx="7.00452" cy="-184.183" rx="24.2073" ry="5.37941" style="stroke:none;"/>
+                </g>
+                <g fill="#000000" fill-opacity="1" id="Stroke_9a7644cef9594f8cb135b6674f891977" inkscape:label="path1" opacity="1" stroke="#00000000" stroke-opacity="1" stroke-width="2.8468101024627686" transform="matrix(1, 0, 0, 1, -58.0942, -141.01)">
+                    <path d="M 78.5716,316.529 C 78.5716,316.529 70.5669,320.96 71.9117,316.64 72.4997,314.751 70.0796,287.299 68.9908,269.857 68.9908,269.857 66.4857,139.226 66.4857,139.226 25.7203,120.207 55.554,70.7558 71.8765,76.591 93.2396,69.5701 114.448,115.224 80.039,141.024 79.5776,200.469 79.8818,285.946 78.5716,316.529 78.5716,316.529 78.5716,316.529 78.5716,316.529 Z" sodipodi:nodetypes="ccccccc" style="stroke:none;"/>
+                    <path d="M 78.5716,316.529 C 78.5716,316.529 70.5669,320.96 71.9117,316.64 72.4997,314.751 70.0796,287.299 68.9908,269.857 68.9908,269.857 66.4857,139.226 66.4857,139.226 25.7203,120.207 55.554,70.7558 71.8765,76.591 93.2396,69.5701 114.448,115.224 80.039,141.024 79.5776,200.469 79.8818,285.946 78.5716,316.529 78.5716,316.529 78.5716,316.529 78.5716,316.529 Z" sodipodi:nodetypes="ccccccc" style="fill:none;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

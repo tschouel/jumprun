@@ -132,6 +132,7 @@
 [ext_resource type="Texture2D" uid="uid://c0rv3nq33lo0x" path="res://animation/Acc128.png" id="130_mt2j7"]
 [ext_resource type="Texture2D" uid="uid://ngsiohpto565" path="res://animation/Acc129.png" id="131_ulodn"]
 [ext_resource type="Texture2D" uid="uid://cl8nm0s13uv6w" path="res://animation/Acc130.png" id="132_wnbk7"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="133_4tb0w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
 animations = [{
@@ -632,3 +633,5 @@ position = Vector2(18, 595)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Eingangblock" unique_id=584867597]
 position = Vector2(13.5, -409)
 shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("133_4tb0w")]

@@ -1,9 +1,8 @@
 extends Area2D
-
 @export var anim_player: AnimationPlayer
 @export var animation_name: String = "taste_bewegung"
 @export var trigger: Area2D
-
+@export var pre_delay: float = 0.0
 var _has_triggered: bool = false
 
 func _ready() -> void:
@@ -20,7 +19,9 @@ func _on_trigger_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
 	_has_triggered = true
-	if anim_player:
-		anim_player.play(animation_name)
 	if trigger:
 		trigger.set_deferred("monitoring", false)
+	if pre_delay > 0.0:
+		await get_tree().create_timer(pre_delay).timeout
+	if anim_player:
+		anim_player.play(animation_name)

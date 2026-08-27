@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="129.15361mm"
+   height="209.15959mm"
+   viewBox="0 0 129.15361 209.15959"
+   version="1.1"
+   id="svg1"
+   inkscape:export-batch-name="StopperR"
+   inkscape:export-batch-path="/Users/joelschoch/Documents/jumprun/animation"
+   sodipodi:docname="stopperl.svg"
+   inkscape:version="1.4.4 (dcaf3e7d, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.56169111"
+     inkscape:cx="330.25269"
+     inkscape:cy="404.13671"
+     inkscape:window-width="1512"
+     inkscape:window-height="917"
+     inkscape:window-x="0"
+     inkscape:window-y="65"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-29.504607,-55.255994)">
+    <path
+       style="fill:#8c6040;stroke-width:0.266151"
+       d="M 29.504607,264.41558 V 64.596639 c 0,0 10.644649,-22.118077 21.577002,1.716843 20.826168,45.405618 64.203371,148.648928 91.365681,166.234418 42.5707,27.56123 -12.16306,31.86768 -12.16306,31.86768 z"
+       id="path1"
+       sodipodi:nodetypes="ccsscc" />
+  </g>
+</svg>

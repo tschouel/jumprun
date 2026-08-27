@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="140.44574mm"
+   height="93.553741mm"
+   viewBox="0 0 140.44574 93.553741"
+   version="1.1"
+   id="svg1"
+   inkscape:export-batch-name="Magnet"
+   inkscape:export-batch-path="/Users/joelschoch/Documents/jumprun/animation"
+   inkscape:version="1.4.4 (dcaf3e7d, 2026-05-05)"
+   sodipodi:docname="fermate.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.24944899"
+     inkscape:cx="6.0132533"
+     inkscape:cy="697.53739"
+     inkscape:window-width="1512"
+     inkscape:window-height="917"
+     inkscape:window-x="0"
+     inkscape:window-y="65"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-44.430645,-96.339472)">
+    <path
+       d="m 114.65351,165.6476 c -6.4047,0 -11.66569,5.26064 -11.66569,11.66504 0,6.40527 5.26099,11.6659 11.66569,11.6659 6.40469,0 11.66569,-5.26063 11.66569,-11.6659 0,-6.4044 -5.261,-11.66504 -11.66569,-11.66504 z m 0,-69.308128 c -32.252195,0 -70.222865,24.703808 -70.222865,93.553738 h 7.319642 c 0,-27.44868 18.527858,-64.27573 62.903223,-64.27573 44.37536,0 62.90322,36.82705 62.90322,64.27573 h 7.31965 c -0.22875,-68.6217 -38.19941,-93.553738 -70.22287,-93.553738 z"
+       id="path634"
+       style="stroke-width:2.28739" />
+  </g>
+</svg>

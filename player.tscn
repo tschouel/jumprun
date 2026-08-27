@@ -25,55 +25,74 @@
 [ext_resource type="Texture2D" uid="uid://cev7y8m3sy57" path="res://animation/__Walk4.png" id="20_lhxi5"]
 [ext_resource type="Script" uid="uid://ktwod4vnctw6" path="res://ground_movement.gd" id="20_pbfsw"]
 [ext_resource type="Texture2D" uid="uid://d3ufv0y8h1db0" path="res://animation/__jump5.png" id="21_mqy1v"]
+[ext_resource type="Texture2D" uid="uid://d181bu2qes1io" path="res://animation/ladder00.png" id="22_3c2l2"]
 [ext_resource type="Texture2D" uid="uid://bjs8jiq4u5tci" path="res://animation/lookdown 0.png" id="22_vybhp"]
+[ext_resource type="Texture2D" uid="uid://dowxbw5jb2j7q" path="res://animation/ladder01.png" id="23_fsr0j"]
 [ext_resource type="Texture2D" uid="uid://bswnrs5b457lt" path="res://animation/lookdown 1.png" id="23_ul1xb"]
 [ext_resource type="Texture2D" uid="uid://bjd1utqwnyifo" path="res://animation/lookdown 2.png" id="24_a23vb"]
+[ext_resource type="Texture2D" uid="uid://bibrxqkfx51b" path="res://animation/ladder02.png" id="24_pg815"]
+[ext_resource type="Texture2D" uid="uid://dow8kfhiqcuol" path="res://animation/ladder03.png" id="25_nmrq0"]
 [ext_resource type="Texture2D" uid="uid://g43wyqe0odud" path="res://animation/lookdown 3.png" id="25_s1202"]
+[ext_resource type="Texture2D" uid="uid://cgsps7nd4gmsn" path="res://animation/ladder04.png" id="26_5w6nj"]
 [ext_resource type="Script" uid="uid://bl4bbun8sosdj" path="res://path_movement.gd" id="26_7hik5"]
 [ext_resource type="Texture2D" uid="uid://dbqua4jnbair3" path="res://animation/lookdown 4.png" id="26_hrkui"]
+[ext_resource type="Texture2D" uid="uid://bqa7m3tibfows" path="res://animation/ladder05.png" id="27_7o7uw"]
 [ext_resource type="Texture2D" uid="uid://dwj54ncn0jx4a" path="res://animation/FastCar_FastCarDrive1.png" id="27_dn2kn"]
 [ext_resource type="Texture2D" uid="uid://d1ogdwdrmcndw" path="res://animation/lookdown 5.png" id="27_phduw"]
 [ext_resource type="Texture2D" uid="uid://ba7hocjf6m718" path="res://animation/FastCar_FastCarDrive2.png" id="28_4tmhn"]
 [ext_resource type="Texture2D" uid="uid://bcl2khc2cglxf" path="res://animation/lookdown 6.png" id="28_7gga0"]
+[ext_resource type="Texture2D" uid="uid://bcygt1wvyfw1h" path="res://animation/ladder06.png" id="28_qhm6v"]
 [ext_resource type="Texture2D" uid="uid://j2xxs5bujnua" path="res://mechanics/Driving/FastCar_FastCarBoost1.png" id="28_va2xi"]
 [ext_resource type="Texture2D" uid="uid://dqhm2idwijm6w" path="res://mechanics/Driving/FastCar_FastCarBoost2.png" id="29_fkf2u"]
 [ext_resource type="Texture2D" uid="uid://f7v8hin3ows6" path="res://animation/FastCar_FastCarDrive3.png" id="29_gpvxe"]
 [ext_resource type="Texture2D" uid="uid://b58ldhy0jskmu" path="res://animation/lookdown 7.png" id="29_l6n6j"]
+[ext_resource type="Texture2D" uid="uid://cn1mpfw45xrva" path="res://animation/ladder07.png" id="29_st57m"]
+[ext_resource type="Texture2D" uid="uid://cs1s7rchovp1v" path="res://animation/ladder08.png" id="30_c33ev"]
 [ext_resource type="Texture2D" uid="uid://ehku4qhv647n" path="res://animation/FastCar_FastCarDrive4.png" id="30_qicb8"]
 [ext_resource type="Texture2D" uid="uid://de5myq63kdjd4" path="res://animation/lookdown 8.png" id="30_s4gbm"]
 [ext_resource type="Texture2D" uid="uid://34i8wghwhpsi" path="res://mechanics/Driving/FastCar_FastCarBoost3.png" id="30_s7jk6"]
 [ext_resource type="Texture2D" uid="uid://cgedlsho8kvc5" path="res://animation/FastCar_FastCarDrive5.png" id="31_6o2m3"]
 [ext_resource type="Texture2D" uid="uid://b3dhmh5pgvho" path="res://mechanics/Driving/FastCar_FastCarBoost4.png" id="31_feeoa"]
 [ext_resource type="Texture2D" uid="uid://da76jfhog3r6f" path="res://animation/lookdown 9.png" id="31_hk8or"]
+[ext_resource type="Texture2D" uid="uid://bo3kypv4tumrw" path="res://animation/ladder09.png" id="31_owt1c"]
 [ext_resource type="Texture2D" uid="uid://blmr412je74pw" path="res://animation/FastCar_FastCarDrive6.png" id="32_2hmo1"]
 [ext_resource type="Texture2D" uid="uid://34i0dysjxo3h" path="res://animation/lookdown 10.png" id="32_4pp7q"]
 [ext_resource type="Texture2D" uid="uid://52kksdocmpr3" path="res://animation/FastCar_Crash1.png" id="32_77e46"]
+[ext_resource type="Texture2D" uid="uid://c12krmsus3e2v" path="res://animation/ladder10.png" id="32_bglm6"]
 [ext_resource type="Texture2D" uid="uid://c0ajpsue6jnhh" path="res://animation/lookdown 11.png" id="33_325ll"]
 [ext_resource type="Texture2D" uid="uid://b3mhlrcdbrnwv" path="res://animation/FastCar_Crash2.png" id="33_cy2ki"]
+[ext_resource type="Texture2D" uid="uid://dcyjifv2lw18m" path="res://animation/ladder11.png" id="33_gldnr"]
 [ext_resource type="Texture2D" uid="uid://cd8rgyujgn5em" path="res://animation/FastCar_FastCarDrive7.png" id="33_uygay"]
 [ext_resource type="Texture2D" uid="uid://qcv00i00q2rb" path="res://animation/lookdown 12.png" id="34_3k40v"]
 [ext_resource type="Texture2D" uid="uid://bqcc5nqjy7r13" path="res://animation/FastCar_Crash3.png" id="34_04cqw"]
+[ext_resource type="Texture2D" uid="uid://bd25a4ol5ob5x" path="res://animation/ladder12.png" id="34_p3pkq"]
 [ext_resource type="Texture2D" uid="uid://bc78dssbqcria" path="res://animation/FastCar_FastCarDrive8.png" id="34_rpay4"]
+[ext_resource type="Texture2D" uid="uid://bpdmxppvviyv8" path="res://animation/ladder13.png" id="35_3mkk3"]
 [ext_resource type="Texture2D" uid="uid://cpfl0p5tbkn7e" path="res://animation/lookdown 13.png" id="35_u6lx0"]
 [ext_resource type="Texture2D" uid="uid://c2b0ye7fsl5a6" path="res://animation/FastCar_Crash4.png" id="35_vihdy"]
 [ext_resource type="Texture2D" uid="uid://7mgk0w7nlm4j" path="res://animation/FastCar_WalktoCar1.png" id="35_xfa3h"]
 [ext_resource type="Texture2D" uid="uid://8eyk8qcfc2si" path="res://animation/FastCar_WalktoCar2.png" id="36_04g4e"]
 [ext_resource type="Texture2D" uid="uid://bytkdxdk7njj2" path="res://animation/FastCar_Crash5.png" id="36_7c55y"]
 [ext_resource type="Texture2D" uid="uid://blogjfdluu6n2" path="res://animation/lookdown 14.png" id="36_ib1vr"]
+[ext_resource type="Texture2D" uid="uid://b85j2v8k84ilm" path="res://animation/ladder14.png" id="36_yiwt8"]
 [ext_resource type="Texture2D" uid="uid://b64abjkwxb5wb" path="res://animation/FastCar_Crash6.png" id="37_hoal8"]
 [ext_resource type="Texture2D" uid="uid://bo6mofwlctjpa" path="res://animation/FastCar_WalktoCar3.png" id="37_lx1qc"]
+[ext_resource type="Texture2D" uid="uid://blq4lepemb8ah" path="res://animation/ladder15.png" id="37_qok22"]
 [ext_resource type="Texture2D" uid="uid://c8ynwyrrec7no" path="res://animation/lookdown 15.png" id="37_w7j8g"]
 [ext_resource type="Texture2D" uid="uid://dauhscgdlk2lj" path="res://animation/__Up1.png" id="38_04cqw"]
+[ext_resource type="Texture2D" uid="uid://db5swggw1we06" path="res://animation/ladder16.png" id="38_8mwl4"]
 [ext_resource type="Texture2D" uid="uid://dis7h0uay0wn3" path="res://animation/lookdown 16.png" id="38_517ue"]
 [ext_resource type="Texture2D" uid="uid://vsmwqese66lc" path="res://animation/FastCar_WalktoCar4.png" id="38_elm0x"]
 [ext_resource type="Texture2D" uid="uid://w4j8ryy8cu84" path="res://animation/__Down1.png" id="38_he65s"]
 [ext_resource type="Texture2D" uid="uid://b3ovc4asdtuhc" path="res://animation/FastCar_Crash7.png" id="38_htija"]
 [ext_resource type="Texture2D" uid="uid://dnmfdvd4o70y" path="res://animation/__Down2.png" id="39_c0yt3"]
+[ext_resource type="Texture2D" uid="uid://bxqdl1fbbd5xl" path="res://animation/ladder17.png" id="39_ebsb2"]
 [ext_resource type="Texture2D" uid="uid://bimaiea1r3264" path="res://animation/FastCar_Crash8.png" id="39_he65s"]
 [ext_resource type="Texture2D" uid="uid://djv0hxfydhneu" path="res://animation/FastCar_WalktoCar5.png" id="39_k7vj2"]
 [ext_resource type="Texture2D" uid="uid://cikbugalakyoy" path="res://animation/lookdown 17.png" id="39_uq8wy"]
 [ext_resource type="Texture2D" uid="uid://bykbemqw2edeb" path="res://animation/__Up2.png" id="39_vihdy"]
 [ext_resource type="Texture2D" uid="uid://bt6vixh4s3csa" path="res://animation/__Up3.png" id="40_7c55y"]
+[ext_resource type="Texture2D" uid="uid://d0m0vj5mqelhg" path="res://animation/ladder18.png" id="40_8fc1w"]
 [ext_resource type="Texture2D" uid="uid://cgdhv5txaiolg" path="res://animation/lookdown 18.png" id="40_coha1"]
 [ext_resource type="Texture2D" uid="uid://srk7voccuyn6" path="res://animation/FastCar_WalktoCar6.png" id="40_dtw5u"]
 [ext_resource type="Texture2D" uid="uid://depfh8ympk3lg" path="res://animation/__Down3.png" id="40_uckl6"]
@@ -83,29 +102,40 @@
 [ext_resource type="Texture2D" uid="uid://bnoqglq1e5ub" path="res://animation/FastCar_WalktoCar7.png" id="41_f37gn"]
 [ext_resource type="Texture2D" uid="uid://chrfjho0gpimw" path="res://animation/__Up4.png" id="41_hoal8"]
 [ext_resource type="Texture2D" uid="uid://ur823scrpv6n" path="res://animation/__Down4.png" id="41_htija"]
+[ext_resource type="Texture2D" uid="uid://rfqtl8nqy5dk" path="res://animation/ladder19.png" id="41_jajrg"]
 [ext_resource type="Texture2D" uid="uid://dokvs62ueqaof" path="res://animation/FastCar_Crash10.png" id="42_hoal8"]
 [ext_resource type="Texture2D" uid="uid://b258dx03blmk0" path="res://animation/FastCar_WalktoCar08.png" id="42_jccjf"]
 [ext_resource type="Texture2D" uid="uid://ckp7mfofjtp5k" path="res://animation/lookdown 20.png" id="42_vxl5j"]
+[ext_resource type="Texture2D" uid="uid://dh6akeclidrrn" path="res://animation/ladder20.png" id="42_w8u6x"]
 [ext_resource type="Texture2D" uid="uid://dbdrq75kulqdg" path="res://animation/lookdown 21.png" id="43_0nkpx"]
 [ext_resource type="Texture2D" uid="uid://dfgpjtjc1v7ps" path="res://animation/FastCar_WalktoCar09.png" id="43_qhi2v"]
+[ext_resource type="Texture2D" uid="uid://bg3cpfji3qbcj" path="res://animation/ladder21.png" id="43_y5pkf"]
+[ext_resource type="Texture2D" uid="uid://d4geoefngsply" path="res://animation/ladder22.png" id="44_3iwlq"]
 [ext_resource type="Texture2D" uid="uid://c8g3dydjhv2c4" path="res://animation/lookdown 22.png" id="44_erdvr"]
 [ext_resource type="Texture2D" uid="uid://dvw5lkjy5txq2" path="res://animation/FastCar_WalktoCar10.png" id="44_ipvpa"]
+[ext_resource type="Texture2D" uid="uid://cyw0fpbcwgewv" path="res://animation/ladder23.png" id="45_3jtyb"]
 [ext_resource type="Texture2D" uid="uid://b68b53rd0iyiy" path="res://animation/lookdown 23.png" id="45_ic286"]
 [ext_resource type="Texture2D" uid="uid://odh7emjdp703" path="res://animation/FastCar_FastCar04.png" id="45_nevyh"]
 [ext_resource type="Texture2D" uid="uid://c38e1juvebf2v" path="res://animation/lookdown 24.png" id="46_1ssn4"]
+[ext_resource type="Texture2D" uid="uid://b25kvqdtw57mh" path="res://animation/ladder24.png" id="46_6fhdv"]
 [ext_resource type="Texture2D" uid="uid://bxgpp5vugslj5" path="res://animation/FastCar_FastCar05.png" id="46_hhr50"]
+[ext_resource type="Texture2D" uid="uid://boxhuum6m1yfx" path="res://animation/ladder25.png" id="47_7gucm"]
 [ext_resource type="Texture2D" uid="uid://bgjcqje04vejt" path="res://animation/FastCar_FastCar06.png" id="47_8u4el"]
 [ext_resource type="Texture2D" uid="uid://dqjgvwfqefgyy" path="res://animation/lookdown 25.png" id="47_jxjpg"]
 [ext_resource type="Texture2D" uid="uid://mwdupkjm5dml" path="res://animation/FastCar_FastCar07.png" id="48_a5i73"]
+[ext_resource type="Texture2D" uid="uid://3krgkyh82p8t" path="res://animation/ladder26.png" id="48_dpbkd"]
 [ext_resource type="Texture2D" uid="uid://ba7kxipy46kt" path="res://animation/lookdown 26.png" id="48_k4idn"]
 [ext_resource type="Texture2D" uid="uid://bpot6wf6ab683" path="res://animation/FastCar_FastCar08.png" id="49_j7swm"]
+[ext_resource type="Texture2D" uid="uid://beethuyx2r5mq" path="res://animation/ladder27.png" id="49_pcxpm"]
 [ext_resource type="Texture2D" uid="uid://subw6kbpifxb" path="res://animation/lookdown 27.png" id="49_raaw1"]
+[ext_resource type="Texture2D" uid="uid://cjae1y7fe5c51" path="res://animation/ladder28.png" id="50_1kuvh"]
 [ext_resource type="Texture2D" uid="uid://bjoyix43sf7c2" path="res://animation/lookdown 28.png" id="50_bgfql"]
 [ext_resource type="Texture2D" uid="uid://bofmvmk18e3rs" path="res://animation/FastCar_FastCar09.png" id="50_bobas"]
 [ext_resource type="Texture2D" uid="uid://gmoxmnbqi0y0" path="res://animation/__toCar01.png" id="50_cye81"]
 [ext_resource type="Texture2D" uid="uid://clk3xghk23yvt" path="res://animation/toBoat__01.png" id="50_rk5q0"]
 [ext_resource type="Texture2D" uid="uid://cp786hxonobch" path="res://animation/toBoat__02.png" id="51_0xmk7"]
 [ext_resource type="Texture2D" uid="uid://d0xo2gvmhyrsa" path="res://animation/lookdown 29.png" id="51_3f83b"]
+[ext_resource type="Texture2D" uid="uid://iq6e8c5ydcg2" path="res://animation/ladder29.png" id="51_h8gpj"]
 [ext_resource type="Texture2D" uid="uid://brslo0uxo1438" path="res://animation/__toCar02.png" id="51_mftst"]
 [ext_resource type="Texture2D" uid="uid://d4akomee1ppwi" path="res://animation/FastCar_FastCar10.png" id="51_vmuuc"]
 [ext_resource type="Texture2D" uid="uid://chk0un8tf7u3y" path="res://animation/lookdown 30.png" id="52_adwsw"]
@@ -275,6 +305,101 @@ animations = [{
 "loop": 1,
 "name": &"jump",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_3c2l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_fsr0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pg815")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nmrq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5w6nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7o7uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qhm6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_st57m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_c33ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_owt1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bglm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_gldnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_p3pkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3mkk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_yiwt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_qok22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8mwl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ebsb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8fc1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_jajrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_w8u6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_y5pkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_3iwlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_3jtyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6fhdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7gucm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_dpbkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_pcxpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1kuvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_h8gpj")
+}],
+"loop": 1,
+"name": &"ladder",
+"speed": 40.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -610,6 +735,101 @@ animations = [{
 "loop": 1,
 "name": &"drive",
 "speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_3c2l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_fsr0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pg815")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nmrq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5w6nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7o7uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qhm6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_st57m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_c33ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_owt1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bglm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_gldnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_p3pkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3mkk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_yiwt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_qok22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8mwl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ebsb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8fc1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_jajrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_w8u6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_y5pkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_3iwlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_3jtyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6fhdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7gucm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_dpbkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_pcxpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1kuvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_h8gpj")
+}],
+"loop": 1,
+"name": &"ladder",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -964,6 +1184,7 @@ speed = 600.0
 jump_velocity = -800.0
 gravity = 1300.0
 max_platform_jump_boost = 900.0
+climb_speed = 400.0
 camera_look_down_offset = 500.0
 
 [node name="Walk" type="AnimatedSprite2D" parent="GroundMovement" unique_id=68145425]
@@ -1011,7 +1232,8 @@ scale = Vector2(1.2, 1.2)
 [node name="LaneSprite" type="AnimatedSprite2D" parent="LaneMovement" unique_id=1647952448]
 visible = false
 sprite_frames = SubResource("SpriteFrames_shhik")
-animation = &"boost"
+animation = &"ladder"
+frame_progress = 0.8311531
 
 [node name="SimpleArm" type="Node2D" parent="." unique_id=160448129 node_paths=PackedStringArray("body_point")]
 unique_name_in_owner = true

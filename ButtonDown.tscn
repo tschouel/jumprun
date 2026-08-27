@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://br6e0aadp6hh2"]
+
+[ext_resource type="Script" uid="uid://3q3fb8w003tc" path="res://button_down.gd" id="1_oomaf"]
+[ext_resource type="Texture2D" uid="uid://bxy2qc01e30es" path="res://animation/PlayButton.png" id="2_rib0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
+size = Vector2(214, 12)
+
+[node name="ButtonDown" type="AnimatableBody2D" unique_id=1051769643]
+
+[node name="PlayButton" type="Sprite2D" parent="." unique_id=1938496723]
+texture = ExtResource("2_rib0g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=780254861]
+polygon = PackedVector2Array(137, -74.5, 126, -74.5, 126, -73.5, -67, -72.5, -96.899994, -72.5, -109.899994, -58.5, -111.100006, -58.5, -125.100006, -34.5, -126.3, -34.5, -152.2, 21.5, -153.4, 21.5, -173.4, 73.5, -175, 73.5, -175, 78.5, 201.79999, 78.5, 203, 77.3, 203, 75.100006, 193, 51.100006, 193, 48.1, 156, -38.9, 156, -42.1, 141, -67.1, 141, -69.5, 137, -72.5)
+
+[node name="TriggerArea" type="Area2D" parent="." unique_id=168229524 node_paths=PackedStringArray("block")]
+position = Vector2(-27, -76)
+script = ExtResource("1_oomaf")
+block = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=1710530246]
+position = Vector2(41, 4)
+shape = SubResource("RectangleShape2D_shhik")

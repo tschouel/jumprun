@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dblt6ljkbvard"]
+
+[ext_resource type="Script" uid="uid://bc3b1b16pbans" path="res://ladder.gd" id="1_lqhsa"]
+[ext_resource type="Texture2D" uid="uid://snyxs5fppyyr" path="res://animation/Ladder_Ebene 1.png" id="2_efw3x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
+size = Vector2(141, 2085)
+
+[node name="Ladder" type="Area2D" unique_id=1341763676]
+script = ExtResource("1_lqhsa")
+
+[node name="LadderEbene1" type="Sprite2D" parent="." unique_id=1871506839]
+texture = ExtResource("2_efw3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1088675446]
+position = Vector2(1.5, 12.5)
+shape = SubResource("RectangleShape2D_shhik")

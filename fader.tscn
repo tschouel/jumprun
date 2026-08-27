@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d0tbfwamk2qnp"]
+
+[ext_resource type="Script" uid="uid://jbgmhf63e7hh" path="res://fader.gd" id="1_8b40m"]
+[ext_resource type="Texture2D" uid="uid://blsolvch6xsv" path="res://animation/Stopper_Ebene 1.png" id="2_af6ln"]
+[ext_resource type="Texture2D" uid="uid://bvbq8wiesfpvn" path="res://animation/StopperR_Ebene 1.png" id="3_jlvlp"]
+[ext_resource type="Texture2D" uid="uid://b6w36krpf4kbv" path="res://animation/__Fader.png" id="4_nkyhl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
+size = Vector2(285.8515, 327.1192)
+
+[node name="fader" type="Node2D" unique_id=1367287159 node_paths=PackedStringArray("start_point", "end_point", "handle", "interaction_zone", "player")]
+script = ExtResource("1_8b40m")
+start_point = NodePath("Left")
+end_point = NodePath("Right")
+handle = NodePath("Handle")
+interaction_zone = NodePath("Handle/InteractionZone")
+player = NodePath("")
+freeze_player_while_grabbing = false
+
+[node name="Left" type="Marker2D" parent="." unique_id=647067423]
+
+[node name="Sprite2D" type="Sprite2D" parent="Left" unique_id=1455647638]
+texture = ExtResource("2_af6ln")
+
+[node name="Right" type="Marker2D" parent="." unique_id=1597021274]
+position = Vector2(4000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Right" unique_id=1358058096]
+position = Vector2(234, -125)
+texture = ExtResource("3_jlvlp")
+
+[node name="Handle" type="Sprite2D" parent="." unique_id=1713553267]
+z_index = 10
+position = Vector2(1629, 1)
+
+[node name="InteractionZone" type="Area2D" parent="Handle" unique_id=1159973943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Handle/InteractionZone" unique_id=1472104333]
+position = Vector2(3.5, -60)
+scale = Vector2(2.5222883, 1.3271576)
+shape = SubResource("RectangleShape2D_shhik")
+
+[node name="Fader" type="Sprite2D" parent="Handle" unique_id=944629650]
+position = Vector2(3, 79)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_nkyhl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Handle/Fader" unique_id=691339250]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Handle/Fader/StaticBody2D" unique_id=1148173402]
+position = Vector2(2, -220)
+polygon = PackedVector2Array(-385.5, -385.3, -387.5, -385.5, -409.5, -385.5, -433.5, -352.5, -434.8, -352.5, -442.5, -333.9, -442.5, -328.2, -459.6, -301.5, -460.7, -301.5, -485.8, -255.5, -486.8, -255.5, -513.7, -197.5, -514.9, -197.5, -535.9, -138.5, -537.1, -138.5, -545.5, -103.20001, -545.5, -28, -540.5, -15.100006, -540.5, -11.799988, -531.5, 0.1000061, -531.5, 2.399994, -514.5, 17.299988, -514.5, 18.700012, -476.5, 40.600006, -476.5, 41.799988, -437.5, 60.700012, -437.5, 62, -420.5, 66.899994, -420.5, 68.899994, -407.1, 66.5, -390.5, 66.5, 8.5, 69.399994, 8.5, 385.5, 46.5, 385.5, 46.5, 69.5, 284.5, 71.5, 441, 71.5, 480, 52.5, 482.09998, 52.5, 512, 31.5, 514.4, 31.5, 536.30005, 8.5, 537.80005, 8.5, 545.5, -7.899994, 545.5, -90.5, 544.5, -95.899994, 544.5, -102.70001, 532.5, -160.9, 532.5, -165.8, 512.5, -233.8, 512.5, -236.9, 492.5, -283.9, 492.5, -287, 472.5, -321, 472.5, -323.3, 442.5, -356.3, 442.5, -357.7, 421.5, -368.8, 421.5, -370.1, 402.7, -374.5, 390.2, -374.5, 379.40002, -371.5, 376, -371.5, 364, -364.5, 361.59998, -364.5, 340.59998, -341.5, 339.2, -341.5, 323.5, -306.9, 323.5, -304.3, 318.09998, -299, 309.8, -301.5, 308.2, -301.5, 292.5, -314.5, 292.5, -315.7, 277.5, -323.8, 277.5, -325.1, 263.5, -328.2, 263.5, -329.7, 249.29999, -328.5, 243.09998, -328.5, 226, -320.5, 223.79999, -320.5, 212.79999, -311.5, 210.59998, -311.5, 171.5, -270.3, 163, -266.5, 160.79999, -266.5, 146.90002, -272.5, 145.29999, -272.5, 140.29999, -277.5, 138.20001, -277.5, 84.5, -325.4, 84.5, -326.7, 65.5, -336.8, 65.5, -338.1, 52.5, -341.1, 52.5, -342.6, 33.400024, -341.5, 28, -341.5, 16.900024, -335.5, 14.700012, -335.5, -27.5, -293.3, -44.5, -283.7, -55.5, -281.2, -55.5, -280.5, -69.100006, -280.5, -88.100006, -287.5, -89.899994, -287.5, -110.899994, -302.5, -112.79999, -302.5, -150.5, -334.5, -150.5, -335.8, -171.5, -344.8, -171.5, -347, -222.9, -335.5, -226.79999, -335.5, -306.8, -309.5, -312, -309.5, -329, -319.5, -330.6, -319.5, -370.5, -367.3, -370.5, -369.4, -385.5, -383.5)

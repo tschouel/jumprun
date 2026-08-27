@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://c1yljb4qmxovq"]
 
 [ext_resource type="Script" uid="uid://duuex1pwdhjb4" path="res://pianokey.gd" id="1_trbsr"]
+[ext_resource type="PackedScene" uid="uid://b6dtyfh18nk7f" path="res://Casseteplayer.tscn" id="2_dhetq"]
 [ext_resource type="Texture2D" uid="uid://cb2s3oihfpj4x" path="res://animation/PianoHammer 00.png" id="2_dyv6b"]
+[ext_resource type="PackedScene" uid="uid://dblt6ljkbvard" path="res://ladder.tscn" id="2_qhd4l"]
 [ext_resource type="Texture2D" uid="uid://cvl6xybhvym2c" path="res://animation/PianoHammer 01.png" id="3_hl0uh"]
 [ext_resource type="Texture2D" uid="uid://fhyfq4nvvmu2" path="res://animation/PianoHammer 02.png" id="4_kxinw"]
 [ext_resource type="Texture2D" uid="uid://cgd6kunodlw2g" path="res://animation/PianoHammer 03.png" id="5_53ten"]
@@ -28,11 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://b4x1t40yj8cyj" path="res://animation/PianoOpen014.png" id="39_dw00j"]
 [ext_resource type="Texture2D" uid="uid://d3v837gug0xef" path="res://animation/PianoOpen015.png" id="40_4j2sd"]
 [ext_resource type="Texture2D" uid="uid://bjnsf1xng2j4n" path="res://animation/PianoOpen016.png" id="41_2nsik"]
-[ext_resource type="Script" uid="uid://i0e2ujduu8rl" path="res://animationtrigger_onetime.gd" id="42_15md6"]
 [ext_resource type="Texture2D" uid="uid://rr4akkrj0ogj" path="res://animation/PianoOpen017.png" id="42_73aji"]
+[ext_resource type="Script" uid="uid://d3aghgulyap5r" path="res://animationFaderAndTrigger.gd" id="43_78i4i"]
 [ext_resource type="Texture2D" uid="uid://ru4nqtw7jv0r" path="res://animation/PianoOpen018.png" id="43_fvvat"]
 [ext_resource type="Texture2D" uid="uid://bjvxte3o6q8nr" path="res://animation/PianoOpen019.png" id="44_8bsk3"]
 [ext_resource type="Texture2D" uid="uid://d4iaffb0v1pbd" path="res://animation/PianoOpen020.png" id="45_dyv6b"]
+[ext_resource type="Texture2D" uid="uid://da3t0ywnqd101" path="res://animation/PianoOpen000.png" id="45_hbw3m"]
 [ext_resource type="Texture2D" uid="uid://cqs4icx8balxs" path="res://animation/PianoOpen021.png" id="46_hl0uh"]
 [ext_resource type="Texture2D" uid="uid://b2fhr1vxsg8ir" path="res://animation/PianoOpen022.png" id="47_kxinw"]
 [ext_resource type="Texture2D" uid="uid://dod1aoujnelte" path="res://animation/PianoOpen023.png" id="48_53ten"]
@@ -196,11 +199,15 @@
 [ext_resource type="Texture2D" uid="uid://cnotk8s6hljrm" path="res://animation/PianoPedal 05.png" id="209_lgnpv"]
 [ext_resource type="Texture2D" uid="uid://qaffekwrkkby" path="res://animation/PianoPedal 06.png" id="210_g4lwo"]
 [ext_resource type="Texture2D" uid="uid://cyw54ttdye3ye" path="res://animation/PianoPedal 07.png" id="211_71c78"]
+[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="212_cqvml"]
 [ext_resource type="Texture2D" uid="uid://d81736repqe2" path="res://animation/PianoPedal 08.png" id="212_vj2bs"]
 [ext_resource type="Texture2D" uid="uid://b3g26imfudxe0" path="res://animation/PianoPedal 09.png" id="213_qu7qj"]
+[ext_resource type="PackedScene" uid="uid://ceqtqvg1p3klf" path="res://wheelturning.tscn" id="214_78i4i"]
 [ext_resource type="Texture2D" uid="uid://cevn42qb0stva" path="res://animation/PianoPedal 10.png" id="214_h0f0r"]
+[ext_resource type="PackedScene" uid="uid://d0tbfwamk2qnp" path="res://fader.tscn" id="215_7wrnd"]
 [ext_resource type="Texture2D" uid="uid://bfk3wu2xid4qf" path="res://animation/PianoPedal 11.png" id="215_xe6q0"]
 [ext_resource type="Texture2D" uid="uid://cbgxrrgjg5ucg" path="res://animation/PianoPedal 12.png" id="216_b742b"]
+[ext_resource type="Texture2D" uid="uid://da2ne8mtaeb1n" path="res://animation/Wheel2.png" id="216_fj4q5"]
 [ext_resource type="Texture2D" uid="uid://wi5j46ahnped" path="res://animation/PianoPedal 13.png" id="217_khmhf"]
 [ext_resource type="Texture2D" uid="uid://ck0msl3ybp0to" path="res://animation/PianoPedal 14.png" id="218_q88ks"]
 [ext_resource type="Texture2D" uid="uid://dr3lcecdy5ly4" path="res://animation/PianoPedal 15.png" id="219_lphvq"]
@@ -510,6 +517,36 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("38_fj4q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hbw3m")
 }, {
 "duration": 1.0,
 "texture": ExtResource("39_dw00j")
@@ -1011,7 +1048,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Sustain",
-"speed": 30.0
+"speed": 15.0
 }]
 
 [sub_resource type="Animation" id="Animation_dhetq"]
@@ -1041,9 +1078,14 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_qhd4l"]
+resource_name = "piano_closed"
+length = 2.1333334
+loop_mode = 1
+
 [sub_resource type="Animation" id="Animation_15md6"]
 resource_name = "piano_open"
-length = 2.0253854
+length = 3.7666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1051,7 +1093,7 @@ tracks/0/path = NodePath("PianoOpen:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0010188073, 1.9775015),
+"times": PackedFloat32Array(0.0010188073, 3.7333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0, 150]
@@ -1063,7 +1105,7 @@ tracks/1/path = NodePath("AnimationPlayer/Area2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.023432527, 0.53283525, 1.9978776),
+"times": PackedFloat32Array(0.023432527, 1.4666667, 3.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.19381458, 1.3334315485236674]
@@ -1072,18 +1114,51 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dhetq"]
 _data = {
 &"RESET": SubResource("Animation_dhetq"),
+&"piano_closed": SubResource("Animation_qhd4l"),
 &"piano_open": SubResource("Animation_15md6")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0uk2"]
 size = Vector2(1762, 566)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_78i4i"]
+polygon = PackedVector2Array(10.190994, -20.45107, 2106.4937, -26.84203, 2101.509, 235.82642, -4.7628174, 233.90912)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wrnd"]
+size = Vector2(28.33333, 0.5538768)
 
 [node name="Pianokey" type="Area2D" unique_id=445377932 node_paths=PackedStringArray("anim_player", "trigger")]
 script = ExtResource("1_trbsr")
 anim_player = NodePath("AnimationPlayer")
 trigger = NodePath("AnimationPlayer/Taste/CollisionShape2D/TasteTrigger")
+
+[node name="Ladder" parent="." unique_id=1341763676 instance=ExtResource("2_qhd4l")]
+position = Vector2(-2290.0002, -783)
+scale = Vector2(1.7057658, 0.42582178)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1297149745]
+z_index = -20
+offset_left = -5254.0
+offset_top = -2422.0
+offset_right = -5214.0
+offset_bottom = -2382.0
+scale = Vector2(341.4445, 154.73677)
+color = Color(0.88507533, 0.8371626, 0.92459995, 1)
+
+[node name="Wheel2" parent="." unique_id=317223483 node_paths=PackedStringArray("fader", "clockwise_trigger", "counter_clockwise_trigger", "stop_trigger", "stop_anim_player") instance=ExtResource("214_78i4i")]
+z_index = 50
+position = Vector2(-769, -480)
+scale = Vector2(0.7, 0.7)
+fader = NodePath("../fader")
+min_value = 0.8
+clockwise_trigger = NodePath("../Area2D2/PlayRight/TriggerArea")
+counter_clockwise_trigger = NodePath("../Area2D2/PlayLeft/TriggerArea")
+stop_trigger = NodePath("../Area2D2/PlayPause/TriggerArea")
+stop_anim_player = NodePath("../PianoOpen/AnimationPlayer")
+stop_animation_name = "piano_open"
+
+[node name="Area2D2" parent="." unique_id=1211710538 instance=ExtResource("2_dhetq")]
+position = Vector2(-1199, -387)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=360656739]
 position = Vector2(1800, -311)
@@ -1118,7 +1193,7 @@ scale = Vector2(1.0007207, 17.863712)
 shape = SubResource("RectangleShape2D_c8yc8")
 
 [node name="Boden" type="StaticBody2D" parent="." unique_id=685181392]
-position = Vector2(-66, 136.99998)
+position = Vector2(-66, 137)
 rotation = -0.1734122
 scale = Vector2(0.367578, 0.2611028)
 
@@ -1134,8 +1209,8 @@ offset_right = 295.0
 offset_bottom = -518.0
 scale = Vector2(47.43999, 1)
 
-[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("21_p7j0c")]
-position = Vector2(299, -352)
+[node name="Player" parent="." unique_id=586206979 instance=ExtResource("21_p7j0c")]
+position = Vector2(1969, -1531)
 
 [node name="VibrationLine" type="CPUParticles2D" parent="." unique_id=189764832]
 visible = false
@@ -1199,7 +1274,7 @@ scale = Vector2(1.0007207, 17.863712)
 shape = SubResource("RectangleShape2D_c8yc8")
 
 [node name="Boden2" type="StaticBody2D" parent="." unique_id=158877216]
-position = Vector2(623, 2154)
+position = Vector2(623, 2151)
 rotation = -0.1734122
 scale = Vector2(0.367578, 0.2611028)
 
@@ -1215,15 +1290,24 @@ offset_right = 295.0
 offset_bottom = -518.0
 scale = Vector2(47.43999, 1)
 
-[node name="PianoOpen" type="Area2D" parent="." unique_id=693274399 node_paths=PackedStringArray("anim_player", "trigger")]
-script = ExtResource("42_15md6")
+[node name="PianoOpen" type="Area2D" parent="." unique_id=693274399 node_paths=PackedStringArray("anim_player", "trigger", "fader", "anim_player_2", "trigger_2", "fader_2")]
+position = Vector2(1, 1)
+script = ExtResource("43_78i4i")
 anim_player = NodePath("AnimationPlayer")
 animation_name = "piano_open"
-trigger = NodePath("../Area2D")
+trigger = NodePath("../Area2D2/PlayRight/TriggerArea")
+pre_delay = 2.0
+fader = NodePath("../fader")
+min_value = 0.8
+anim_player_2 = NodePath("AnimationPlayer")
+animation_name_2 = "piano_closed"
+trigger_2 = NodePath("../Area2D2/PlayLeft/TriggerArea")
+fader_2 = NodePath("../fader")
+min_value_2 = 0.8
 
 [node name="PianoOpen" type="AnimatedSprite2D" parent="PianoOpen" unique_id=1160418649]
 z_index = 1
-position = Vector2(1725, -258)
+position = Vector2(1725, -255)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_c8yc8")
@@ -1241,17 +1325,101 @@ freeze_mode = 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PianoOpen/AnimationPlayer/Area2D" unique_id=1288184652]
 polygon = PackedVector2Array(-29, -15, -79, 113, -341, 121, -379, 167, -408, 240, -373, 238, -324, 173, 10, 169, 25, -27)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1400832560]
-position = Vector2(588, -362)
-
-[node name="testi" type="CollisionShape2D" parent="Area2D" unique_id=1440365142]
-position = Vector2(-513, 241)
-scale = Vector2(9.613594, 3.2950566)
-shape = SubResource("RectangleShape2D_u0jqh")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1725493001]
 position = Vector2(588, -362)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=301407359]
 position = Vector2(1357, -273)
 shape = SubResource("RectangleShape2D_y0uk2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=167479504]
+position = Vector2(1, 0)
+script = ExtResource("212_cqvml")
+start_position = Vector2(0, -800)
+zoom = 0.5
+
+[node name="fader" parent="." unique_id=1367287159 node_paths=PackedStringArray("player") instance=ExtResource("215_7wrnd")]
+position = Vector2(-1559, -887)
+scale = Vector2(0.2, 0.2)
+player = NodePath("../Player")
+
+[node name="Left" parent="fader" index="0" unique_id=647067423]
+position = Vector2(-579.99994, -249.99997)
+
+[node name="Right" parent="fader" index="1" unique_id=1597021274]
+position = Vector2(4365, -149.99998)
+
+[node name="Handle" parent="fader" index="2" unique_id=1713553267]
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" parent="fader/Handle/InteractionZone" parent_id_path=PackedInt32Array(1367287159, 1159973943) index="0" unique_id=1472104333]
+scale = Vector2(2.858614, 1.3271576)
+
+[node name="Boden3" type="StaticBody2D" parent="." unique_id=293895956]
+position = Vector2(-1640, -919.00006)
+scale = Vector2(3.248829, 0.9431646)
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Boden3" unique_id=557355913]
+z_as_relative = false
+position = Vector2(-13.604091, 95.42344)
+scale = Vector2(0.077, 1.659)
+occluder = SubResource("OccluderPolygon2D_78i4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boden3" unique_id=712620090]
+position = Vector2(327.81046, 106.02611)
+rotation = 3.1415925
+scale = Vector2(34.45255, -332.83224)
+shape = SubResource("RectangleShape2D_7wrnd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boden3" unique_id=489739607]
+z_index = 1
+position = Vector2(-13.220276, -6.3615623)
+scale = Vector2(150, 200)
+
+[node name="ColorRect" type="ColorRect" parent="Boden3/Sprite2D" unique_id=1977834832]
+offset_left = -1.2719896
+offset_top = 0.058314316
+offset_right = 38.728012
+offset_bottom = 40.058315
+scale = Vector2(2.38007, 0.012527043)
+color = Color(0, 0, 0, 1)
+
+[node name="Wheel4" parent="." unique_id=1798141010 node_paths=PackedStringArray("fader", "clockwise_trigger", "counter_clockwise_trigger", "stop_trigger", "stop_anim_player") instance=ExtResource("214_78i4i")]
+z_index = 50
+position = Vector2(-1202, -483)
+fader = NodePath("../fader")
+min_value = 0.4
+max_value = 0.6
+clockwise_trigger = NodePath("../Area2D2/PlayRight/TriggerArea")
+counter_clockwise_trigger = NodePath("../Area2D2/PlayLeft/TriggerArea")
+stop_trigger = NodePath("../Area2D2/PlayPause/TriggerArea")
+stop_anim_player = NodePath("../PianoOpen/AnimationPlayer")
+stop_animation_name = "piano_open"
+
+[node name="Sprite2D" parent="Wheel4" index="0" unique_id=907049112]
+texture = ExtResource("216_fj4q5")
+
+[node name="Wheel" parent="." unique_id=1469064000 node_paths=PackedStringArray("fader", "clockwise_trigger", "counter_clockwise_trigger", "stop_trigger", "stop_anim_player") instance=ExtResource("214_78i4i")]
+z_index = 50
+position = Vector2(1054, -396)
+scale = Vector2(0.5, 0.5)
+fader = NodePath("../fader")
+min_value = 0.8
+clockwise_trigger = NodePath("../Area2D2/PlayRight/TriggerArea")
+counter_clockwise_trigger = NodePath("../Area2D2/PlayLeft/TriggerArea")
+stop_trigger = NodePath("../Area2D2/PlayPause/TriggerArea")
+stop_anim_player = NodePath("../PianoOpen/AnimationPlayer")
+stop_animation_name = "piano_open"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=835979728]
+zoom = 0.4
+script = ExtResource("212_cqvml")
+start_position = Vector2(2000, -1600)
+zoom = 0.4
+
+[editable path="Area2D2"]
+[editable path="Area2D2/PlayRight"]
+[editable path="Area2D2/PlayLeft"]
+[editable path="Area2D2/PlayPause"]
+[editable path="fader"]
+[editable path="Wheel4"]

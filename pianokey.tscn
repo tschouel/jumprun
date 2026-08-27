@@ -204,18 +204,34 @@
 [ext_resource type="Texture2D" uid="uid://b3g26imfudxe0" path="res://animation/PianoPedal 09.png" id="213_qu7qj"]
 [ext_resource type="PackedScene" uid="uid://ceqtqvg1p3klf" path="res://wheelturning.tscn" id="214_78i4i"]
 [ext_resource type="Texture2D" uid="uid://cevn42qb0stva" path="res://animation/PianoPedal 10.png" id="214_h0f0r"]
+[ext_resource type="Texture2D" uid="uid://bk2j8enlfd7me" path="res://animation/PianoClosed 00.png" id="214_xntuf"]
 [ext_resource type="PackedScene" uid="uid://d0tbfwamk2qnp" path="res://fader.tscn" id="215_7wrnd"]
+[ext_resource type="Texture2D" uid="uid://d1f8a1cwjy2hx" path="res://animation/PianoClosed 01.png" id="215_bscr2"]
 [ext_resource type="Texture2D" uid="uid://bfk3wu2xid4qf" path="res://animation/PianoPedal 11.png" id="215_xe6q0"]
 [ext_resource type="Texture2D" uid="uid://cbgxrrgjg5ucg" path="res://animation/PianoPedal 12.png" id="216_b742b"]
+[ext_resource type="Texture2D" uid="uid://clv6ej71d4vmr" path="res://animation/PianoClosed 02.png" id="216_cma1g"]
 [ext_resource type="Texture2D" uid="uid://da2ne8mtaeb1n" path="res://animation/Wheel2.png" id="216_fj4q5"]
 [ext_resource type="Texture2D" uid="uid://wi5j46ahnped" path="res://animation/PianoPedal 13.png" id="217_khmhf"]
+[ext_resource type="Texture2D" uid="uid://bpq00kbp5atcp" path="res://animation/PianoClosed 03.png" id="217_q0h42"]
+[ext_resource type="Texture2D" uid="uid://k8nt4k25e1by" path="res://animation/PianoClosed 04.png" id="218_2xsd4"]
 [ext_resource type="Texture2D" uid="uid://ck0msl3ybp0to" path="res://animation/PianoPedal 14.png" id="218_q88ks"]
 [ext_resource type="Texture2D" uid="uid://dr3lcecdy5ly4" path="res://animation/PianoPedal 15.png" id="219_lphvq"]
+[ext_resource type="Texture2D" uid="uid://d3cfl5f0cbkvj" path="res://animation/PianoClosed 05.png" id="219_uydka"]
+[ext_resource type="Texture2D" uid="uid://dqpakpn1g6u81" path="res://animation/PianoClosed 06.png" id="220_adsk3"]
 [ext_resource type="Texture2D" uid="uid://bnb7btsl1vj8y" path="res://animation/PianoPedal 16.png" id="220_dlcy3"]
+[ext_resource type="Texture2D" uid="uid://bs3rpkwhpk5hv" path="res://animation/PianoClosed 07.png" id="221_7tmxj"]
 [ext_resource type="Texture2D" uid="uid://ch877ux62m38m" path="res://animation/PianoPedal 17.png" id="221_n2jdt"]
 [ext_resource type="Texture2D" uid="uid://66oh4cu1s6eh" path="res://animation/PianoPedal 18.png" id="222_0nuka"]
+[ext_resource type="Texture2D" uid="uid://m220p5p07mb8" path="res://animation/PianoClosed 08.png" id="222_8eoqk"]
 [ext_resource type="Texture2D" uid="uid://cy48c2ik0n0si" path="res://animation/PianoPedal 19.png" id="223_nrsuh"]
+[ext_resource type="Texture2D" uid="uid://bdx7upyfexnsq" path="res://animation/PianoClosed 09.png" id="223_rguew"]
+[ext_resource type="Texture2D" uid="uid://bmha13wsyhtj3" path="res://animation/PianoClosed 10.png" id="224_rta5u"]
 [ext_resource type="Texture2D" uid="uid://dnymvkynbfed1" path="res://animation/PianoPedal 20.png" id="224_sqbxi"]
+[ext_resource type="Texture2D" uid="uid://bmlukfugbmgxt" path="res://animation/PianoClosed 11.png" id="225_vrmac"]
+[ext_resource type="Texture2D" uid="uid://baxbnoici4pbt" path="res://animation/PianoClosed 12.png" id="226_2r2fi"]
+[ext_resource type="Texture2D" uid="uid://c5i7uk0kpnbck" path="res://animation/PianoClosed 13.png" id="227_7jaxq"]
+[ext_resource type="Texture2D" uid="uid://0xsugcvrd6gw" path="res://animation/PianoClosed 14.png" id="228_1vbjp"]
+[ext_resource type="Texture2D" uid="uid://bo5sy11biwpqo" path="res://animation/PianoClosed 15.png" id="229_fxd3x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
 animations = [{
@@ -1049,6 +1065,59 @@ animations = [{
 "loop": 0,
 "name": &"Sustain",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("214_xntuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_bscr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_cma1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_q0h42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_2xsd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_uydka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_adsk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_7tmxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_8eoqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_rguew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_rta5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_vrmac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_2r2fi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_7jaxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_1vbjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_fxd3x")
+}],
+"loop": 1,
+"name": &"pianoclosed",
+"speed": 18.0
 }]
 
 [sub_resource type="Animation" id="Animation_dhetq"]
@@ -1077,15 +1146,51 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PianoOpen:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Sustain"]
+}
 
 [sub_resource type="Animation" id="Animation_qhd4l"]
 resource_name = "piano_closed"
-length = 2.1333334
+length = 2.2
 loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PianoOpen:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PianoOpen:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"pianoclosed"]
+}
 
 [sub_resource type="Animation" id="Animation_15md6"]
 resource_name = "piano_open"
-length = 3.7666667
+length = 3.8333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1109,6 +1214,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.19381458, 1.3334315485236674]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PianoOpen:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Sustain"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dhetq"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bxy2qc01e30es" path="res://animation/PlayButton.png" id="2_rib0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
-size = Vector2(214, 12)
+size = Vector2(214, 15)
 
 [node name="ButtonDown" type="AnimatableBody2D" unique_id=1051769643]
 
@@ -20,5 +20,5 @@ script = ExtResource("1_oomaf")
 block = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=1710530246]
-position = Vector2(41, 4)
+position = Vector2(41, 2.5)
 shape = SubResource("RectangleShape2D_shhik")

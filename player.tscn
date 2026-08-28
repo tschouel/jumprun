@@ -227,6 +227,20 @@
 [ext_resource type="Texture2D" uid="uid://cvyrvg5d4njgf" path="res://animation/__toFly11.png" id="92_0tqd8"]
 [ext_resource type="Script" uid="uid://b877gqsf7fwd5" path="res://mechanics/Driving/driving_movement.gd" id="93_4tmhn"]
 [ext_resource type="Texture2D" uid="uid://dhsci2im425l1" path="res://animation/__toFly12.png" id="93_vxixj"]
+[ext_resource type="Texture2D" uid="uid://bkof2a3dipdil" path="res://animation/shockres 00.png" id="102_yiwt8"]
+[ext_resource type="Texture2D" uid="uid://dscgovdpky2e8" path="res://animation/shockres 01.png" id="103_qok22"]
+[ext_resource type="Texture2D" uid="uid://dgly30rljc8ye" path="res://animation/shockres 02.png" id="104_8mwl4"]
+[ext_resource type="Texture2D" uid="uid://dd2sqtj61qs63" path="res://animation/shockres 03.png" id="105_ebsb2"]
+[ext_resource type="Texture2D" uid="uid://bxssdgirt80nq" path="res://animation/shockres 04.png" id="106_8fc1w"]
+[ext_resource type="Texture2D" uid="uid://cpk8efc5dgfl3" path="res://animation/shockres 05.png" id="107_jajrg"]
+[ext_resource type="Texture2D" uid="uid://ds5su42mxns5g" path="res://animation/shockres 06.png" id="108_w8u6x"]
+[ext_resource type="Texture2D" uid="uid://do5ig41iqobpy" path="res://animation/shockres 07.png" id="109_y5pkf"]
+[ext_resource type="Texture2D" uid="uid://7604g4vt32x2" path="res://animation/shockres 08.png" id="110_3iwlq"]
+[ext_resource type="Texture2D" uid="uid://cqlj6d87cfqjd" path="res://animation/shockres 09.png" id="111_3jtyb"]
+[ext_resource type="Texture2D" uid="uid://dviho2b1tuiha" path="res://animation/shockres 10.png" id="112_6fhdv"]
+[ext_resource type="Texture2D" uid="uid://ds2mvf6xsal4b" path="res://animation/shockres 11.png" id="113_7gucm"]
+[ext_resource type="Texture2D" uid="uid://bggnqicq636n2" path="res://animation/shockres 12.png" id="114_dpbkd"]
+[ext_resource type="Texture2D" uid="uid://ciiibhwygyw53" path="res://animation/shockres 13.png" id="115_pcxpm"]
 [ext_resource type="Script" uid="uid://ch5antkg8o5il" path="res://simple_arm.gd" id="148_yskhe"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3a0q"]
@@ -560,6 +574,61 @@ animations = [{
 "loop": 1,
 "name": &"lookdownLoop",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102_yiwt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_qok22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_8mwl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ebsb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_8fc1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_jajrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_w8u6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_y5pkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_3iwlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_3jtyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_6fhdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_7gucm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_dpbkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_pcxpm")
+}],
+"loop": 0,
+"name": &"shockres",
+"speed": 120.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("115_pcxpm")
+}],
+"loop": 1,
+"name": &"shockresloop",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1154,7 +1223,7 @@ occluder = SubResource("OccluderPolygon2D_w3a0q")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
 position = Vector2(493, -452)
 offset = Vector2(600, 0)
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(0.2, 0.2)
 process_callback = 0
 limit_enabled = false
 limit_left = 0
@@ -1184,14 +1253,14 @@ speed = 600.0
 jump_velocity = -800.0
 gravity = 1300.0
 max_platform_jump_boost = 900.0
-climb_speed = 400.0
 camera_look_down_offset = 500.0
+shock_hold_time = 0.5
 
 [node name="Walk" type="AnimatedSprite2D" parent="GroundMovement" unique_id=68145425]
 position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"stand"
+animation = &"shockresloop"
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false

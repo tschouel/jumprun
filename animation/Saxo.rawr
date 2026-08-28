@@ -1,0 +1,337 @@
+{
+    "assets": {
+        "__type__": "Assets",
+        "colors": {
+            "__type__": "NamedColorList",
+            "name": "",
+            "uuid": "ebde044b-e277-427d-b1b4-e53b18c50cd9",
+            "values": [
+            ]
+        },
+        "compositions": {
+            "__type__": "CompositionList",
+            "name": "",
+            "uuid": "c9f64ae9-53d2-48bf-94f9-60b5348dcea0",
+            "values": [
+                {
+                    "__type__": "Composition",
+                    "animation": {
+                        "__type__": "AnimationContainer",
+                        "first_frame": 0,
+                        "last_frame": 180
+                    },
+                    "fps": 60,
+                    "group_color": "#00000000",
+                    "height": 2500,
+                    "locked": false,
+                    "name": "TrumpetBG.svg",
+                    "shapes": [
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "TrumpetBG.svg",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                                {
+                                    "__type__": "Layer",
+                                    "animation": {
+                                        "__type__": "AnimationContainer",
+                                        "first_frame": 0,
+                                        "last_frame": 180
+                                    },
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "mask": {
+                                        "__type__": "MaskSettings",
+                                        "inverted": false,
+                                        "mask": "NoMask"
+                                    },
+                                    "name": "Ventil3",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "parent": null,
+                                    "render": true,
+                                    "shapes": [
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 0,
+                                                "y": 0
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": -1.0158828e-08,
+                                                "y": 5.4049357e-05
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 3.3315601348876953,
+                                                "y": 3.3315601348876953
+                                            }
+                                        }
+                                    },
+                                    "uuid": "f038f029-437a-4c94-b566-de3b1cf0e9d1",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Layer",
+                                    "animation": {
+                                        "__type__": "AnimationContainer",
+                                        "first_frame": 0,
+                                        "last_frame": 180
+                                    },
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "mask": {
+                                        "__type__": "MaskSettings",
+                                        "inverted": false,
+                                        "mask": "NoMask"
+                                    },
+                                    "name": "Trumpet",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "parent": null,
+                                    "render": true,
+                                    "shapes": [
+                                        {
+                                            "__type__": "PreCompLayer",
+                                            "composition": "58c2bba4-363b-4448-903f-011eeaaa4fe2",
+                                            "group_color": "#00000000",
+                                            "locked": false,
+                                            "name": "Composition Layer",
+                                            "opacity": {
+                                                "value": 1
+                                            },
+                                            "size": {
+                                                "height": 1024,
+                                                "width": 536
+                                            },
+                                            "timing": {
+                                                "__type__": "StretchableTime",
+                                                "start_time": 0,
+                                                "stretch": 1
+                                            },
+                                            "transform": {
+                                                "__type__": "Transform",
+                                                "anchor_point": {
+                                                    "value": {
+                                                        "x": 424.9038288323685,
+                                                        "y": 39.897244083619626
+                                                    }
+                                                },
+                                                "position": {
+                                                    "value": {
+                                                        "x": -552.2274043457894,
+                                                        "y": -181.64660622554473
+                                                    }
+                                                },
+                                                "rotation": {
+                                                    "value": 0
+                                                },
+                                                "scale": {
+                                                    "value": {
+                                                        "x": 1.2053626775741577,
+                                                        "y": 1
+                                                    }
+                                                }
+                                            },
+                                            "uuid": "ce015d7d-c9e0-4a16-90c6-cf8fd461795d",
+                                            "visible": true
+                                        }
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 0,
+                                                "y": 0
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 3013.938095516323,
+                                                "y": 412.4336881740328
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 2.5,
+                                                "y": 2.5
+                                            }
+                                        }
+                                    },
+                                    "uuid": "4192177b-376b-46f0-b454-9c4f568331e6",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 0,
+                                        "y": 0
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 0,
+                                        "y": 0
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "bda38dc4-34c8-4972-96da-fe0e3a137a0f",
+                            "visible": true
+                        }
+                    ],
+                    "uuid": "1c3b82aa-5084-4c17-bc72-c1a93c2c5fd7",
+                    "visible": true,
+                    "width": 2500
+                },
+                {
+                    "__type__": "Composition",
+                    "animation": {
+                        "__type__": "AnimationContainer",
+                        "first_frame": 0,
+                        "last_frame": 60
+                    },
+                    "fps": 60,
+                    "group_color": "#00000000",
+                    "height": 1024,
+                    "locked": false,
+                    "name": "",
+                    "shapes": [
+                        {
+                            "__type__": "Image",
+                            "group_color": "#00000000",
+                            "image": "69bb524d-2ae7-4b5d-a536-f90983456c67",
+                            "locked": false,
+                            "name": "1751239",
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 268,
+                                        "y": 512
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 296.9553966304909,
+                                        "y": 518.813034501292
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 20
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": -0.943126916885376,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "5c74189a-f506-47aa-a632-bdd2bfbe2718",
+                            "visible": true
+                        }
+                    ],
+                    "uuid": "58c2bba4-363b-4448-903f-011eeaaa4fe2",
+                    "visible": true,
+                    "width": 724
+                }
+            ]
+        },
+        "fonts": {
+            "__type__": "FontList",
+            "name": "",
+            "uuid": "26881215-95db-4fff-b557-2e70a34ea910",
+            "values": [
+            ]
+        },
+        "gradient_colors": {
+            "__type__": "GradientColorsList",
+            "name": "",
+            "uuid": "0b5bd4f9-df9a-4492-9e0c-64dcece65264",
+            "values": [
+            ]
+        },
+        "gradients": {
+            "__type__": "GradientList",
+            "name": "",
+            "uuid": "c1457197-097d-45c6-b550-ee552b06f0f0",
+            "values": [
+            ]
+        },
+        "images": {
+            "__type__": "BitmapList",
+            "name": "",
+            "uuid": "dc45d0dc-cb36-4943-8db9-0c6cf61b345f",
+            "values": [
+                {
+                    "__type__": "Bitmap",
+                    "data": "",
+                    "filename": "C:/Users/joels/Downloads/1751239.png",
+                    "format": "png",
+                    "height": 1024,
+                    "name": "",
+                    "url": "",
+                    "uuid": "69bb524d-2ae7-4b5d-a536-f90983456c67",
+                    "width": 536
+                }
+            ]
+        },
+        "name": "",
+        "uuid": "c234f375-4d74-490f-a06f-9024fc7916d1"
+    },
+    "format": {
+        "format_version": 8,
+        "generator": "Glaxnimate",
+        "generator_version": "0.6.0-git-d2da67a"
+    },
+    "info": {
+        "author": "",
+        "description": "",
+        "keywords": [
+        ]
+    },
+    "metadata": {
+    }
+}

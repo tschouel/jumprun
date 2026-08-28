@@ -1,0 +1,39 @@
+<svg height="793.75" inkscape:export-xdpi="96" inkscape:export-ydpi="96" style="fill:none;stroke:none;" version="1.1" viewBox="0 0 793.75 793.75" width="793.75" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Walk.svg</title>
+    <defs/>
+    <sodipodi:namedview bordercolor="#666666" borderlayer="true" inkscape:document-units="px" inkscape:pagecheckerboard="true" pagecolor="#ffffff"/>
+    <metadata>
+        <rdf:RDF>
+            <cc:Work>
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type rdf:resource="http://purl.org/dc/dcmitype/MovingImage"/>
+                <dc:title>Walk.svg</dc:title>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g id="Composition_1a107b874c164d84876a08e0f61fb4ca" inkscape:groupmode="layer" inkscape:label="Walk.svg">
+        <g id="Layer_867f18fed93f449f929c1a015299f9f7" inkscape:groupmode="layer" inkscape:label="Walk.svg" opacity="1" transform="matrix(1, 0, 0, 1, 0, 0)">
+            <g id="Layer_9bcb2ec66ec04755ac2b272889df7c5a" inkscape:groupmode="layer" inkscape:label="Walk1" opacity="1" transform="matrix(1, 0, 0, 1, 345.788, 211.836)">
+                <g id="Group_c5cba3e50bef4b7488df78ea41858332" inkscape:label="rect1-3" opacity="1" sodipodi:insensitive="true" transform="matrix(0.0066737, 0.999978, -0.999978, 0.0066737, -6.04167e-06, 1.875e-07)"/>
+                <g fill="#000000" fill-opacity="1" id="Fill_db4e5f8a630c414495e88c92696df302" inkscape:label="path3" opacity="1" transform="matrix(0.912445, -0.4092, -0.4092, -0.912445, 0, 0)">
+                    <ellipse cx="-62.8814" cy="-307.445" rx="24.2073" ry="5.37941" style="stroke:none;"/>
+                </g>
+                <g fill="#000000" fill-opacity="1" id="Fill_0ed0227b29f9448692efea4cbec0d8fb" inkscape:label="path3-7" opacity="1" transform="matrix(0.999348, -0.0361142, -0.0361142, -0.999348, 0, 0)">
+                    <ellipse cx="56.9966" cy="-315.125" rx="24.2073" ry="5.37941" style="stroke:none;"/>
+                </g>
+                <g fill="#000000" fill-opacity="1" id="Stroke_7d1ad73043554738be651f2d73ab8a8f" inkscape:label="path1" opacity="1" stroke="#00000000" stroke-opacity="1" stroke-width="2.8468101024627686" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <path d="M 54.7237,316.885 C 54.7237,316.885 43.1596,318.468 44.5044,314.148 45.0924,312.259 46.9436,270.57 46.9226,270.213 46.9226,270.213 44.3959,132.681 44.3959,132.681 41.232,76.0605 111.204,69.2518 128.529,84.1113 143.375,108.676 105.815,154.065 53.8585,137.751 53.8585,137.751 54.7237,316.885 54.7237,316.885 Z" sodipodi:nodetypes="cccccc" style="stroke:none;"/>
+                    <path d="M 54.7237,316.885 C 54.7237,316.885 43.1596,318.468 44.5044,314.148 45.0924,312.259 46.9436,270.57 46.9226,270.213 46.9226,270.213 44.3959,132.681 44.3959,132.681 41.232,76.0605 111.204,69.2518 128.529,84.1113 143.375,108.676 105.815,154.065 53.8585,137.751 53.8585,137.751 54.7237,316.885 54.7237,316.885 Z" sodipodi:nodetypes="cccccc" style="fill:none;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+                </g>
+                <g fill="#ffffff" fill-opacity="1" id="Stroke_5c92c5c9cae64ffa8820e0e41754e763" inkscape:label="ellipse19" opacity="1" stroke="#00000000" stroke-opacity="1" stroke-width="0.33237001299858093" transform="matrix(0.930762, -0.365627, 0.365316, 0.92997, 0, 0)">
+                    <ellipse cx="71.5481" cy="131.465" rx="9.18513" ry="4.71278" style="stroke:none;"/>
+                    <ellipse cx="71.5481" cy="131.465" rx="9.18513" ry="4.71278" style="fill:none;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+                </g>
+                <g fill="#000000" fill-opacity="1" id="Stroke_96c842f67b81444eb2dcb5bb49d6f097" inkscape:label="ellipse18" opacity="1" stroke="#00000000" stroke-opacity="1" stroke-width="0.49615800380706787" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <ellipse cx="109.552" cy="98.018" rx="3.13843" ry="6.14925" style="stroke:none;"/>
+                    <ellipse cx="109.552" cy="98.018" rx="3.13843" ry="6.14925" style="fill:none;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

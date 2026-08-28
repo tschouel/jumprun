@@ -1,0 +1,789 @@
+{
+    "assets": {
+        "__type__": "Assets",
+        "colors": {
+            "__type__": "NamedColorList",
+            "name": "",
+            "uuid": "deba0a54-878b-4b9b-b4c9-a5d7194caaac",
+            "values": [
+            ]
+        },
+        "compositions": {
+            "__type__": "CompositionList",
+            "name": "",
+            "uuid": "0728956c-4128-4d32-8b69-7044cff75776",
+            "values": [
+                {
+                    "__type__": "Composition",
+                    "animation": {
+                        "__type__": "AnimationContainer",
+                        "first_frame": 0,
+                        "last_frame": 180
+                    },
+                    "fps": 60,
+                    "group_color": "#00000000",
+                    "height": 1500,
+                    "locked": false,
+                    "name": "Composition",
+                    "shapes": [
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer",
+                            "opacity": {
+                                "keyframes": [
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 25,
+                                        "value": 0
+                                    },
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 35,
+                                        "value": 0.3499999940395355
+                                    }
+                                ]
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                                {
+                                    "__type__": "Image",
+                                    "group_color": "#00000000",
+                                    "image": "dc218ff6-a8d2-46d9-8792-592e096ff65b",
+                                    "locked": false,
+                                    "name": "1751239 3",
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 268,
+                                                "y": 512
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 386.0750654248767,
+                                                "y": 748.9655364839897
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": -1.3920034170150757,
+                                                "y": 1.326117753982544
+                                            }
+                                        }
+                                    },
+                                    "uuid": "8c070da3-f554-4491-90b2-a94248c803f2",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 267.2749672875616,
+                                        "y": 261.6374836437808
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.5,
+                                        "y": 0.5
+                                    }
+                                }
+                            },
+                            "uuid": "b138df1c-6c51-4faa-8656-473792fd81a7",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer 3",
+                            "opacity": {
+                                "keyframes": [
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 20,
+                                        "value": 0
+                                    },
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 30,
+                                        "value": 0.4000000059604645
+                                    }
+                                ]
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                                {
+                                    "__type__": "Image",
+                                    "group_color": "#00000000",
+                                    "image": "dc218ff6-a8d2-46d9-8792-592e096ff65b",
+                                    "locked": false,
+                                    "name": "1751239 6",
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 268,
+                                                "y": 512
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 386.0750654248767,
+                                                "y": 748.9655364839897
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": -1.3920034170150757,
+                                                "y": 1.326117753982544
+                                            }
+                                        }
+                                    },
+                                    "uuid": "ea80b281-464d-4844-8416-cea0b87b0029",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 430.76199295720426,
+                                        "y": 284.18741821890376
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.6000000238418579,
+                                        "y": 0.6000000238418579
+                                    }
+                                }
+                            },
+                            "uuid": "50e1783c-767c-4564-8f6b-6b962f53ee4f",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer 4",
+                            "opacity": {
+                                "keyframes": [
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 15,
+                                        "value": 0
+                                    },
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 25,
+                                        "value": 0.5
+                                    }
+                                ]
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                                {
+                                    "__type__": "Image",
+                                    "group_color": "#00000000",
+                                    "image": "dc218ff6-a8d2-46d9-8792-592e096ff65b",
+                                    "locked": false,
+                                    "name": "1751239 7",
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 268,
+                                                "y": 512
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 2049.6361154243928,
+                                                "y": 806.8504141692989
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": -1.3920034170150757,
+                                                "y": 1.326117753982544
+                                            }
+                                        }
+                                    },
+                                    "uuid": "dab57e46-0a63-4613-8337-d71143fbe6eb",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": -516.3352591979674,
+                                        "y": 256
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.699999988079071,
+                                        "y": 0.699999988079071
+                                    }
+                                }
+                            },
+                            "uuid": "b24688c3-2b35-495c-abcc-17329897b288",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer 5",
+                            "opacity": {
+                                "keyframes": [
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 10,
+                                        "value": 0
+                                    },
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 20,
+                                        "value": 0.6000000238418579
+                                    }
+                                ]
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                                {
+                                    "__type__": "Image",
+                                    "group_color": "#00000000",
+                                    "image": "dc218ff6-a8d2-46d9-8792-592e096ff65b",
+                                    "locked": false,
+                                    "name": "1751239 8",
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 268,
+                                                "y": 512
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 2571.921230047294,
+                                                "y": 940.1114634326352
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": -1.3920034170150757,
+                                                "y": 1.326117753982544
+                                            }
+                                        }
+                                    },
+                                    "uuid": "51d9ee0b-5307-448b-a7e0-be5c323160e8",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": -915.1872269954576,
+                                        "y": 153.8206089564735
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.800000011920929,
+                                        "y": 0.800000011920929
+                                    }
+                                }
+                            },
+                            "uuid": "ed2b5182-df1f-4ea2-b969-b943983a0018",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer 1",
+                            "opacity": {
+                                "keyframes": [
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 5,
+                                        "value": 0
+                                    },
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 15,
+                                        "value": 0.800000011920929
+                                    }
+                                ]
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                                {
+                                    "__type__": "Image",
+                                    "group_color": "#00000000",
+                                    "image": "dc218ff6-a8d2-46d9-8792-592e096ff65b",
+                                    "locked": false,
+                                    "name": "1751239 4",
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 268,
+                                                "y": 512
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 2523.62100365072,
+                                                "y": 897.7324699136267
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": -1.3920034170150757,
+                                                "y": 1.326117753982544
+                                            }
+                                        }
+                                    },
+                                    "uuid": "148e1f44-de3b-46ea-9188-114994258d26",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": -873.6367175473359,
+                                        "y": 145.13099166794962
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 0.8999999761581421,
+                                        "y": 0.8999999761581421
+                                    }
+                                }
+                            },
+                            "uuid": "c54e77dc-b14e-49ea-8946-c7b84b8cdd6d",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer 2",
+                            "opacity": {
+                                "keyframes": [
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 0,
+                                        "value": 0
+                                    },
+                                    {
+                                        "after": {
+                                            "x": 1,
+                                            "y": 1
+                                        },
+                                        "before": {
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "time": 10,
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                                {
+                                    "__type__": "Image",
+                                    "group_color": "#00000000",
+                                    "image": "dc218ff6-a8d2-46d9-8792-592e096ff65b",
+                                    "locked": false,
+                                    "name": "1751239 5",
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 268,
+                                                "y": 512
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 2103.7458631393333,
+                                                "y": 845.8597866114716
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": -1.3920034170150757,
+                                                "y": 1.326117753982544
+                                            }
+                                        }
+                                    },
+                                    "uuid": "2f37b2c3-e3f6-4c07-9e89-d9b6f24ed2c7",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Layer",
+                                    "animation": {
+                                        "__type__": "AnimationContainer",
+                                        "first_frame": 0,
+                                        "last_frame": 180
+                                    },
+                                    "auto_orient": false,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "mask": {
+                                        "__type__": "MaskSettings",
+                                        "inverted": false,
+                                        "mask": "NoMask"
+                                    },
+                                    "name": "Layer 6",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "parent": null,
+                                    "render": true,
+                                    "shapes": [
+                                    ],
+                                    "transform": {
+                                        "__type__": "Transform",
+                                        "anchor_point": {
+                                            "value": {
+                                                "x": 0,
+                                                "y": 0
+                                            }
+                                        },
+                                        "position": {
+                                            "value": {
+                                                "x": 0,
+                                                "y": 0
+                                            }
+                                        },
+                                        "rotation": {
+                                            "value": 0
+                                        },
+                                        "scale": {
+                                            "value": {
+                                                "x": 1,
+                                                "y": 1
+                                            }
+                                        }
+                                    },
+                                    "uuid": "3413df22-2c36-406f-8f4f-9a63faad8558",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": -473.2254217739759,
+                                        "y": 187.23171951970437
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "d0500cae-8ba0-469a-9092-76e54059abde",
+                            "visible": true
+                        }
+                    ],
+                    "uuid": "d58a8904-c51b-4aa3-8118-5f2124f19d04",
+                    "visible": true,
+                    "width": 1809
+                }
+            ]
+        },
+        "fonts": {
+            "__type__": "FontList",
+            "name": "",
+            "uuid": "8a753da5-1311-4b02-94d3-6539ac5b9e42",
+            "values": [
+            ]
+        },
+        "gradient_colors": {
+            "__type__": "GradientColorsList",
+            "name": "",
+            "uuid": "17a52c5e-33c0-4257-a864-dec0f6606a30",
+            "values": [
+            ]
+        },
+        "gradients": {
+            "__type__": "GradientList",
+            "name": "",
+            "uuid": "29422593-82d4-45c5-a7e5-93674b003310",
+            "values": [
+            ]
+        },
+        "images": {
+            "__type__": "BitmapList",
+            "name": "",
+            "uuid": "f2a2a0de-52d9-46a1-8d69-28c0fd67f7ec",
+            "values": [
+                {
+                    "__type__": "Bitmap",
+                    "data": "",
+                    "filename": "C:/Users/joels/Downloads/1751239.png",
+                    "format": "png",
+                    "height": 1024,
+                    "name": "",
+                    "url": "",
+                    "uuid": "dc218ff6-a8d2-46d9-8792-592e096ff65b",
+                    "width": 536
+                }
+            ]
+        },
+        "name": "",
+        "uuid": "6e1210a6-bda5-48bc-b2d1-b625132e0e14"
+    },
+    "format": {
+        "format_version": 8,
+        "generator": "Glaxnimate",
+        "generator_version": "0.6.0-git-d2da67a"
+    },
+    "info": {
+        "author": "",
+        "description": "",
+        "keywords": [
+        ]
+    },
+    "metadata": {
+    }
+}

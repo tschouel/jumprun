@@ -1260,7 +1260,7 @@ shock_hold_time = 0.5
 position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"shockresloop"
+animation = &"stand"
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false

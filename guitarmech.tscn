@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://bc5cgwcbcu0oh"]
+
+[ext_resource type="Texture2D" uid="uid://fhccuf144qo4" path="res://GuitMech1 0.png" id="1_1qkbf"]
+[ext_resource type="Texture2D" uid="uid://c6yaaglvjc7u6" path="res://GuitMech1 1.png" id="2_h7aiy"]
+[ext_resource type="Texture2D" uid="uid://b7ecdkc4lqqq" path="res://GuitMech1 2.png" id="3_ogpwn"]
+[ext_resource type="Texture2D" uid="uid://bvdk5ouar2vnp" path="res://GuitMech1 3.png" id="4_25fpm"]
+[ext_resource type="Texture2D" uid="uid://713c675wxbg0" path="res://GuitMech1 4.png" id="5_1wpqt"]
+[ext_resource type="Texture2D" uid="uid://datowog5gafe4" path="res://GuitMech2 0.png" id="6_p3ymo"]
+[ext_resource type="Texture2D" uid="uid://l12mejxdibad" path="res://GuitMech2 1.png" id="7_escxx"]
+[ext_resource type="Texture2D" uid="uid://dekkd3mvhauq6" path="res://GuitMech2 2.png" id="8_g56sf"]
+[ext_resource type="Texture2D" uid="uid://d2ai05ms5lwmn" path="res://GuitMech2 3.png" id="9_j7feq"]
+[ext_resource type="Texture2D" uid="uid://cp4dbohkhtk84" path="res://GuitMech2 4.png" id="10_al5jm"]
+[ext_resource type="Texture2D" uid="uid://d4pd6pl06ud1" path="res://GuitMechArm3 0.png" id="11_q7avt"]
+[ext_resource type="Texture2D" uid="uid://detbyaao0xd1l" path="res://GuitMechArm3 1.png" id="12_j1xbe"]
+[ext_resource type="Texture2D" uid="uid://c416odg4a56ks" path="res://GuitMechArm3 2.png" id="13_3m4jg"]
+[ext_resource type="Texture2D" uid="uid://d207gq6qh8jb" path="res://GuitMechArm3 3.png" id="14_5x0ck"]
+[ext_resource type="Texture2D" uid="uid://chdfr0drth4et" path="res://GuitMechArm3 4.png" id="15_ai131"]
+[ext_resource type="Texture2D" uid="uid://cffe48eeewpw8" path="res://GuitMechArm4 0.png" id="16_06wqv"]
+[ext_resource type="Texture2D" uid="uid://dx2qyvns8qv1s" path="res://GuitMechArm4 1.png" id="17_ip84t"]
+[ext_resource type="Texture2D" uid="uid://dxgbqb40m2jsy" path="res://GuitMechArm4 2.png" id="18_bc36m"]
+[ext_resource type="Texture2D" uid="uid://bsgsh0lcm2day" path="res://GuitMechArm4 3.png" id="19_jkdxd"]
+[ext_resource type="Texture2D" uid="uid://c1q5np1yf7cfp" path="res://GuitMechArm4 4.png" id="20_xwvit"]
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="21_o0qil"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffelt"]
+size = Vector2(28.33333, 6.065457)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jeyyi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1qkbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h7aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ogpwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_25fpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1wpqt")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1wpqt")
+}],
+"loop": 1,
+"name": &"loop",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8yc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_p3ymo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_escxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g56sf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j7feq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_al5jm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0uk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_q7avt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j1xbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3m4jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5x0ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ai131")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4r8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_06wqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ip84t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bc36m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jkdxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xwvit")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_xwvit")
+}],
+"loop": 1,
+"name": &"loop",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=2058975777]
+position = Vector2(-43, 105)
+
+[node name="Boden" type="StaticBody2D" parent="." unique_id=2116792927]
+z_index = -20
+position = Vector2(-31, 45.000023)
+scale = Vector2(23.44883, 0.9431646)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boden" unique_id=1387573009]
+position = Vector2(4.349897, -121.92996)
+scale = Vector2(54.766544, 15.768663)
+shape = SubResource("RectangleShape2D_ffelt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boden" unique_id=938752414]
+z_index = 1
+position = Vector2(-12.708523, -156.91855)
+scale = Vector2(150, 200)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Boden" unique_id=762035154]
+z_index = 1
+position = Vector2(-13.220276, -6.3615623)
+scale = Vector2(150, 200)
+
+[node name="BG" type="ColorRect" parent="Boden/Sprite2D2" unique_id=1718845617]
+z_index = -50
+material = SubResource("ShaderMaterial_jeyyi")
+offset_left = -1.1437671
+offset_top = 1.8872643
+offset_right = 38.85623
+offset_bottom = 41.88724
+scale = Vector2(0.17991452, -2.3744788)
+color = Color(0.8881705, 0.98241967, 0.9997863, 1)
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("21_o0qil")]
+position = Vector2(-216, -171)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1502382435]
+position = Vector2(-46, 72)
+scale = Vector2(2, 2)
+
+[node name="Arm1" type="AnimatedSprite2D" parent="Node2D" unique_id=1172789003]
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+
+[node name="Arm2" type="AnimatedSprite2D" parent="Node2D" unique_id=365765549]
+sprite_frames = SubResource("SpriteFrames_c8yc8")
+
+[node name="Arm3" type="AnimatedSprite2D" parent="Node2D" unique_id=418932131]
+sprite_frames = SubResource("SpriteFrames_y0uk2")
+
+[node name="Arm4" type="AnimatedSprite2D" parent="Node2D" unique_id=231425747]
+sprite_frames = SubResource("SpriteFrames_p4r8s")

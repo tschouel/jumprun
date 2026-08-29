@@ -6494,7 +6494,7 @@
                                         }
                                     },
                                     "uuid": "652b5ee8-a5f4-4173-a4fa-2db40fbbb33e",
-                                    "visible": false
+                                    "visible": true
                                 },
                                 {
                                     "__type__": "Layer",
@@ -7692,7 +7692,7 @@
                                         }
                                     },
                                     "uuid": "9dbde2ce-287a-444f-876e-46e2a6751f51",
-                                    "visible": true
+                                    "visible": false
                                 },
                                 {
                                     "__type__": "Layer",
@@ -9255,7 +9255,7 @@
                                         }
                                     },
                                     "uuid": "a680ecd7-e3ac-41af-b3e8-083c9cbaeb31",
-                                    "visible": false
+                                    "visible": true
                                 },
                                 {
                                     "__type__": "Group",

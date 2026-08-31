@@ -555,7 +555,8 @@ opposite_direction_trigger = NodePath("../Gegenbewegung/TriggerArea")
 
 [node name="BottomFader" parent="." unique_id=1477086347 node_paths=PackedStringArray("start_point", "end_point", "handle") instance=ExtResource("97_slh3d")]
 z_index = 20
-position = Vector2(6321, 1130)
+position = Vector2(5854, 539)
+scale = Vector2(1, -1)
 script = ExtResource("100_215b8")
 start_point = NodePath("Left")
 end_point = NodePath("Right")
@@ -566,9 +567,20 @@ right_action = "ui_right"
 invert_input = false
 freeze_player_while_grabbing = true
 
+[node name="Left" parent="BottomFader" index="0" unique_id=647067423]
+position = Vector2(80, 350)
+scale = Vector2(0.2, 0.2)
+
+[node name="Right" parent="BottomFader" index="1" unique_id=1597021274]
+position = Vector2(4053, 350)
+scale = Vector2(0.2, 0.2)
+
+[node name="Handle" parent="BottomFader" index="2" unique_id=1713553267]
+position = Vector2(3516, 210)
+scale = Vector2(0.3, 0.3)
+
 [node name="AnimatedSprite2D" parent="BottomFader" index="3" unique_id=466261305 node_paths=PackedStringArray("closeness_source", "sprite")]
-position = Vector2(1774, 1403)
-scale = Vector2(2, 2)
+position = Vector2(1756, 104)
 frame = 7
 frame_progress = 0.80801356
 script = ExtResource("3_o317o")

@@ -1223,7 +1223,7 @@ occluder = SubResource("OccluderPolygon2D_w3a0q")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
 position = Vector2(493, -452)
 offset = Vector2(600, 0)
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(0.4, 0.4)
 process_callback = 0
 limit_enabled = false
 limit_left = 0

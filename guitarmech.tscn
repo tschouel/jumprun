@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcc2ma2t6ges8" path="res://guitarmech.gd" id="1_25fpm"]
 [ext_resource type="Texture2D" uid="uid://2e7y0uh1r7h" path="res://GuitArm1 0.png" id="3_1wpqt"]
+[ext_resource type="Texture2D" uid="uid://cjvawhwuipvo1" path="res://Body 0.png" id="3_06wqv"]
 [ext_resource type="Texture2D" uid="uid://b816qb8kfvjot" path="res://GuitArm1 1.png" id="4_p3ymo"]
 [ext_resource type="Texture2D" uid="uid://b4a4a6u6ri3ei" path="res://GuitArm1 2.png" id="5_escxx"]
 [ext_resource type="Texture2D" uid="uid://dlybxpco763m2" path="res://GuitArm1 3.png" id="6_g56sf"]
@@ -24,22 +25,33 @@
 [ext_resource type="Texture2D" uid="uid://dhfdt4md8v47x" path="res://GuitArm4 4.png" id="22_d7mey"]
 [ext_resource type="Texture2D" uid="uid://c161u8pdhonsp" path="res://animation/Guitar Mecha.png" id="22_ogpwn"]
 [ext_resource type="Script" uid="uid://by0nmo2bide17" path="res://guitar_string.gd" id="23_25fpm"]
-[ext_resource type="Texture2D" uid="uid://dnq4dpa6mivfw" path="res://GuitarPedal 0.png" id="24_ai131"]
 [ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="25_1wpqt"]
-[ext_resource type="Texture2D" uid="uid://bbor1va18sv4v" path="res://GuitarPedal 1.png" id="25_06wqv"]
-[ext_resource type="Texture2D" uid="uid://o4cmrpcvuwjd" path="res://GuitarPedal 2.png" id="26_ip84t"]
-[ext_resource type="Texture2D" uid="uid://bh3u246nlhva8" path="res://GuitarPedal 3.png" id="27_bc36m"]
-[ext_resource type="Texture2D" uid="uid://dpsdbc3vhgoyr" path="res://GuitarPedal 4.png" id="28_jkdxd"]
-[ext_resource type="Texture2D" uid="uid://b58p2mbboj7sl" path="res://GuitarPedal 5.png" id="29_xwvit"]
-[ext_resource type="Texture2D" uid="uid://dwj78gd6q7ptm" path="res://GuitarPedal 6.png" id="30_o0qil"]
-[ext_resource type="Texture2D" uid="uid://vjj6n4yhh8jd" path="res://GuitarPedal 7.png" id="31_ffelt"]
-[ext_resource type="Texture2D" uid="uid://dmi8hjqm87x7j" path="res://GuitarPedal 8.png" id="32_jeyyi"]
-[ext_resource type="Texture2D" uid="uid://sw5eu3tbf52j" path="res://GuitarPedal 9.png" id="33_d7mey"]
+[ext_resource type="Texture2D" uid="uid://rk7fqjiisr3" path="res://GuitPedal 0.png" id="25_06wqv"]
+[ext_resource type="Texture2D" uid="uid://ci3mki1qowth" path="res://GuitPedal 1.png" id="26_ip84t"]
+[ext_resource type="Texture2D" uid="uid://dppyhmq1l62jk" path="res://GuitPedal 2.png" id="27_bc36m"]
+[ext_resource type="Texture2D" uid="uid://ta8c7yatn0re" path="res://GuitPedal 3.png" id="28_jkdxd"]
+[ext_resource type="Texture2D" uid="uid://d3ygjn5mnt5mb" path="res://GuitPedal 4.png" id="29_xwvit"]
+[ext_resource type="Texture2D" uid="uid://dn335nhekomhe" path="res://GuitPedal 5.png" id="30_o0qil"]
+[ext_resource type="Texture2D" uid="uid://n2r28x1kj07w" path="res://GuitPedal 6.png" id="31_ffelt"]
+[ext_resource type="Texture2D" uid="uid://bksopalviknq6" path="res://GuitPedal 7.png" id="32_jeyyi"]
+[ext_resource type="Texture2D" uid="uid://e5v50yuct5md" path="res://GuitPedal 8.png" id="33_d7mey"]
+[ext_resource type="Texture2D" uid="uid://cnwew4wke6n2i" path="res://GuitPedal 9.png" id="34_hf205"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffelt"]
 size = Vector2(28.33333, 6.065457)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jeyyi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixr7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_06wqv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
 animations = [{
@@ -169,9 +181,6 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("24_ai131")
-}, {
-"duration": 1.0,
 "texture": ExtResource("25_06wqv")
 }, {
 "duration": 1.0,
@@ -199,7 +208,7 @@ animations = [{
 "texture": ExtResource("33_d7mey")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_ai131")
+"texture": ExtResource("34_hf205")
 }],
 "loop": 0,
 "name": &"pluck",
@@ -209,11 +218,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
 size = Vector2(20, 28.722223)
 
-[node name="GuitarMech" type="Node2D" unique_id=2058975777 node_paths=PackedStringArray("interaction_zone", "player", "string_node", "pluck_sprite", "pedal_sprite", "lever_sprites")]
+[node name="GuitarMech" type="Node2D" unique_id=2058975777 node_paths=PackedStringArray("interaction_zone", "player", "player_override_sprite", "string_node", "pluck_sprite", "pedal_sprite", "lever_sprites")]
 position = Vector2(-43, 105)
 script = ExtResource("1_25fpm")
 interaction_zone = NodePath("InteractionZone")
 player = NodePath("Player")
+player_override_sprite = NodePath("animation/Playernew")
 string_node = NodePath("Saite")
 pluck_sprite = NodePath("animation/PedalRechts")
 pedal_sprite = NodePath("animation/PedalLinks")
@@ -263,8 +273,13 @@ color = Color(0.54814297, 0.6974549, 0.7128562, 1)
 position = Vector2(-216, -171)
 
 [node name="animation" type="Node2D" parent="." unique_id=1502382435]
-position = Vector2(-143, -18)
+position = Vector2(-108, 0)
 scale = Vector2(2, 2)
+
+[node name="Playernew" type="AnimatedSprite2D" parent="animation" unique_id=151792996]
+visible = false
+position = Vector2(133, -187)
+sprite_frames = SubResource("SpriteFrames_ixr7o")
 
 [node name="Arm1" type="AnimatedSprite2D" parent="animation" unique_id=1172789003]
 position = Vector2(106.5, -3.5)
@@ -305,18 +320,17 @@ scale = Vector2(4.1, 4.1)
 texture = ExtResource("22_ogpwn")
 
 [node name="PedalRechts" type="AnimatedSprite2D" parent="animation" unique_id=1124216700]
-position = Vector2(519.5, 102)
+position = Vector2(393, 4)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_wd2d7")
 animation = &"pluck"
-frame = 10
 frame_progress = 1.0
 
 [node name="PedalLinks" type="AnimatedSprite2D" parent="animation" unique_id=976477755]
-position = Vector2(-348.5, 102.5)
-scale = Vector2(-1, 1)
+position = Vector2(-141, 9)
+scale = Vector2(-0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_wd2d7")
 animation = &"pluck"
-frame = 10
 frame_progress = 1.0
 
 [node name="Saite" type="Line2D" parent="." unique_id=540404650 node_paths=PackedStringArray("start_point", "end_point", "press_points", "pluck_point", "pluck_point_alt")]
@@ -327,7 +341,7 @@ script = ExtResource("23_25fpm")
 start_point = NodePath("Start")
 end_point = NodePath("End")
 press_points = [NodePath("../animation/Arm1/presspoint1"), NodePath("../animation/Arm2/presspoint2"), NodePath("../animation/Arm3/presspoint3"), NodePath("../animation/Arm4/presspoint4")]
-press_depth = 35.0
+press_depth = 40.0
 pluck_point = NodePath("../pluckpoint")
 pluck_point_alt = NodePath("../pluckpointLeft")
 vibration_decay = 1.5
@@ -342,7 +356,7 @@ position = Vector2(-1706, 400)
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1490993428]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=895363405]
-position = Vector2(33, -415.49997)
+position = Vector2(119.99999, -364.00003)
 scale = Vector2(22.440002, 17.999998)
 shape = SubResource("RectangleShape2D_u0jqh")
 
@@ -359,5 +373,3 @@ scale = Vector2(2, 2)
 [node name="pluckpointLeft" type="Marker2D" parent="." unique_id=320249503]
 position = Vector2(-1465, 447)
 scale = Vector2(4, 4)
-
-[node name="playeranimation" type="AnimatedSprite2D" parent="." unique_id=1598741048]

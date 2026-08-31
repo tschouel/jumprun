@@ -34,10 +34,16 @@ extends Node
 @export var toggle_key: Key = KEY_F
 @export var player: CharacterBody2D
 @export var freeze_player_while_active: bool = true
-## Animationsname im Player-SpriteFrames (z.B. "sitzend_gitarre"), der waehrend
-## des Spielmodus per GroundMovement.set_animation_override() angezeigt wird.
-## Leer lassen, um die Player-Animation nicht anzufassen.
+## Animationsname, der waehrend des Spielmodus per
+## GroundMovement.set_animation_override() angezeigt wird. Leer lassen, um
+## die Player-Animation nicht anzufassen.
 @export var player_animation_override: String = ""
+## Optional: eigenes AnimatedSprite2D (eigenes SpriteFrames) fuer die diversen
+## Gitarre-Animationen des Players, statt sie ins Haupt-SpriteFrames zu
+## quetschen - wird waehrend des Spielmodus sichtbar, der normale Player-
+## Sprite wird solange versteckt. Leer lassen, um stattdessen nur
+## player_animation_override im normalen Sprite abzuspielen.
+@export var player_override_sprite: AnimatedSprite2D
 
 @export_group("Saite")
 @export var string_node: Node
@@ -122,8 +128,9 @@ func _activate() -> void:
 	if freeze_player_while_active and player:
 		player.set_physics_process(false)
 		player.velocity = Vector2.ZERO
-	if player_animation_override != "" and _ground_movement and _ground_movement.has_method("set_animation_override"):
-		_ground_movement.set_animation_override(player_animation_override)
+	if _ground_movement and _ground_movement.has_method("set_animation_override"):
+		if player_animation_override != "" or player_override_sprite:
+			_ground_movement.set_animation_override(player_animation_override, player_override_sprite)
 
 func _deactivate() -> void:
 	_is_active = false

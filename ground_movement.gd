@@ -58,6 +58,11 @@ var _platforms_currently_passable: bool = false
 ## oder wachsen muss, wenn ein neues Minigame dazukommt.
 var _animation_override_active: bool = false
 var _animation_override_name: String = ""
+## Falls gesetzt: ein KOMPLETT eigenes AnimatedSprite2D (eigenes SpriteFrames),
+## das waehrend des Overrides sichtbar ist statt nur eine Animation im
+## normalen sprite umzuschalten - fuer Minigames mit vielen eigenen,
+## diversen Animationen, die nicht ins Haupt-SpriteFrames sollen.
+var _override_sprite: AnimatedSprite2D = null
 func setup(player: CharacterBody2D) -> void:
 	_player = player
 	if not sprite:
@@ -78,19 +83,58 @@ func set_active(active: bool) -> void:
 ## zurueck), bis clear_animation_override() aufgerufen wird. Beliebig viele
 ## externe Skripte koennen das benutzen (Fader, TuningPeg, SinkButton,
 ## guitar_mechanism.gd, ...) - diese Datei muss dafuer nie erweitert werden.
-func set_animation_override(animation_name: String) -> void:
+##
+## override_sprite leer lassen: nur animation_name wird im normalen sprite
+## gespielt (wie bisher). override_sprite gesetzt: der normale sprite wird
+## versteckt, override_sprite stattdessen sichtbar gemacht und darauf
+## animation_name gespielt - fuer Minigames mit eigenem, umfangreichem
+## SpriteFrames voller diverser Animationen (z.B. beim Gitarre-Spielen), die
+## nicht ins Haupt-SpriteFrames des Players gequetscht werden sollen.
+func set_animation_override(animation_name: String, override_sprite: AnimatedSprite2D = null) -> void:
 	_animation_override_active = true
 	_animation_override_name = animation_name
-	if sprite and animation_name != "":
+	_override_sprite = override_sprite
+	if _override_sprite:
+		if sprite:
+			sprite.visible = false
+		_override_sprite.visible = true
+		if animation_name != "":
+			_override_sprite.speed_scale = 1.0
+			if _override_sprite.animation != animation_name or not _override_sprite.is_playing():
+				_override_sprite.play(animation_name)
+	elif sprite and animation_name != "":
 		sprite.speed_scale = 1.0
 		if sprite.animation != animation_name or not sprite.is_playing():
 			sprite.play(animation_name)
+## Wechselt WAEHREND ein Override aktiv ist die Animation auf dem aktuell
+## sichtbaren Sprite (dem override_sprite von set_animation_override, oder dem
+## normalen sprite, falls keiner gesetzt wurde) - ohne Sichtbarkeiten
+## anzufassen. Fuer Minigames, bei denen waehrend des Steuerns mehrere
+## verschiedene Animationen nacheinander drankommen (z.B. je nachdem, welche
+## Taste gerade gedrueckt wird), ohne jedes Mal den Override neu zu setzen.
+func set_override_animation(animation_name: String) -> void:
+	if not _animation_override_active or animation_name == "":
+		return
+	_animation_override_name = animation_name
+	var target: AnimatedSprite2D = _override_sprite if _override_sprite else sprite
+	if not target:
+		return
+	target.speed_scale = 1.0
+	if target.animation != animation_name or not target.is_playing():
+		target.play(animation_name)
 ## Beendet einen aktiven Override - ab dem naechsten process_movement()-Aufruf
 ## uebernimmt die normale Logik wieder (Stand/Walk/Jump/... je nach aktuellem
 ## Zustand), ganz ohne dass hier explizit etwas zurueckgesetzt werden muss.
+## Macht ein evtl. genutztes override_sprite wieder unsichtbar und den
+## normalen sprite wieder sichtbar.
 func clear_animation_override() -> void:
 	_animation_override_active = false
 	_animation_override_name = ""
+	if _override_sprite:
+		_override_sprite.visible = false
+	if sprite:
+		sprite.visible = true
+	_override_sprite = null
 ## Fügt der Bewegung einen einmaligen Stoß hinzu (z.B. Druckwelle), klingt über push_friction ab.
 ## Löst zusätzlich die Schock-Animation aus, wenn der Betrag über shock_threshold liegt -
 ## aber nur, wenn nicht schon eine Schock-Reaktion läuft (verhindert Dauer-Neustart bei Beat-Serien).

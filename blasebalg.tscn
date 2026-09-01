@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://cl8ca04f7drd7"]
+
+[ext_resource type="Script" uid="uid://oddhqke1xn02" path="res://animationtriggerBlasebalg.gd" id="1_2gon3"]
+[ext_resource type="Texture2D" uid="uid://biiw24vg10cpi" path="res://animation/Blasebalg 00.png" id="2_bcy2g"]
+[ext_resource type="Texture2D" uid="uid://knttkm3fxvsd" path="res://animation/Blasebalg 01.png" id="3_u4uij"]
+[ext_resource type="Texture2D" uid="uid://c1w6mbb24m5d5" path="res://animation/Blasebalg 02.png" id="4_tbxdr"]
+[ext_resource type="Texture2D" uid="uid://y13a22u5kayc" path="res://animation/Blasebalg 03.png" id="5_v5p14"]
+[ext_resource type="Texture2D" uid="uid://c37yppi73gs1s" path="res://animation/Blasebalg 04.png" id="6_sb22c"]
+[ext_resource type="Texture2D" uid="uid://ctqsr0141ge6f" path="res://animation/Blasebalg 05.png" id="7_8cvt2"]
+[ext_resource type="Texture2D" uid="uid://lkpc5qihklw4" path="res://animation/Blasebalg 06.png" id="8_ldfxo"]
+[ext_resource type="Texture2D" uid="uid://cfrib3faj6qha" path="res://animation/Blasebalg 07.png" id="9_c33tq"]
+[ext_resource type="Texture2D" uid="uid://b16wm4kg50jgq" path="res://animation/Blasebalg 08.png" id="10_vaykp"]
+[ext_resource type="Texture2D" uid="uid://crgiympy7j7db" path="res://animation/Blasebalg 09.png" id="11_q2jv4"]
+[ext_resource type="Texture2D" uid="uid://ctw2vwnryov6r" path="res://animation/Blasebalg 10.png" id="12_lq0o3"]
+[ext_resource type="Texture2D" uid="uid://wvfjmxok4jcx" path="res://animation/Blasebalg 11.png" id="13_m7ugv"]
+[ext_resource type="Texture2D" uid="uid://ch65k7a0u638b" path="res://animation/Blasebalg 12.png" id="14_exntn"]
+[ext_resource type="Texture2D" uid="uid://dtlagbcxc0q1d" path="res://animation/Blasebalg 13.png" id="15_u84m7"]
+[ext_resource type="Texture2D" uid="uid://tc18nk5kd1dd" path="res://animation/Blasebalg 14.png" id="16_pndvt"]
+[ext_resource type="Texture2D" uid="uid://bq853bokdbi0u" path="res://animation/Blasebalg 15.png" id="17_lv4ld"]
+[ext_resource type="Texture2D" uid="uid://b4yyp8h7fywb3" path="res://animation/Blasebalg 16.png" id="18_5hrok"]
+[ext_resource type="Texture2D" uid="uid://bcswidih8amvk" path="res://animation/Blasebalg 17.png" id="19_q42p2"]
+[ext_resource type="Texture2D" uid="uid://dq6sm6hi4abom" path="res://animation/Blasebalg 18.png" id="20_cqpai"]
+[ext_resource type="Texture2D" uid="uid://btgrkcyu1b1ar" path="res://animation/Blasebalg 19.png" id="21_aepxq"]
+[ext_resource type="Texture2D" uid="uid://cnm54wras3ary" path="res://animation/Blasebalg 20.png" id="22_gvgmq"]
+[ext_resource type="Texture2D" uid="uid://d3s1nwwtnhfti" path="res://animation/Blasebalg 21.png" id="23_rl62x"]
+[ext_resource type="Texture2D" uid="uid://bp8nm1wvh56xi" path="res://animation/Blasebalg 22.png" id="24_ru6ti"]
+[ext_resource type="Texture2D" uid="uid://cgme0617gmtoa" path="res://animation/Blasebalg 23.png" id="25_ef0gh"]
+[ext_resource type="Texture2D" uid="uid://d0lir8gwr4jwi" path="res://animation/Blasebalg 24.png" id="26_4dwiv"]
+[ext_resource type="Texture2D" uid="uid://da0hmaxgwn5ko" path="res://animation/Blasebalg 25.png" id="27_w81v8"]
+[ext_resource type="Texture2D" uid="uid://b5kt246gwxqbp" path="res://animation/Blasebalg 26.png" id="28_kjsu5"]
+[ext_resource type="Texture2D" uid="uid://dxk48aoiy70qn" path="res://animation/Blasebalg 27.png" id="29_j6avg"]
+[ext_resource type="Texture2D" uid="uid://dntke7voy0uxf" path="res://animation/Blasebalg 28.png" id="30_05f5i"]
+[ext_resource type="Texture2D" uid="uid://8jrd3m7p2dta" path="res://animation/Blasebalg 29.png" id="31_o0i3t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_db6s6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bcy2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u4uij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tbxdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v5p14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sb22c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8cvt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ldfxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c33tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vaykp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q2jv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lq0o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m7ugv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_exntn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_u84m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pndvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lv4ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5hrok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q42p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cqpai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_aepxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_gvgmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_rl62x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ru6ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ef0gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4dwiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_w81v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_kjsu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_j6avg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_05f5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_o0i3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bcy2g")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_bw61x"]
+resource_name = "Blasebalg"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.004999999, 0.335, 0.35319313, 0.515, 0.72837424, 1.0333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.241892, -1.5219271077390553, -1.53588974175501, -1.4563003, -1.4049900478554354, -1.2601277199399057]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Blasebalg2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0450001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 29]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0024140812, 0.33184138, 0.3623439, 0.72837424),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(94, 82), Vector2(91, 89), Vector2(89.99999, 87.99999), Vector2(90.00001, 96), Vector2(93.00001, 86.00001)]
+}
+
+[sub_resource type="Animation" id="Animation_braay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.241892]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Blasebalg2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(91, 89)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a816w"]
+_data = {
+&"Blasebalg": SubResource("Animation_bw61x"),
+&"RESET": SubResource("Animation_braay")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox1pj"]
+size = Vector2(22.294897, 12.832855)
+
+[node name="Blasebalg" type="Node" unique_id=893604280]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1419536107]
+script = ExtResource("1_2gon3")
+
+[node name="Blasebalg2" type="AnimatedSprite2D" parent="Node2D" unique_id=1209962413]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_db6s6")
+
+[node name="Rotation" type="Node2D" parent="Node2D" unique_id=1091051614]
+position = Vector2(91, 89)
+rotation = -1.241892
+
+[node name="AnimatableBody2D" type="RigidBody2D" parent="Node2D/Rotation" unique_id=993230579]
+position = Vector2(660.6085, 882.9481)
+freeze = true
+freeze_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rotation/AnimatableBody2D" unique_id=1628464359]
+position = Vector2(-168.01622, 30.928131)
+polygon = PackedVector2Array(-483.76923, -1271.9185, -486.46268, -1162.1653, -494.31158, -1154.2032, -493.90698, -920.8241, -501.47815, -918.2401, -503.41104, -1276.8376)
+
+[node name="BlasebalgAnim" type="AnimationPlayer" parent="Node2D/Rotation/AnimatableBody2D" unique_id=1214915264]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_a816w")
+
+[node name="TriggerBlasebalg" type="Area2D" parent="Node2D" unique_id=1491253490]
+position = Vector2(-67, 13)
+rotation = 0.34410587
+scale = Vector2(15.614204, -1.5175027)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerBlasebalg" unique_id=1670257713]
+position = Vector2(-0.54034805, -3.5835876)
+scale = Vector2(0.99999976, 1)
+shape = SubResource("RectangleShape2D_ox1pj")
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=1151063702]

@@ -40,3 +40,7 @@ texture = ExtResource("2_jrw0r")
 position = Vector2(795, -456.00003)
 scale = Vector2(6, 6)
 step_size = 5.0
+
+[node name="Node" type="Node" parent="." unique_id=1618908225]
+script = ExtResource("1_oodcg")
+zoom = 0.5

@@ -1253,6 +1253,7 @@ speed = 600.0
 jump_velocity = -800.0
 gravity = 1300.0
 max_platform_jump_boost = 900.0
+climb_speed = 400.0
 camera_look_down_offset = 500.0
 shock_hold_time = 0.5
 

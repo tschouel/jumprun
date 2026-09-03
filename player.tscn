@@ -1203,6 +1203,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1969377440 groups=["player"]]
+scale = Vector2(0.5, 0.5)
 floor_snap_length = 12.0
 platform_on_leave = 2
 script = ExtResource("1_4flbx")
@@ -1221,9 +1222,9 @@ scale = Vector2(0.41968638, 0.3021742)
 occluder = SubResource("OccluderPolygon2D_w3a0q")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
-position = Vector2(493, -452)
-offset = Vector2(600, 0)
-zoom = Vector2(0.4, 0.4)
+position = Vector2(-578, -416)
+offset = Vector2(600, -800)
+zoom = Vector2(0.5, 0.5)
 process_callback = 0
 limit_enabled = false
 limit_left = 0
@@ -1231,9 +1232,6 @@ limit_top = 0
 limit_right = 17250
 limit_bottom = 1080
 position_smoothing_speed = 15.0
-
-[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=236994846]
-position = Vector2(21.160006, -6.819992)
 
 [node name="FlyingMovement" type="Node2D" parent="." unique_id=291982134]
 script = ExtResource("16_u1c27")
@@ -1261,7 +1259,9 @@ shock_hold_time = 0.5
 position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"stand"
+animation = &"walking"
+frame = 1
+frame_progress = 0.19631858
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false

@@ -544,15 +544,15 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Mover/AnimatableBody2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.665, 0.835, 1.135, 1.4350001, 1.805, 3.845, 6.155),
+"times": PackedFloat32Array(0, 0.665, 0.835, 1.135, 1.505, 1.835, 3.815, 6.155),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-4, -66), Vector2(-5, 49), Vector2(-8, 47), Vector2(-4, 101), Vector2(-9, 161), Vector2(-5, 173), Vector2(-6, 206), Vector2(-2, 267)]
+"values": [Vector2(-4, -66), Vector2(-5, 49), Vector2(-8, 47), Vector2(-4, 101), Vector2(-35.924347, 254.17798), Vector2(-17.363762, 261.424), Vector2(-37.12097, 257.1051), Vector2(-2, 267)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yjsgw"]
@@ -1990,7 +1990,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8yc8"]
-size = Vector2(643, 130.5)
+size = Vector2(643, 189.03247)
 
 [sub_resource type="Curve2D" id="Curve2D_ptuls"]
 _data = {
@@ -2006,17 +2006,17 @@ body = NodePath("Mover/AnimatableBody2D")
 path = NodePath("Path2D")
 path_follow = NodePath("Path2D/PathFollow2D")
 frame_path_keys = Array[Vector2]([Vector2(1, 0), Vector2(20, 0), Vector2(159, 1)])
-frame_body_offset_keys = Array[Vector3]([Vector3(0, 0, 0), Vector3(20, 0, 100), Vector3(70, 0, 150), Vector3(110, 0, 160), Vector3(130, 0, 200), Vector3(159, 0, 180)])
+frame_body_offset_keys = Array[Vector3]([Vector3(0, 0, 0), Vector3(20, 0, 100), Vector3(70, 0, 150), Vector3(110, 0, 160), Vector3(130, 0, 200), Vector3(159, 0, 400)])
 pump_zone = NodePath("Blasebalg/Node2D/TriggerBlasebalg")
 jump_zone = NodePath("jumptrigger")
 require_full_pump = true
 
 [node name="jumptrigger" type="Area2D" parent="." unique_id=1276694444]
-position = Vector2(340.00003, -571.00006)
+position = Vector2(423, 1085)
 scale = Vector2(1.541837, 0.076126896)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jumptrigger" unique_id=1726235745]
-position = Vector2(-149.8213, -2561.5115)
+position = Vector2(-201.70747, -29647.867)
 shape = SubResource("RectangleShape2D_u0jqh")
 
 [node name="Boden" type="StaticBody2D" parent="." unique_id=1103004906]
@@ -2059,7 +2059,8 @@ scale = Vector2(0.17991452, -2.3744788)
 color = Color(0.54814297, 0.6974549, 0.7128562, 1)
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("402_4p3rm")]
-position = Vector2(-1662, -144)
+z_index = 20
+position = Vector2(2355, -36)
 
 [node name="Boden3" type="StaticBody2D" parent="." unique_id=1574003000]
 position = Vector2(12931, -11376)
@@ -2090,8 +2091,8 @@ callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_yjsgw")
 
 [node name="BagpipeAnimation" type="AnimatedSprite2D" parent="Mover" unique_id=826206833]
-position = Vector2(61, -223)
-scale = Vector2(2, 2)
+position = Vector2(81.86365, -357.3602)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"jump"
 
@@ -2099,7 +2100,7 @@ animation = &"jump"
 position = Vector2(-4, -66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mover/AnimatableBody2D" unique_id=1110141497]
-position = Vector2(77.800766, -602.25)
+position = Vector2(189.4762, -930.8995)
 shape = SubResource("RectangleShape2D_c8yc8")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1172269794]
@@ -2110,13 +2111,13 @@ position = Vector2(234, -173)
 rotation = -1.241892
 
 [node name="Ladder" parent="." unique_id=1341763676 instance=ExtResource("494_bbxe7")]
-position = Vector2(-550, -593)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-231, -609)
+scale = Vector2(0.3834292, 0.6556573)
 
 [node name="Blasebalg" parent="." unique_id=893604280 instance=ExtResource("464_enu75")]
 
 [node name="Node2D" parent="Blasebalg" index="0" unique_id=1419536107 node_paths=PackedStringArray("trigger_zone", "animation_player")]
-position = Vector2(944, -51)
+position = Vector2(1364, -49)
 scale = Vector2(-1, 1)
 trigger_zone = NodePath("TriggerBlasebalg")
 only_once = false

@@ -1,36 +1,36 @@
 [gd_scene format=3 uid="uid://cl8ca04f7drd7"]
 
 [ext_resource type="Script" uid="uid://oddhqke1xn02" path="res://animationtriggerBlasebalg.gd" id="1_2gon3"]
-[ext_resource type="Texture2D" uid="uid://biiw24vg10cpi" path="res://animation/Blasebalg 00.png" id="2_bcy2g"]
-[ext_resource type="Texture2D" uid="uid://knttkm3fxvsd" path="res://animation/Blasebalg 01.png" id="3_u4uij"]
-[ext_resource type="Texture2D" uid="uid://c1w6mbb24m5d5" path="res://animation/Blasebalg 02.png" id="4_tbxdr"]
-[ext_resource type="Texture2D" uid="uid://y13a22u5kayc" path="res://animation/Blasebalg 03.png" id="5_v5p14"]
-[ext_resource type="Texture2D" uid="uid://c37yppi73gs1s" path="res://animation/Blasebalg 04.png" id="6_sb22c"]
-[ext_resource type="Texture2D" uid="uid://ctqsr0141ge6f" path="res://animation/Blasebalg 05.png" id="7_8cvt2"]
-[ext_resource type="Texture2D" uid="uid://lkpc5qihklw4" path="res://animation/Blasebalg 06.png" id="8_ldfxo"]
-[ext_resource type="Texture2D" uid="uid://cfrib3faj6qha" path="res://animation/Blasebalg 07.png" id="9_c33tq"]
-[ext_resource type="Texture2D" uid="uid://b16wm4kg50jgq" path="res://animation/Blasebalg 08.png" id="10_vaykp"]
-[ext_resource type="Texture2D" uid="uid://crgiympy7j7db" path="res://animation/Blasebalg 09.png" id="11_q2jv4"]
-[ext_resource type="Texture2D" uid="uid://ctw2vwnryov6r" path="res://animation/Blasebalg 10.png" id="12_lq0o3"]
-[ext_resource type="Texture2D" uid="uid://wvfjmxok4jcx" path="res://animation/Blasebalg 11.png" id="13_m7ugv"]
-[ext_resource type="Texture2D" uid="uid://ch65k7a0u638b" path="res://animation/Blasebalg 12.png" id="14_exntn"]
-[ext_resource type="Texture2D" uid="uid://dtlagbcxc0q1d" path="res://animation/Blasebalg 13.png" id="15_u84m7"]
-[ext_resource type="Texture2D" uid="uid://tc18nk5kd1dd" path="res://animation/Blasebalg 14.png" id="16_pndvt"]
-[ext_resource type="Texture2D" uid="uid://bq853bokdbi0u" path="res://animation/Blasebalg 15.png" id="17_lv4ld"]
-[ext_resource type="Texture2D" uid="uid://b4yyp8h7fywb3" path="res://animation/Blasebalg 16.png" id="18_5hrok"]
-[ext_resource type="Texture2D" uid="uid://bcswidih8amvk" path="res://animation/Blasebalg 17.png" id="19_q42p2"]
-[ext_resource type="Texture2D" uid="uid://dq6sm6hi4abom" path="res://animation/Blasebalg 18.png" id="20_cqpai"]
-[ext_resource type="Texture2D" uid="uid://btgrkcyu1b1ar" path="res://animation/Blasebalg 19.png" id="21_aepxq"]
-[ext_resource type="Texture2D" uid="uid://cnm54wras3ary" path="res://animation/Blasebalg 20.png" id="22_gvgmq"]
-[ext_resource type="Texture2D" uid="uid://d3s1nwwtnhfti" path="res://animation/Blasebalg 21.png" id="23_rl62x"]
-[ext_resource type="Texture2D" uid="uid://bp8nm1wvh56xi" path="res://animation/Blasebalg 22.png" id="24_ru6ti"]
-[ext_resource type="Texture2D" uid="uid://cgme0617gmtoa" path="res://animation/Blasebalg 23.png" id="25_ef0gh"]
-[ext_resource type="Texture2D" uid="uid://d0lir8gwr4jwi" path="res://animation/Blasebalg 24.png" id="26_4dwiv"]
-[ext_resource type="Texture2D" uid="uid://da0hmaxgwn5ko" path="res://animation/Blasebalg 25.png" id="27_w81v8"]
-[ext_resource type="Texture2D" uid="uid://b5kt246gwxqbp" path="res://animation/Blasebalg 26.png" id="28_kjsu5"]
-[ext_resource type="Texture2D" uid="uid://dxk48aoiy70qn" path="res://animation/Blasebalg 27.png" id="29_j6avg"]
-[ext_resource type="Texture2D" uid="uid://dntke7voy0uxf" path="res://animation/Blasebalg 28.png" id="30_05f5i"]
-[ext_resource type="Texture2D" uid="uid://8jrd3m7p2dta" path="res://animation/Blasebalg 29.png" id="31_o0i3t"]
+[ext_resource type="Texture2D" uid="uid://glh2s8btomr1" path="res://animation/Blasebalg 00.png" id="2_bcy2g"]
+[ext_resource type="Texture2D" uid="uid://cy2mg2tu63dve" path="res://animation/Blasebalg 01.png" id="3_u4uij"]
+[ext_resource type="Texture2D" uid="uid://dt716fwwissd7" path="res://animation/Blasebalg 02.png" id="4_tbxdr"]
+[ext_resource type="Texture2D" uid="uid://dj3r3yt728775" path="res://animation/Blasebalg 03.png" id="5_v5p14"]
+[ext_resource type="Texture2D" uid="uid://y458jh5wgu8v" path="res://animation/Blasebalg 04.png" id="6_sb22c"]
+[ext_resource type="Texture2D" uid="uid://curaybwoc1sd8" path="res://animation/Blasebalg 05.png" id="7_8cvt2"]
+[ext_resource type="Texture2D" uid="uid://da30s26epyx0c" path="res://animation/Blasebalg 06.png" id="8_ldfxo"]
+[ext_resource type="Texture2D" uid="uid://ffxyfk8e8eon" path="res://animation/Blasebalg 07.png" id="9_c33tq"]
+[ext_resource type="Texture2D" uid="uid://3ttpb5npdugq" path="res://animation/Blasebalg 08.png" id="10_vaykp"]
+[ext_resource type="Texture2D" uid="uid://bn5ar00gjfx08" path="res://animation/Blasebalg 09.png" id="11_q2jv4"]
+[ext_resource type="Texture2D" uid="uid://bhtsayi5evp6c" path="res://animation/Blasebalg 10.png" id="12_lq0o3"]
+[ext_resource type="Texture2D" uid="uid://bgwcwtfqfbawr" path="res://animation/Blasebalg 11.png" id="13_m7ugv"]
+[ext_resource type="Texture2D" uid="uid://pxykuwyptntc" path="res://animation/Blasebalg 12.png" id="14_exntn"]
+[ext_resource type="Texture2D" uid="uid://dreif1vlwvhw0" path="res://animation/Blasebalg 13.png" id="15_u84m7"]
+[ext_resource type="Texture2D" uid="uid://mh1f8hjua2kh" path="res://animation/Blasebalg 14.png" id="16_pndvt"]
+[ext_resource type="Texture2D" uid="uid://sfcyaxb8hv0w" path="res://animation/Blasebalg 15.png" id="17_lv4ld"]
+[ext_resource type="Texture2D" uid="uid://b4sb7isragwww" path="res://animation/Blasebalg 16.png" id="18_5hrok"]
+[ext_resource type="Texture2D" uid="uid://b2j0jtjvkofcp" path="res://animation/Blasebalg 17.png" id="19_q42p2"]
+[ext_resource type="Texture2D" uid="uid://bateix0ypm5s7" path="res://animation/Blasebalg 18.png" id="20_cqpai"]
+[ext_resource type="Texture2D" uid="uid://buga3iveoh6hg" path="res://animation/Blasebalg 19.png" id="21_aepxq"]
+[ext_resource type="Texture2D" uid="uid://lqfhx1f1phax" path="res://animation/Blasebalg 20.png" id="22_gvgmq"]
+[ext_resource type="Texture2D" uid="uid://c5cax877dgtyl" path="res://animation/Blasebalg 21.png" id="23_rl62x"]
+[ext_resource type="Texture2D" uid="uid://dk3jxeymlc1bu" path="res://animation/Blasebalg 22.png" id="24_ru6ti"]
+[ext_resource type="Texture2D" uid="uid://chxioydeoemyj" path="res://animation/Blasebalg 23.png" id="25_ef0gh"]
+[ext_resource type="Texture2D" uid="uid://crevopxu2vs4e" path="res://animation/Blasebalg 24.png" id="26_4dwiv"]
+[ext_resource type="Texture2D" uid="uid://ba3dpaowcj3ui" path="res://animation/Blasebalg 25.png" id="27_w81v8"]
+[ext_resource type="Texture2D" uid="uid://bdqgpdy20jpke" path="res://animation/Blasebalg 26.png" id="28_kjsu5"]
+[ext_resource type="Texture2D" uid="uid://dxj60k267ochw" path="res://animation/Blasebalg 27.png" id="29_j6avg"]
+[ext_resource type="Texture2D" uid="uid://b7s8213r67kcf" path="res://animation/Blasebalg 28.png" id="30_05f5i"]
+[ext_resource type="Texture2D" uid="uid://cacdlpi1elp5f" path="res://animation/Blasebalg 29.png" id="31_o0i3t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_db6s6"]
 animations = [{
@@ -124,9 +124,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_o0i3t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_bcy2g")
 }],
 "loop": 0,
 "name": &"default",
@@ -227,7 +224,7 @@ size = Vector2(22.294897, 12.832855)
 script = ExtResource("1_2gon3")
 
 [node name="Blasebalg2" type="AnimatedSprite2D" parent="Node2D" unique_id=1209962413]
-scale = Vector2(2, 2)
+position = Vector2(19, 26)
 sprite_frames = SubResource("SpriteFrames_db6s6")
 
 [node name="Rotation" type="Node2D" parent="Node2D" unique_id=1091051614]

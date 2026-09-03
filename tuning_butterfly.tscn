@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bodeptyikrbbn"]
+
+[ext_resource type="Texture2D" uid="uid://bhojwackvpx0h" path="res://animation/TunerButterfly 00.png" id="1_sonfb"]
+[ext_resource type="Texture2D" uid="uid://cj8xx77y1tiin" path="res://animation/TunerButterfly 01.png" id="2_ucqgi"]
+[ext_resource type="Texture2D" uid="uid://ca2qvsldbwug2" path="res://animation/TunerButterfly 02.png" id="3_txbvq"]
+[ext_resource type="Texture2D" uid="uid://dhgih2x2qw84y" path="res://animation/TunerButterfly 03.png" id="4_q6edx"]
+[ext_resource type="Texture2D" uid="uid://d3jnf55k1y06b" path="res://animation/TunerButterfly 04.png" id="5_rc6vb"]
+[ext_resource type="Texture2D" uid="uid://bwn8dq8yd4tqr" path="res://animation/TunerButterfly 05.png" id="6_fl0b1"]
+[ext_resource type="Texture2D" uid="uid://c6m2jmvq0hby6" path="res://animation/TunerButterfly 06.png" id="7_0ljcf"]
+[ext_resource type="Texture2D" uid="uid://ohr2rf4d0i5w" path="res://animation/TunerButterfly 07.png" id="8_l1hr3"]
+[ext_resource type="Texture2D" uid="uid://dqf16yg87tu5e" path="res://animation/TunerButterfly 08.png" id="9_tk1jx"]
+[ext_resource type="Texture2D" uid="uid://dvpvl8ehk6pfb" path="res://animation/TunerButterfly 09.png" id="10_q7t5y"]
+[ext_resource type="Texture2D" uid="uid://bglb7s86ukwkd" path="res://animation/TunerButterfly 10.png" id="11_vd4d3"]
+[ext_resource type="Texture2D" uid="uid://deec15hs0sxvj" path="res://animation/TunerButterfly 11.png" id="12_njvaf"]
+[ext_resource type="Texture2D" uid="uid://4xi5nw17ay2x" path="res://animation/TunerButterfly 12.png" id="13_51840"]
+[ext_resource type="Texture2D" uid="uid://bbh5dc5dlco4" path="res://animation/TunerButterfly 13.png" id="14_wy6w7"]
+[ext_resource type="Texture2D" uid="uid://dut4kb8fjbxd" path="res://animation/TunerButterfly 14.png" id="15_6s3fp"]
+[ext_resource type="Script" uid="uid://ccl1ttudna1vg" path="res://tuner_butterfly.gd" id="16_n4dpm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sonfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ucqgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_txbvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q6edx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rc6vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fl0b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ljcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l1hr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tk1jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q7t5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vd4d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_njvaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_51840")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wy6w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6s3fp")
+}],
+"loop": 0,
+"name": &"spin",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sonfb")
+}],
+"loop": 0,
+"name": &"stand",
+"speed": 5.0
+}]
+
+[node name="TuningButterfly" type="Node2D" unique_id=639405115]
+
+[node name="TunerButterfly" type="AnimatedSprite2D" parent="." unique_id=1235848640 node_paths=PackedStringArray("stand_collider", "trigger_area")]
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+animation = &"spin"
+frame = 7
+frame_progress = 0.038953356
+script = ExtResource("16_n4dpm")
+move_from_offset = Vector2(0, 800)
+stand_collider = NodePath("StaticBody2D/stand")
+trigger_area = NodePath("")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TunerButterfly" unique_id=1913976639]
+
+[node name="stand" type="CollisionPolygon2D" parent="TunerButterfly/StaticBody2D" unique_id=1314799596]
+polygon = PackedVector2Array(159, -136, 68, -170, -51, -172, -169, -131)

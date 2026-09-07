@@ -241,6 +241,7 @@
 [ext_resource type="Texture2D" uid="uid://ds2mvf6xsal4b" path="res://animation/shockres 11.png" id="113_7gucm"]
 [ext_resource type="Texture2D" uid="uid://bggnqicq636n2" path="res://animation/shockres 12.png" id="114_dpbkd"]
 [ext_resource type="Texture2D" uid="uid://ciiibhwygyw53" path="res://animation/shockres 13.png" id="115_pcxpm"]
+[ext_resource type="Texture2D" uid="uid://b5t8qa4rmy28y" path="res://animation/__Slide.png" id="116_qok22"]
 [ext_resource type="Script" uid="uid://ch5antkg8o5il" path="res://simple_arm.gd" id="148_yskhe"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3a0q"]
@@ -628,6 +629,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"shockresloop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("116_qok22")
+}],
+"loop": 1,
+"name": &"slide",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1222,9 +1231,6 @@ scale = Vector2(0.41968638, 0.3021742)
 occluder = SubResource("OccluderPolygon2D_w3a0q")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
-position = Vector2(-578, -416)
-offset = Vector2(600, -800)
-zoom = Vector2(0.5, 0.5)
 process_callback = 0
 limit_enabled = false
 limit_left = 0
@@ -1259,9 +1265,7 @@ shock_hold_time = 0.5
 position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"walking"
-frame = 1
-frame_progress = 0.19631858
+animation = &"stand"
 
 [node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
 visible = false
@@ -1312,3 +1316,6 @@ body_point = NodePath("ArmPoint")
 
 [node name="ArmPoint" type="Marker2D" parent="SimpleArm" unique_id=15438377]
 position = Vector2(1, -120)
+
+[node name="Feet" type="Marker2D" parent="." unique_id=1994790529]
+unique_name_in_owner = true

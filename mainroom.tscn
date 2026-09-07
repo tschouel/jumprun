@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dn0mlgjjhsjrc"]
 
 [ext_resource type="Texture2D" uid="uid://cwunxicdnbqn0" path="res://animation/Flexatone 0000.png" id="1_8wqce"]
+[ext_resource type="Script" uid="uid://cry8e8ytv5o81" path="res://MainRoom.gd" id="1_olxc3"]
 [ext_resource type="Script" uid="uid://cc4tv5gesd5gh" path="res://roomcolorrect.gd" id="1_vi7tf"]
 [ext_resource type="Texture2D" uid="uid://chy570uv1v5yc" path="res://animation/Flexatone 0001.png" id="2_e3cem"]
 [ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="2_wdt6o"]
@@ -1959,6 +1960,7 @@
 [ext_resource type="Texture2D" uid="uid://bteme5lv6s1is" path="res://animation/Pause 249.png" id="1775_608qm"]
 [ext_resource type="Texture2D" uid="uid://gf6uh231f67u" path="res://animation/Door.png" id="1958_l2yp0"]
 [ext_resource type="Texture2D" uid="uid://4plu13pi84a8" path="res://animation/FiddleDoor.png" id="1958_ttb45"]
+[ext_resource type="Script" uid="uid://bsemwg3u2mmm1" path="res://door.gd" id="1959_r40xy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3fyjc"]
 
@@ -8484,8 +8486,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
 
-[node name="Mainroom" type="Node2D" unique_id=821930514]
-position = Vector2(1723, -140)
+[node name="Mainroom" type="Node2D" unique_id=91085038]
+script = ExtResource("1_olxc3")
 
 [node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1551481425]
 z_index = 1
@@ -8701,9 +8703,32 @@ scale = Vector2(17.640005, 0.99999994)
 shape = SubResource("RectangleShape2D_u0jqh")
 one_way_collision_margin = 5.3
 
-[node name="FiddleDoor" type="Sprite2D" parent="." unique_id=582882635]
+[node name="flexatosaragosa" type="Area2D" parent="." unique_id=1220983911 node_paths=PackedStringArray("left_creature", "right_creature", "left_color_rect", "right_color_rect")]
+position = Vector2(62, 62)
+script = ExtResource("1705_m610h")
+left_creature = NodePath("../Flexatone")
+right_creature = NodePath("../Saragosa")
+left_color_rect = NodePath("../Sprite2D3/FlexatoneRect")
+right_color_rect = NodePath("../Sprite2D2/SaragosaRect")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flexatosaragosa" unique_id=221735331]
+position = Vector2(-77, 19)
+rotation = 1.5479641
+scale = Vector2(17.640005, 0.99999994)
+shape = SubResource("RectangleShape2D_u0jqh")
+one_way_collision_margin = 5.3
+
+[node name="DoorString" type="Area2D" parent="." unique_id=2127388081]
+script = ExtResource("1959_r40xy")
+interact_key = 70
+
+[node name="FiddleDoor" type="Sprite2D" parent="DoorString" unique_id=582882635]
 position = Vector2(5786, -20)
 texture = ExtResource("1958_ttb45")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorString" unique_id=1159715039]
+position = Vector2(5786, -20)
+polygon = PackedVector2Array(27.100006, -176, -22.5, -176, -39.300003, -169, -41.699997, -169, -64.7, -149, -66, -149, -88, -118, -89.3, -118, -106.3, -80, -107.6, -80, -114, -54.199997, -114, -40.399994, -102.1, -23, -101.4, -23, -94, -1.6000061, -94, 16.699997, -134, 153.79999, -134, 175, -5, 175.9, 57.300003, 176, 87.100006, 175, 134, 175, 134, 152.20001, 95.5, 18, 96, 11.100006, 96, 6.399994, 101, -6.600006, 101, -9.399994, 114, -27, 116.2, -27, 113, -55.199997, 113, -60.4, 102, -89.5, 102, -92.6, 77, -133.6, 77, -135.8, 49, -166.8, 49, -168.4)
 
 [node name="Door2" type="Sprite2D" parent="." unique_id=1330258849]
 visible = false
@@ -8723,3 +8748,8 @@ texture = ExtResource("1958_l2yp0")
 visible = false
 position = Vector2(3436, 27)
 texture = ExtResource("1958_l2yp0")
+
+[node name="Spawnpoint" type="Node2D" parent="." unique_id=421961289]
+
+[node name="default" type="Marker2D" parent="Spawnpoint" unique_id=1383209790]
+position = Vector2(4172, -181)

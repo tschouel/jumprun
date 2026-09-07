@@ -17,7 +17,7 @@ General/is_live_update_enabled=false
 [application]
 
 config/name="Jumprun"
-run/main_scene="uid://t0s8d2hx4v88"
+run/main_scene="uid://o2h3mw3w0rmb"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 run/size/viewport_height=648
@@ -25,7 +25,9 @@ run/size/viewport_width=3840
 
 [autoload]
 
-FmodManager="*uid://cds10pm7hwn3p"
+FmodManager="uid://cds10pm7hwn3p"
+Gamestate="*uid://oj5njrt88smn"
+SceneManager="*uid://cctciwbljmy7y"
 
 [display]
 

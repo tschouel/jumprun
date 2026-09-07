@@ -63,10 +63,6 @@ max_sag = 500.0
 solid_block_depth = 500.0
 bounce_velocity_base = 400.0
 bounce_velocity_per_tension = 350.0
-break_rope_segments = 30
-break_gravity = 200.0
-break_snap_strength = 80.0
-break_time_scale = 30.0
 
 [node name="TuningPeg" type="AnimatedSprite2D" parent="." unique_id=1723540039]
 unique_name_in_owner = true
@@ -86,10 +82,7 @@ position = Vector2(2863, 130.44116)
 [node name="StringLine" type="Line2D" parent="." unique_id=901622392]
 unique_name_in_owner = true
 position = Vector2(-349, 0.4411621)
-
-[node name="StringLineRight" type="Line2D" parent="." unique_id=1227340252]
-unique_name_in_owner = true
-visible = false
+width = 3.0
 
 [node name="BounceArea" type="Area2D" parent="." unique_id=299184704]
 unique_name_in_owner = true
@@ -97,10 +90,11 @@ position = Vector2(-349, 0.4411621)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BounceArea" unique_id=292539694]
 
-[node name="TensionTrigger" type="Area2D" parent="." unique_id=1949885314 node_paths=PackedStringArray("string_node")]
+[node name="TensionTrigger" type="Area2D" parent="." unique_id=1949885314 node_paths=PackedStringArray("string_node", "hand_grip")]
 position = Vector2(128, -52)
 script = ExtResource("9_c7v6u")
 string_node = NodePath("..")
+hand_grip = NodePath("../TuningPeg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TensionTrigger" unique_id=1416170649]
 position = Vector2(122.5, -78.09242)

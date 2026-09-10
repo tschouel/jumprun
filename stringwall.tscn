@@ -61,10 +61,14 @@ size = Vector2(42.371777, 16.578377)
 position = Vector2(9, -2)
 scale = Vector2(2, 2)
 script = ExtResource("1_wqj7m")
+break_gravity = 3000.0
+break_snap_strength = 100.0
+break_time_scale = 2.0
 
 [node name="TuningPeg" type="AnimatedSprite2D" parent="." unique_id=1723540039]
 unique_name_in_owner = true
-position = Vector2(491, -44)
+position = Vector2(-4.5, -1122.5)
+rotation = -1.5707964
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"turn"
@@ -72,10 +76,10 @@ animation = &"turn"
 [node name="HandPoint" type="Marker2D" parent="TuningPeg" unique_id=170060936]
 
 [node name="AnchorLeft" type="Marker2D" parent="." unique_id=1138421449]
-position = Vector2(501, -5.5)
+position = Vector2(141.5, -1236.5)
 
 [node name="AnchorRight" type="Marker2D" parent="." unique_id=176412402]
-position = Vector2(1893, 46)
+position = Vector2(748.5, 8)
 
 [node name="StringLine" type="Line2D" parent="." unique_id=901622392]
 unique_name_in_owner = true
@@ -83,18 +87,8 @@ position = Vector2(-349, 0.4411621)
 width = 2.0
 default_color = Color(0.54669994, 0.71, 0.56302994, 1)
 
-[node name="StringLineRight" type="Line2D" parent="." unique_id=1227340252]
-unique_name_in_owner = true
-visible = false
-
-[node name="BounceArea" type="Area2D" parent="." unique_id=299184704]
-unique_name_in_owner = true
-position = Vector2(-349, 0.4411621)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BounceArea" unique_id=292539694]
-
 [node name="TensionTrigger" type="Area2D" parent="." unique_id=1949885314 node_paths=PackedStringArray("string_node", "hand_grip")]
-position = Vector2(332, -113)
+position = Vector2(-205, -1139.5)
 script = ExtResource("8_2fd6r")
 string_node = NodePath("..")
 hand_grip = NodePath("../TuningPeg/HandPoint")
@@ -106,14 +100,25 @@ shape = SubResource("RectangleShape2D_c7v6u")
 
 [node name="Violin" type="Sprite2D" parent="." unique_id=589289601]
 z_index = -50
-position = Vector2(1211, 123.000015)
+position = Vector2(273.0001, -616)
 rotation = -0.32157204
-scale = Vector2(-1.36, 1.357)
 skew = -0.11869609
 texture = ExtResource("9_4unyf")
 
-[node name="SolidBlock" type="StaticBody2D" parent="." unique_id=1050579036]
+[node name="StringLineRight" type="Line2D" parent="." unique_id=1912668374]
+unique_name_in_owner = true
+visible = false
+default_color = Color(0, 0, 0, 1)
+
+[node name="WallBlock" type="StaticBody2D" parent="." unique_id=1050579036]
 unique_name_in_owner = true
 position = Vector2(-349, 0.4411621)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SolidBlock" unique_id=790867579]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WallBlock" unique_id=790867579]
+
+[node name="BounceArea" type="Area2D" parent="." unique_id=1125676989]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BounceArea" unique_id=24269948]
+position = Vector2(407.5, -194)
+polygon = PackedVector2Array(19.5, -23, -3.5, -10, -393, -931, -363, -933)

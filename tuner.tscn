@@ -55,29 +55,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7v6u"]
-size = Vector2(42.371777, 16.578377)
+size = Vector2(36.33701, 9.318848)
 
 [node name="String" type="Area2D" unique_id=1321114405]
 script = ExtResource("1_rsy4c")
-max_sag = 500.0
-solid_block_depth = 500.0
-bounce_velocity_base = 400.0
-bounce_velocity_per_tension = 350.0
+max_sag = 200.0
+bounce_velocity_per_tension = 200.0
+vibration_decay = 0.5
+vibration_frequency_increase_per_tension = 1.0
 
 [node name="TuningPeg" type="AnimatedSprite2D" parent="." unique_id=1723540039]
 unique_name_in_owner = true
-position = Vector2(241, -76.55884)
-scale = Vector2(0.5, 0.5)
+position = Vector2(75, -52.000004)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"turn"
 
 [node name="HandPoint" type="Marker2D" parent="TuningPeg" unique_id=170060936]
 
 [node name="AnchorLeft" type="Marker2D" parent="." unique_id=1138421449]
-position = Vector2(261, 14.441162)
+position = Vector2(73, 6)
 
 [node name="AnchorRight" type="Marker2D" parent="." unique_id=176412402]
-position = Vector2(2863, 130.44116)
+position = Vector2(1285, 78)
 
 [node name="StringLine" type="Line2D" parent="." unique_id=901622392]
 unique_name_in_owner = true
@@ -97,16 +97,15 @@ string_node = NodePath("..")
 hand_grip = NodePath("../TuningPeg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TensionTrigger" unique_id=1416170649]
-position = Vector2(122.5, -78.09242)
+position = Vector2(-50.750015, -17.546219)
 scale = Vector2(3.894102, 17.481516)
 shape = SubResource("RectangleShape2D_c7v6u")
 
 [node name="Violin" type="Sprite2D" parent="." unique_id=589289601]
 z_index = -50
-position = Vector2(1540, 230.44115)
-rotation = -0.32157204
-scale = Vector2(-2.5604699, 2.5574076)
-skew = -0.11869609
+position = Vector2(628.99994, 38.999996)
+rotation = -1.5079645
+scale = Vector2(-1, 0.999)
 texture = ExtResource("10_2gel1")
 
 [node name="SolidBlock" type="StaticBody2D" parent="." unique_id=1050579036]

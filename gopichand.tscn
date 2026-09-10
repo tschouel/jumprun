@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://cvvvut563eaga"]
+
+[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_26sh6"]
+[ext_resource type="Script" uid="uid://bvm30vu3gner0" path="res://gopichand.gd" id="1_6617k"]
+[ext_resource type="Texture2D" uid="uid://cjvawhwuipvo1" path="res://Body 0.png" id="2_6617k"]
+[ext_resource type="Texture2D" uid="uid://cvkcxq5go025n" path="res://animation/Gopichand 0.png" id="4_26sh6"]
+[ext_resource type="Texture2D" uid="uid://cqyc2o5vghvlh" path="res://animation/Gopichand 1.png" id="5_6617k"]
+[ext_resource type="Texture2D" uid="uid://cuckpv45vl065" path="res://animation/Gopichand 2.png" id="6_v7mwd"]
+[ext_resource type="Texture2D" uid="uid://c4p5yq6embar8" path="res://animation/Gopichand 3.png" id="7_vuykl"]
+[ext_resource type="Texture2D" uid="uid://bc7xudjelr24y" path="res://animation/Gopichand 4.png" id="8_io7v8"]
+[ext_resource type="Texture2D" uid="uid://dg34c81yv2ir4" path="res://animation/Gopichand 5.png" id="9_xwx8v"]
+[ext_resource type="Texture2D" uid="uid://b56cr54qhvhor" path="res://animation/Gopichand 6.png" id="10_ttjeq"]
+[ext_resource type="Texture2D" uid="uid://chm8ebfg6iui5" path="res://animation/Gopichand 7.png" id="11_glvq8"]
+[ext_resource type="Texture2D" uid="uid://dphn4jxo25gx2" path="res://animation/Gopichand 8.png" id="12_flvy6"]
+[ext_resource type="Script" uid="uid://by0nmo2bide17" path="res://guitar_string.gd" id="13_kt4yg"]
+[ext_resource type="Texture2D" uid="uid://ctxa0j8o7vsf0" path="res://animation/Gopichand 9.png" id="13_sykg5"]
+[ext_resource type="Texture2D" uid="uid://cdfvds4akxp0m" path="res://animation/Gopichand.png" id="15_4ntvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18tnm"]
+size = Vector2(28.33333, 6.065457)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5f6i5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uff22"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6617k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmdl3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_26sh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6617k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v7mwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vuykl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_io7v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xwx8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ttjeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_glvq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_flvy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sykg5")
+}],
+"loop": 0,
+"name": &"pluck",
+"speed": 60.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cud7f"]
+size = Vector2(20, 28.722223)
+
+[node name="Gopichand" type="Area2D" unique_id=666133277 node_paths=PackedStringArray("interaction_zone", "player", "string_node", "pluck_sprite")]
+script = ExtResource("1_6617k")
+interaction_zone = NodePath("InteractionZone")
+player = NodePath("Player")
+string_node = NodePath("Saite")
+pluck_sprite = NodePath("animation/PedalRechts")
+
+[node name="Boden" type="StaticBody2D" parent="." unique_id=440628978]
+z_index = -20
+position = Vector2(-14, 90.999985)
+scale = Vector2(23.44883, 0.9431646)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boden" unique_id=483550434]
+position = Vector2(4.4351892, -157.97878)
+scale = Vector2(54.766544, 15.768663)
+shape = SubResource("RectangleShape2D_18tnm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boden" unique_id=564202869]
+z_index = 1
+position = Vector2(-12.708523, -156.91855)
+scale = Vector2(150, 200)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Boden" unique_id=1586508616]
+z_index = 1
+position = Vector2(-13.220276, -6.3615623)
+scale = Vector2(150, 200)
+
+[node name="BG2" type="ColorRect" parent="Boden/Sprite2D2" unique_id=1592441808]
+z_index = -50
+material = SubResource("ShaderMaterial_5f6i5")
+offset_left = -1.1980698
+offset_top = 94.02388
+offset_right = 38.80193
+offset_bottom = 134.02385
+scale = Vector2(0.8944735, -2.3744788)
+
+[node name="BG" type="ColorRect" parent="Boden/Sprite2D2" unique_id=1979338021]
+z_index = -50
+material = SubResource("ShaderMaterial_5f6i5")
+offset_left = -1.1793056
+offset_top = -1.0814657
+offset_right = 38.820694
+offset_bottom = 38.91851
+scale = Vector2(0.17991452, -2.3744788)
+color = Color(0.54814297, 0.6974549, 0.7128562, 1)
+
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_26sh6")]
+position = Vector2(-216, -171)
+
+[node name="animation" type="Node2D" parent="." unique_id=861777710]
+position = Vector2(-108, 0)
+scale = Vector2(2, 2)
+
+[node name="Playernew" type="AnimatedSprite2D" parent="animation" unique_id=1740997209]
+visible = false
+position = Vector2(133, -187)
+sprite_frames = SubResource("SpriteFrames_uff22")
+
+[node name="PedalRechts" type="AnimatedSprite2D" parent="animation" unique_id=1538876383]
+position = Vector2(592, -10.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_nmdl3")
+animation = &"pluck"
+frame_progress = 1.0
+
+[node name="Saite" type="Line2D" parent="." unique_id=1571158824 node_paths=PackedStringArray("start_point", "end_point", "press_points", "pluck_point", "pluck_point_alt")]
+width = 8.0
+default_color = Color(0, 0, 0, 1)
+antialiased = true
+script = ExtResource("13_kt4yg")
+start_point = NodePath("Start")
+end_point = NodePath("End")
+press_points = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+press_depth = 40.0
+pluck_point = NodePath("")
+pluck_point_alt = NodePath("")
+vibration_decay = 1.5
+vibration_frequency = 40.0
+
+[node name="Start" type="Marker2D" parent="Saite" unique_id=324382606]
+position = Vector2(1778, 45)
+
+[node name="End" type="Marker2D" parent="Saite" unique_id=695014784]
+position = Vector2(-642, 56)
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1665995645]
+position = Vector2(578, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=2047279921]
+position = Vector2(119.99999, -364.00003)
+scale = Vector2(22.440002, 17.999998)
+shape = SubResource("RectangleShape2D_cud7f")
+
+[node name="pluckpoint" type="Marker2D" parent="." unique_id=1402363702]
+position = Vector2(1625, 433)
+scale = Vector2(2, 2)
+
+[node name="Gopichand" type="Sprite2D" parent="." unique_id=1759266641]
+position = Vector2(934, 46)
+texture = ExtResource("15_4ntvk")

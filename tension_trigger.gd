@@ -9,6 +9,25 @@ extends Area2D
 ## gesetzt ist). Erneutes Druecken von engage_key (oder Verlassen der Zone)
 ## laesst wieder los und gibt die Bewegung frei.
 ##
+## KAMERA-EFFEKT BEIM ANGREIFEN (optional, standardmaessig AUS):
+## camera_offset_x/camera_offset_y = 0.0 (Default) -> kein Kamera-Effekt,
+## exakt wie urspruenglich. Ungleich 0 gesetzt (einzeln oder beide
+## zusammen): beim Angreifen faehrt die Kamera ueber
+## ground_module.set_camera_offset_override() auf diesen Ziel-Offset (z.B.
+## um ein grosses Instrument ganz sichtbar zu machen ODER seitlich zu
+## verschieben), beim Loslassen wieder smooth zurueck auf (0, 0) bzw.
+## (0, camera_look_down_offset) falls gerade nach unten geschaut wird.
+##
+## camera_move_duration = 0.0 (Default) -> die Kamerafahrt nutzt das alte,
+## geschwindigkeitsbasierte Smoothing (camera_look_speed in
+## groundmovement.gd), ohne feste Dauer. Auf eine Zeit in Sekunden gesetzt:
+## die Kamerafahrt dauert GENAU so lange (per Tween), X und Y gemeinsam.
+##
+## camera_move_curve (optional, nur wirksam wenn camera_move_duration > 0):
+## eine Curve-Ressource fuer frei editierbare, interpolierte Keyframes
+## (im Inspector per Rechtsklick beliebig viele Punkte/Tangenten setzbar).
+## Leer lassen fuer eine Standard-Ease-Bewegung.
+##
 ## SETUP: Diesen Node (Area2D + CollisionShape2D) beim Stimmschluessel-Ende
 ## der Saite platzieren, dieses Skript drauf, dann im Inspector "String Node"
 ## auf den MusicString- oder StringWall-Root-Node ziehen (oder es findet ihn
@@ -44,6 +63,22 @@ signal disengaged
 ## Wird ignoriert, falls string_node keine request_tension_decrease()-Methode
 ## hat (z.B. bei StringWall.gd). Loest bei Erfolg die Handgreif-Animation aus.
 @export var decrease_key: Key = KEY_LEFT
+
+@export_group("Kamera")
+## X-Ziel-Offset (in Pixeln), den die Kamera beim Angreifen smooth anfaehrt.
+## 0.0 (Standard) = kein horizontaler Kamera-Effekt.
+@export var camera_offset_x: float = 0.0
+## Y-Ziel-Offset (in Pixeln), den die Kamera beim Angreifen smooth anfaehrt.
+## 0.0 (Standard) = kein vertikaler Kamera-Effekt.
+@export var camera_offset_y: float = 0.0
+## Dauer der Kamerafahrt in Sekunden. 0.0 (Standard) = altes, geschwindig-
+## keitsbasiertes Smoothing ohne feste Dauer (camera_look_speed). > 0 =
+## exakt diese Zeit, per Tween (siehe camera_move_curve fuer die Kurvenform).
+@export var camera_move_duration: float = 0.0
+## Optionale Curve-Ressource fuer frei editierbare, interpolierte Keyframes
+## der Kamerafahrt (nur wirksam, wenn camera_move_duration > 0). Leer
+## lassen fuer eine Standard-Ease-Bewegung.
+@export var camera_move_curve: Curve
 
 var _player_inside: CharacterBody2D = null
 var _is_engaged: bool = false
@@ -99,18 +134,20 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				_try_hand_grip()
 			get_viewport().set_input_as_handled()
 
-## Nur Bewegungssperre + Signal - KEINE Armanimation.
+## Bewegungssperre + optionaler Kamera-Effekt + Signal - KEINE Armanimation.
 func _engage() -> void:
 	_is_engaged = true
 	engaged.emit()
 	if _player_inside and "movement_locked" in _player_inside:
 		_player_inside.movement_locked = true
 	_lock_player_movement(true)
+	_apply_camera_offset(true)
 
 func _disengage() -> void:
 	_is_engaged = false
 	disengaged.emit()
 	_lock_player_movement(false)
+	_apply_camera_offset(false)
 
 ## Blockiert bzw. entsperrt die Spielerbewegung ueber das dafuer vorgesehene
 ## Override-System in groundmovement.gd (set_animation_override /
@@ -125,6 +162,24 @@ func _lock_player_movement(lock: bool) -> void:
 		ground_module.set_animation_override("stand")
 	else:
 		ground_module.clear_animation_override()
+
+## Setzt bzw. loescht den Kamera-Offset-Override (X+Y) auf ground_module
+## (siehe groundmovement.gd), inklusive Dauer/Kurve. Macht nichts, falls
+## sowohl camera_offset_x als auch camera_offset_y == 0 sind (Standard aus).
+func _apply_camera_offset(engage: bool) -> void:
+	if camera_offset_x == 0.0 and camera_offset_y == 0.0:
+		return
+	if not _player_inside:
+		return
+	var ground_module: Node = _player_inside.get("ground_module")
+	if not ground_module:
+		return
+	if engage:
+		if ground_module.has_method("set_camera_offset_override"):
+			ground_module.set_camera_offset_override(Vector2(camera_offset_x, camera_offset_y), camera_move_duration, camera_move_curve)
+	else:
+		if ground_module.has_method("clear_camera_offset_override"):
+			ground_module.clear_camera_offset_override(camera_move_duration, camera_move_curve)
 
 func _try_hand_grip() -> void:
 	if not hand_grip or not _player_inside:

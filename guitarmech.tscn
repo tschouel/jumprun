@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://dhfdt4md8v47x" path="res://GuitArm4 4.png" id="22_d7mey"]
 [ext_resource type="Texture2D" uid="uid://c161u8pdhonsp" path="res://animation/Guitar Mecha.png" id="22_ogpwn"]
 [ext_resource type="Script" uid="uid://by0nmo2bide17" path="res://guitar_string.gd" id="23_25fpm"]
-[ext_resource type="Script" uid="uid://ci8ptvp4fxdi5" path="res://levelcamera.gd" id="25_1wpqt"]
 [ext_resource type="Texture2D" uid="uid://rk7fqjiisr3" path="res://GuitPedal 0.png" id="25_06wqv"]
 [ext_resource type="Texture2D" uid="uid://ci3mki1qowth" path="res://GuitPedal 1.png" id="26_ip84t"]
 [ext_resource type="Texture2D" uid="uid://dppyhmq1l62jk" path="res://GuitPedal 2.png" id="27_bc36m"]
@@ -359,12 +358,6 @@ position = Vector2(-1706, 400)
 position = Vector2(119.99999, -364.00003)
 scale = Vector2(22.440002, 17.999998)
 shape = SubResource("RectangleShape2D_u0jqh")
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1232354419]
-position = Vector2(1, 0)
-script = ExtResource("25_1wpqt")
-start_position = Vector2(400, 0)
-zoom = 0.3
 
 [node name="pluckpoint" type="Marker2D" parent="." unique_id=675849655]
 position = Vector2(1625, 433)

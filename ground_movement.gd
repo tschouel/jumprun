@@ -22,6 +22,9 @@ extends Node2D
 @export var snap_to_ladder_center: bool = true
 @export_group("Kamera / Look Down")
 @export var camera_look_down_offset: float = 400.0
+## Geschwindigkeit (px/s) fuer das geschwindigkeitsbasierte Kamera-Smoothing
+## (Look-Down UND jeder Kamera-Override mit duration=0, siehe
+## set_camera_offset_override). Gilt fuer X und Y gleichermassen.
 @export var camera_look_speed: float = 900.0
 @export_group("Schock-Reaktion")
 ## Name der Einstiegs-Animation im Walk-SpriteFrames, wird bei starkem Stoß EINMAL abgespielt
@@ -63,6 +66,20 @@ var _animation_override_name: String = ""
 ## normalen sprite umzuschalten - fuer Minigames mit vielen eigenen,
 ## diversen Animationen, die nicht ins Haupt-SpriteFrames sollen.
 var _override_sprite: AnimatedSprite2D = null
+# --- Externer Kamera-Offset-Override (X UND Y) ---
+## Solange aktiv (duration=0-Modus), gilt ZUSAETZLICH zum normalen
+## Look-Down-Verhalten ein von aussen gesetzter Ziel-Offset fuer die Kamera
+## (siehe set_camera_offset_override/clear_camera_offset_override, aufgerufen
+## z.B. von TensionTrigger.gd). Die X-Komponente hat IMMER Vorrang (Look-Down
+## kennt nur Y), die Y-Komponente hat Vorrang vor dem normalen
+## Look-Down-Ziel.
+var _camera_offset_override_active: bool = false
+var _camera_offset_override_target: Vector2 = Vector2.ZERO
+## Laeuft eine Tween-basierte Kamerafahrt (duration>0, siehe
+## _animate_camera_to)? Waehrend dieser aktiv ist, greift _update_camera()
+## NICHT per move_toward ein, um Konflikte mit dem Tween zu vermeiden.
+var _camera_tween_active: bool = false
+var _camera_offset_tween: Tween
 func setup(player: CharacterBody2D) -> void:
 	_player = player
 	if not sprite:
@@ -135,6 +152,61 @@ func clear_animation_override() -> void:
 	if sprite:
 		sprite.visible = true
 	_override_sprite = null
+## Setzt einen von aussen erzwungenen Kamera-Ziel-Offset (X UND Y, siehe
+## TensionTrigger.gd).
+##
+## duration <= 0 (Standard): altes Verhalten - Ziel wird ab jetzt jeden
+## Frame per move_toward(camera_look_speed) in _update_camera() smooth
+## angefahren, ganz ohne feste Dauer (X und Y gemeinsam als Vektor).
+##
+## duration > 0: neue Tween-basierte Kamerafahrt ueber GENAU diese Zeit.
+## curve = null: Standard-Ease (TRANS_SINE/EASE_IN_OUT). curve gesetzt: die
+## Kamera folgt exakt der uebergebenen Curve-Ressource (frei im Inspector
+## mit beliebig vielen Punkten/Tangenten editierbar - "interpolierte
+## Keyframes") ueber den Zeitraum 0..1 -> Start-Offset..target_offset,
+## fuer X und Y gleichzeitig entlang derselben Kurve (linear interpoliert
+## zwischen Start- und Zielposition, nur das Tempo/die Ease-Form kommt aus
+## der Curve).
+##
+## Bleibt auch waehrend eines aktiven Animation-Overrides wirksam, da die
+## Kamera in einem eigenen, immer aktiven _process() aktualisiert wird.
+func set_camera_offset_override(target_offset: Vector2, duration: float = 0.0, curve: Curve = null) -> void:
+	_camera_offset_override_active = true
+	_camera_offset_override_target = target_offset
+	_animate_camera_to(target_offset, duration, curve)
+## Hebt einen per set_camera_offset_override gesetzten Ziel-Offset wieder auf
+## - die Kamera faehrt danach (wieder wahlweise per move_toward ODER Tween,
+## siehe duration/curve) zurueck auf ihr normales Ziel (X=0, Y=0 bzw.
+## camera_look_down_offset falls gerade nach unten geschaut wird).
+func clear_camera_offset_override(duration: float = 0.0, curve: Curve = null) -> void:
+	_camera_offset_override_active = false
+	var target_y: float = camera_look_down_offset if _looking_down else 0.0
+	_animate_camera_to(Vector2(0.0, target_y), duration, curve)
+## Gemeinsame Umsetzung fuer set_camera_offset_override/
+## clear_camera_offset_override: entweder Tween starten (duration>0) oder
+## den bisherigen Tween-Zustand aufraeumen und dem normalen
+## move_toward-Pfad in _update_camera() die Fuehrung ueberlassen
+## (duration<=0). Animiert IMMER offset.x UND offset.y gemeinsam.
+func _animate_camera_to(target_offset: Vector2, duration: float, curve: Curve) -> void:
+	if not _camera:
+		return
+	if _camera_offset_tween and _camera_offset_tween.is_valid():
+		_camera_offset_tween.kill()
+	if duration <= 0.0:
+		_camera_tween_active = false
+		return
+	_camera_tween_active = true
+	var start_offset: Vector2 = _camera.offset
+	_camera_offset_tween = create_tween()
+	if curve:
+		_camera_offset_tween.tween_method(
+			func(progress: float) -> void:
+				_camera.offset = start_offset.lerp(target_offset, curve.sample(progress)),
+			0.0, 1.0, duration
+		)
+	else:
+		_camera_offset_tween.tween_property(_camera, "offset", target_offset, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_camera_offset_tween.finished.connect(func() -> void: _camera_tween_active = false)
 ## Fügt der Bewegung einen einmaligen Stoß hinzu (z.B. Druckwelle), klingt über push_friction ab.
 ## Löst zusätzlich die Schock-Animation aus, wenn der Betrag über shock_threshold liegt -
 ## aber nur, wenn nicht schon eine Schock-Reaktion läuft (verhindert Dauer-Neustart bei Beat-Serien).
@@ -211,7 +283,6 @@ func process_movement(delta: float) -> void:
 			_shock_in_loop = false
 	var is_moving: bool = input_axis != 0.0 and abs(_player.velocity.x) > 10.0
 	_update_animation(is_moving)
-	_update_camera(delta)
 func _handle_ladder(delta: float) -> bool:
 	var up_pressed: bool = Input.is_action_pressed("ui_up")
 	var down_pressed: bool = Input.is_action_pressed("ui_down")
@@ -253,11 +324,29 @@ func _set_platforms_passable(passable: bool) -> void:
 	if current_ladder and current_ladder.has_method("set_platforms_passable"):
 		current_ladder.set_platforms_passable(passable)
 	_platforms_currently_passable = passable
+## Laeuft jeden Frame, UNABHAENGIG davon ob process_movement() gerade aktiv
+## ist oder durch einen Animation-Override blockiert wird - dadurch bleibt
+## die Kamera (Look-Down UND set_camera_offset_override) immer smooth,
+## selbst waehrend z.B. TensionTrigger die normale Bewegung sperrt.
+func _process(delta: float) -> void:
+	_update_camera(delta)
+## Solange eine Tween-basierte Kamerafahrt laeuft (_camera_tween_active,
+## siehe _animate_camera_to), greift diese Funktion NICHT ein - der Tween
+## schreibt _camera.offset direkt. Sonst (duration<=0-Modus, klassisches
+## Verhalten) wird weiterhin per move_toward(camera_look_speed) interpoliert
+## - X und Y unabhaengig, aber mit derselben Geschwindigkeit.
 func _update_camera(delta: float) -> void:
 	if not _camera:
 		return
-	var target_y: float = camera_look_down_offset if _looking_down else 0.0
-	_camera.offset.y = move_toward(_camera.offset.y, target_y, camera_look_speed * delta)
+	if _camera_tween_active:
+		return
+	var target: Vector2 = Vector2.ZERO
+	if _camera_offset_override_active:
+		target = _camera_offset_override_target
+	elif _looking_down:
+		target.y = camera_look_down_offset
+	_camera.offset.x = move_toward(_camera.offset.x, target.x, camera_look_speed * delta)
+	_camera.offset.y = move_toward(_camera.offset.y, target.y, camera_look_speed * delta)
 func _update_animation(is_moving: bool) -> void:
 	if not sprite:
 		return

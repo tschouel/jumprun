@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bitrk61nlwmut"]
+
+[ext_resource type="Script" uid="uid://crdv3ub54v5xn" path="res://string_harp.gd" id="1_7wv00"]
+[ext_resource type="PackedScene" uid="uid://bk3shck6s4311" path="res://string_ring.tscn" id="2_pskgk"]
+
+[node name="StringHarp" type="Node2D" unique_id=552625837]
+script = ExtResource("1_7wv00")
+string_scene = ExtResource("2_pskgk")
+invert_direction = true

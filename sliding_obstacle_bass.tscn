@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://i6v0te848si6"]
+
+[ext_resource type="Script" uid="uid://7oir6lkxkf6f" path="res://sliding_obstacle_bass.gd" id="1_4n3ap"]
+[ext_resource type="Texture2D" uid="uid://5mkcj65ksfrn" path="res://animation/ObstacleBass.png" id="2_4n3ap"]
+
+[node name="SlidingObstacleBass" type="Area2D" unique_id=437958236]
+script = ExtResource("1_4n3ap")
+
+[node name="ObstacleBass" type="Sprite2D" parent="." unique_id=1692943330]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_4n3ap")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=61621300]
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(39, -147.9, 35.699997, -148, -34.300003, -148, -60.300003, -140, -63.6, -140, -90.6, -123, -92.8, -123, -101.8, -114, -103.9, -114, -119.9, -96, -121.1, -96, -132.1, -79, -133.3, -79, -147.3, -45, -148.7, -45, -150, -37.199997, -150, 33.699997, -149, 36.399994, -149, 40.399994, -134, 72.3, -134, 74.7, -107, 106.7, -107, 108, -82, 126, -82, 127.29999, -67, 134.20001, -67, 135.5, -42, 143.4, -42, 144.70001, -22, 147.70001, 23.899994, 148, 47.300003, 141, 50.5, 141, 70.5, 131, 72.7, 131, 87.7, 120, 89.8, 120, 116.79999, 93, 118.100006, 93, 133.1, 69, 134.4, 69, 139.4, 56, 140.6, 56, 149.5, 18, 150, -26, 143, -49.300003, 143, -52.5, 125, -84.5, 125, -86.8, 103, -110.9, 103, -112.1, 74, -132, 74, -133.4, 39, -146.5)

@@ -78,19 +78,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="TuningButterfly" type="Node2D" unique_id=639405115]
-
-[node name="TunerButterfly" type="AnimatedSprite2D" parent="." unique_id=1235848640 node_paths=PackedStringArray("stand_collider", "trigger_area")]
+[node name="TunerButterfly" type="AnimatedSprite2D" unique_id=1235848640 node_paths=PackedStringArray("stand_collider")]
 sprite_frames = SubResource("SpriteFrames_u0jqh")
 animation = &"spin"
-frame = 7
-frame_progress = 0.038953356
+frame = 14
+frame_progress = 1.0
 script = ExtResource("16_n4dpm")
 move_from_offset = Vector2(0, 800)
 stand_collider = NodePath("StaticBody2D/stand")
-trigger_area = NodePath("")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="TunerButterfly" unique_id=1913976639]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1913976639]
 
-[node name="stand" type="CollisionPolygon2D" parent="TunerButterfly/StaticBody2D" unique_id=1314799596]
+[node name="stand" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1314799596]
 polygon = PackedVector2Array(159, -136, 68, -170, -51, -172, -169, -131)
+
+[node name="TuningButterfly" type="Node2D" parent="." unique_id=639405115]

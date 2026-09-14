@@ -10,23 +10,32 @@ extends Area2D
 ## laesst wieder los und gibt die Bewegung frei.
 ##
 ## KAMERA-EFFEKT BEIM ANGREIFEN (optional, standardmaessig AUS):
-## camera_offset_x/camera_offset_y = 0.0 (Default) -> kein Kamera-Effekt,
-## exakt wie urspruenglich. Ungleich 0 gesetzt (einzeln oder beide
-## zusammen): beim Angreifen faehrt die Kamera ueber
-## ground_module.set_camera_offset_override() auf diesen Ziel-Offset (z.B.
-## um ein grosses Instrument ganz sichtbar zu machen ODER seitlich zu
-## verschieben), beim Loslassen wieder smooth zurueck auf (0, 0) bzw.
-## (0, camera_look_down_offset) falls gerade nach unten geschaut wird.
+## camera_offset_x/camera_offset_y = 0.0 (Default) -> kein Offset-Effekt.
+## Ungleich 0 gesetzt (einzeln oder beide zusammen): beim Angreifen faehrt
+## die Kamera ueber ground_module.set_camera_offset_override() auf diesen
+## Ziel-Offset (z.B. um ein grosses Instrument ganz sichtbar zu machen ODER
+## seitlich zu verschieben), beim Loslassen wieder smooth zurueck auf (0, 0)
+## bzw. (0, camera_look_down_offset) falls gerade nach unten geschaut wird.
 ##
-## camera_move_duration = 0.0 (Default) -> die Kamerafahrt nutzt das alte,
-## geschwindigkeitsbasierte Smoothing (camera_look_speed in
-## groundmovement.gd), ohne feste Dauer. Auf eine Zeit in Sekunden gesetzt:
-## die Kamerafahrt dauert GENAU so lange (per Tween), X und Y gemeinsam.
+## ZUSAETZLICH: camera_zoom_enabled = false (Default) -> kein Zoom-Effekt.
+## Aktiviert und camera_zoom_target gesetzt (z.B. Vector2(0.6, 0.6) zum
+## Reinzoomen): beim Angreifen faehrt die Kamera ueber
+## ground_module.set_camera_zoom_override() auf diesen Zoom, beim Loslassen
+## wieder zurueck auf den Zoom-Wert, der VOR dem Angreifen aktiv war (wird
+## von groundmovement.gd automatisch gemerkt - unabhaengig vom
+## Level-Basiswert). Nutzt dieselbe camera_move_duration/camera_move_curve
+## wie der Offset-Effekt, damit beide als EINE gemeinsame Kamerafahrt wirken.
+##
+## camera_move_duration = 0.0 (Default) -> die Kamerafahrt (Offset UND Zoom)
+## nutzt das alte, geschwindigkeitsbasierte Smoothing (camera_look_speed
+## bzw. camera_zoom_speed in groundmovement.gd), ohne feste Dauer. Auf eine
+## Zeit in Sekunden gesetzt: die Kamerafahrt dauert GENAU so lange (per
+## Tween).
 ##
 ## camera_move_curve (optional, nur wirksam wenn camera_move_duration > 0):
 ## eine Curve-Ressource fuer frei editierbare, interpolierte Keyframes
 ## (im Inspector per Rechtsklick beliebig viele Punkte/Tangenten setzbar).
-## Leer lassen fuer eine Standard-Ease-Bewegung.
+## Leer lassen fuer eine Standard-Ease-Bewegung. Gilt fuer Offset UND Zoom.
 ##
 ## SETUP: Diesen Node (Area2D + CollisionShape2D) beim Stimmschluessel-Ende
 ## der Saite platzieren, dieses Skript drauf, dann im Inspector "String Node"
@@ -64,20 +73,35 @@ signal disengaged
 ## hat (z.B. bei StringWall.gd). Loest bei Erfolg die Handgreif-Animation aus.
 @export var decrease_key: Key = KEY_LEFT
 
-@export_group("Kamera")
+@export_group("Kamera - Position")
 ## X-Ziel-Offset (in Pixeln), den die Kamera beim Angreifen smooth anfaehrt.
 ## 0.0 (Standard) = kein horizontaler Kamera-Effekt.
 @export var camera_offset_x: float = 0.0
 ## Y-Ziel-Offset (in Pixeln), den die Kamera beim Angreifen smooth anfaehrt.
 ## 0.0 (Standard) = kein vertikaler Kamera-Effekt.
 @export var camera_offset_y: float = 0.0
-## Dauer der Kamerafahrt in Sekunden. 0.0 (Standard) = altes, geschwindig-
-## keitsbasiertes Smoothing ohne feste Dauer (camera_look_speed). > 0 =
-## exakt diese Zeit, per Tween (siehe camera_move_curve fuer die Kurvenform).
+
+@export_group("Kamera - Zoom")
+## Aktiviert den Zoom-Effekt beim Angreifen. Standard AUS, damit
+## camera_zoom_target = Vector2(1,1) nicht versehentlich als "aktiver,
+## aber wirkungsloser" Zoom missverstanden wird.
+@export var camera_zoom_enabled: bool = false
+## Ziel-Zoom, den die Kamera beim Angreifen smooth anfaehrt (nur wirksam,
+## wenn camera_zoom_enabled = true). Werte < 1 zoomen NAEHER ran, Werte > 1
+## zoomen WEITER raus (Godot-Konvention: kleinerer Zoom = mehr sichtbarer
+## Weltausschnitt... genauer: Camera2D.zoom skaliert die View, < 1 zeigt
+## MEHR von der Welt, > 1 zeigt WENIGER/zoomt rein - im Zweifel kurz
+## ausprobieren, welche Richtung fuer dein Setup "reinzoomen" bedeutet).
+@export var camera_zoom_target: Vector2 = Vector2(0.6, 0.6)
+
+@export_group("Kamera - Bewegung")
+## Dauer der Kamerafahrt in Sekunden (gilt fuer Offset UND Zoom gemeinsam).
+## 0.0 (Standard) = altes, geschwindigkeitsbasiertes Smoothing ohne feste
+## Dauer. > 0 = exakt diese Zeit, per Tween (siehe camera_move_curve).
 @export var camera_move_duration: float = 0.0
 ## Optionale Curve-Ressource fuer frei editierbare, interpolierte Keyframes
 ## der Kamerafahrt (nur wirksam, wenn camera_move_duration > 0). Leer
-## lassen fuer eine Standard-Ease-Bewegung.
+## lassen fuer eine Standard-Ease-Bewegung. Gilt fuer Offset UND Zoom.
 @export var camera_move_curve: Curve
 
 var _player_inside: CharacterBody2D = null
@@ -134,7 +158,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				_try_hand_grip()
 			get_viewport().set_input_as_handled()
 
-## Bewegungssperre + optionaler Kamera-Effekt + Signal - KEINE Armanimation.
+## Bewegungssperre + optionale Kamera-Effekte (Offset UND Zoom) + Signal -
+## KEINE Armanimation.
 func _engage() -> void:
 	_is_engaged = true
 	engaged.emit()
@@ -142,12 +167,14 @@ func _engage() -> void:
 		_player_inside.movement_locked = true
 	_lock_player_movement(true)
 	_apply_camera_offset(true)
+	_apply_camera_zoom(true)
 
 func _disengage() -> void:
 	_is_engaged = false
 	disengaged.emit()
 	_lock_player_movement(false)
 	_apply_camera_offset(false)
+	_apply_camera_zoom(false)
 
 ## Blockiert bzw. entsperrt die Spielerbewegung ueber das dafuer vorgesehene
 ## Override-System in groundmovement.gd (set_animation_override /
@@ -180,6 +207,24 @@ func _apply_camera_offset(engage: bool) -> void:
 	else:
 		if ground_module.has_method("clear_camera_offset_override"):
 			ground_module.clear_camera_offset_override(camera_move_duration, camera_move_curve)
+
+## Setzt bzw. loescht den Kamera-Zoom-Override auf ground_module (siehe
+## groundmovement.gd), inklusive Dauer/Kurve. Macht nichts, wenn
+## camera_zoom_enabled = false ist (Standard aus).
+func _apply_camera_zoom(engage: bool) -> void:
+	if not camera_zoom_enabled:
+		return
+	if not _player_inside:
+		return
+	var ground_module: Node = _player_inside.get("ground_module")
+	if not ground_module:
+		return
+	if engage:
+		if ground_module.has_method("set_camera_zoom_override"):
+			ground_module.set_camera_zoom_override(camera_zoom_target, camera_move_duration, camera_move_curve)
+	else:
+		if ground_module.has_method("clear_camera_zoom_override"):
+			ground_module.clear_camera_zoom_override(camera_move_duration, camera_move_curve)
 
 func _try_hand_grip() -> void:
 	if not hand_grip or not _player_inside:

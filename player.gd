@@ -5,7 +5,7 @@ extends CharacterBody2D
 		is_on_path = value
 # Direkt über den Szenenbaum eingebunden
 @onready var walking_sprite: Node2D = get_node_or_null("GroundMovement/Walk")
-@onready var sliding_sprite: Node2D = get_node_or_null("Sliding/Slide")
+@onready var sliding_sprite: Node2D = get_node_or_null("PathMovement/Slide")
 @onready var flying_sprite: Node2D = get_node_or_null("FlyingSprite")
 @export_group("Spiegelung & Grafik")
 @export var keep_upright: bool = true
@@ -35,10 +35,16 @@ var is_flying_active: bool = false
 var is_driving_active: bool = false
 var is_lane_active: bool = false
 var is_ground_active: bool = true
+## Aktiv, solange der Spieler im Kontrabass-Multi-Lane-Sliding steckt
+## (von BassSlideZone gesetzt). Getrennt von is_on_path, damit player.gd
+## zwischen der alten PathMovement (einspurig) und PathBassMovement
+## (mehrspurig) unterscheiden kann.
+var is_bass_slide_active: bool = false
 # Modul-Referenzen
 @onready var flying_module = $FlyingMovement
 @onready var ground_module = $GroundMovement
 @onready var path_module = $PathMovement
+@onready var bass_path_module = $PathBassMovement
 @onready var driving_module = $DrivingMovement
 @onready var lane_module = $LaneMovement
 var _last_global_x: float = 0.0
@@ -66,6 +72,8 @@ func _ready() -> void:
 		ground_module.setup(self)
 	if path_module:
 		path_module.setup(self)
+	if bass_path_module:
+		bass_path_module.setup(self)
 	if driving_module:
 		driving_module.setup(self)
 	if lane_module:
@@ -126,12 +134,19 @@ func _physics_process(delta: float) -> void:
 			flying_module.process_movement(delta)
 		move_and_slide()
 		return
-	# 4. Pfad- / Schlitten-Modus (auf vorgegebenem Pfad)
+	# 4. Kontrabass-Pfad-Modus (mehrspurig, per Taste F gestartet) - MUSS
+	# vor dem normalen Pfad-Modus geprüft werden, da is_on_path in beiden
+	# Fällen true ist, aber unterschiedliche Module ansteuert.
+	if is_bass_slide_active:
+		if bass_path_module:
+			bass_path_module.process_movement(delta)
+		return
+	# 5. Pfad- / Schlitten-Modus (auf vorgegebenem Pfad)
 	if is_on_path:
 		if path_module:
 			path_module.process_movement(delta)
 		return
-	# 5. Normaler Boden-Modus (Standard = Sliding / Schlittern, ausser Fermata ist aktiv)
+	# 6. Normaler Boden-Modus (Standard = Sliding / Schlittern, ausser Fermata ist aktiv)
 	_check_default_sprite_state()
 	if ground_module:
 		ground_module.process_movement(delta)
@@ -146,7 +161,7 @@ func _check_default_sprite_state() -> void:
 		target_sprite = walking_sprite
 	else:
 		if not sliding_sprite or not is_instance_valid(sliding_sprite):
-			sliding_sprite = get_node_or_null("Sliding/Slide")
+			sliding_sprite = get_node_or_null("PathMovement/Slide")
 		target_sprite = sliding_sprite
 	if target_sprite:
 		show_only_sprite(target_sprite)
@@ -162,7 +177,7 @@ func show_only_sprite(active_sprite: Node2D) -> void:
 	if not walking_sprite or not is_instance_valid(walking_sprite):
 		walking_sprite = get_node_or_null("GroundMovement/Walk")
 	if not sliding_sprite or not is_instance_valid(sliding_sprite):
-		sliding_sprite = get_node_or_null("Sliding/Slide")
+		sliding_sprite = get_node_or_null("PathMovement/Slide")
 	if not flying_sprite or not is_instance_valid(flying_sprite):
 		flying_sprite = get_node_or_null("FlyingSprite")
 	var all_sprites: Array[Node2D] = []

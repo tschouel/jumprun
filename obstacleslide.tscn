@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://uymmwup660xg"]
+
+[ext_resource type="Texture2D" uid="uid://1nwy752bn8ym" path="res://animation/Obstacle.png" id="1_1e6vc"]
+[ext_resource type="Script" uid="uid://cr87kcwvcshv8" path="res://sliding_obstacle.gd" id="1_suqrt"]
+
+[node name="SlidingObstacle" type="Area2D" unique_id=437958236]
+position = Vector2(0, -15)
+script = ExtResource("1_suqrt")
+
+[node name="Obstacle" type="Sprite2D" parent="." unique_id=2071165529]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_1e6vc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1104558008]
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-19, -65, -19, -63.7, -46.4, -58, -50.5, -58, -74.5, -46, -76.7, -46, -94.7, -32, -96.9, -32, -112.9, -15, -114.2, -15, -134.1, 20, -135.6, 20, -141.7, 49, -143.4, 49, -141, 62.399994, -141, 65, 140, 63, 143.4, 63, 138, 34.6, 138, 30.599998, 129, 10.599998, 129, 8.300003, 114, -11.700001, 114, -13.900002, 92, -33.9, 92, -35.2, 61, -52.3, 61, -53.5, 44, -58.5, 44, -59.7, 17, -63.8, 17, -65)

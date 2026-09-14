@@ -1,0 +1,644 @@
+{
+    "assets": {
+        "__type__": "Assets",
+        "colors": {
+            "__type__": "NamedColorList",
+            "name": "",
+            "uuid": "e9a498b5-e573-41e4-92f9-75a1f63900d5",
+            "values": [
+            ]
+        },
+        "compositions": {
+            "__type__": "CompositionList",
+            "name": "",
+            "uuid": "b1eaaa9f-8b34-4901-a170-f904879fd8cd",
+            "values": [
+                {
+                    "__type__": "Composition",
+                    "animation": {
+                        "__type__": "AnimationContainer",
+                        "first_frame": 0,
+                        "last_frame": 180
+                    },
+                    "fps": 60,
+                    "group_color": "#00000000",
+                    "height": 512,
+                    "locked": false,
+                    "name": "Composition",
+                    "shapes": [
+                        {
+                            "__type__": "Layer",
+                            "animation": {
+                                "__type__": "AnimationContainer",
+                                "first_frame": 0,
+                                "last_frame": 180
+                            },
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "mask": {
+                                "__type__": "MaskSettings",
+                                "inverted": false,
+                                "mask": "NoMask"
+                            },
+                            "name": "Layer",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "parent": null,
+                            "render": true,
+                            "shapes": [
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "4c6ef39f-fa35-4584-8378-fa37d6b899e6",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "PreCompLayer",
+                            "composition": "70abdb7e-7b75-4de0-80ad-de11ce4c97eb",
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "name": "Composition Layer",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "size": {
+                                "height": 410,
+                                "width": 410
+                            },
+                            "timing": {
+                                "__type__": "StretchableTime",
+                                "start_time": 0,
+                                "stretch": 1
+                            },
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256,
+                                        "y": 256
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 307.5820895522388,
+                                        "y": 300.4179104477612
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "64b7c7c8-cfca-4130-845b-7b81f0dfbcc8",
+                            "visible": true
+                        },
+                        {
+                            "__type__": "Group",
+                            "auto_orient": false,
+                            "group_color": "#00000000",
+                            "locked": false,
+                            "name": "Path",
+                            "opacity": {
+                                "value": 1
+                            },
+                            "shapes": [
+                                {
+                                    "__type__": "Fill",
+                                    "color": {
+                                        "value": "#909090"
+                                    },
+                                    "fill_rule": "NonZero",
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Fill",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "e405d36c-b6a4-4ad7-9a23-b98e459680b8",
+                                    "visible": true
+                                },
+                                {
+                                    "__type__": "Stroke",
+                                    "cap": "ButtCap",
+                                    "color": {
+                                        "value": "#c8c8c8"
+                                    },
+                                    "group_color": "#00000000",
+                                    "join": "MiterJoin",
+                                    "locked": false,
+                                    "miter_limit": 4,
+                                    "name": "Stroke",
+                                    "opacity": {
+                                        "value": 1
+                                    },
+                                    "use": null,
+                                    "uuid": "169f525f-4855-453c-961c-cb9cf06ad8d6",
+                                    "visible": true,
+                                    "width": {
+                                        "value": 1
+                                    }
+                                },
+                                {
+                                    "__type__": "Path",
+                                    "closed": true,
+                                    "group_color": "#00000000",
+                                    "locked": false,
+                                    "name": "Path",
+                                    "reversed": false,
+                                    "shape": {
+                                        "value": {
+                                            "closed": true,
+                                            "points": [
+                                                {
+                                                    "pos": {
+                                                        "x": 188.1673996088113,
+                                                        "y": 160.99620166377446
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 188.63330668030918,
+                                                        "y": 164.38046302904144
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 188.1673996088113,
+                                                        "y": 160.99620166377446
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 250.69860814503153,
+                                                        "y": 157.8166486873565
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 250.69860814503153,
+                                                        "y": 157.8166486873565
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 250.69860814503153,
+                                                        "y": 157.8166486873565
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 343.9654954532922,
+                                                        "y": 48.65199649700593
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 285.6736908856293,
+                                                        "y": 61.37020840267784
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 402.2573000209551,
+                                                        "y": 35.933784591334025
+                                                    },
+                                                    "type": 1
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 435.1126807772742,
+                                                        "y": 73.02856931621042
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 435.1126807772742,
+                                                        "y": 73.02856931621042
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 435.1126807772742,
+                                                        "y": 73.02856931621042
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 411.79595895020907,
+                                                        "y": 136.61962884456997
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 443.59148871438884,
+                                                        "y": 120.72186396248009
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 380.0004291860293,
+                                                        "y": 152.51739372665986
+                                                    },
+                                                    "type": 1
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 371.52162124891464,
+                                                        "y": 117.5423109860621
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 371.52162124891464,
+                                                        "y": 117.5423109860621
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 371.52162124891464,
+                                                        "y": 117.5423109860621
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 387.41938613100456,
+                                                        "y": 78.32782427690705
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 368.3420682724967,
+                                                        "y": 80.4475262611857
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 406.4967039895124,
+                                                        "y": 76.2081222926284
+                                                    },
+                                                    "type": 1
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 403.3171510130944,
+                                                        "y": 68.78916534765312
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 403.3171510130944,
+                                                        "y": 68.78916534765312
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 403.3171510130944,
+                                                        "y": 68.78916534765312
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 354.56400537468545,
+                                                        "y": 80.4475262611857
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 380.0004291860293,
+                                                        "y": 55.01110244984187
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 329.1275815633416,
+                                                        "y": 105.88395007252953
+                                                    },
+                                                    "type": 1
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 311.1101146969731,
+                                                        "y": 159.93635067163513
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 311.1101146969731,
+                                                        "y": 159.93635067163513
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 311.1101146969731,
+                                                        "y": 159.93635067163513
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 375.76102521747197,
+                                                        "y": 158.87649967949582
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 375.76102521747197,
+                                                        "y": 158.87649967949582
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 375.76102521747197,
+                                                        "y": 158.87649967949582
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 376.8208762096113,
+                                                        "y": 180.07351952228234
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 376.8208762096113,
+                                                        "y": 180.07351952228234
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 376.8208762096113,
+                                                        "y": 180.07351952228234
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 306.4011330515398,
+                                                        "y": 181.13337051442164
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 306.4011330515398,
+                                                        "y": 181.13337051442164
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 306.4011330515398,
+                                                        "y": 181.13337051442164
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 166.39350153655278,
+                                                        "y": 440.9024405021491
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 272.522531930753,
+                                                        "y": 400.4723336853109
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 60.26447114235251,
+                                                        "y": 481.3325473189873
+                                                    },
+                                                    "type": 1
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 77.37313432835822,
+                                                        "y": 378.2686567164179
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 77.37313432835822,
+                                                        "y": 378.2686567164179
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 77.37313432835822,
+                                                        "y": 378.2686567164179
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 116.05970149253733,
+                                                        "y": 358.20895522388065
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 90.26865671641792,
+                                                        "y": 351.0447761194031
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 141.85074626865674,
+                                                        "y": 365.3731343283582
+                                                    },
+                                                    "type": 1
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 140.41791044776122,
+                                                        "y": 375.4029850746269
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 140.41791044776122,
+                                                        "y": 375.4029850746269
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 140.41791044776122,
+                                                        "y": 375.4029850746269
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 134.6865671641791,
+                                                        "y": 415.52238805970154
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 169.07462686567163,
+                                                        "y": 412.6567164179105
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 100.29850746268657,
+                                                        "y": 418.3880597014926
+                                                    },
+                                                    "type": 1
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 149.01492537313433,
+                                                        "y": 425.5522388059702
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 149.01492537313433,
+                                                        "y": 425.5522388059702
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 149.01492537313433,
+                                                        "y": 425.5522388059702
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 238.58058683697425,
+                                                        "y": 181.7501182417523
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 238.58058683697425,
+                                                        "y": 181.7501182417523
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 238.58058683697425,
+                                                        "y": 181.7501182417523
+                                                    },
+                                                    "type": 0
+                                                },
+                                                {
+                                                    "pos": {
+                                                        "x": 187.70149253731344,
+                                                        "y": 181.97014925373136
+                                                    },
+                                                    "tan_in": {
+                                                        "x": 187.70149253731344,
+                                                        "y": 181.97014925373136
+                                                    },
+                                                    "tan_out": {
+                                                        "x": 187.70149253731344,
+                                                        "y": 181.97014925373136
+                                                    },
+                                                    "type": 0
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "uuid": "3cce55fb-89de-476a-9742-bbbd06cd466c",
+                                    "visible": true
+                                }
+                            ],
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 256.2473208914995,
+                                        "y": 248.14987097678522
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 256.2473208914995,
+                                        "y": 248.14987097678522
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "cf1c6a94-3540-4d08-851d-772c70ce589c",
+                            "visible": true
+                        }
+                    ],
+                    "uuid": "70ad6854-b694-459d-b1b2-ce3bc2b5131f",
+                    "visible": true,
+                    "width": 512
+                },
+                {
+                    "__type__": "Composition",
+                    "animation": {
+                        "__type__": "AnimationContainer",
+                        "first_frame": 0,
+                        "last_frame": 180
+                    },
+                    "fps": 60,
+                    "group_color": "#00000000",
+                    "height": 410,
+                    "locked": false,
+                    "name": "",
+                    "shapes": [
+                        {
+                            "__type__": "Image",
+                            "group_color": "#00000000",
+                            "image": "aad497b4-e1ff-49bc-b245-34b4aa8433ea",
+                            "locked": false,
+                            "name": "Bildschirmfoto 2026-09-14 um 10",
+                            "transform": {
+                                "__type__": "Transform",
+                                "anchor_point": {
+                                    "value": {
+                                        "x": 205,
+                                        "y": 205
+                                    }
+                                },
+                                "position": {
+                                    "value": {
+                                        "x": 205,
+                                        "y": 205
+                                    }
+                                },
+                                "rotation": {
+                                    "value": 0
+                                },
+                                "scale": {
+                                    "value": {
+                                        "x": 1,
+                                        "y": 1
+                                    }
+                                }
+                            },
+                            "uuid": "3dcb05ef-4d50-48f3-b927-49e38a1b9df3",
+                            "visible": true
+                        }
+                    ],
+                    "uuid": "70abdb7e-7b75-4de0-80ad-de11ce4c97eb",
+                    "visible": true,
+                    "width": 410
+                }
+            ]
+        },
+        "fonts": {
+            "__type__": "FontList",
+            "name": "",
+            "uuid": "9d4f6def-b085-4e3f-a5d4-eda0cd1ea095",
+            "values": [
+            ]
+        },
+        "gradient_colors": {
+            "__type__": "GradientColorsList",
+            "name": "",
+            "uuid": "01bc6b19-b36a-4f1f-9155-b5f7e992c836",
+            "values": [
+            ]
+        },
+        "gradients": {
+            "__type__": "GradientList",
+            "name": "",
+            "uuid": "41f39fdb-98dd-43c1-a9da-0f8bc53dd3dc",
+            "values": [
+            ]
+        },
+        "images": {
+            "__type__": "BitmapList",
+            "name": "",
+            "uuid": "9280066f-64c4-4c2c-93d6-b8927a372f66",
+            "values": [
+                {
+                    "__type__": "Bitmap",
+                    "data": "",
+                    "filename": "/Users/joelschoch/Desktop/Bildschirmfoto 2026-09-14 um 10.59.47.png",
+                    "format": "png",
+                    "height": 410,
+                    "name": "",
+                    "url": "",
+                    "uuid": "aad497b4-e1ff-49bc-b245-34b4aa8433ea",
+                    "width": 410
+                }
+            ]
+        },
+        "name": "",
+        "uuid": "a15ef1c8-e0db-4ad8-9696-2f79f4307718"
+    },
+    "format": {
+        "format_version": 8,
+        "generator": "Glaxnimate",
+        "generator_version": "0.6.0-git-d2da67a"
+    },
+    "info": {
+        "author": "",
+        "description": "",
+        "keywords": [
+        ]
+    },
+    "metadata": {
+    }
+}

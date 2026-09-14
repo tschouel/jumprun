@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cvvvut563eaga"]
 
-[ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="1_26sh6"]
 [ext_resource type="Script" uid="uid://bvm30vu3gner0" path="res://gopichand.gd" id="1_6617k"]
 [ext_resource type="Texture2D" uid="uid://cjvawhwuipvo1" path="res://Body 0.png" id="2_6617k"]
 [ext_resource type="Texture2D" uid="uid://cvkcxq5go025n" path="res://animation/Gopichand 0.png" id="4_26sh6"]
@@ -12,14 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://b56cr54qhvhor" path="res://animation/Gopichand 6.png" id="10_ttjeq"]
 [ext_resource type="Texture2D" uid="uid://chm8ebfg6iui5" path="res://animation/Gopichand 7.png" id="11_glvq8"]
 [ext_resource type="Texture2D" uid="uid://dphn4jxo25gx2" path="res://animation/Gopichand 8.png" id="12_flvy6"]
-[ext_resource type="Script" uid="uid://by0nmo2bide17" path="res://guitar_string.gd" id="13_kt4yg"]
 [ext_resource type="Texture2D" uid="uid://ctxa0j8o7vsf0" path="res://animation/Gopichand 9.png" id="13_sykg5"]
+[ext_resource type="Script" uid="uid://be4bcsqhnak0o" path="res://guitar_string_tunable.gd" id="14_glvq8"]
 [ext_resource type="Texture2D" uid="uid://cdfvds4akxp0m" path="res://animation/Gopichand.png" id="15_4ntvk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_18tnm"]
-size = Vector2(28.33333, 6.065457)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5f6i5"]
+[ext_resource type="Texture2D" uid="uid://ibb68ua80veq" path="res://animation/__Key1.png" id="16_glvq8"]
+[ext_resource type="Texture2D" uid="uid://beww6ce42lu6v" path="res://animation/__Key2.png" id="17_flvy6"]
+[ext_resource type="Texture2D" uid="uid://ctrnftebdqcbc" path="res://animation/__Key3.png" id="18_sykg5"]
+[ext_resource type="Texture2D" uid="uid://cx34y036x8jgm" path="res://animation/__Key4.png" id="19_vh3i8"]
+[ext_resource type="Texture2D" uid="uid://d0ls8mci38tnq" path="res://animation/__Key5.png" id="20_vr6rc"]
+[ext_resource type="Texture2D" uid="uid://d2rw0mw5q1gr" path="res://animation/__Key6.png" id="21_kt4yg"]
+[ext_resource type="Script" uid="uid://df0h3vkd32fvv" path="res://tension_trigger.gd" id="22_uusry"]
+[ext_resource type="Script" uid="uid://mfwmlwd21kgn" path="res://callandresponse.gd" id="23_flvy6"]
+[ext_resource type="Script" uid="uid://buswmpbrgwxqs" path="res://level_string_display.gd" id="24_sykg5"]
+[ext_resource type="Script" uid="uid://d7g4hupdmlcw" path="res://tunerbutterflycontroller.gd" id="24_vr6rc"]
+[ext_resource type="PackedScene" uid="uid://bk3shck6s4311" path="res://string_ring.tscn" id="25_vh3i8"]
+[ext_resource type="PackedScene" uid="uid://bodeptyikrbbn" path="res://tuning_butterfly.tscn" id="27_kt4yg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uff22"]
 animations = [{
@@ -70,57 +76,80 @@ animations = [{
 "speed": 60.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ntvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_glvq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_flvy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_glvq8")
+}],
+"loop": 0,
+"name": &"stuck",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_glvq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_flvy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sykg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vh3i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vr6rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kt4yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kt4yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vr6rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vh3i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sykg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_flvy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_glvq8")
+}],
+"loop": 0,
+"name": &"turn",
+"speed": 30.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cud7f"]
 size = Vector2(20, 28.722223)
 
-[node name="Gopichand" type="Area2D" unique_id=666133277 node_paths=PackedStringArray("interaction_zone", "player", "string_node", "pluck_sprite")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f6i5"]
+size = Vector2(36.33701, 9.318848)
+
+[node name="Gopichand" type="Area2D" unique_id=666133277 node_paths=PackedStringArray("interaction_zone", "player", "string_node", "call_and_response", "pluck_sprite")]
 script = ExtResource("1_6617k")
 interaction_zone = NodePath("InteractionZone")
-player = NodePath("Player")
+player = NodePath("")
 string_node = NodePath("Saite")
+call_and_response = NodePath("Callandresponse")
 pluck_sprite = NodePath("animation/PedalRechts")
-
-[node name="Boden" type="StaticBody2D" parent="." unique_id=440628978]
-z_index = -20
-position = Vector2(-14, 90.999985)
-scale = Vector2(23.44883, 0.9431646)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boden" unique_id=483550434]
-position = Vector2(4.4351892, -157.97878)
-scale = Vector2(54.766544, 15.768663)
-shape = SubResource("RectangleShape2D_18tnm")
-
-[node name="Sprite2D" type="Sprite2D" parent="Boden" unique_id=564202869]
-z_index = 1
-position = Vector2(-12.708523, -156.91855)
-scale = Vector2(150, 200)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Boden" unique_id=1586508616]
-z_index = 1
-position = Vector2(-13.220276, -6.3615623)
-scale = Vector2(150, 200)
-
-[node name="BG2" type="ColorRect" parent="Boden/Sprite2D2" unique_id=1592441808]
-z_index = -50
-material = SubResource("ShaderMaterial_5f6i5")
-offset_left = -1.1980698
-offset_top = 94.02388
-offset_right = 38.80193
-offset_bottom = 134.02385
-scale = Vector2(0.8944735, -2.3744788)
-
-[node name="BG" type="ColorRect" parent="Boden/Sprite2D2" unique_id=1979338021]
-z_index = -50
-material = SubResource("ShaderMaterial_5f6i5")
-offset_left = -1.1793056
-offset_top = -1.0814657
-offset_right = 38.820694
-offset_bottom = 38.91851
-scale = Vector2(0.17991452, -2.3744788)
-color = Color(0.54814297, 0.6974549, 0.7128562, 1)
-
-[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("1_26sh6")]
-position = Vector2(-216, -171)
+camera_offset_x = 500.0
+camera_zoom_enabled = true
+camera_transition_duration = 2.0
 
 [node name="animation" type="Node2D" parent="." unique_id=861777710]
 position = Vector2(-108, 0)
@@ -138,25 +167,37 @@ sprite_frames = SubResource("SpriteFrames_nmdl3")
 animation = &"pluck"
 frame_progress = 1.0
 
-[node name="Saite" type="Line2D" parent="." unique_id=1571158824 node_paths=PackedStringArray("start_point", "end_point", "press_points", "pluck_point", "pluck_point_alt")]
+[node name="Saite" type="Line2D" parent="." unique_id=1571158824 node_paths=PackedStringArray("start_point", "end_point")]
 width = 8.0
 default_color = Color(0, 0, 0, 1)
 antialiased = true
-script = ExtResource("13_kt4yg")
-start_point = NodePath("Start")
-end_point = NodePath("End")
-press_points = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
-press_depth = 40.0
-pluck_point = NodePath("")
-pluck_point_alt = NodePath("")
-vibration_decay = 1.5
-vibration_frequency = 40.0
+script = ExtResource("14_glvq8")
+start_point = NodePath("AnchorLeft")
+end_point = NodePath("AnchorRight")
+max_sag = -70.0
 
-[node name="Start" type="Marker2D" parent="Saite" unique_id=324382606]
+[node name="AnchorRight" type="Marker2D" parent="Saite" unique_id=324382606]
+unique_name_in_owner = true
 position = Vector2(1778, 45)
 
-[node name="End" type="Marker2D" parent="Saite" unique_id=695014784]
+[node name="AnchorLeft" type="Marker2D" parent="Saite" unique_id=695014784]
+unique_name_in_owner = true
 position = Vector2(-642, 56)
+
+[node name="StringLine" type="Line2D" parent="Saite" unique_id=288383167]
+unique_name_in_owner = true
+
+[node name="TuningPeg" type="AnimatedSprite2D" parent="Saite" unique_id=840699904]
+unique_name_in_owner = true
+position = Vector2(-449, -114)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_4ntvk")
+animation = &"stuck"
+
+[node name="HandPoint" type="Marker2D" parent="Saite/TuningPeg" unique_id=874861673]
+
+[node name="Pluckpoint" type="Marker2D" parent="Saite" unique_id=854320572]
+position = Vector2(1377, 0)
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1665995645]
 position = Vector2(578, -2)
@@ -170,6 +211,85 @@ shape = SubResource("RectangleShape2D_cud7f")
 position = Vector2(1625, 433)
 scale = Vector2(2, 2)
 
-[node name="Gopichand" type="Sprite2D" parent="." unique_id=1759266641]
+[node name="TensionTrigger" type="Area2D" parent="." unique_id=16888008 node_paths=PackedStringArray("string_node", "hand_grip")]
+position = Vector2(-401, -113)
+script = ExtResource("22_uusry")
+string_node = NodePath("../Saite")
+hand_grip = NodePath("../Saite/TuningPeg/HandPoint")
+camera_offset_x = 1300.0
+camera_zoom_enabled = true
+camera_zoom_target = Vector2(0.5, 0.5)
+camera_move_duration = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TensionTrigger" unique_id=1121420828]
+position = Vector2(-50.750015, -17.546219)
+scale = Vector2(3.894102, 17.481516)
+shape = SubResource("RectangleShape2D_5f6i5")
+
+[node name="Gopichand" type="StaticBody2D" parent="." unique_id=1742796945]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gopichand" unique_id=1636165817]
+position = Vector2(934, 46)
+polygon = PackedVector2Array(1371, -366.8, 1301, -374.8, 1301, -376, 1200, -376, 1109.8, -369, 1099.8, -369, 895, -336.7, 895, -335.8, 670, -303.7, 670, -302.8, 228, -245.8, 228, -244.8, -140, -203.8, -140, -202.9, -450, -172.8, -450, -171.9, -773, -145.8, -773, -145, -1535.1, -123, -1569.1, -123, -1590.3, -120, -1592, -120, -1592, -46, -1591, 28, -1591, 105.100006, -1588, 127.29999, -1588, 130, -1150, 140.90002, -1150, 142, -1011, 140, -1011, 139, -856, 140, -785.1, 140, -652, 145, -629.1, 145, -501.09998, 154, -489.19995, 154, -403.09998, 164, -394.30005, 164, 5, 218.70001, 5, 219.79999, 1191.8999, 374, 1200.8999, 374, 1202.2, 376, 1259.7, 376, 1261.8999, 373.8, 1297.2, 371, 1306.2, 371, 1353.3999, 362, 1358.3, 362, 1412.3, 346, 1415.3999, 346, 1447.3, 332, 1450.5, 332, 1481.6001, 315, 1483.7, 315, 1527.7, 283, 1529.2, 283, 1530.3, 280.8, 1517.2, 263.59998, 1523.7, 258, 1525.3, 258, 1550.3, 200, 1551.5, 200, 1571.5, 136, 1572.6001, 136, 1581.7, 92, 1582.8, 92, 1591.8, 8, 1592, -76.100006, 1587, -114.29999, 1587, -122.2, 1579, -161.4, 1579, -166.3, 1567, -209, 1567, -213.3, 1551.8999, -256.6, 1554, -259.3, 1554, -262.8, 1524, -292.8, 1524, -294, 1503, -310, 1503, -311.1, 1475, -328.1, 1475, -329.3, 1442, -344.3, 1442, -345.5, 1404, -357.5, 1404, -358.6, 1371, -365.7)
+
+[node name="Gopichand" type="Sprite2D" parent="Gopichand" unique_id=1759266641]
 position = Vector2(934, 46)
 texture = ExtResource("15_4ntvk")
+
+[node name="Callandresponse" type="Node" parent="." unique_id=1279517241 node_paths=PackedStringArray("interaction_zone", "string_node", "feedback_label", "success_target", "final_target")]
+script = ExtResource("23_flvy6")
+interaction_zone = NodePath("../InteractionZone")
+string_node = NodePath("../Saite")
+expected_tension_level = 1
+stage3_expected_tension_level = 1
+stage3_bpm = 100.0
+stage3_rhythm_pattern = Array[float]([0.5, 1.0, 0.5])
+feedback_label = NodePath("../Label")
+success_target = NodePath("../LevelStringDisplay")
+final_target = NodePath("../tunerbutterflycontroller")
+
+[node name="tunerbutterflycontroller" type="Node" parent="." unique_id=566946090 node_paths=PackedStringArray("player", "butterflies")]
+script = ExtResource("24_vr6rc")
+player = NodePath("")
+camera_zoom_target = Vector2(0.3, 0.3)
+butterflies = [NodePath("../TunerButterfly"), NodePath("../TunerButterfly2"), NodePath("../TunerButterfly3")]
+
+[node name="Label" type="Label" parent="." unique_id=2014038529]
+offset_left = 1313.0
+offset_top = -449.0
+offset_right = 1353.0
+offset_bottom = -426.0
+
+[node name="LevelStringDisplay" type="Node2D" parent="." unique_id=506952954 node_paths=PackedStringArray("start_point", "end_point")]
+script = ExtResource("24_sykg5")
+string_scene = ExtResource("25_vh3i8")
+start_point = NodePath("Startpoint")
+end_point = NodePath("Endpoint")
+count = 3
+spacing = 100.0
+override_vibration_amplitude = 25.0
+override_wave_length_px = 150.0
+
+[node name="Startpoint" type="Marker2D" parent="LevelStringDisplay" unique_id=1834712454]
+position = Vector2(2104, -330)
+
+[node name="Endpoint" type="Marker2D" parent="LevelStringDisplay" unique_id=394318672]
+position = Vector2(2096, -1609)
+
+[node name="TunerButterfly" parent="." unique_id=1235848640 instance=ExtResource("27_kt4yg")]
+position = Vector2(2763, -68)
+move_from_offset = Vector2(0, 2000)
+move_duration = 4.0
+loop_count = 5
+
+[node name="TunerButterfly2" parent="." unique_id=566693395 instance=ExtResource("27_kt4yg")]
+position = Vector2(3262, -84)
+move_from_offset = Vector2(0, 2000)
+move_duration = 4.0
+loop_count = 5
+
+[node name="TunerButterfly3" parent="." unique_id=638506664 instance=ExtResource("27_kt4yg")]
+position = Vector2(3822, -83)
+move_from_offset = Vector2(0, 2000)
+move_duration = 4.0
+loop_count = 5

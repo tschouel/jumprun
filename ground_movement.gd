@@ -26,6 +26,10 @@ extends Node2D
 ## (Look-Down UND jeder Kamera-Override mit duration=0, siehe
 ## set_camera_offset_override). Gilt fuer X und Y gleichermassen.
 @export var camera_look_speed: float = 900.0
+## Geschwindigkeit fuer das geschwindigkeitsbasierte Zoom-Smoothing (Einheiten
+## Zoom-Faktor pro Sekunde), analog zu camera_look_speed - nur wirksam, wenn
+## set_camera_zoom_override MIT duration=0 aufgerufen wird.
+@export var camera_zoom_speed: float = 2.0
 @export_group("Schock-Reaktion")
 ## Name der Einstiegs-Animation im Walk-SpriteFrames, wird bei starkem Stoß EINMAL abgespielt
 @export var shock_animation_name: String = "shockres"
@@ -80,6 +84,22 @@ var _camera_offset_override_target: Vector2 = Vector2.ZERO
 ## NICHT per move_toward ein, um Konflikte mit dem Tween zu vermeiden.
 var _camera_tween_active: bool = false
 var _camera_offset_tween: Tween
+# --- Externer Kamera-Zoom-Override ---
+## Analog zum Offset-Override, aber fuer camera.zoom. Da Zoom multiplikativ
+## ist und KEINEN natuerlichen "Aus"-Wert wie (0,0) beim Offset hat, wird
+## beim ERSTEN Zoom-Override der aktuelle Zoom als _camera_zoom_base
+## gemerkt - clear_camera_zoom_override() faehrt exakt dorthin zurueck,
+## statt hart auf einen festen Wert wie Vector2.ONE zu springen (robust
+## gegenueber Leveln, die selbst schon einen abweichenden Basis-Zoom
+## nutzen, z.B. fuer grosse World Scale). _camera_zoom_base_captured bleibt
+## nach dem ersten Erfassen dauerhaft TRUE (wird NICHT beim Loslassen
+## zurueckgesetzt) - siehe _update_camera fuer den Grund.
+var _camera_zoom_override_active: bool = false
+var _camera_zoom_override_target: Vector2 = Vector2.ONE
+var _camera_zoom_base: Vector2 = Vector2.ONE
+var _camera_zoom_base_captured: bool = false
+var _camera_zoom_tween_active: bool = false
+var _camera_zoom_tween: Tween
 func setup(player: CharacterBody2D) -> void:
 	_player = player
 	if not sprite:
@@ -207,6 +227,59 @@ func _animate_camera_to(target_offset: Vector2, duration: float, curve: Curve) -
 	else:
 		_camera_offset_tween.tween_property(_camera, "offset", target_offset, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	_camera_offset_tween.finished.connect(func() -> void: _camera_tween_active = false)
+## Setzt einen von aussen erzwungenen Kamera-ZOOM-Ziel (Vector2, meist
+## gleichmaessig x=y fuer proportionalen Zoom, z.B. Vector2(0.6, 0.6) zum
+## Reinzoomen bei World-Scale-Werten < 1, oder Vector2(1.5, 1.5) zum
+## Rauszoomen). Beim ERSTEN Aufruf wird der aktuelle camera.zoom als
+## Rueckkehrpunkt gemerkt (siehe _camera_zoom_base) - clear_camera_zoom_override()
+## faehrt spaeter exakt dorthin zurueck, unabhaengig vom Level-Basiswert.
+##
+## duration/curve verhalten sich analog zu set_camera_offset_override (0 =
+## geschwindigkeitsbasiertes Smoothing ueber camera_zoom_speed, > 0 =
+## Tween ueber exakt diese Zeit, curve optional fuer eigene Keyframes).
+func set_camera_zoom_override(target_zoom: Vector2, duration: float = 0.0, curve: Curve = null) -> void:
+	if not _camera:
+		return
+	if not _camera_zoom_base_captured:
+		_camera_zoom_base = _camera.zoom
+		_camera_zoom_base_captured = true
+	_camera_zoom_override_active = true
+	_camera_zoom_override_target = target_zoom
+	_animate_camera_zoom_to(target_zoom, duration, curve)
+## Hebt einen per set_camera_zoom_override gesetzten Zoom wieder auf - die
+## Kamera faehrt zurueck auf den beim ersten Override gemerkten
+## Basis-Zoom (_camera_zoom_base). _camera_zoom_base_captured bleibt dabei
+## bewusst TRUE (nicht zuruecksetzen!) - sonst wuesste _update_camera beim
+## naechsten Frame nicht mehr, wohin der Zoom zurueckfahren soll, und die
+## Kamera wuerde einfach beim eingezoomten Wert haengen bleiben, statt nach
+## dem Loslassen (z.B. erneutes F) wieder zurueckzufahren.
+func clear_camera_zoom_override(duration: float = 0.0, curve: Curve = null) -> void:
+	_camera_zoom_override_active = false
+	var target: Vector2 = _camera_zoom_base if _camera_zoom_base_captured else Vector2.ONE
+	_animate_camera_zoom_to(target, duration, curve)
+## Analog zu _animate_camera_to, nur fuer camera.zoom statt camera.offset -
+## eigener Tween, damit Offset- und Zoom-Fahrten unabhaengig voneinander
+## gleichzeitig laufen koennen.
+func _animate_camera_zoom_to(target_zoom: Vector2, duration: float, curve: Curve) -> void:
+	if not _camera:
+		return
+	if _camera_zoom_tween and _camera_zoom_tween.is_valid():
+		_camera_zoom_tween.kill()
+	if duration <= 0.0:
+		_camera_zoom_tween_active = false
+		return
+	_camera_zoom_tween_active = true
+	var start_zoom: Vector2 = _camera.zoom
+	_camera_zoom_tween = create_tween()
+	if curve:
+		_camera_zoom_tween.tween_method(
+			func(progress: float) -> void:
+				_camera.zoom = start_zoom.lerp(target_zoom, curve.sample(progress)),
+			0.0, 1.0, duration
+		)
+	else:
+		_camera_zoom_tween.tween_property(_camera, "zoom", target_zoom, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_camera_zoom_tween.finished.connect(func() -> void: _camera_zoom_tween_active = false)
 ## Fügt der Bewegung einen einmaligen Stoß hinzu (z.B. Druckwelle), klingt über push_friction ab.
 ## Löst zusätzlich die Schock-Animation aus, wenn der Betrag über shock_threshold liegt -
 ## aber nur, wenn nicht schon eine Schock-Reaktion läuft (verhindert Dauer-Neustart bei Beat-Serien).
@@ -326,7 +399,7 @@ func _set_platforms_passable(passable: bool) -> void:
 	_platforms_currently_passable = passable
 ## Laeuft jeden Frame, UNABHAENGIG davon ob process_movement() gerade aktiv
 ## ist oder durch einen Animation-Override blockiert wird - dadurch bleibt
-## die Kamera (Look-Down UND set_camera_offset_override) immer smooth,
+## die Kamera (Look-Down, Offset-Override UND Zoom-Override) immer smooth,
 ## selbst waehrend z.B. TensionTrigger die normale Bewegung sperrt.
 func _process(delta: float) -> void:
 	_update_camera(delta)
@@ -334,19 +407,28 @@ func _process(delta: float) -> void:
 ## siehe _animate_camera_to), greift diese Funktion NICHT ein - der Tween
 ## schreibt _camera.offset direkt. Sonst (duration<=0-Modus, klassisches
 ## Verhalten) wird weiterhin per move_toward(camera_look_speed) interpoliert
-## - X und Y unabhaengig, aber mit derselben Geschwindigkeit.
+## - X und Y unabhaengig, aber mit derselben Geschwindigkeit. Zoom laeuft
+## unabhaengig davon nach demselben Prinzip - WICHTIG: bewegt sich auch
+## dann weiter (Richtung _camera_zoom_base), wenn _camera_zoom_override_active
+## gerade false ist, sonst wuerde die Kamera nach clear_camera_zoom_override()
+## einfach beim eingezoomten Wert stehen bleiben statt zurueckzufahren
+## (identisches Prinzip wie beim Offset, der ja auch immer Richtung Vector2.ZERO
+## bzw. Look-Down-Ziel weiterlaeuft, unabhaengig vom Override-Status).
 func _update_camera(delta: float) -> void:
 	if not _camera:
 		return
-	if _camera_tween_active:
-		return
-	var target: Vector2 = Vector2.ZERO
-	if _camera_offset_override_active:
-		target = _camera_offset_override_target
-	elif _looking_down:
-		target.y = camera_look_down_offset
-	_camera.offset.x = move_toward(_camera.offset.x, target.x, camera_look_speed * delta)
-	_camera.offset.y = move_toward(_camera.offset.y, target.y, camera_look_speed * delta)
+	if not _camera_tween_active:
+		var target: Vector2 = Vector2.ZERO
+		if _camera_offset_override_active:
+			target = _camera_offset_override_target
+		elif _looking_down:
+			target.y = camera_look_down_offset
+		_camera.offset.x = move_toward(_camera.offset.x, target.x, camera_look_speed * delta)
+		_camera.offset.y = move_toward(_camera.offset.y, target.y, camera_look_speed * delta)
+	if not _camera_zoom_tween_active and _camera_zoom_base_captured:
+		var zoom_target: Vector2 = _camera_zoom_override_target if _camera_zoom_override_active else _camera_zoom_base
+		_camera.zoom.x = move_toward(_camera.zoom.x, zoom_target.x, camera_zoom_speed * delta)
+		_camera.zoom.y = move_toward(_camera.zoom.y, zoom_target.y, camera_zoom_speed * delta)
 func _update_animation(is_moving: bool) -> void:
 	if not sprite:
 		return

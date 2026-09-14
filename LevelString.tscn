@@ -1,33 +1,126 @@
 [gd_scene format=3 uid="uid://cpulku5t0f6jw"]
 
+[ext_resource type="Script" uid="uid://ctqw6gd2ofaxj" path="res://sliding_obstacle_sequencer.gd" id="1_b34n4"]
+[ext_resource type="Script" uid="uid://bk0vv8qsyk1ys" path="res://slidingzone.gd" id="1_b56y6"]
 [ext_resource type="PackedScene" uid="uid://lnni6mifksry" path="res://uku.tscn" id="1_ihm0d"]
+[ext_resource type="Script" uid="uid://q3e40vrqcq25" path="res://sliding_obstacle_step.gd" id="2_eb6hj"]
 [ext_resource type="PackedScene" uid="uid://bceoa1sdo5k5q" path="res://tuner.tscn" id="2_prcow"]
 [ext_resource type="PackedScene" uid="uid://cqkt7t7buduub" path="res://player.tscn" id="3_b56y6"]
+[ext_resource type="PackedScene" uid="uid://uymmwup660xg" path="res://obstacleslide.tscn" id="3_gtma5"]
 [ext_resource type="PackedScene" uid="uid://bqexjotm5aeum" path="res://string_slide.tscn" id="4_b34n4"]
+[ext_resource type="Script" uid="uid://baf6qsjuhshdq" path="res://sliding_path_visual.gd" id="4_o75kk"]
 [ext_resource type="Texture2D" uid="uid://7gf7c7grmli2" path="res://E-bass.png" id="5_eb6hj"]
 [ext_resource type="PackedScene" uid="uid://w8x2dvqf34ww" path="res://stringwall.tscn" id="6_prcow"]
+[ext_resource type="PackedScene" uid="uid://cvvvut563eaga" path="res://gopichand.tscn" id="13_ut8v4"]
+[ext_resource type="PackedScene" uid="uid://bitrk61nlwmut" path="res://string_harp.tscn" id="13_x5fvb"]
+
+[sub_resource type="Curve2D" id="Curve2D_b34n4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8925, -1431, 0, 0, 0, 0, 9279, -1347, 0, 0, 0, 0, 16739, 1961)
+}
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_eb6hj"]
+script = ExtResource("2_eb6hj")
+beats = 5.0
+obstacle_scene = ExtResource("3_gtma5")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_8mwl4"]
+script = ExtResource("2_eb6hj")
+obstacle_scene = ExtResource("3_gtma5")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_ebsb2"]
+script = ExtResource("2_eb6hj")
+obstacle_scene = ExtResource("3_gtma5")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_8fc1w"]
+script = ExtResource("2_eb6hj")
+obstacle_scene = ExtResource("3_gtma5")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_jajrg"]
+script = ExtResource("2_eb6hj")
+obstacle_scene = ExtResource("3_gtma5")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
+size = Vector2(53, 211)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xu011"]
 size = Vector2(4.71, 373.44922)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nch4o"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
 size = Vector2(306, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nch4o"]
+
 [node name="Level1" type="Area2D" unique_id=1941508753]
 
-[node name="Bouncestring3" parent="." unique_id=1321114405 instance=ExtResource("1_ihm0d")]
-position = Vector2(1651, -1107)
-scale = Vector2(-0.7, 0.7)
+[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("3_b56y6")]
+position = Vector2(8701, -1446)
 
-[node name="AnchorLeft" parent="Bouncestring3" index="0" unique_id=1138421449]
+[node name="Sliding" type="Area2D" parent="." unique_id=517695625]
+
+[node name="StringHarp" parent="Sliding" unique_id=552625837 node_paths=PackedStringArray("start_point", "end_point") instance=ExtResource("13_x5fvb")]
+position = Vector2(9101, -1387)
+start_point = NodePath("start")
+end_point = NodePath("end")
+count = 21
+spacing = 80.0
+
+[node name="start" type="Marker2D" parent="Sliding/StringHarp" unique_id=670457606]
+position = Vector2(2021, 3530)
+
+[node name="end" type="Marker2D" parent="Sliding/StringHarp" unique_id=502673156]
+position = Vector2(5428, -1812)
+
+[node name="Path2D" type="Path2D" parent="Sliding" unique_id=27412297]
+curve = SubResource("Curve2D_b34n4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Sliding/Path2D" unique_id=1807201270]
+position = Vector2(8925, -1431)
+rotation = 0.23297924
+loop = false
+
+[node name="sequencer" type="Node2D" parent="Sliding/Path2D" unique_id=129207006 node_paths=PackedStringArray("path")]
+position = Vector2(1, 0)
+script = ExtResource("1_b34n4")
+path = NodePath("..")
+slide_speed = 800.0
+steps = Array[ExtResource("2_eb6hj")]([SubResource("Resource_eb6hj"), SubResource("Resource_8mwl4"), SubResource("Resource_ebsb2"), SubResource("Resource_8fc1w"), SubResource("Resource_jajrg")])
+
+[node name="SlidingPath" type="Node2D" parent="Sliding/Path2D" unique_id=202849235 node_paths=PackedStringArray("path")]
+script = ExtResource("4_o75kk")
+path = NodePath("..")
+line_width = 10.0
+
+[node name="SlidingZoneStart" type="Area2D" parent="Sliding" unique_id=254374237 node_paths=PackedStringArray("path_follow")]
+script = ExtResource("1_b56y6")
+path_follow = NodePath("../Path2D/PathFollow2D")
+override_bpm = 140.0
+override_units_per_bar = 2500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sliding/SlidingZoneStart" unique_id=1379460014]
+position = Vector2(8950, -1510)
+shape = SubResource("RectangleShape2D_3gcn6")
+
+[node name="1stPart" type="Node" parent="." unique_id=1287981784]
+
+[node name="Bouncestring3" parent="1stPart" unique_id=1321114405 instance=ExtResource("1_ihm0d")]
+position = Vector2(1651, -1107)
+rotation = -3.1415925
+scale = Vector2(0.7, -0.7)
+
+[node name="AnchorLeft" parent="1stPart/Bouncestring3" index="0" unique_id=1138421449]
 position = Vector2(88, -158)
 
-[node name="AnchorRight" parent="Bouncestring3" index="1" unique_id=176412402]
+[node name="AnchorRight" parent="1stPart/Bouncestring3" index="1" unique_id=176412402]
 position = Vector2(744, -350)
 
-[node name="String" parent="." unique_id=1599221047 instance=ExtResource("2_prcow")]
+[node name="String" parent="1stPart" unique_id=1599221047 instance=ExtResource("2_prcow")]
 position = Vector2(626, -9)
 scale = Vector2(0.75, 0.75)
 max_sag = 80.0
@@ -35,62 +128,59 @@ bounce_velocity_base = 700.0
 bounce_velocity_per_tension = 250.0
 vibration_decay = 2.0
 
-[node name="TuningPeg" parent="String" index="0" unique_id=1723540039]
+[node name="TuningPeg" parent="1stPart/String" index="0" unique_id=1723540039]
 position = Vector2(491, -44)
 scale = Vector2(0.25, 0.25)
 
-[node name="AnchorLeft" parent="String" index="1" unique_id=1138421449]
+[node name="AnchorLeft" parent="1stPart/String" index="1" unique_id=1138421449]
 position = Vector2(501, -5.5)
 
-[node name="AnchorRight" parent="String" index="2" unique_id=176412402]
+[node name="AnchorRight" parent="1stPart/String" index="2" unique_id=176412402]
 position = Vector2(1816, 70)
 
-[node name="StringLine" parent="String" index="3" unique_id=901622392]
+[node name="StringLine" parent="1stPart/String" index="3" unique_id=901622392]
 width = 7.0
 default_color = Color(0.2618, 0.33218, 0.34, 1)
 
-[node name="TensionTrigger" parent="String" index="5" unique_id=1949885314 node_paths=PackedStringArray("hand_grip")]
+[node name="TensionTrigger" parent="1stPart/String" index="5" unique_id=1949885314 node_paths=PackedStringArray("hand_grip")]
 position = Vector2(333.33325, -113.000015)
 hand_grip = NodePath("../TuningPeg/HandPoint")
 camera_offset_x = 250.0
 camera_move_duration = 0.7
 
-[node name="CollisionShape2D" parent="String/TensionTrigger" index="0" unique_id=1416170649]
+[node name="CollisionShape2D" parent="1stPart/String/TensionTrigger" index="0" unique_id=1416170649]
 position = Vector2(118.66676, 45.000023)
 scale = Vector2(4.534101, 19.641516)
 
-[node name="Violin" parent="String" index="6" unique_id=589289601]
+[node name="Violin" parent="1stPart/String" index="6" unique_id=589289601]
 z_index = -30
 position = Vector2(1234, 56.000008)
 scale = Vector2(-1.36, 1.357)
 
-[node name="Bouncestring2" parent="." unique_id=229200027 instance=ExtResource("1_ihm0d")]
+[node name="Bouncestring2" parent="1stPart" unique_id=229200027 instance=ExtResource("1_ihm0d")]
 position = Vector2(1906.9999, -571)
 scale = Vector2(0.7, 0.7)
 
-[node name="AnchorLeft" parent="Bouncestring2" index="0" unique_id=1138421449]
+[node name="AnchorLeft" parent="1stPart/Bouncestring2" index="0" unique_id=1138421449]
 position = Vector2(90, -160)
 
-[node name="AnchorRight" parent="Bouncestring2" index="1" unique_id=176412402]
+[node name="AnchorRight" parent="1stPart/Bouncestring2" index="1" unique_id=176412402]
 position = Vector2(736, -358)
 
-[node name="Ukulele" parent="Bouncestring2" index="5" unique_id=1044888036]
+[node name="Ukulele" parent="1stPart/Bouncestring2" index="5" unique_id=1044888036]
 z_index = -10
 
-[node name="Player" parent="." unique_id=1969377440 instance=ExtResource("3_b56y6")]
-position = Vector2(-2836, -4143)
-
-[node name="Boden" type="StaticBody2D" parent="." unique_id=761121673]
+[node name="Boden" type="StaticBody2D" parent="1stPart" unique_id=761121673]
 position = Vector2(255, 271)
 rotation = -0.1734122
-scale = Vector2(0.367578, 0.2611028)
+scale = Vector2(0.36757797, 0.2611028)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=338598099]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="1stPart/Boden" unique_id=338598099]
 position = Vector2(1141.7661, -363.8803)
 scale = Vector2(400, 1)
 shape = SubResource("RectangleShape2D_xu011")
 
-[node name="ColorRect" type="ColorRect" parent="Boden" unique_id=1179966180]
+[node name="ColorRect" type="ColorRect" parent="1stPart/Boden" unique_id=1179966180]
 offset_left = 255.0
 offset_top = -558.0
 offset_right = 295.0
@@ -98,59 +188,44 @@ offset_bottom = -518.0
 scale = Vector2(47.43999, 1)
 color = Color(0.24, 0.24, 0.24, 1)
 
-[node name="StringSlide" parent="." unique_id=1302506947 instance=ExtResource("4_b34n4")]
+[node name="StringSlide" parent="1stPart" unique_id=1302506947 instance=ExtResource("4_b34n4")]
 position = Vector2(-2320, -3142)
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=101546485]
-z_index = 1
-position = Vector2(-13.220276, -6.3615623)
-scale = Vector2(150, 200)
-
-[node name="BG" type="ColorRect" parent="Sprite2D2" unique_id=844718547]
-z_index = -60
-material = SubResource("ShaderMaterial_nch4o")
-offset_left = -38.65853
-offset_top = 11.621808
-offset_right = 666.38
-offset_bottom = 29.278316
-scale = Vector2(0.17991452, -2.3744788)
-color = Color(1, 0.79, 0.79, 1)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1291266672]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="1stPart" unique_id=1291266672]
 position = Vector2(-950, 541)
 
-[node name="EBass" type="Sprite2D" parent="CharacterBody2D" unique_id=45751853]
+[node name="EBass" type="Sprite2D" parent="1stPart/CharacterBody2D" unique_id=45751853]
 z_index = -50
 position = Vector2(5087, -1551)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 texture = ExtResource("5_eb6hj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1667949022]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/CharacterBody2D" unique_id=1667949022]
 position = Vector2(5087, -1551)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 polygon = PackedVector2Array(14, -512, 14, -510.3, -12, -499.3, -36.199997, -496, -39.300003, -496, -34.666718, -473.33325, -39.666718, -473, -45.333374, -480.33325, -49.666718, -480.33325, -53.333374, -473.66663, -53.333374, -467, -48.666718, -460, -43.333374, -460, -39.666718, -468.33325, -34.666718, -468.33325, -33.800003, -451, -34.00003, -434.66663, -38.00003, -435.33325, -42.666718, -442, -46.666718, -442.33325, -52.00003, -435, -50.666718, -425, -43.666687, -420.66663, -37.666718, -428.66663, -35.00003, -428, -36, -416.9, -36, -403.1, -27.699997, -396, -25.399994, -390, -26, -105, -26, 50, -29, 71.900024, -29, 78.70001, -33, 91.70001, -33, 94.400024, -40, 104.400024, -40, 106.099976, -73.7, 135, -75.899994, 135, -91.899994, 152, -93.2, 152, -104.2, 172, -105.7, 172, -110.7, 198, -112.100006, 198, -110, 236.09998, -110, 241, -91.600006, 254, -90.2, 254, -81, 271.5, -81, 289.59998, -88, 306.59998, -88, 308.2, -95, 316.2, -95, 317.8, -120.5, 333, -122.5, 333, -128.5, 355, -129.8, 355, -133.8, 385, -135.1, 385, -133, 423.09998, -133, 429.40002, -127, 445.40002, -127, 448.59998, -116, 464.5, -116, 466.90002, -100, 481.90002, -100, 483.2, -76, 496.2, -76, 497.5, -53, 504.40002, -53, 505.7, -29, 509.7, -29, 511, 25, 510, 32.299988, 510, 63.299988, 501, 66.5, 501, 81.5, 493, 83.70001, 493, 99.79999, 480, 101.899994, 480, 116.899994, 462, 118.29999, 462, 128.29999, 441, 129.70001, 441, 132.70001, 424, 133.70001, 424, 135, 415.09998, 135, 388.7, 123, 342, 123, 338.3, 117, 330.3, 117, 328.59998, 101.29999, 323, 99.79999, 323, 91.79999, 315, 91.20001, 315, 83.20001, 299, 80.79999, 284, 81, 278.09998, 81, 272.59998, 87, 261.5, 87, 259.8, 104.79999, 242, 106.79999, 242, 108.79999, 222, 110.20001, 222, 107, 184.79999, 107, 179.59998, 99, 161.59998, 99, 159.20001, 91, 150.20001, 91, 148.09998, 75, 134.09998, 75, 132.90002, 46.600006, 114, 44.899994, 114, 36.899994, 105, 36.299988, 105, 28.299988, 87, 24.799988, 62, 24, 62, 17, -359, 17, -389.5, 20, -395.5, 20, -397, 26.700012, -402, 29.200012, -402, 26.799988, -428, 28, -431.7, 28, -434.3, 25, -443.3, 25, -468.4, 26.100006, -470, 27.200012, -470, 28.299988, -472.1, 26, -475.7, 26, -480, 33, -505.7, 33, -508.1, 30, -510.1, 30, -512)
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=1599505990]
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="1stPart" unique_id=1599505990]
 position = Vector2(12774, 526)
 rotation = 3.1415925
 scale = Vector2(1, -1)
 
-[node name="EBass" type="Sprite2D" parent="CharacterBody2D2" unique_id=1175565800]
+[node name="EBass" type="Sprite2D" parent="1stPart/CharacterBody2D2" unique_id=1175565800]
 z_index = -50
 position = Vector2(5087, -1551)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 texture = ExtResource("5_eb6hj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D2" unique_id=178913636]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/CharacterBody2D2" unique_id=178913636]
 position = Vector2(5087, -1551)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 polygon = PackedVector2Array(14, -512, 14, -510.3, -12, -499.3, -36.199997, -496, -39.300003, -496, -34.666718, -473.33325, -39.666718, -473, -45.333374, -480.33325, -49.666718, -480.33325, -53.333374, -473.66663, -53.333374, -467, -48.666718, -460, -43.333374, -460, -39.666718, -468.33325, -34.666718, -468.33325, -33.800003, -451, -34.00003, -434.66663, -38.00003, -435.33325, -42.666718, -442, -46.666718, -442.33325, -52.00003, -435, -50.666718, -425, -43.666687, -420.66663, -37.666718, -428.66663, -35.00003, -428, -36, -416.9, -36, -403.1, -27.699997, -396, -25.399994, -390, -26, -105, -26, 50, -29, 71.900024, -29, 78.70001, -33, 91.70001, -33, 94.400024, -40, 104.400024, -40, 106.099976, -73.7, 135, -75.899994, 135, -91.899994, 152, -93.2, 152, -104.2, 172, -105.7, 172, -110.7, 198, -112.100006, 198, -110, 236.09998, -110, 241, -91.600006, 254, -90.2, 254, -81, 271.5, -81, 289.59998, -88, 306.59998, -88, 308.2, -95, 316.2, -95, 317.8, -120.5, 333, -122.5, 333, -128.5, 355, -129.8, 355, -133.8, 385, -135.1, 385, -133, 423.09998, -133, 429.40002, -127, 445.40002, -127, 448.59998, -116, 464.5, -116, 466.90002, -100, 481.90002, -100, 483.2, -76, 496.2, -76, 497.5, -53, 504.40002, -53, 505.7, -29, 509.7, -29, 511, 25, 510, 32.299988, 510, 63.299988, 501, 66.5, 501, 81.5, 493, 83.70001, 493, 99.79999, 480, 101.899994, 480, 116.899994, 462, 118.29999, 462, 128.29999, 441, 129.70001, 441, 132.70001, 424, 133.70001, 424, 135, 415.09998, 135, 388.7, 123, 342, 123, 338.3, 117, 330.3, 117, 328.59998, 101.29999, 323, 99.79999, 323, 91.79999, 315, 91.20001, 315, 83.20001, 299, 80.79999, 284, 81, 278.09998, 81, 272.59998, 87, 261.5, 87, 259.8, 104.79999, 242, 106.79999, 242, 108.79999, 222, 110.20001, 222, 107, 184.79999, 107, 179.59998, 99, 161.59998, 99, 159.20001, 91, 150.20001, 91, 148.09998, 75, 134.09998, 75, 132.90002, 46.600006, 114, 44.899994, 114, 36.899994, 105, 36.299988, 105, 28.299988, 87, 24.799988, 62, 24, 62, 17, -359, 17, -389.5, 20, -395.5, 20, -397, 26.700012, -402, 29.200012, -402, 26.799988, -428, 28, -431.7, 28, -434.3, 25, -443.3, 25, -468.4, 26.100006, -470, 27.200012, -470, 28.299988, -472.1, 26, -475.7, 26, -480, 33, -505.7, 33, -508.1, 30, -510.1, 30, -512)
 
-[node name="Stringwall" parent="." unique_id=140960651 instance=ExtResource("6_prcow")]
+[node name="Stringwall" parent="1stPart" unique_id=140960651 instance=ExtResource("6_prcow")]
 position = Vector2(5023, -1170)
 scale = Vector2(1, 1)
 max_sag = 25.0
@@ -158,71 +233,71 @@ min_sag = 0.0
 wall_bounce_strength = 900.0
 bounce_horizontal_margin = 15.0
 
-[node name="TuningPeg" parent="Stringwall" index="0" unique_id=1723540039]
+[node name="TuningPeg" parent="1stPart/Stringwall" index="0" unique_id=1723540039]
 position = Vector2(701.00006, -857)
 
-[node name="AnchorLeft" parent="Stringwall" index="1" unique_id=1138421449]
+[node name="AnchorLeft" parent="1stPart/Stringwall" index="1" unique_id=1138421449]
 position = Vector2(753, -858)
 
-[node name="AnchorRight" parent="Stringwall" index="2" unique_id=176412402]
+[node name="AnchorRight" parent="1stPart/Stringwall" index="2" unique_id=176412402]
 position = Vector2(839, 68)
 
-[node name="StringLine" parent="Stringwall" index="3" unique_id=901622392]
+[node name="StringLine" parent="1stPart/Stringwall" index="3" unique_id=901622392]
 width = 10.0
 default_color = Color(0, 0, 0, 1)
 
-[node name="TensionTrigger" parent="Stringwall" index="4" unique_id=1949885314]
+[node name="TensionTrigger" parent="1stPart/Stringwall" index="4" unique_id=1949885314]
 position = Vector2(474, -928)
 camera_offset_y = 450.0
 camera_move_duration = 0.7
 
-[node name="CollisionShape2D" parent="Stringwall/TensionTrigger" index="0" unique_id=1416170649]
+[node name="CollisionShape2D" parent="1stPart/Stringwall/TensionTrigger" index="0" unique_id=1416170649]
 position = Vector2(182.00002, -46)
 
-[node name="Violin" parent="Stringwall" index="5" unique_id=589289601]
+[node name="Violin" parent="1stPart/Stringwall" index="5" unique_id=589289601]
 position = Vector2(818.0001, -368)
 rotation = 0.0
 
-[node name="BounceArea" parent="Stringwall" index="8" unique_id=1125676989]
+[node name="BounceArea" parent="1stPart/Stringwall" index="8" unique_id=1125676989]
 position = Vector2(364, 167)
 rotation = 0.29670596
 
-[node name="CollisionPolygon2D" parent="Stringwall/BounceArea" index="0" unique_id=24269948]
+[node name="CollisionPolygon2D" parent="1stPart/Stringwall/BounceArea" index="0" unique_id=24269948]
 position = Vector2(406.54346, -193.70752)
 polygon = PackedVector2Array(19.5, -23, 9.010742, -16.995605, -387.1963, -919.5952, -363, -933, -222.02728, -597.6138)
 
-[node name="Bouncestring4" parent="." unique_id=344878007 instance=ExtResource("1_ihm0d")]
+[node name="Bouncestring4" parent="1stPart" unique_id=344878007 instance=ExtResource("1_ihm0d")]
 position = Vector2(4387, -1425)
-rotation = -0.30892327
-scale = Vector2(-0.5, 0.5)
+rotation = 2.8326693
+scale = Vector2(0.5, -0.5)
 bounce_velocity = 1100.0
 
-[node name="AnchorLeft" parent="Bouncestring4" index="0" unique_id=1138421449]
+[node name="AnchorLeft" parent="1stPart/Bouncestring4" index="0" unique_id=1138421449]
 position = Vector2(88, -158)
 
-[node name="AnchorRight" parent="Bouncestring4" index="1" unique_id=176412402]
+[node name="AnchorRight" parent="1stPart/Bouncestring4" index="1" unique_id=176412402]
 position = Vector2(744, -350)
 
-[node name="Bouncestring5" parent="." unique_id=1937142595 instance=ExtResource("1_ihm0d")]
+[node name="Bouncestring5" parent="1stPart" unique_id=1937142595 instance=ExtResource("1_ihm0d")]
 position = Vector2(4709, -1638)
 rotation = 0.2443461
 scale = Vector2(0.5, 0.5)
 bounce_velocity = 1100.0
 
-[node name="AnchorLeft" parent="Bouncestring5" index="0" unique_id=1138421449]
+[node name="AnchorLeft" parent="1stPart/Bouncestring5" index="0" unique_id=1138421449]
 position = Vector2(88, -158)
 
-[node name="AnchorRight" parent="Bouncestring5" index="1" unique_id=176412402]
+[node name="AnchorRight" parent="1stPart/Bouncestring5" index="1" unique_id=176412402]
 position = Vector2(744, -350)
 
-[node name="Boden2" type="StaticBody2D" parent="." unique_id=243986434]
+[node name="Boden2" type="StaticBody2D" parent="1stPart" unique_id=243986434]
 position = Vector2(5487, -1851)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boden2" unique_id=833747066]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1stPart/Boden2" unique_id=833747066]
 position = Vector2(143, 0)
 shape = SubResource("RectangleShape2D_shhik")
 
-[node name="ColorRect" type="ColorRect" parent="Boden2" unique_id=1307461123]
+[node name="ColorRect" type="ColorRect" parent="1stPart/Boden2" unique_id=1307461123]
 offset_left = 3.9999998
 offset_top = -3.9999998
 offset_right = 44.0
@@ -230,9 +305,38 @@ offset_bottom = 7.0
 scale = Vector2(7.24, 1)
 color = Color(0, 0, 0, 1)
 
-[editable path="Bouncestring3"]
-[editable path="String"]
-[editable path="Bouncestring2"]
-[editable path="Stringwall"]
-[editable path="Bouncestring4"]
-[editable path="Bouncestring5"]
+[node name="BG" type="Sprite2D" parent="." unique_id=101546485]
+z_index = 1
+position = Vector2(-13.220276, -6.3615623)
+scale = Vector2(150, 200)
+
+[node name="BG" type="ColorRect" parent="BG" unique_id=844718547]
+z_index = -60
+material = SubResource("ShaderMaterial_nch4o")
+anchors_preset = -1
+anchor_top = 87.53999
+anchor_right = 1057.5021
+anchor_bottom = 124.40704
+offset_left = -38.65853
+offset_top = 11.621808
+offset_right = 666.38
+offset_bottom = 29.278316
+scale = Vector2(0.17991452, -2.3744788)
+color = Color(1, 0.79, 0.79, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Gopichand" parent="." unique_id=666133277 node_paths=PackedStringArray("player") instance=ExtResource("13_ut8v4")]
+position = Vector2(17371, 2174)
+player = NodePath("../Player")
+
+[node name="tunerbutterflycontroller" parent="Gopichand" index="7" unique_id=566946090 node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[editable path="1stPart/Bouncestring3"]
+[editable path="1stPart/String"]
+[editable path="1stPart/Bouncestring2"]
+[editable path="1stPart/StringSlide"]
+[editable path="1stPart/Stringwall"]
+[editable path="1stPart/Bouncestring4"]
+[editable path="1stPart/Bouncestring5"]
+[editable path="Gopichand"]

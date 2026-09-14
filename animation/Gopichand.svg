@@ -2,14 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="178.36261mm"
-   height="94.237885mm"
-   viewBox="0 0 178.36261 94.237885"
+   width="842.53455mm"
+   height="198.4375mm"
+   viewBox="0 0 842.53455 198.4375"
    version="1.1"
    id="svg1"
    xml:space="preserve"
    inkscape:version="1.4.4 (dcaf3e7d, 2026-05-05)"
    sodipodi:docname="Gopichand.svg"
+   inkscape:export-batch-name=""
+   inkscape:export-batch-path="/Users/joelschoch/Documents/jumprun/animation"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.0072011"
-     inkscape:cx="380.75812"
-     inkscape:cy="242.25549"
+     inkscape:zoom="0.23255782"
+     inkscape:cx="582.6508"
+     inkscape:cy="331.10045"
      inkscape:window-width="1512"
      inkscape:window-height="945"
      inkscape:window-x="0"
@@ -34,15 +36,14 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" /><defs
      id="defs1" /><g
-     inkscape:label="Ebene 1"
+     inkscape:label="Gopichand"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-19.297864,-101.31232)"><path
+     transform="matrix(5.3128344,0,0,5.3128344,-177.99466,-671.52667)"><path
        style="fill:#aaaaaa;fill-opacity:1;stroke:none;stroke-width:1.059;stroke-dasharray:none;stroke-opacity:1"
        d="m 56.641925,139.18235 c 0,0 2.366875,4.86525 0.525973,12.22887 -6.048685,-0.1315 -22.748319,-0.52597 -22.748319,-0.52597 l -0.39448,-11.5714 z"
        id="path2"
-       sodipodi:nodetypes="ccccc"
-       transform="translate(-4.7916661e-8)" /><path
+       sodipodi:nodetypes="ccccc" /><path
        style="display:inline;fill:none;stroke:#5c5c5c;stroke-width:1.059;stroke-dasharray:none;stroke-opacity:1"
        d="m 188.66875,158.67965 c -6.45227,5.33931 -16.15664,4.48298 -16.15664,4.48298 0,0 -64.16007,-8.21249 -78.018645,-10.26561 -13.858573,-2.05313 -38.490202,-1.31747 -38.490202,-1.31747 l -21.816864,-0.58964 -0.147411,-11.35067 c 0,0 39.401148,-1.15461 40.209241,-1.15461 0.808094,0 45.051221,-3.23238 93.334811,-11.11129 12.19291,-1.36868 18.2299,0.43449 22.21568,5.11232"
        id="path1"

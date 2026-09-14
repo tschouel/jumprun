@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://cmlysd7bc7ye"]
+
+[ext_resource type="Script" uid="uid://cp50cyycmwgm5" path="res://bass_slide_zone.gd" id="1_50qrp"]
+[ext_resource type="PackedScene" uid="uid://i5yg6y73j2je" path="res://Screenfade.tscn" id="2_axns2"]
+[ext_resource type="Texture2D" uid="uid://6wd0jad2uq67" path="res://animation/Kontrabass.png" id="2_udlfm"]
+[ext_resource type="Script" uid="uid://ctqw6gd2ofaxj" path="res://sliding_obstacle_sequencer.gd" id="4_lo0sq"]
+[ext_resource type="Script" uid="uid://bqx1q5wro075i" path="res://LaneSwitchToggle.gd" id="6_2lcgb"]
+[ext_resource type="Script" uid="uid://q3e40vrqcq25" path="res://sliding_obstacle_step.gd" id="6_r1frd"]
+[ext_resource type="PackedScene" uid="uid://i6v0te848si6" path="res://sliding_obstacle_bass.tscn" id="7_r1frd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
+size = Vector2(304, 259)
+
+[sub_resource type="Curve2D" id="Curve2D_lo0sq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 265, -40, 0, 0, 0, 0, 355, 971, 0, 0, 0, 0, 457, 12505, 0, 0, 0, 0, 359, 18325)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_axns2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 221, 123, 0, 0, 0, 0, 248, 905, 0, 0, 0, 0, 240, 1749, 0, 0, 0, 0, 155, 10924, 0, 0, 0, 0, 144, 12537, 0, 0, 0, 0, 146, 15170, 0, 0, 0, 0, 359, 18324)
+}
+point_count = 7
+
+[sub_resource type="Resource" id="Resource_2lcgb"]
+script = ExtResource("6_r1frd")
+beats = 9.0
+bpm = 100.0
+obstacle_scene = ExtResource("7_r1frd")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Curve2D" id="Curve2D_2lcgb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 339, 332, 0, 0, 0, 0, 462, 989, 0, 0, 0, 0, 772, 12511, 0, 0, 0, 0, 664, 15208, 0, 0, 0, 0, 647, 15381, 0, 0, 0, 0, 363, 18326)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_a2oub"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 174, 569, 0, 0, 0, 0, 166, 987, 0, 0, 0, 0, -134, 12557, 0, 0, 0, 0, -69, 15158, 0, 0, 0, 0, 364, 18330)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_r1frd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 477, 871, 0, 0, 0, 0, 545, 1021, 0, 0, 0, 0, 605, 2455, 0, 0, 0, 0, 1017, 12541, 0, 0, 0, 0, 891, 15146, 0, 0, 0, 0, 364, 18327)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4pto"]
+size = Vector2(4.71, 373.44922)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
+size = Vector2(1625, 20)
+
+[node name="BassSlideZone" type="Area2D" unique_id=1304215454 node_paths=PackedStringArray("path_follows", "respawn_point", "screen_fade")]
+script = ExtResource("1_50qrp")
+path_follows = [NodePath("Saite1/PathFollow2D"), NodePath("Saite2/PathFollow2D"), NodePath("Saite3/PathFollow2D"), NodePath("Saite4/PathFollow2D"), NodePath("Saite5/PathFollow2D")]
+respawn_point = NodePath("RespawnPoint")
+screen_fade = NodePath("Screenfade")
+camera_offset_target = Vector2(0, 150)
+camera_transition_duration = 1.0
+
+[node name="Screenfade" parent="." unique_id=2127022392 instance=ExtResource("2_axns2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607306610]
+position = Vector2(286, -119.5)
+shape = SubResource("RectangleShape2D_shhik")
+
+[node name="Kontrabass" type="Sprite2D" parent="." unique_id=851382078]
+position = Vector2(321, 8855)
+scale = Vector2(2, 2)
+texture = ExtResource("2_udlfm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1584275519]
+position = Vector2(374, 8466)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-2.6999512, -4921, -37.69995, -4936, -40, -4936, -40, -4933.7, -44, -4927.6, -44, -4926.6, -57, -4923.6, -90, -4928.8, -90, -4931, -97.5, -4928, -99.69995, -4928, -109, -4863.1, -109, -4857.4, -123.400024, -4790.5, -129, -4796.8, -129, -4798.8, -185, -4804.9, -185, -4807.2, -191.5, -4804, -193.59998, -4804, -221, -4690.2, -221, -4686.3, -234.30005, -4642.4, -219, -4707.8, -219, -4714, -297.8, -4714, -308.8, -4598, -310, -4598, -310, -4590.9, -304, -4586.9, -304, -4585.6, -280.40002, -4577, -263.2, -4577, -254.29999, -4585, -253.29999, -4585, -254, -4583.4, -254, -4581.8, -259.8, -4576, -261.90002, -4576, -263, -4549, -263, -4539.3, -260, -4535.4, -260, -4533, -213.90002, -4532.1, -209, -4440.9, -209, -4419.6, -175.40002, -4408.4, -179, -4387.2, -179, -4361.5, -173, -4349.5, -173, -4347.3, -154.19995, -4344, -142.90002, -4344, -120.69995, -4347, -113.599976, -4347, -97, -4353.6, -97, -4354.3, -76, -4357.3, -76, -4358, -35, -4356, -29.300049, -4356, -22.400024, -4353, -20.900024, -4353, -15.900024, -4347, -15.199951, -4347, 0.8000488, -4315, 1.5999756, -4315, 27.599976, -4246, 28.5, -4246, 58.5, -4152, 59.19995, -4152, 96.19995, -3738, 95.099976, -3729, 86.80005, -3729, 85, -3730.8, 85, -3734.2, 77, -3730.2, 38.099976, -3730, -62, -3734, -62, -3735.1, -108.099976, -3733, -113.69995, -3733, -136, -3735.9, -123.099976, -4213, -121.69995, -4213, -124.30005, -4231, -194.90002, -4231, -224, -3644, -224, -3622.7, -193.5, -3608, -186.30005, -3608, -164, -3627.1, -164, -3627.9, -121.30005, -3654.8, -108.099976, -3653, -105.69995, -3653, -98, -3655.6, -65.099976, -3654, -63.900024, -3654, -46, -3656.2, -46, -3657, 41.30005, -3657, 43, -3655.9, 43, -3653.8, 57.19995, -3655, 61.69995, -3655, 80.69995, -3649, 83.19995, -3649, 86, -3646.2, 86, -3644.8, 88.099976, -3643.7, 91.599976, -3646, 92.5, -3646, 98.5, -3643, 101.599976, -3643, 172, -3611.8, 172, -3610.7, 174.5, -3609.6, 176.80005, -3612, 179.19995, -3612, 171.80005, -3696, 171, -3696, 171, -3724.7, 174, -3733.7, 174, -3756.1, 170, -3792.2, 170, -3803.1, 124, -4170.2, 124, -4178.2, 71, -4400, 71, -4402.2, 120.19995, -4407, 123.30005, -4407, 87.19995, -4674, 88.30005, -4674, 114, -4530.6, 114, -4524.2, 117.19995, -4521, 156.19995, -4521, 172.40002, -4524, 177.5, -4524, 191.5, -4531, 194, -4531, 194, -4551.3, 188.5, -4573, 221, -4576.5, 223.5, -4628, 216, -4692, 147.5, -4704, 117, -4786.5, 117, -4789.8, 114, -4792.8, 114, -4795, 67.69995, -4795, 48, -4887.4, 48, -4891.4, 35, -4924.5, 35, -4926.8, 30.800049, -4931, 26.5, -4931, 7.5, -4921)
+
+[node name="Saite3" type="Path2D" parent="." unique_id=2104637375]
+curve = SubResource("Curve2D_lo0sq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Saite3" unique_id=464435419]
+position = Vector2(265, -40)
+rotation = 1.4820096
+loop = false
+
+[node name="SlidingObstacleSequencer" type="Node2D" parent="Saite3" unique_id=1096260148 node_paths=PackedStringArray("path")]
+script = ExtResource("4_lo0sq")
+path = NodePath("..")
+slide_speed = 900.0
+
+[node name="Saite2" type="Path2D" parent="." unique_id=411761128]
+curve = SubResource("Curve2D_axns2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Saite2" unique_id=913744023]
+position = Vector2(221, 123)
+rotation = 1.5362831
+loop = false
+
+[node name="SlidingObstacleSequencer" type="Node2D" parent="Saite2" unique_id=283103212 node_paths=PackedStringArray("path")]
+script = ExtResource("4_lo0sq")
+path = NodePath("..")
+slide_speed = 900.0
+steps = Array[ExtResource("6_r1frd")]([SubResource("Resource_2lcgb")])
+
+[node name="Saite4" type="Path2D" parent="." unique_id=284134562]
+curve = SubResource("Curve2D_2lcgb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Saite4" unique_id=286884760]
+position = Vector2(339, 332)
+rotation = 1.3857241
+loop = false
+
+[node name="SlidingObstacleSequencer" type="Node2D" parent="Saite4" unique_id=667979925 node_paths=PackedStringArray("path")]
+script = ExtResource("4_lo0sq")
+path = NodePath("..")
+slide_speed = 900.0
+
+[node name="Saite1" type="Path2D" parent="." unique_id=472125987]
+curve = SubResource("Curve2D_a2oub")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Saite1" unique_id=998307006]
+position = Vector2(174, 569)
+rotation = 1.5899328
+loop = false
+
+[node name="SlidingObstacleSequencer" type="Node2D" parent="Saite1" unique_id=1034316630 node_paths=PackedStringArray("path")]
+script = ExtResource("4_lo0sq")
+path = NodePath("..")
+slide_speed = 900.0
+
+[node name="Saite5" type="Path2D" parent="." unique_id=2011447010]
+curve = SubResource("Curve2D_r1frd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Saite5" unique_id=917957011]
+position = Vector2(477, 871)
+rotation = 1.1451738
+loop = false
+
+[node name="SlidingObstacleSequencer" type="Node2D" parent="Saite5" unique_id=604850985 node_paths=PackedStringArray("path")]
+script = ExtResource("4_lo0sq")
+path = NodePath("..")
+slide_speed = 900.0
+
+[node name="Boden" type="StaticBody2D" parent="." unique_id=484691847]
+position = Vector2(-257, 151.00002)
+scale = Vector2(0.36757797, 0.2611028)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=1896328249]
+position = Vector2(1141.7661, -363.8803)
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_s4pto")
+
+[node name="ColorRect" type="ColorRect" parent="Boden" unique_id=399213467]
+offset_left = 255.0
+offset_top = -558.0
+offset_right = 295.0
+offset_bottom = -518.0
+scale = Vector2(47.43999, 1)
+color = Color(0.24, 0.24, 0.24, 1)
+
+[node name="RespawnPoint" type="Marker2D" parent="." unique_id=683580660]
+position = Vector2(28, -29)
+
+[node name="LaneswitchEnable" type="Area2D" parent="." unique_id=91458574]
+position = Vector2(347, 1162)
+script = ExtResource("6_2lcgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaneswitchEnable" unique_id=74442750]
+position = Vector2(6, -5)
+shape = SubResource("RectangleShape2D_3gcn6")
+
+[node name="LaneswitchStop" type="Area2D" parent="." unique_id=218570939]
+position = Vector2(306, 15192)
+script = ExtResource("6_2lcgb")
+enable_lane_switching = false
+reset_camera = true
+camera_reset_duration = 2.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LaneswitchStop" unique_id=1013787716]
+position = Vector2(83.5, -5)
+shape = SubResource("RectangleShape2D_3gcn6")

@@ -1,33 +1,49 @@
 extends Node
 
-## Steuert den gesamten Gitarren-Mechanismus: Taste F in der Mechanik-Zone
-## aktiviert/verlaesst den Spielmodus. Kein automatischer Takt mehr - und die
-## Hebel-Tasten loesen selbst KEINEN Zupf mehr aus, die bestimmen nur noch
-## welcher Bund gedrueckt wird (Fretting). Das eigentliche Zupfen passiert
-## unabhaengig davon ueber zwei eigene "Pedal"-Tasten:
-## - pluck_key (default E): Standard-Zupf - eigene Animation (pluck_sprite),
-##   kurz danach (pluck_delay) string_node.pluck(false) (Bereich start_point
-##   -> aktiver Druckpunkt vibriert).
-## - pedal_key (default Q): zweiter Zupf - eigene Animation (pedal_sprite),
-##   kurz danach string_node.pluck(true) (Bereich end_point -> aktiver
-##   Druckpunkt vibriert).
+## Steuert den (vereinfachten) Gopichand-Mechanismus: Taste F in der
+## Interaktionszone aktiviert/verlaesst den Spielmodus. Waehrend aktiv,
+## loest Taste E (pluck_key) das Anspielen der Saite aus - eigene
+## Zupf-Animation (pluck_sprite, optional), kurz danach (pluck_delay)
+## string_node.pluck(). Keine Hebel, kein Fretting, kein zweites Pedal -
+## anders als guitarmech.gd (das volle 6-Mechanik-Original) gibt es hier nur
+## diese eine Aktion.
 ##
-## Die 4 Hebel-Tasten spielen daneben weiterhin JEWEILS ihre eigene
-## Hebel-Animation, solange sie gehalten werden (mehrere gleichzeitig moeglich
-## - das ist rein visuell, der physische Hebel wird gedrueckt). Jede
-## Hebel-Animation laeuft zweistufig: erst einmalig lever_animation_name
-## ("default"), danach automatisch in die Loop-Animation lever_loop_animation_name
-## ("loop"), solange die Taste weiter gehalten wird.
+## CALL-AND-RESPONSE (optional): Falls call_and_response gesetzt ist, wird
+## bei JEDEM tatsaechlichen Zupfen (nach pluck_delay) zusaetzlich
+## call_and_response.register_note() mit der aktuellen Tonhoehe
+## (string_node.tension_level) aufgerufen. Das Starten/Abbrechen einer
+## Herausforderung passiert NICHT hier, sondern eigenstaendig in
+## call_and_response.gd selbst (das denselben Interaktionszone-Trigger
+## eigenstaendig ueberwacht) - siehe call_and_response.gd.
 ##
-## Welcher Hebel die Saite tatsaechlich verbiegt, folgt der Gitarren-Prioritaet
-## taste4 > taste3 > taste2 > taste1: solange Hebel 4 (index 3, hoechster Ton)
-## gehalten wird, "gewinnt" er immer, egal welche tieferen Hebel zusaetzlich
-## gehalten werden - die haben dann einfach keinen Effekt auf die Saite
-## (bleiben aber sichtbar gedrueckt/animiert).
+## KAMERA-EFFEKT BEIM AKTIVIEREN (optional, standardmaessig AUS):
+## camera_offset_x/camera_offset_y = 0.0 (Default) -> kein Offset-Effekt.
+## Ungleich 0 gesetzt: beim Aktivieren (F) faehrt die Kamera ueber
+## ground_module.set_camera_offset_override() auf diesen Ziel-Offset (z.B.
+## um das Instrument ganz sichtbar zu machen), beim Deaktivieren wieder
+## smooth zurueck.
 ##
-## Annahme (bei Bedarf im Inspector anpassen): lever_keys default =
-## [KEY_LEFT, KEY_DOWN, KEY_RIGHT, KEY_UP] (taste1..taste4), da nur
-## "links, unten, rechts" genannt wurden - die 4. Taste bitte pruefen.
+## ZUSAETZLICH: camera_zoom_enabled = false (Default) -> kein Zoom-Effekt.
+## Aktiviert und camera_zoom_target gesetzt (z.B. Vector2(0.6, 0.6) zum
+## Reinzoomen): beim Aktivieren faehrt die Kamera ueber
+## ground_module.set_camera_zoom_override() auf diesen Zoom, beim
+## Deaktivieren wieder zurueck auf den Zoom-Wert, der VOR dem Aktivieren
+## galt (wird von groundmovement.gd automatisch gemerkt).
+##
+## camera_transition_duration/camera_transition_curve gelten GEMEINSAM fuer
+## Offset UND Zoom - es gibt hier absichtlich nur EINE Zeit/Kurve fuer
+## beide Effekte, damit sie sich als EINE einheitliche Kamerafahrt anfuehlen.
+##
+## Diese Kamera-Logik hier verwenden statt sie in einen separaten
+## Zonen-Node auszulagern - _activate()/_deactivate() tracken hier schon
+## den Aktivierungszustand und die Player-Referenz, ein zweiter Node
+## wuerde dieselbe Zustandsverwaltung nur duplizieren.
+##
+## Setup: interaction_zone auf die Area2D zeigen lassen, die den Spieler
+## erkennt. string_node auf den Line2D-Saiten-Node zeigen lassen (z.B. mit
+## guitar_string_tunable.gd oder PluckableString.gd - beide haben eine
+## pluck()-Methode UND eine tension_level-Property). player auf den
+## CharacterBody2D-Player zeigen lassen.
 
 @export_group("Zone & Aktivierung")
 @export var interaction_zone: Area2D
@@ -38,60 +54,64 @@ extends Node
 ## GroundMovement.set_animation_override() angezeigt wird. Leer lassen, um
 ## die Player-Animation nicht anzufassen.
 @export var player_animation_override: String = ""
-## Optional: eigenes AnimatedSprite2D (eigenes SpriteFrames) fuer die diversen
-## Gitarre-Animationen des Players, statt sie ins Haupt-SpriteFrames zu
-## quetschen - wird waehrend des Spielmodus sichtbar, der normale Player-
-## Sprite wird solange versteckt. Leer lassen, um stattdessen nur
-## player_animation_override im normalen Sprite abzuspielen.
+## Optional: eigenes AnimatedSprite2D (eigenes SpriteFrames) fuer eine
+## eigene Gopichand-Spielhaltung des Players, statt sie ins
+## Haupt-SpriteFrames zu quetschen - wird waehrend des Spielmodus sichtbar,
+## der normale Player-Sprite wird solange versteckt. Leer lassen, um
+## stattdessen nur player_animation_override im normalen Sprite abzuspielen.
 @export var player_override_sprite: AnimatedSprite2D
 
 @export_group("Saite")
 @export var string_node: Node
 
+@export_group("Call & Response (optional)")
+## Falls gesetzt: register_note(string_node.tension_level) wird bei jedem
+## Zupfen aufgerufen. Start/Abbruch einer Herausforderung passiert
+## eigenstaendig in call_and_response.gd, nicht hier.
+@export var call_and_response: Node
+
 @export_group("Zupf-Animation")
-## Loest den Standard-Zupf aus - unabhaengig davon, ob gerade ein Hebel
-## gehalten wird oder nicht.
+## Loest das Anspielen der Saite aus, solange der Spielmodus aktiv ist.
 @export var pluck_key: Key = KEY_E
-## Optional: eigene AnimatedSprite2D fuer den Zupf-/Strum-Moment (z.B. ein Arm
-## oder Plektrum). Kann leer bleiben - dann wird trotzdem geplueckt, nur ohne
-## eigene Animation dafuer.
+## Optional: eigene AnimatedSprite2D fuer den Zupf-Moment (z.B. eine Hand
+## oder ein Schlegel). Kann leer bleiben - dann wird trotzdem geplueckt, nur
+## ohne eigene Animation dafuer.
 @export var pluck_sprite: AnimatedSprite2D
 @export var pluck_animation_name: String = "pluck"
 ## Wie lange nach dem Tastendruck gewartet wird, bevor die Saite tatsaechlich
 ## vibriert (string_node.pluck()) - fuer den Sync mit der Zupf-Animation. 0 = sofort.
 @export var pluck_delay: float = 0.1
 
-@export_group("Zweites Pedal")
-## Einmaliges Druecken (kein Halten) loest dieses Pedal aus - eigene
-## Animation, eigener Zupf mit umgekehrtem Vibrationsbereich (end_point ->
-## Druckpunkt statt start_point -> Druckpunkt).
-@export var pedal_key: Key = KEY_Q
-@export var pedal_sprite: AnimatedSprite2D
-@export var pedal_animation_name: String = "default"
-
-@export_group("Hebel (Index 0 = taste1 ... Index 3 = taste4, hoechster Ton)")
-@export var lever_sprites: Array[AnimatedSprite2D] = []
-@export var lever_keys: Array[Key] = [KEY_LEFT, KEY_DOWN, KEY_RIGHT, KEY_UP]
-## Einmalige Start-Animation, die beim Druecken der Taste zuerst abgespielt wird.
-@export var lever_animation_name: String = "default"
-## Loop-Animation, in die nach lever_animation_name automatisch gewechselt wird,
-## solange die Taste weiter gehalten wird. Muss im SpriteFrames als "Loop" markiert sein.
-@export var lever_loop_animation_name: String = "loop"
+@export_group("Kamera")
+## X-Ziel-Offset (in Pixeln), den die Kamera beim Aktivieren smooth anfaehrt.
+## 0.0 (Standard) = kein horizontaler Kamera-Effekt.
+@export var camera_offset_x: float = 0.0
+## Y-Ziel-Offset (in Pixeln), den die Kamera beim Aktivieren smooth anfaehrt.
+## 0.0 (Standard) = kein vertikaler Kamera-Effekt.
+@export var camera_offset_y: float = 0.0
+## Aktiviert den Zoom-Effekt beim Aktivieren des Spielmodus. Standard AUS.
+@export var camera_zoom_enabled: bool = false
+## Ziel-Zoom, den die Kamera beim Aktivieren smooth anfaehrt (nur wirksam,
+## wenn camera_zoom_enabled = true). Werte < 1 zoomen naeher ran, Werte > 1
+## zoomen weiter raus (im Zweifel kurz ausprobieren, welche Richtung fuer
+## dein Setup "reinzoomen" bedeutet).
+@export var camera_zoom_target: Vector2 = Vector2(0.6, 0.6)
+## GLOBALE Dauer in Sekunden fuer die gesamte Kamerafahrt (Offset UND Zoom
+## GEMEINSAM). 0.0 (Standard) = altes, geschwindigkeitsbasiertes Smoothing
+## ohne feste Dauer (camera_look_speed/camera_zoom_speed in
+## groundmovement.gd). > 0 = beide Effekte dauern GENAU so lange, per Tween.
+@export var camera_transition_duration: float = 0.0
+## Optionale Curve-Ressource fuer frei editierbare, interpolierte Keyframes
+## der Kamerafahrt (nur wirksam, wenn camera_transition_duration > 0). Gilt
+## GEMEINSAM fuer Offset UND Zoom. Leer lassen fuer eine Standard-Ease-
+## Bewegung.
+@export var camera_transition_curve: Curve
 
 var _player_in_zone: bool = false
 var _is_active: bool = false
-var _current_lever: int = -1
-var _current_lever_low: int = -1
-var _lever_in_loop: Array[bool] = []
 var _ground_movement: Node = null
 
 func _ready() -> void:
-	_lever_in_loop.resize(lever_sprites.size())
-	for i in range(lever_sprites.size()):
-		_lever_in_loop[i] = false
-		var sprite: AnimatedSprite2D = lever_sprites[i]
-		if sprite:
-			sprite.animation_finished.connect(_on_lever_animation_finished.bind(i))
 	if player:
 		_ground_movement = player.get_node_or_null("GroundMovement")
 	if interaction_zone:
@@ -120,8 +140,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			_activate()
 	elif event.physical_keycode == pluck_key and _is_active:
 		_trigger_pluck_sequence()
-	elif event.physical_keycode == pedal_key and _is_active:
-		_trigger_pedal()
 
 func _activate() -> void:
 	_is_active = true
@@ -131,6 +149,8 @@ func _activate() -> void:
 	if _ground_movement and _ground_movement.has_method("set_animation_override"):
 		if player_animation_override != "" or player_override_sprite:
 			_ground_movement.set_animation_override(player_animation_override, player_override_sprite)
+	_apply_camera_offset(true)
+	_apply_camera_zoom(true)
 
 func _deactivate() -> void:
 	_is_active = false
@@ -138,37 +158,59 @@ func _deactivate() -> void:
 		player.set_physics_process(true)
 	if _ground_movement and _ground_movement.has_method("clear_animation_override"):
 		_ground_movement.clear_animation_override()
-	_current_lever = -1
-	_current_lever_low = -1
-	if string_node and string_node.has_method("set_pressed_lever"):
-		string_node.set_pressed_lever(-1)
-	if string_node and string_node.has_method("set_pressed_lever_alt"):
-		string_node.set_pressed_lever_alt(-1)
 	if pluck_sprite:
 		pluck_sprite.stop()
-	if pedal_sprite:
-		pedal_sprite.stop()
-		pedal_sprite.animation = pedal_animation_name
-		pedal_sprite.set_frame_and_progress(0, 0.0)
-	for i in range(lever_sprites.size()):
-		var sprite: AnimatedSprite2D = lever_sprites[i]
-		if sprite:
-			sprite.stop()
-			sprite.animation = lever_animation_name
-			sprite.set_frame_and_progress(0, 0.0)
-		_lever_in_loop[i] = false
+	_apply_camera_offset(false)
+	_apply_camera_zoom(false)
 
-func _process(_delta: float) -> void:
-	if not _is_active:
+## Setzt bzw. loescht den Kamera-Offset-Override (X+Y) auf ground_module
+## (siehe groundmovement.gd), unter Verwendung der GLOBALEN
+## camera_transition_duration/camera_transition_curve. Macht nichts, falls
+## sowohl camera_offset_x als auch camera_offset_y == 0 sind (Standard aus).
+func _apply_camera_offset(activate: bool) -> void:
+	if camera_offset_x == 0.0 and camera_offset_y == 0.0:
 		return
-	_poll_levers()
+	if not _ground_movement:
+		return
+	if activate:
+		if _ground_movement.has_method("set_camera_offset_override"):
+			_ground_movement.set_camera_offset_override(Vector2(camera_offset_x, camera_offset_y), camera_transition_duration, camera_transition_curve)
+	else:
+		if _ground_movement.has_method("clear_camera_offset_override"):
+			_ground_movement.clear_camera_offset_override(camera_transition_duration, camera_transition_curve)
 
+## Setzt bzw. loescht den Kamera-Zoom-Override auf ground_module (siehe
+## groundmovement.gd), unter Verwendung derselben GLOBALEN
+## camera_transition_duration/camera_transition_curve wie der Offset-Effekt.
+## Macht nichts, wenn camera_zoom_enabled = false ist (Standard aus).
+func _apply_camera_zoom(activate: bool) -> void:
+	if not camera_zoom_enabled:
+		return
+	if not _ground_movement:
+		return
+	if activate:
+		if _ground_movement.has_method("set_camera_zoom_override"):
+			_ground_movement.set_camera_zoom_override(camera_zoom_target, camera_transition_duration, camera_transition_curve)
+	else:
+		if _ground_movement.has_method("clear_camera_zoom_override"):
+			_ground_movement.clear_camera_zoom_override(camera_transition_duration, camera_transition_curve)
+
+## DIAGNOSE: zeigt, ob call_and_response/string_node korrekt gesetzt sind
+## und ob die tension_level-Property gefunden wird. Nach der Diagnose
+## wieder entfernen.
 func _pluck() -> void:
 	if string_node and string_node.has_method("pluck"):
-		string_node.pluck(false)
+		string_node.pluck()
+	print("[Gopichand DIAGNOSE] _pluck() aufgerufen. call_and_response=", call_and_response, " string_node=", string_node)
+	if string_node:
+		print("[Gopichand DIAGNOSE]   string_node hat tension_level? ", ("tension_level" in string_node))
+	if call_and_response:
+		print("[Gopichand DIAGNOSE]   call_and_response hat register_note? ", call_and_response.has_method("register_note"))
+	if call_and_response and call_and_response.has_method("register_note") and string_node and ("tension_level" in string_node):
+		call_and_response.register_note(string_node.tension_level)
 
 ## Wird nur beim WECHSEL "nicht gehalten -> gehalten" ausgeloest (nicht bei
-## jedem Frame, in dem eine Taste gehalten wird) - also einmal pro Tastendruck.
+## jedem Frame, in dem die Taste gehalten wird) - also einmal pro Tastendruck.
 func _trigger_pluck_sequence() -> void:
 	if pluck_sprite:
 		pluck_sprite.stop()
@@ -183,88 +225,3 @@ func _deferred_pluck() -> void:
 	# verlassen wurde, soll nicht nachtraeglich noch geplueckt werden.
 	if _is_active:
 		_pluck()
-
-## Zweites Pedal (pedal_key, einmaliges Druecken): eigene Animation, zupft
-## die Saite mit umgekehrtem Vibrationsbereich (end_point -> Druckpunkt).
-func _trigger_pedal() -> void:
-	if pedal_sprite:
-		pedal_sprite.stop()
-		pedal_sprite.play(pedal_animation_name)
-	if pluck_delay <= 0.0:
-		_pluck_from_end()
-	else:
-		get_tree().create_timer(pluck_delay).timeout.connect(_deferred_pluck_from_end)
-
-func _pluck_from_end() -> void:
-	if string_node and string_node.has_method("pluck"):
-		string_node.pluck(true)
-
-func _deferred_pluck_from_end() -> void:
-	if _is_active:
-		_pluck_from_end()
-
-func _poll_levers() -> void:
-	# Jede gehaltene Taste spielt ihre eigene Hebel-Animation und bestimmt den
-	# aktiven Druckpunkt - loest aber selbst KEINEN Zupf mehr aus (das machen
-	# jetzt ausschliesslich pluck_key und pedal_key, siehe _unhandled_input).
-	#
-	# Zwei Prioritaeten werden parallel ermittelt, weil E und Q unterschiedlich
-	# aufloesen sollen, wenn mehrere Hebel gleichzeitig gehalten werden:
-	# - dominant_high (taste4 > taste3 > taste2 > taste1): fuer die sichtbare
-	#   Biegung der Saite und das Standard-Pedal E.
-	# - dominant_low (taste1 > taste2 > taste3 > taste4, umgekehrt): nur fuer
-	#   die Vibrationsgrenze beim zweiten Pedal Q (guitar_string.gd:
-	#   set_pressed_lever_alt).
-	var dominant_high: int = -1
-	var dominant_low: int = -1
-	for i in range(lever_keys.size()):
-		var held: bool = Input.is_physical_key_pressed(lever_keys[i])
-		_update_lever_sprite(i, held)
-		if held:
-			# Wir laufen aufsteigend index 0 -> 3 durch, daher gewinnt am Ende
-			# immer der hoechste gehaltene Index = taste4 > taste3 > taste2 > taste1.
-			dominant_high = i
-			if dominant_low == -1:
-				# Der ERSTE (also niedrigste) gehaltene Index gewinnt.
-				dominant_low = i
-	if dominant_high != _current_lever:
-		_current_lever = dominant_high
-		if string_node and string_node.has_method("set_pressed_lever"):
-			string_node.set_pressed_lever(_current_lever)
-	if dominant_low != _current_lever_low:
-		_current_lever_low = dominant_low
-		if string_node and string_node.has_method("set_pressed_lever_alt"):
-			string_node.set_pressed_lever_alt(_current_lever_low)
-
-func _update_lever_sprite(index: int, held: bool) -> void:
-	if index < 0 or index >= lever_sprites.size():
-		return
-	var sprite: AnimatedSprite2D = lever_sprites[index]
-	if not sprite:
-		return
-	if held:
-		# Nur neu starten, wenn der Hebel gerade nicht schon animiert -
-		# ein bereits laufender Intro- oder Loop-Zustand wird nicht unterbrochen.
-		if not sprite.is_playing():
-			_lever_in_loop[index] = false
-			sprite.speed_scale = 1.0
-			sprite.play(lever_animation_name)
-	else:
-		# Taste losgelassen: Loop verlassen und sauber auf Frame 0 der
-		# default-Animation zurueckschalten (nicht einfach stoppen - dann
-		# bliebe sie irgendwo mitten in der Loop-Animation stehen).
-		sprite.stop()
-		sprite.animation = lever_animation_name
-		sprite.set_frame_and_progress(0, 0.0)
-		_lever_in_loop[index] = false
-
-func _on_lever_animation_finished(index: int) -> void:
-	if index < 0 or index >= lever_sprites.size():
-		return
-	var sprite: AnimatedSprite2D = lever_sprites[index]
-	if not sprite:
-		return
-	if sprite.animation == lever_animation_name and not _lever_in_loop[index]:
-		_lever_in_loop[index] = true
-		sprite.speed_scale = 1.0
-		sprite.play(lever_loop_animation_name)

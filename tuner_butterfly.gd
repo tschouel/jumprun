@@ -1,12 +1,25 @@
 extends AnimatedSprite2D
-class_name TuningKeySequence
+class_name TunerButterfly
 ## Der drehende Stimmschluessel: laeuft beim Start (start_tuning()) eine
-## Weg-Strecke ab (Move From Offset -> Move To Offset, in Move Duration
-## Sekunden) und spielt dabei eure 16-Frame-Dreh-Animation ("Loop
+## Weg-Strecke ab (Move From Offset -> Move To Offset, bzw. von
+## flight_start_point -> Move To Offset, siehe unten) in Move Duration
+## Sekunden und spielt dabei eure 16-Frame-Dreh-Animation ("Loop
 ## Animation") genau "Loop Count" mal komplett durch. Danach wechselt er
 ## automatisch zur "Stand Animation" (die Endpose) - und GENAU in dem
 ## Moment, in dem die startet, wird der "Stand Collider" aktiviert, auf dem
 ## der Spieler dann stehen kann.
+##
+## FREI WAEHLBARER EINFLUG-STARTPUNKT (flight_start_point, neu):
+## Optional ein beliebiger Node2D (z.B. ein Marker2D, den ihr irgendwo
+## ausserhalb des sichtbaren Bereichs platziert, z.B. unterhalb des
+## Bildschirms fuer einen "von unten reinfliegenden" Schmetterling). Ist
+## flight_start_point gesetzt, wird er als START-Position verwendet (statt
+## move_from_offset) - move_to_offset bleibt weiterhin die relative
+## Zielposition. flight_start_point liegt in GLOBALEN Koordinaten
+## (global_position) und wird beim Start automatisch in die lokale
+## Position dieses Nodes umgerechnet - es spielt also keine Rolle, wo der
+## Marker im Szenenbaum sitzt. Leer lassen fuer das alte Verhalten
+## (move_from_offset relativ zur eigenen Editor-Position).
 ##
 ## SETUP:
 ## 1. Dieses Skript direkt auf euren AnimatedSprite2D-Node packen (also den,
@@ -16,32 +29,34 @@ class_name TuningKeySequence
 ##    (Standard-Name hier: "spin") und eine kurze/einzelne Animation fuer
 ##    die Endpose (Standard-Name hier: "stand").
 ## 3. Move From Offset / Move To Offset: lokale Position RELATIV zur
-##    Position, an der ihr den Node im Editor platziert habt. Beispiel:
-##    (0,0) -> (0,-40), wenn der Schluessel beim Spannen 40px nach oben
-##    wandern soll. Bleibt Move To Offset auf (0,0), bewegt er sich gar
-##    nicht - dann macht nur die Dreh-Animation etwas.
+##    Position, an der ihr den Node im Editor platziert habt (wird
+##    ignoriert, falls flight_start_point gesetzt ist - dann gilt dessen
+##    globale Position als Start).
 ## 4. Stand Collider: zieht euren CollisionShape2D- oder CollisionPolygon2D-
 ##    Node rein, auf dem der Spieler stehen koennen soll. Der sollte im
 ##    Editor mit angehaktem "Disabled" starten - das Skript aktiviert ihn
-##    automatisch, sobald "Stand" beginnt (und schaltet ihn in _ready()
-##    vorsichtshalber nochmal explizit aus, falls ihr's vergesst).
+##    automatisch, sobald "Stand" beginnt.
 ## 5. Ausloeser (zwei Wege, auch gleichzeitig nutzbar):
-##    a) Trigger Area unten im Inspector auf eine Area2D ziehen (z.B. eine
-##       Zone am Boden vor dem Stimmschluessel) - sobald der Spieler die
-##       betritt, startet die Sequenz automatisch, kein Extra-Code noetig.
-##    b) Von aussen (z.B. aus eurem TensionTrigger.gd beim E-Druck) einfach
-##       start_tuning() aufrufen.
+##    a) Trigger Area unten im Inspector auf eine Area2D ziehen.
+##    b) Von aussen (z.B. TensionTrigger.gd, CallAndResponse.gd, oder
+##       TunerButterflySequenceController.gd) einfach start_tuning()
+##       aufrufen.
 
 @export var loop_animation: String = "spin"
 @export var stand_animation: String = "stand"
 
 @export_group("Bewegung")
-## Startposition relativ zur urspruenglichen (im Editor gesetzten) Position.
+## Startposition relativ zur urspruenglichen (im Editor gesetzten)
+## Position - wird IGNORIERT, falls flight_start_point gesetzt ist.
 @export var move_from_offset: Vector2 = Vector2.ZERO
 ## Zielposition relativ zur urspruenglichen Position.
 @export var move_to_offset: Vector2 = Vector2.ZERO
-## Wie lange die Bewegung von "Move From" zu "Move To" dauert.
+## Wie lange die Bewegung von Start zu "Move To" dauert.
 @export var move_duration: float = 2.0
+## Optional: beliebiger Node2D (z.B. Marker2D), dessen GLOBALE Position als
+## Einflug-Startpunkt verwendet wird, statt move_from_offset. Leer lassen
+## fuer das alte, offset-basierte Verhalten.
+@export var flight_start_point: Node2D
 
 @export_group("Animation")
 ## Wie oft die Loop-Animation komplett durchlaeuft, bevor auf die
@@ -60,10 +75,7 @@ class_name TuningKeySequence
 ## lieber selbst von einem anderen Skript aus aufruft.
 @export var trigger_area: Area2D
 ## Falls true, kann die Sequenz durch erneutes Betreten des Triggers nochmal
-## ausgeloest werden. Normalerweise AUS lassen: sonst springt der
-## Schluessel bei jedem erneuten Betreten wieder zurueck an Move From
-## Offset und spult alles nochmal ab, obwohl der Spieler evtl. schon auf
-## dem Stand Collider steht.
+## ausgeloest werden.
 @export var retriggerable: bool = false
 
 var _base_position: Vector2
@@ -82,18 +94,27 @@ func _ready() -> void:
 	_reset_visual()
 
 ## Erzwingt beim Start des Spiels die "Ruhepose": Frame 0 der Loop-
-## Animation (egal welche Animation/welcher Frame zuletzt im Editor
-## eingestellt war - der wird sonst mit in der Szene gespeichert) UND die
-## Position von Move From Offset. Dadurch steht der Schluessel von Anfang
-## an schon dort, wo er "vor dem Spannen" hingehoert, statt zunaechst an
-## der rohen Editor-Position zu haengen und erst beim Ausloesen dorthin zu
-## springen.
+## Animation UND die Start-Position (flight_start_point falls gesetzt,
+## sonst move_from_offset). Dadurch steht/haengt der Schluessel bzw.
+## Schmetterling von Anfang an schon dort, wo er "vor dem Start"
+## hingehoert.
 func _reset_visual() -> void:
 	stop()
 	if loop_animation != "":
 		animation = loop_animation
 	frame = 0
-	position = _base_position + move_from_offset
+	position = _start_position()
+
+## Ermittelt die aktuelle Start-Position: flight_start_point (in lokale
+## Koordinaten umgerechnet), falls gesetzt - sonst wie bisher
+## _base_position + move_from_offset.
+func _start_position() -> Vector2:
+	if flight_start_point:
+		var parent2d := get_parent() as Node2D
+		if parent2d:
+			return parent2d.to_local(flight_start_point.global_position)
+		return flight_start_point.global_position
+	return _base_position + move_from_offset
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if _triggered and not retriggerable:
@@ -114,7 +135,7 @@ func start_tuning() -> void:
 	_running = true
 	_loops_done = 0
 
-	position = _base_position + move_from_offset
+	position = _start_position()
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "position", _base_position + move_to_offset, move_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 

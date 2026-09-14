@@ -242,7 +242,10 @@
 [ext_resource type="Texture2D" uid="uid://bggnqicq636n2" path="res://animation/shockres 12.png" id="114_dpbkd"]
 [ext_resource type="Texture2D" uid="uid://ciiibhwygyw53" path="res://animation/shockres 13.png" id="115_pcxpm"]
 [ext_resource type="Texture2D" uid="uid://b5t8qa4rmy28y" path="res://animation/__Slide.png" id="116_qok22"]
+[ext_resource type="Texture2D" uid="uid://dccfwmw84tscq" path="res://animation/particlee.png" id="122_8mwl4"]
+[ext_resource type="Texture2D" uid="uid://bihuivdiwo4vb" path="res://animation/__SlideBass.png" id="123_8fc1w"]
 [ext_resource type="Script" uid="uid://ch5antkg8o5il" path="res://simple_arm.gd" id="148_yskhe"]
+[ext_resource type="Script" uid="uid://cd8cw8mn8mq7d" path="res://path_bass_movement.gd" id="245_ebsb2"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3a0q"]
 polygon = PackedVector2Array(85.778336, -211.79834, 188.23581, -191.94226, 200.14946, -145.61139, 0, -142.302)
@@ -683,31 +686,53 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4itt3"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w3a0q"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yskhe"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lxrty"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qok22"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 5.0
+scale_over_velocity_min = 0.5
+scale_over_velocity_max = 1.1999999
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8yc8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_4itt3")
+"texture": ExtResource("17_w3a0q")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_w3a0q")
+"texture": ExtResource("18_yskhe")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_yskhe")
+"texture": ExtResource("19_lxrty")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_lxrty")
+"texture": ExtResource("20_66i60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_mqy1v")
+}],
+"loop": 1,
+"name": &"SlideJump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("116_qok22")
 }],
 "loop": 1,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("123_8fc1w")
+}],
+"loop": 1,
+"name": &"slide_bass",
 "speed": 5.0
 }]
 
@@ -1222,7 +1247,7 @@ scale = Vector2(14.2129, 14.2129)
 polygon = PackedVector2Array(4.0807996, -15.8306875, 6.191558, -15.8306875, 6.0508404, -17.660011, 3.095779, -18.082163, 0.07035861, -16.041763)
 
 [node name="Footcoll" type="CollisionPolygon2D" parent="." unique_id=963911059]
-scale = Vector2(3.7699997, 3.7699997)
+scale = Vector2(3.7699997, 3.7078178)
 polygon = PackedVector2Array(-0.795756, 0.795756, 7.692308, 0.530504, 11.671087, -1.061008, 2.122016, -0.265252, -0.265252, -2.65252)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1578364868]
@@ -1267,24 +1292,29 @@ shock_hold_time = 0.5
 position = Vector2(0, -140)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"stand"
+animation = &"slide"
 
-[node name="Sliding" type="AnimatedSprite2D" parent="." unique_id=1897769808]
-visible = false
-position = Vector2(8, -18)
-scale = Vector2(0.09241157, 0.092411555)
-sprite_frames = SubResource("SpriteFrames_c8yc8")
-frame_progress = 0.09262883
-
-[node name="Slide" type="AnimatedSprite2D" parent="." unique_id=853094658]
-visible = false
-position = Vector2(0, -61.99)
-scale = Vector2(0.09241157, 0.092411555)
-sprite_frames = SubResource("SpriteFrames_c8yc8")
-frame_progress = 0.09262883
-
-[node name="PathMovement" type="Node2D" parent="." unique_id=156126812]
+[node name="PathMovement" type="Node2D" parent="." unique_id=156126812 node_paths=PackedStringArray("dust_particles")]
 script = ExtResource("26_7hik5")
+jump_duration_multiplier = 0.3
+dust_particles = NodePath("SlideDust")
+
+[node name="SlideDust" type="GPUParticles2D" parent="PathMovement" unique_id=356398310]
+unique_name_in_owner = true
+scale = Vector2(0.02, 0.02)
+emitting = false
+amount = 50
+texture = ExtResource("122_8mwl4")
+lifetime = 2.5
+collision_base_size = 0.5
+process_material = SubResource("ParticleProcessMaterial_qok22")
+
+[node name="Slide" type="AnimatedSprite2D" parent="PathMovement" unique_id=853094658]
+visible = false
+position = Vector2(0, -140)
+scale = Vector2(0.285, 0.285)
+sprite_frames = SubResource("SpriteFrames_c8yc8")
+animation = &"slide_bass"
 
 [node name="DrivingMovement" type="Node2D" parent="." unique_id=1392764790]
 script = ExtResource("93_4tmhn")
@@ -1308,8 +1338,7 @@ scale = Vector2(1.2, 1.2)
 [node name="LaneSprite" type="AnimatedSprite2D" parent="LaneMovement" unique_id=1647952448]
 visible = false
 sprite_frames = SubResource("SpriteFrames_shhik")
-animation = &"ladder"
-frame_progress = 0.8311531
+animation = &"trans"
 
 [node name="SimpleArm" type="Node2D" parent="." unique_id=160448129 node_paths=PackedStringArray("body_point")]
 unique_name_in_owner = true
@@ -1321,3 +1350,7 @@ position = Vector2(1, -120)
 
 [node name="Feet" type="Marker2D" parent="." unique_id=1994790529]
 unique_name_in_owner = true
+
+[node name="PathBassMovement" type="Node2D" parent="." unique_id=599059943]
+script = ExtResource("245_ebsb2")
+sprite_x_offset = -23.0

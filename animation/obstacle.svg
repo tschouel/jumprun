@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="76.8787mm"
+   height="35.604073mm"
+   viewBox="0 0 76.8787 35.604073"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d, 2026-05-05)"
+   sodipodi:docname="obstacle.svg"
+   inkscape:export-batch-name=""
+   inkscape:export-batch-path="/Users/joelschoch/Documents/jumprun/animation"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.58974886"
+     inkscape:cx="61.890751"
+     inkscape:cy="-169.5637"
+     inkscape:window-width="1512"
+     inkscape:window-height="917"
+     inkscape:window-x="0"
+     inkscape:window-y="65"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Obstacle"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-63.625628,-167.70948)">
+    <path
+       style="opacity:1;fill:#292929;stroke:#5c5c5c;stroke-width:1.059"
+       id="path1"
+       sodipodi:type="arc"
+       sodipodi:cx="102.06498"
+       sodipodi:cy="202.78406"
+       sodipodi:rx="37.909851"
+       sodipodi:ry="34.545074"
+       sodipodi:start="3.1415927"
+       sodipodi:end="0"
+       sodipodi:arc-type="slice"
+       d="m 64.155128,202.78406 a 37.909851,34.545074 0 0 1 37.909852,-34.54508 37.909851,34.545074 0 0 1 37.90985,34.54508 h -37.90985 z"
+       inkscape:export-filename="/Users/joelschoch/path1.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

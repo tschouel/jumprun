@@ -16,6 +16,15 @@ extends Node
 ## call_and_response.gd selbst (das denselben Interaktionszone-Trigger
 ## eigenstaendig ueberwacht) - siehe call_and_response.gd.
 ##
+## AUSSTIEGS-SPERRE (neu): waehrend lock_exit() aktiv ist (siehe
+## unlock_exit()), ignoriert _deactivate() JEDEN Aufruf - egal ob durch F
+## oder durch Verlassen von interaction_zone. Gedacht fuer Momente wie das
+## Finale in tuner_butterfly_sequence_controller.gd, waehrend derer der
+## Spieler das Instrument/Vehicle nicht verlassen koennen soll (z.B.
+## waehrend die Kamera rauszoomt und die Abschluss-Animation laeuft).
+## Oeffentlich aufrufbar von aussen ueber lock_exit()/unlock_exit() bzw.
+## abfragbar ueber is_exit_locked().
+##
 ## KAMERA-EFFEKT BEIM AKTIVIEREN (optional, standardmaessig AUS):
 ## camera_offset_x/camera_offset_y = 0.0 (Default) -> kein Offset-Effekt.
 ## Ungleich 0 gesetzt: beim Aktivieren (F) faehrt die Kamera ueber
@@ -109,6 +118,7 @@ extends Node
 
 var _player_in_zone: bool = false
 var _is_active: bool = false
+var _exit_locked: bool = false
 var _ground_movement: Node = null
 
 func _ready() -> void:
@@ -141,6 +151,21 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.physical_keycode == pluck_key and _is_active:
 		_trigger_pluck_sequence()
 
+## Verhindert ab sofort jedes Deaktivieren (weder per F noch durch
+## Verlassen von interaction_zone), bis unlock_exit() aufgerufen wird.
+## Macht NICHTS, falls der Spielmodus gerade gar nicht aktiv ist - eine
+## Sperre "faengt" den Modus also nicht nachtraeglich ein.
+func lock_exit() -> void:
+	_exit_locked = true
+
+## Hebt eine mit lock_exit() gesetzte Sperre wieder auf - deaktiviert den
+## Spielmodus dabei NICHT selbst, macht ihn nur wieder verlassbar.
+func unlock_exit() -> void:
+	_exit_locked = false
+
+func is_exit_locked() -> bool:
+	return _exit_locked
+
 func _activate() -> void:
 	_is_active = true
 	if freeze_player_while_active and player:
@@ -152,7 +177,12 @@ func _activate() -> void:
 	_apply_camera_offset(true)
 	_apply_camera_zoom(true)
 
+## Verlaesst den Spielmodus - tut NICHTS, solange _exit_locked gesetzt ist
+## (siehe lock_exit()), egal ob der Aufruf von der F-Taste oder vom
+## Verlassen der interaction_zone kommt.
 func _deactivate() -> void:
+	if _exit_locked:
+		return
 	_is_active = false
 	if freeze_player_while_active and player:
 		player.set_physics_process(true)
@@ -195,17 +225,9 @@ func _apply_camera_zoom(activate: bool) -> void:
 		if _ground_movement.has_method("clear_camera_zoom_override"):
 			_ground_movement.clear_camera_zoom_override(camera_transition_duration, camera_transition_curve)
 
-## DIAGNOSE: zeigt, ob call_and_response/string_node korrekt gesetzt sind
-## und ob die tension_level-Property gefunden wird. Nach der Diagnose
-## wieder entfernen.
 func _pluck() -> void:
 	if string_node and string_node.has_method("pluck"):
 		string_node.pluck()
-	print("[Gopichand DIAGNOSE] _pluck() aufgerufen. call_and_response=", call_and_response, " string_node=", string_node)
-	if string_node:
-		print("[Gopichand DIAGNOSE]   string_node hat tension_level? ", ("tension_level" in string_node))
-	if call_and_response:
-		print("[Gopichand DIAGNOSE]   call_and_response hat register_note? ", call_and_response.has_method("register_note"))
 	if call_and_response and call_and_response.has_method("register_note") and string_node and ("tension_level" in string_node):
 		call_and_response.register_note(string_node.tension_level)
 

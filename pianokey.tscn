@@ -233,6 +233,7 @@
 [ext_resource type="Texture2D" uid="uid://0xsugcvrd6gw" path="res://animation/PianoClosed 14.png" id="228_1vbjp"]
 [ext_resource type="Texture2D" uid="uid://bo5sy11biwpqo" path="res://animation/PianoClosed 15.png" id="229_fxd3x"]
 [ext_resource type="Texture2D" uid="uid://bsfdhbmfrrp6q" path="res://animation/__Wheel.png" id="233_bscr2"]
+[ext_resource type="PackedScene" uid="uid://n8sudsu6ycl5" path="res://tuning_peg_weight.tscn" id="234_cma1g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
 animations = [{
@@ -1248,7 +1249,7 @@ anim_player = NodePath("AnimationPlayer")
 trigger = NodePath("AnimationPlayer/Taste/CollisionShape2D/TasteTrigger")
 
 [node name="Ladder" parent="." unique_id=1341763676 instance=ExtResource("2_qhd4l")]
-position = Vector2(-1782.0001, -418)
+position = Vector2(-1787, -579)
 scale = Vector2(0.6257657, 0.42582178)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1297149745]
@@ -1320,7 +1321,7 @@ scale = Vector2(400.00003, 1)
 shape = SubResource("RectangleShape2D_trbsr")
 
 [node name="Player" parent="." unique_id=586206979 instance=ExtResource("21_p7j0c")]
-position = Vector2(1969, -1531)
+position = Vector2(2401, -1051)
 
 [node name="VibrationLine" type="CPUParticles2D" parent="." unique_id=189764832]
 visible = false
@@ -1384,9 +1385,9 @@ scale = Vector2(1.0007207, 17.863712)
 shape = SubResource("RectangleShape2D_c8yc8")
 
 [node name="Boden2" type="StaticBody2D" parent="." unique_id=158877216]
-position = Vector2(623, 2151)
-rotation = -0.1734122
-scale = Vector2(0.367578, 0.2611028)
+position = Vector2(1688.9998, 1831)
+rotation = -0.017557532
+scale = Vector2(1.1900878, 0.62260675)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden2" unique_id=1978785719]
 position = Vector2(1204, -519)
@@ -1540,6 +1541,22 @@ script = ExtResource("212_cqvml")
 start_position = Vector2(2000, -1800)
 zoom = 0.5
 
+[node name="TuningPegWeight" parent="." unique_id=1668087887 node_paths=PackedStringArray("player", "rope_middle_point") instance=ExtResource("234_cma1g")]
+position = Vector2(2350, 1390)
+player = NodePath("../Player")
+camera_offset_y = 350.0
+camera_transition_duration = 0.5
+rope_middle_point = NodePath("Middlepoint")
+
+[node name="Endpoint" parent="TuningPegWeight" index="2" unique_id=705543088]
+position = Vector2(-856, -93)
+
+[node name="Middlepoint" parent="TuningPegWeight" index="3" unique_id=397397600]
+position = Vector2(-575, -482)
+
+[node name="RigidBody2D" parent="TuningPegWeight" index="5" unique_id=2029360696]
+position = Vector2(-762, 197)
+
 [editable path="Area2D2"]
 [editable path="Area2D2/PlayRight"]
 [editable path="Area2D2/PlayLeft"]
@@ -1547,3 +1564,4 @@ zoom = 0.5
 [editable path="fader"]
 [editable path="Wheel4"]
 [editable path="Wheel3"]
+[editable path="TuningPegWeight"]

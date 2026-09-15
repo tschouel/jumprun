@@ -671,7 +671,7 @@ animation_3 = "stop"
 
 [node name="Boden" type="StaticBody2D" parent="." unique_id=409933830]
 position = Vector2(-4735, 583.00006)
-scale = Vector2(8.007576, 0.2611028)
+scale = Vector2(1.447576, 0.2611028)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boden" unique_id=1789157244]
 position = Vector2(1205.1089, -222.13504)

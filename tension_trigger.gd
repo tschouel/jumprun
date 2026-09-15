@@ -9,6 +9,13 @@ extends Area2D
 ## gesetzt ist). Erneutes Druecken von engage_key (oder Verlassen der Zone)
 ## laesst wieder los und gibt die Bewegung frei.
 ##
+## F-HINWEIS (optional): f_prompt zeigt (falls gesetzt) einen Hinweis-Sprite,
+## der zwischen zwei Loop-Animationen wechselt: f_prompt_idle_animation
+## ("Druecke F"), solange NICHT angefasst, und f_prompt_engaged_animation
+## ("links/rechts drehen"), WAEHREND angefasst - keine Sichtbarkeits-
+## Umschaltung mehr, der Sprite bleibt durchgehend sichtbar und wechselt nur
+## die Animation.
+##
 ## KAMERA-EFFEKT BEIM ANGREIFEN (optional, standardmaessig AUS):
 ## camera_offset_x/camera_offset_y = 0.0 (Default) -> kein Offset-Effekt.
 ## Ungleich 0 gesetzt (einzeln oder beide zusammen): beim Angreifen faehrt
@@ -60,6 +67,14 @@ signal disengaged
 
 @export var string_node: Node
 @export var hand_grip: Node2D
+## Optionaler Hinweis-Sprite (eigenes AnimatedSprite2D), der zwischen
+## f_prompt_idle_animation und f_prompt_engaged_animation wechselt. Leer
+## lassen, falls dieser Peg keinen Hinweis hat.
+@export var f_prompt: AnimatedSprite2D
+## Animation, die f_prompt zeigt, waehrend NICHT angefasst ("Druecke F"-Hinweis).
+@export var f_prompt_idle_animation: String = "f"
+## Animation, die f_prompt zeigt, WAEHREND angefasst (Hinweis: links/rechts drehen).
+@export var f_prompt_engaged_animation: String = "lr"
 
 @export_group("Bedienung")
 ## Taste zum Angreifen/Loslassen des Stimmschluessels - blockiert NUR die
@@ -112,6 +127,8 @@ func _ready() -> void:
 		string_node = _find_string_ancestor()
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	if f_prompt and f_prompt.visible:
+		f_prompt.play(f_prompt_idle_animation)
 
 func _find_string_ancestor() -> Node:
 	var n: Node = get_parent()
@@ -158,8 +175,9 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				_try_hand_grip()
 			get_viewport().set_input_as_handled()
 
-## Bewegungssperre + optionale Kamera-Effekte (Offset UND Zoom) + Signal -
-## KEINE Armanimation.
+## Bewegungssperre + optionale Kamera-Effekte (Offset UND Zoom) + Signal +
+## F-Hinweis auf die "links/rechts drehen"-Animation umschalten (bleibt
+## sichtbar) - KEINE Armanimation.
 func _engage() -> void:
 	_is_engaged = true
 	engaged.emit()
@@ -168,6 +186,8 @@ func _engage() -> void:
 	_lock_player_movement(true)
 	_apply_camera_offset(true)
 	_apply_camera_zoom(true)
+	if f_prompt:
+		f_prompt.play(f_prompt_engaged_animation)
 
 func _disengage() -> void:
 	_is_engaged = false
@@ -175,6 +195,9 @@ func _disengage() -> void:
 	_lock_player_movement(false)
 	_apply_camera_offset(false)
 	_apply_camera_zoom(false)
+	if f_prompt:
+		f_prompt.visible = true
+		f_prompt.play(f_prompt_idle_animation)
 
 ## Blockiert bzw. entsperrt die Spielerbewegung ueber das dafuer vorgesehene
 ## Override-System in groundmovement.gd (set_animation_override /

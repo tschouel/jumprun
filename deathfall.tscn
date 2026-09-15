@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dkievakbu1ud"]
+
+[ext_resource type="Script" uid="uid://e7bi1egtinkg" path="res://deathfall.gd" id="1_dodys"]
+[ext_resource type="PackedScene" uid="uid://i5yg6y73j2je" path="res://Screenfade.tscn" id="2_qij7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(613, 8)
+
+[node name="FallDown" type="Area2D" unique_id=2131316012 node_paths=PackedStringArray("screen_fade")]
+script = ExtResource("1_dodys")
+screen_fade = NodePath("Screenfade")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1221957239]
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="Screenfade" parent="." unique_id=2127022392 instance=ExtResource("2_qij7r")]

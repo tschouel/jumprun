@@ -9,10 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://uymmwup660xg" path="res://obstacleslide.tscn" id="3_gtma5"]
 [ext_resource type="PackedScene" uid="uid://bqexjotm5aeum" path="res://string_slide.tscn" id="4_b34n4"]
 [ext_resource type="Script" uid="uid://baf6qsjuhshdq" path="res://sliding_path_visual.gd" id="4_o75kk"]
-[ext_resource type="Texture2D" uid="uid://7gf7c7grmli2" path="res://E-bass.png" id="5_eb6hj"]
 [ext_resource type="PackedScene" uid="uid://w8x2dvqf34ww" path="res://stringwall.tscn" id="6_prcow"]
+[ext_resource type="PackedScene" uid="uid://pp8h55papmcy" path="res://Use_F.tscn" id="8_ut8v4"]
+[ext_resource type="PackedScene" uid="uid://i5yg6y73j2je" path="res://Screenfade.tscn" id="9_m1rte"]
+[ext_resource type="PackedScene" uid="uid://dkievakbu1ud" path="res://deathfall.tscn" id="10_45x2h"]
+[ext_resource type="Texture2D" uid="uid://bmnxs4us4na8v" path="res://animation/Ebass.png" id="13_mkbvl"]
 [ext_resource type="PackedScene" uid="uid://cvvvut563eaga" path="res://gopichand.tscn" id="13_ut8v4"]
 [ext_resource type="PackedScene" uid="uid://bitrk61nlwmut" path="res://string_harp.tscn" id="13_x5fvb"]
+[ext_resource type="Texture2D" uid="uid://d0ss155tfk04t" path="res://animation/Bow.png" id="15_mkbvl"]
+[ext_resource type="PackedScene" uid="uid://nw00esy8tk0y" path="res://PegTuner.tscn" id="15_yi0be"]
+[ext_resource type="PackedScene" uid="uid://cmlysd7bc7ye" path="res://bass_slide_zone.tscn" id="16_emxea"]
+[ext_resource type="PackedScene" uid="uid://btmaiciliu3dr" path="res://slide_jump_slide.tscn" id="17_7g4j0"]
+[ext_resource type="PackedScene" uid="uid://b31llrikqcrt3" path="res://bow.tscn" id="21_a57k7"]
+[ext_resource type="Script" uid="uid://cvekb7pxjw0nx" path="res://vibrating_string.gd" id="22_a57k7"]
+[ext_resource type="Script" uid="uid://1au8o0bjnu8v" path="res://string_pulse_point.gd" id="23_45x2h"]
+[ext_resource type="FontFile" uid="uid://v2iw8q25268g" path="res://OrchestralAlphabet_1.otf" id="24_axxh8"]
 
 [sub_resource type="Curve2D" id="Curve2D_b34n4"]
 _data = {
@@ -47,22 +58,19 @@ obstacle_scene = ExtResource("3_gtma5")
 metadata/_custom_type_script = "uid://q3e40vrqcq25"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
-size = Vector2(53, 211)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu011"]
-size = Vector2(4.71, 373.44922)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
-size = Vector2(306, 20)
+size = Vector2(87, 211)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nch4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ms32o"]
 
 [node name="Level1" type="Area2D" unique_id=1941508753]
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("3_b56y6")]
-position = Vector2(8701, -1446)
+position = Vector2(-2773, -3937)
 
 [node name="Sliding" type="Area2D" parent="." unique_id=517695625]
+position = Vector2(1247, 0)
 
 [node name="StringHarp" parent="Sliding" unique_id=552625837 node_paths=PackedStringArray("start_point", "end_point") instance=ExtResource("13_x5fvb")]
 position = Vector2(9101, -1387)
@@ -91,141 +99,170 @@ script = ExtResource("1_b34n4")
 path = NodePath("..")
 slide_speed = 800.0
 steps = Array[ExtResource("2_eb6hj")]([SubResource("Resource_eb6hj"), SubResource("Resource_8mwl4"), SubResource("Resource_ebsb2"), SubResource("Resource_8fc1w"), SubResource("Resource_jajrg")])
+perpendicular_offset = 10.0
 
 [node name="SlidingPath" type="Node2D" parent="Sliding/Path2D" unique_id=202849235 node_paths=PackedStringArray("path")]
 script = ExtResource("4_o75kk")
 path = NodePath("..")
 line_width = 10.0
 
-[node name="SlidingZoneStart" type="Area2D" parent="Sliding" unique_id=254374237 node_paths=PackedStringArray("path_follow")]
+[node name="SlidingZoneStart" type="Area2D" parent="Sliding" unique_id=254374237 node_paths=PackedStringArray("path_follow", "respawn_point", "screen_fade", "f_prompt_sprite")]
 script = ExtResource("1_b56y6")
 path_follow = NodePath("../Path2D/PathFollow2D")
 override_bpm = 140.0
 override_units_per_bar = 2500.0
+respawn_point = NodePath("Respawn")
+screen_fade = NodePath("../Screenfade")
+f_prompt_sprite = NodePath("../UseF")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sliding/SlidingZoneStart" unique_id=1379460014]
-position = Vector2(8950, -1510)
+position = Vector2(8944.5, -1510)
 shape = SubResource("RectangleShape2D_3gcn6")
+
+[node name="Respawn" type="Marker2D" parent="Sliding/SlidingZoneStart" unique_id=1932583639]
+position = Vector2(8769, -1523)
+
+[node name="UseF" parent="Sliding" unique_id=1096380668 instance=ExtResource("8_ut8v4")]
+position = Vector2(8954, -1582)
+scale = Vector2(0.25, 0.25)
+animation = &"f"
+frame_progress = 0.0
+
+[node name="Screenfade" parent="Sliding" unique_id=2127022392 instance=ExtResource("9_m1rte")]
 
 [node name="1stPart" type="Node" parent="." unique_id=1287981784]
 
-[node name="Bouncestring3" parent="1stPart" unique_id=1321114405 instance=ExtResource("1_ihm0d")]
-position = Vector2(1651, -1107)
+[node name="StartJump Riddle" type="Node2D" parent="1stPart" unique_id=2043910869]
+
+[node name="RespawnPoint" type="Marker2D" parent="1stPart/StartJump Riddle" unique_id=1969144707]
+position = Vector2(-2764, -3880)
+
+[node name="FallDown" parent="1stPart/StartJump Riddle" unique_id=2131316012 node_paths=PackedStringArray("player", "respawn_point") instance=ExtResource("10_45x2h")]
+position = Vector2(-3754, -3567.0002)
+scale = Vector2(2.6799998, 4.96)
+player = NodePath("../../../Player")
+respawn_point = NodePath("../RespawnPoint")
+
+[node name="FallDown2" parent="1stPart/StartJump Riddle" unique_id=21872052 node_paths=PackedStringArray("player", "respawn_point") instance=ExtResource("10_45x2h")]
+position = Vector2(4037.0002, -127.00014)
+rotation = -0.52565265
+scale = Vector2(4.657134, 11.564026)
+player = NodePath("../../../Player")
+respawn_point = NodePath("../RespawnPoint")
+
+[node name="UseF" parent="1stPart/StartJump Riddle" unique_id=496348884 instance=ExtResource("8_ut8v4")]
+position = Vector2(2164, -245)
+scale = Vector2(0.3, 0.3)
+animation = &"f"
+frame_progress = 0.0
+
+[node name="Bow2" type="StaticBody2D" parent="1stPart/StartJump Riddle" unique_id=1206201095]
+position = Vector2(1235, 39.99997)
+rotation = 2.1816616
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="Bow" type="Sprite2D" parent="1stPart/StartJump Riddle/Bow2" unique_id=1590177242]
+texture = ExtResource("15_mkbvl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/StartJump Riddle/Bow2" unique_id=711595010]
+polygon = PackedVector2Array(-628, -684.8, -651.2, -708, -656, -708, -661, -698.5, -661, -697, -672, -686.8, -672, -679.3, -653, -661.2, -653, -657.8, -648.9, -659.9, -639, -646.4, -639, -644.1, -623, -629.1, -623, -627.2, -486.8, -490, -486, -490, -486, -482.2, -408, -398.2, -408, -396.2, -320, -309.2, -320, -305.8, -317, -307.3, -317, -306.2, -247, -231.20001, -247, -229.20001, 619, 700.80005, 619, 702.80005, 624.19995, 708, 628.80005, 708, 644.9, 693, 647, 693, 657.80005, 679.4, 661, 686.30005, 661, 688.19995, 663.19995, 689.30005, 671.69995, 683, 672, 671.6, 647, 638.30005, 647, 636.4, 637, 634.30005, 637, 632.19995, 628.69995, 635, 626.30005, 635, 623, 652.80005, 623, 657.4, 618, 665.6, 605.69995, 656, 604.9, 656, 592, 640.30005, 592, 638.19995, -285.1, -325, -285.9, -325, -300, -348.5, -300, -350.8, -327, -380.8, -327, -382.8, -401, -454.9, -401, -458.2, -405, -456.3, -405, -457.9, -434, -485, -434, -486, -457, -503.1, -457, -504.2, -459.1, -505.3, -461.8, -503.6, -464, -509.5, -464, -511.7, -483.5, -535.3, -481, -542.7, -481, -545.8, -501.1, -567, -502, -574.2, -502, -577.6, -500, -582.6, -500, -583.5, -497.9, -584, -495.9, -584, -467.9, -553, -464.1, -553, -444.2, -574, -442.8, -574, -441.7, -576, -452, -593.5, -452, -596.2, -462.5, -602, -463.1, -602, -551, -695.9, -551, -697.4, -553.6, -698.4, -595.9, -650, -624, -680.8, -624, -682.4, -626.7, -683.4, -628, -681.8)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="1stPart/StartJump Riddle/Bow2" unique_id=9109190]
+polygon = PackedVector2Array(-444.6, -573.4, -447, -572.3, -447, -570.9, -458, -560.9, -458, -556.2, 619, 624.69995, 619, 626.9, 627, 633.80005, 627, 636.4, 641.30005, 634, 643.30005, 634, 644.4, 631.6, -423, -550.8, -423, -552.9)
+
+[node name="Bouncestring3" parent="1stPart/StartJump Riddle" unique_id=1321114405 instance=ExtResource("1_ihm0d")]
+position = Vector2(2947.0002, -1027)
 rotation = -3.1415925
 scale = Vector2(0.7, -0.7)
 
-[node name="AnchorLeft" parent="1stPart/Bouncestring3" index="0" unique_id=1138421449]
-position = Vector2(88, -158)
-
-[node name="AnchorRight" parent="1stPart/Bouncestring3" index="1" unique_id=176412402]
-position = Vector2(744, -350)
-
-[node name="String" parent="1stPart" unique_id=1599221047 instance=ExtResource("2_prcow")]
-position = Vector2(626, -9)
+[node name="String" parent="1stPart/StartJump Riddle" unique_id=1599221047 instance=ExtResource("2_prcow")]
+position = Vector2(1788, -123.99988)
 scale = Vector2(0.75, 0.75)
 max_sag = 80.0
 bounce_velocity_base = 700.0
 bounce_velocity_per_tension = 250.0
 vibration_decay = 2.0
+tuning_peg_max_animation = "stuck"
 
-[node name="TuningPeg" parent="1stPart/String" index="0" unique_id=1723540039]
+[node name="TuningPeg" parent="1stPart/StartJump Riddle/String" index="0" unique_id=1723540039]
 position = Vector2(491, -44)
 scale = Vector2(0.25, 0.25)
 
-[node name="AnchorLeft" parent="1stPart/String" index="1" unique_id=1138421449]
+[node name="AnchorLeft" parent="1stPart/StartJump Riddle/String" index="1" unique_id=1138421449]
 position = Vector2(501, -5.5)
 
-[node name="AnchorRight" parent="1stPart/String" index="2" unique_id=176412402]
+[node name="AnchorRight" parent="1stPart/StartJump Riddle/String" index="2" unique_id=176412402]
 position = Vector2(1816, 70)
 
-[node name="StringLine" parent="1stPart/String" index="3" unique_id=901622392]
+[node name="StringLine" parent="1stPart/StartJump Riddle/String" index="3" unique_id=901622392]
 width = 7.0
 default_color = Color(0.2618, 0.33218, 0.34, 1)
 
-[node name="TensionTrigger" parent="1stPart/String" index="5" unique_id=1949885314 node_paths=PackedStringArray("hand_grip")]
-position = Vector2(333.33325, -113.000015)
+[node name="TensionTrigger" parent="1stPart/StartJump Riddle/String" index="5" unique_id=1949885314 node_paths=PackedStringArray("hand_grip", "f_prompt")]
+position = Vector2(370.6666, -113.33349)
 hand_grip = NodePath("../TuningPeg/HandPoint")
+f_prompt = NodePath("../../UseF")
 camera_offset_x = 250.0
 camera_move_duration = 0.7
 
-[node name="CollisionShape2D" parent="1stPart/String/TensionTrigger" index="0" unique_id=1416170649]
+[node name="CollisionShape2D" parent="1stPart/StartJump Riddle/String/TensionTrigger" index="0" unique_id=1416170649]
 position = Vector2(118.66676, 45.000023)
 scale = Vector2(4.534101, 19.641516)
 
-[node name="Violin" parent="1stPart/String" index="6" unique_id=589289601]
+[node name="Violin" parent="1stPart/StartJump Riddle/String" index="6" unique_id=589289601]
 z_index = -30
 position = Vector2(1234, 56.000008)
 scale = Vector2(-1.36, 1.357)
 
-[node name="Bouncestring2" parent="1stPart" unique_id=229200027 instance=ExtResource("1_ihm0d")]
-position = Vector2(1906.9999, -571)
+[node name="Bouncestring2" parent="1stPart/StartJump Riddle" unique_id=229200027 instance=ExtResource("1_ihm0d")]
+position = Vector2(1962, -850.9999)
+rotation = -2.5569074
 scale = Vector2(0.7, 0.7)
 
-[node name="AnchorLeft" parent="1stPart/Bouncestring2" index="0" unique_id=1138421449]
-position = Vector2(90, -160)
-
-[node name="AnchorRight" parent="1stPart/Bouncestring2" index="1" unique_id=176412402]
-position = Vector2(736, -358)
-
-[node name="Ukulele" parent="1stPart/Bouncestring2" index="5" unique_id=1044888036]
+[node name="Ukulele" parent="1stPart/StartJump Riddle/Bouncestring2" index="5" unique_id=1044888036]
 z_index = -10
 
-[node name="Boden" type="StaticBody2D" parent="1stPart" unique_id=761121673]
-position = Vector2(255, 271)
-rotation = -0.1734122
-scale = Vector2(0.36757797, 0.2611028)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="1stPart/Boden" unique_id=338598099]
-position = Vector2(1141.7661, -363.8803)
-scale = Vector2(400, 1)
-shape = SubResource("RectangleShape2D_xu011")
-
-[node name="ColorRect" type="ColorRect" parent="1stPart/Boden" unique_id=1179966180]
-offset_left = 255.0
-offset_top = -558.0
-offset_right = 295.0
-offset_bottom = -518.0
-scale = Vector2(47.43999, 1)
-color = Color(0.24, 0.24, 0.24, 1)
-
-[node name="StringSlide" parent="1stPart" unique_id=1302506947 instance=ExtResource("4_b34n4")]
+[node name="StringSlide" parent="1stPart/StartJump Riddle" unique_id=1302506947 instance=ExtResource("4_b34n4")]
 position = Vector2(-2320, -3142)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="1stPart" unique_id=1291266672]
-position = Vector2(-950, 541)
+[node name="Saite blockiert Riddle" type="Node2D" parent="1stPart" unique_id=68522693]
+position = Vector2(1162, -114.99988)
 
-[node name="EBass" type="Sprite2D" parent="1stPart/CharacterBody2D" unique_id=45751853]
-z_index = -50
-position = Vector2(5087, -1551)
-rotation = 1.5707964
-scale = Vector2(3, 3)
-texture = ExtResource("5_eb6hj")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/CharacterBody2D" unique_id=1667949022]
-position = Vector2(5087, -1551)
-rotation = 1.5707964
-scale = Vector2(3, 3)
-polygon = PackedVector2Array(14, -512, 14, -510.3, -12, -499.3, -36.199997, -496, -39.300003, -496, -34.666718, -473.33325, -39.666718, -473, -45.333374, -480.33325, -49.666718, -480.33325, -53.333374, -473.66663, -53.333374, -467, -48.666718, -460, -43.333374, -460, -39.666718, -468.33325, -34.666718, -468.33325, -33.800003, -451, -34.00003, -434.66663, -38.00003, -435.33325, -42.666718, -442, -46.666718, -442.33325, -52.00003, -435, -50.666718, -425, -43.666687, -420.66663, -37.666718, -428.66663, -35.00003, -428, -36, -416.9, -36, -403.1, -27.699997, -396, -25.399994, -390, -26, -105, -26, 50, -29, 71.900024, -29, 78.70001, -33, 91.70001, -33, 94.400024, -40, 104.400024, -40, 106.099976, -73.7, 135, -75.899994, 135, -91.899994, 152, -93.2, 152, -104.2, 172, -105.7, 172, -110.7, 198, -112.100006, 198, -110, 236.09998, -110, 241, -91.600006, 254, -90.2, 254, -81, 271.5, -81, 289.59998, -88, 306.59998, -88, 308.2, -95, 316.2, -95, 317.8, -120.5, 333, -122.5, 333, -128.5, 355, -129.8, 355, -133.8, 385, -135.1, 385, -133, 423.09998, -133, 429.40002, -127, 445.40002, -127, 448.59998, -116, 464.5, -116, 466.90002, -100, 481.90002, -100, 483.2, -76, 496.2, -76, 497.5, -53, 504.40002, -53, 505.7, -29, 509.7, -29, 511, 25, 510, 32.299988, 510, 63.299988, 501, 66.5, 501, 81.5, 493, 83.70001, 493, 99.79999, 480, 101.899994, 480, 116.899994, 462, 118.29999, 462, 128.29999, 441, 129.70001, 441, 132.70001, 424, 133.70001, 424, 135, 415.09998, 135, 388.7, 123, 342, 123, 338.3, 117, 330.3, 117, 328.59998, 101.29999, 323, 99.79999, 323, 91.79999, 315, 91.20001, 315, 83.20001, 299, 80.79999, 284, 81, 278.09998, 81, 272.59998, 87, 261.5, 87, 259.8, 104.79999, 242, 106.79999, 242, 108.79999, 222, 110.20001, 222, 107, 184.79999, 107, 179.59998, 99, 161.59998, 99, 159.20001, 91, 150.20001, 91, 148.09998, 75, 134.09998, 75, 132.90002, 46.600006, 114, 44.899994, 114, 36.899994, 105, 36.299988, 105, 28.299988, 87, 24.799988, 62, 24, 62, 17, -359, 17, -389.5, 20, -395.5, 20, -397, 26.700012, -402, 29.200012, -402, 26.799988, -428, 28, -431.7, 28, -434.3, 25, -443.3, 25, -468.4, 26.100006, -470, 27.200012, -470, 28.299988, -472.1, 26, -475.7, 26, -480, 33, -505.7, 33, -508.1, 30, -510.1, 30, -512)
-
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="1stPart" unique_id=1599505990]
-position = Vector2(12774, 526)
+[node name="Bass2" type="CharacterBody2D" parent="1stPart/Saite blockiert Riddle" unique_id=1599505990]
+position = Vector2(12841, 598)
 rotation = 3.1415925
 scale = Vector2(1, -1)
 
-[node name="EBass" type="Sprite2D" parent="1stPart/CharacterBody2D2" unique_id=1175565800]
+[node name="EBass" type="Sprite2D" parent="1stPart/Saite blockiert Riddle/Bass2" unique_id=1140358370]
 z_index = -50
-position = Vector2(5087, -1551)
+position = Vector2(5092.9995, -1579.001)
 rotation = 1.5707964
-scale = Vector2(3, 3)
-texture = ExtResource("5_eb6hj")
+scale = Vector2(1.825, 1.825)
+texture = ExtResource("13_mkbvl")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/CharacterBody2D2" unique_id=178913636]
-position = Vector2(5087, -1551)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/Saite blockiert Riddle/Bass2" unique_id=1881487707]
+position = Vector2(5092.9995, -1579.001)
 rotation = 1.5707964
-scale = Vector2(3, 3)
-polygon = PackedVector2Array(14, -512, 14, -510.3, -12, -499.3, -36.199997, -496, -39.300003, -496, -34.666718, -473.33325, -39.666718, -473, -45.333374, -480.33325, -49.666718, -480.33325, -53.333374, -473.66663, -53.333374, -467, -48.666718, -460, -43.333374, -460, -39.666718, -468.33325, -34.666718, -468.33325, -33.800003, -451, -34.00003, -434.66663, -38.00003, -435.33325, -42.666718, -442, -46.666718, -442.33325, -52.00003, -435, -50.666718, -425, -43.666687, -420.66663, -37.666718, -428.66663, -35.00003, -428, -36, -416.9, -36, -403.1, -27.699997, -396, -25.399994, -390, -26, -105, -26, 50, -29, 71.900024, -29, 78.70001, -33, 91.70001, -33, 94.400024, -40, 104.400024, -40, 106.099976, -73.7, 135, -75.899994, 135, -91.899994, 152, -93.2, 152, -104.2, 172, -105.7, 172, -110.7, 198, -112.100006, 198, -110, 236.09998, -110, 241, -91.600006, 254, -90.2, 254, -81, 271.5, -81, 289.59998, -88, 306.59998, -88, 308.2, -95, 316.2, -95, 317.8, -120.5, 333, -122.5, 333, -128.5, 355, -129.8, 355, -133.8, 385, -135.1, 385, -133, 423.09998, -133, 429.40002, -127, 445.40002, -127, 448.59998, -116, 464.5, -116, 466.90002, -100, 481.90002, -100, 483.2, -76, 496.2, -76, 497.5, -53, 504.40002, -53, 505.7, -29, 509.7, -29, 511, 25, 510, 32.299988, 510, 63.299988, 501, 66.5, 501, 81.5, 493, 83.70001, 493, 99.79999, 480, 101.899994, 480, 116.899994, 462, 118.29999, 462, 128.29999, 441, 129.70001, 441, 132.70001, 424, 133.70001, 424, 135, 415.09998, 135, 388.7, 123, 342, 123, 338.3, 117, 330.3, 117, 328.59998, 101.29999, 323, 99.79999, 323, 91.79999, 315, 91.20001, 315, 83.20001, 299, 80.79999, 284, 81, 278.09998, 81, 272.59998, 87, 261.5, 87, 259.8, 104.79999, 242, 106.79999, 242, 108.79999, 222, 110.20001, 222, 107, 184.79999, 107, 179.59998, 99, 161.59998, 99, 159.20001, 91, 150.20001, 91, 148.09998, 75, 134.09998, 75, 132.90002, 46.600006, 114, 44.899994, 114, 36.899994, 105, 36.299988, 105, 28.299988, 87, 24.799988, 62, 24, 62, 17, -359, 17, -389.5, 20, -395.5, 20, -397, 26.700012, -402, 29.200012, -402, 26.799988, -428, 28, -431.7, 28, -434.3, 25, -443.3, 25, -468.4, 26.100006, -470, 27.200012, -470, 28.299988, -472.1, 26, -475.7, 26, -480, 33, -505.7, 33, -508.1, 30, -510.1, 30, -512)
+scale = Vector2(1.825, 1.825)
+polygon = PackedVector2Array(48.200012, -846, 22.899994, -846, 9.600006, -841, 6.5, -841, -19, -826.1, -67.100006, -823, -70.399994, -823, -64.7, -793, -63.800003, -793, -60.800003, -757, -60, -757, -60, -711, -64, -679.1, -64, -666.1, -51.699997, -656, -46.199997, -647, -49, 80, -49, 121.70001, -59, 151.70001, -59, 154.40002, -75, 180.40002, -75, 182, -87, 193.09998, -87, 193.90002, -110.5, 208, -112.7, 208, -125.7, 219, -127.8, 219, -148.8, 240, -150.1, 240, -167.1, 265, -168.3, 265, -180.3, 294, -181.7, 294, -188.7, 336, -190, 336, -190, 365.19995, -186, 390.30005, -186, 396.90002, -163.7, 416, -161.9, 416, -150.9, 429, -150.2, 429, -140.2, 448, -139.5, 448, -136, 461, -136, 478.5, -146, 505.59998, -146, 507.09998, -159, 523.30005, -159, 525, -171, 535.1, -171, 535.69995, -195.3, 546, -198.8, 546, -203.8, 551, -205.5, 551, -216.5, 588, -217.8, 588, -222, 633.30005, -222, 720.4, -207, 755.30005, -207, 757.69995, -191, 777.69995, -191, 779.9, -171, 797.80005, -171, 799.1, -152, 811.1, -152, 812.30005, -118, 827.19995, -118, 828.6, -69, 840.5, -69, 841.80005, -31.300003, 846, 39.100006, 846, 66.399994, 841, 71.29999, 841, 109.29999, 828, 112.5, 828, 141.5, 811, 143.79999, 811, 175.70001, 782, 177, 782, 195, 756, 196.29999, 756, 210.29999, 725, 211.6, 725, 222, 683.9, 222, 665.80005, 215, 616.69995, 215, 610.69995, 201, 556, 201, 552.19995, 192, 543.19995, 192, 541, 177.5, 541, 172.6, 538, 170.79999, 538, 156.79999, 524, 156, 524, 142, 504, 141.4, 504, 132.4, 478, 132, 458.30005, 141, 437.40002, 141, 435.69995, 149, 426.80005, 149, 424.80005, 172.70001, 404, 174.6, 404, 176.6, 395, 177.9, 395, 180, 352, 180, 327.80005, 171, 287.59998, 171, 283.5, 160, 261.5, 160, 259.19995, 141, 238.19995, 141, 237, 91.600006, 202, 89.79999, 202, 64.79999, 178, 64.100006, 178, 47.100006, 150, 46.5, 150, 39.600006, 122, 39, 122, 28, -542, 28, -627, 29, -627, 29, -648.4, 32, -652.3, 32, -654.1, 44.700012, -664, 47.299988, -664, 42, -707.2, 42, -708, 45, -708, 45, -700.9, 51, -696.9, 51, -694.4, 61.100006, -697, 65.20001, -697, 69.100006, -704, 71, -704, 71, -727.8, 67, -731.8, 67, -733.4, 59.299988, -736, 51.899994, -736, 44, -723.6, 44, -722.6, 41.899994, -722.1, 40, -774, 44.100006, -774, 56.100006, -761, 65.20001, -761, 74, -778.5, 74, -785.6, 68, -795.6, 68, -798.1, 63, -801.1, 63, -803.6, 56.899994, -802, 54, -802, 44, -788, 42.5, -788, 53, -838.8, 53, -844.4)
 
-[node name="Stringwall" parent="1stPart" unique_id=140960651 instance=ExtResource("6_prcow")]
+[node name="Bass1" type="CharacterBody2D" parent="1stPart/Saite blockiert Riddle" unique_id=1291266672]
+position = Vector2(-950, 541)
+
+[node name="EBass" type="Sprite2D" parent="1stPart/Saite blockiert Riddle/Bass1" unique_id=45751853]
+z_index = -50
+position = Vector2(5087, -1532)
+rotation = 1.5707964
+scale = Vector2(1.825, 1.825)
+texture = ExtResource("13_mkbvl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/Saite blockiert Riddle/Bass1" unique_id=2117219366]
+position = Vector2(5087, -1532)
+rotation = 1.5707964
+scale = Vector2(1.825, 1.825)
+polygon = PackedVector2Array(24, -844.2, 24, -842.4, 12.600006, -838, 9.5, -838, -19, -822.2, -62.100006, -819, -65.3, -819, -56.699997, -757, -56, -757, -56, -711, -60, -679.1, -60, -669.1, -48.800003, -659, -48.199997, -659, -42.199997, -647, -45, 80, -45, 121.70001, -56, 154.70001, -56, 157.40002, -72, 183.40002, -72, 185, -84, 196.09998, -84, 196.90002, -107.5, 211, -109.7, 211, -122.7, 222, -124.8, 222, -145.8, 243, -147.1, 243, -164.1, 268, -165.3, 268, -174.3, 289, -175.6, 289, -181.5, 313, -182.8, 313, -184.8, 336, -186, 336, -186, 365.19995, -182, 390.30005, -182, 396, -160.7, 413, -158.9, 413, -147.9, 426, -147.2, 426, -137.2, 445, -136.5, 445, -132, 461, -132, 478.69995, -139, 499.69995, -139, 502.30005, -156, 526.4, -156, 528, -168, 538.1, -168, 538.69995, -192.3, 549, -195.8, 549, -200.8, 554, -202.5, 554, -212.5, 588, -213.8, 588, -218.8, 642, -220.1, 642, -218, 715.1, -218, 720.4, -204, 752.30005, -204, 754.69995, -188, 774.69995, -188, 776.9, -168, 794.80005, -168, 796.1, -149, 808.1, -149, 809.30005, -115, 824.19995, -115, 825.6, -69, 836.5, -69, 837.80005, -23, 842.80005, -23, 844, 26.199997, 844, 66.29999, 837, 71.29999, 837, 106.29999, 825, 109.5, 825, 138.5, 808, 140.79999, 808, 172.70001, 779, 174, 779, 192, 753, 193.29999, 753, 207.29999, 722, 208.6, 722, 218.5, 680, 220.29999, 680, 211, 616.69995, 211, 610.80005, 198, 559, 198, 555.19995, 191, 547.19995, 191, 545, 177.5, 545, 169.5, 541, 167.79999, 541, 153.79999, 527, 153, 527, 139, 507, 138.4, 507, 128.4, 478, 128, 458.30005, 138, 434.40002, 138, 432.69995, 146, 423.80005, 146, 421.80005, 169.70001, 401, 171.70001, 401, 172.70001, 395, 173.9, 395, 176, 352, 176, 327.80005, 169, 294.59998, 169, 290.59998, 157, 264.59998, 157, 262.19995, 149, 253.19995, 149, 251.09998, 133, 237.09998, 133, 236, 78.600006, 197, 76.899994, 197, 57.899994, 176, 57.100006, 176, 44.200012, 153, 43.5, 153, 35.5, 122, 24, -542, 24, -628.8, 26, -648.9, 26, -651.3, 39.899994, -667, 42.100006, -667, 36, -775.1, 39, -779, 40.200012, -779, 41.299988, -781, 38, -786.5, 38, -794, 49, -838.8, 49, -841.8)
+
+[node name="Stringwall" parent="1stPart/Saite blockiert Riddle" unique_id=140960651 instance=ExtResource("6_prcow")]
 position = Vector2(5023, -1170)
 scale = Vector2(1, 1)
 max_sag = 25.0
@@ -233,77 +270,105 @@ min_sag = 0.0
 wall_bounce_strength = 900.0
 bounce_horizontal_margin = 15.0
 
-[node name="TuningPeg" parent="1stPart/Stringwall" index="0" unique_id=1723540039]
-position = Vector2(701.00006, -857)
+[node name="SpecialViolin" parent="1stPart/Saite blockiert Riddle/Stringwall" index="0" unique_id=1976410993]
+position = Vector2(839.99994, -371)
+rotation = -0.033161256
 
-[node name="AnchorLeft" parent="1stPart/Stringwall" index="1" unique_id=1138421449]
-position = Vector2(753, -858)
+[node name="TuningPeg" parent="1stPart/Saite blockiert Riddle/Stringwall" index="1" unique_id=1723540039]
+position = Vector2(692.00006, -908)
+scale = Vector2(0.3, 0.3)
 
-[node name="AnchorRight" parent="1stPart/Stringwall" index="2" unique_id=176412402]
-position = Vector2(839, 68)
+[node name="AnchorLeft" parent="1stPart/Saite blockiert Riddle/Stringwall" index="2" unique_id=1138421449]
+position = Vector2(759, -910)
 
-[node name="StringLine" parent="1stPart/Stringwall" index="3" unique_id=901622392]
+[node name="AnchorRight" parent="1stPart/Saite blockiert Riddle/Stringwall" index="3" unique_id=176412402]
+position = Vector2(881, 62)
+
+[node name="StringLine" parent="1stPart/Saite blockiert Riddle/Stringwall" index="4" unique_id=901622392]
 width = 10.0
 default_color = Color(0, 0, 0, 1)
 
-[node name="TensionTrigger" parent="1stPart/Stringwall" index="4" unique_id=1949885314]
+[node name="TensionTrigger" parent="1stPart/Saite blockiert Riddle/Stringwall" index="5" unique_id=1949885314]
 position = Vector2(474, -928)
 camera_offset_y = 450.0
 camera_move_duration = 0.7
 
-[node name="CollisionShape2D" parent="1stPart/Stringwall/TensionTrigger" index="0" unique_id=1416170649]
-position = Vector2(182.00002, -46)
+[node name="CollisionShape2D" parent="1stPart/Saite blockiert Riddle/Stringwall/TensionTrigger" index="0" unique_id=1416170649]
+position = Vector2(190.00002, -47)
 
-[node name="Violin" parent="1stPart/Stringwall" index="5" unique_id=589289601]
-position = Vector2(818.0001, -368)
-rotation = 0.0
-
-[node name="BounceArea" parent="1stPart/Stringwall" index="8" unique_id=1125676989]
-position = Vector2(364, 167)
+[node name="BounceArea" parent="1stPart/Saite blockiert Riddle/Stringwall" index="8" unique_id=1125676989]
+position = Vector2(398, 152)
 rotation = 0.29670596
 
-[node name="CollisionPolygon2D" parent="1stPart/Stringwall/BounceArea" index="0" unique_id=24269948]
+[node name="CollisionPolygon2D" parent="1stPart/Saite blockiert Riddle/Stringwall/BounceArea" index="0" unique_id=24269948]
 position = Vector2(406.54346, -193.70752)
 polygon = PackedVector2Array(19.5, -23, 9.010742, -16.995605, -387.1963, -919.5952, -363, -933, -222.02728, -597.6138)
 
-[node name="Bouncestring4" parent="1stPart" unique_id=344878007 instance=ExtResource("1_ihm0d")]
-position = Vector2(4387, -1425)
-rotation = 2.8326693
+[node name="TuningPegStand" type="StaticBody2D" parent="1stPart/Saite blockiert Riddle/Stringwall" unique_id=2099291495]
+position = Vector2(-5055, 1174)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/Saite blockiert Riddle/Stringwall/TuningPegStand" unique_id=1212563336]
+position = Vector2(36, -1)
+polygon = PackedVector2Array(5776, -2043, 5808, -2096, 5848, -2113, 5869, -2096, 5893, -2111, 5875, -2134, 5885, -2145, 5917, -2097, 5755, -1998, 5627, -1988, 5640, -1971, 5637, -1965, 5607, -1971, 5602, -1981, 5613, -1996, 5757, -2011)
+
+[node name="Uku1" parent="1stPart/Saite blockiert Riddle" unique_id=344878007 node_paths=PackedStringArray("tuning_peg") instance=ExtResource("1_ihm0d")]
+position = Vector2(4348, -1463)
+rotation = -3.1415925
 scale = Vector2(0.5, -0.5)
 bounce_velocity = 1100.0
+tuning_peg = NodePath("../TuningPeg1")
+rotations_degrees = PackedFloat32Array(360, 270, 180)
+rotation_duration = 0.5
 
-[node name="AnchorLeft" parent="1stPart/Bouncestring4" index="0" unique_id=1138421449]
-position = Vector2(88, -158)
+[node name="TuningPeg1" parent="1stPart/Saite blockiert Riddle" unique_id=1606043576 node_paths=PackedStringArray("player", "hand_grip") instance=ExtResource("15_yi0be")]
+position = Vector2(5424, -1141)
+scale = Vector2(0.6, 0.6)
+num_steps = 2
+start_level = 2
+player = NodePath("../../../Player")
+hand_grip = NodePath("HandPoint")
+camera_offset_x = -300.0
+camera_offset_y = -200.0
+camera_transition_duration = 0.5
 
-[node name="AnchorRight" parent="1stPart/Bouncestring4" index="1" unique_id=176412402]
-position = Vector2(744, -350)
+[node name="Uku2" parent="1stPart/Saite blockiert Riddle" unique_id=1937142595 node_paths=PackedStringArray("tuning_peg") instance=ExtResource("1_ihm0d")]
+position = Vector2(4826, -1686)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+bounce_velocity = 1100.0
+tuning_peg = NodePath("../TuningPeg2")
+rotations_degrees = PackedFloat32Array(-360, -270)
+rotation_duration = 0.5
 
-[node name="Bouncestring5" parent="1stPart" unique_id=1937142595 instance=ExtResource("1_ihm0d")]
-position = Vector2(4709, -1638)
-rotation = 0.2443461
+[node name="TuningPeg2" parent="1stPart/Saite blockiert Riddle" unique_id=1524109639 node_paths=PackedStringArray("player", "hand_grip") instance=ExtResource("15_yi0be")]
+position = Vector2(5552, -1138)
+scale = Vector2(0.6, 0.6)
+num_steps = 1
+start_level = 1
+player = NodePath("../../../Player")
+hand_grip = NodePath("HandPoint")
+camera_offset_x = -400.0
+camera_offset_y = -200.0
+camera_transition_duration = 0.5
+
+[node name="Uku3" parent="1stPart/Saite blockiert Riddle" unique_id=397298574 instance=ExtResource("1_ihm0d")]
+position = Vector2(5403, -1863)
 scale = Vector2(0.5, 0.5)
 bounce_velocity = 1100.0
 
-[node name="AnchorLeft" parent="1stPart/Bouncestring5" index="0" unique_id=1138421449]
-position = Vector2(88, -158)
+[node name="Bow" type="StaticBody2D" parent="1stPart/Saite blockiert Riddle" unique_id=116138848]
+position = Vector2(5864, -2627)
+rotation = 0.7033677
+scale = Vector2(0.5, 0.5)
 
-[node name="AnchorRight" parent="1stPart/Bouncestring5" index="1" unique_id=176412402]
-position = Vector2(744, -350)
+[node name="Bow" type="Sprite2D" parent="1stPart/Saite blockiert Riddle/Bow" unique_id=352947128]
+texture = ExtResource("15_mkbvl")
 
-[node name="Boden2" type="StaticBody2D" parent="1stPart" unique_id=243986434]
-position = Vector2(5487, -1851)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stPart/Saite blockiert Riddle/Bow" unique_id=532262690]
+polygon = PackedVector2Array(-628, -684.8, -651.2, -708, -656, -708, -661, -698.5, -661, -697, -672, -686.8, -672, -679.3, -653, -661.2, -653, -657.8, -648.9, -659.9, -639, -646.4, -639, -644.1, -623, -629.1, -623, -627.2, -486.8, -490, -486, -490, -486, -482.2, -408, -398.2, -408, -396.2, -320, -309.2, -320, -305.8, -317, -307.3, -317, -306.2, -247, -231.20001, -247, -229.20001, 619, 700.80005, 619, 702.80005, 624.19995, 708, 628.80005, 708, 644.9, 693, 647, 693, 657.80005, 679.4, 661, 686.30005, 661, 688.19995, 663.19995, 689.30005, 671.69995, 683, 672, 671.6, 647, 638.30005, 647, 636.4, 637, 634.30005, 637, 632.19995, 628.69995, 635, 626.30005, 635, 623, 652.80005, 623, 657.4, 618, 665.6, 605.69995, 656, 604.9, 656, 592, 640.30005, 592, 638.19995, -285.1, -325, -285.9, -325, -300, -348.5, -300, -350.8, -327, -380.8, -327, -382.8, -401, -454.9, -401, -458.2, -405, -456.3, -405, -457.9, -434, -485, -434, -486, -457, -503.1, -457, -504.2, -459.1, -505.3, -461.8, -503.6, -464, -509.5, -464, -511.7, -483.5, -535.3, -481, -542.7, -481, -545.8, -501.1, -567, -502, -574.2, -502, -577.6, -500, -582.6, -500, -583.5, -497.9, -584, -495.9, -584, -467.9, -553, -464.1, -553, -444.2, -574, -442.8, -574, -441.7, -576, -452, -593.5, -452, -596.2, -462.5, -602, -463.1, -602, -551, -695.9, -551, -697.4, -553.6, -698.4, -595.9, -650, -624, -680.8, -624, -682.4, -626.7, -683.4, -628, -681.8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="1stPart/Boden2" unique_id=833747066]
-position = Vector2(143, 0)
-shape = SubResource("RectangleShape2D_shhik")
-
-[node name="ColorRect" type="ColorRect" parent="1stPart/Boden2" unique_id=1307461123]
-offset_left = 3.9999998
-offset_top = -3.9999998
-offset_right = 44.0
-offset_bottom = 7.0
-scale = Vector2(7.24, 1)
-color = Color(0, 0, 0, 1)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="1stPart/Saite blockiert Riddle/Bow" unique_id=1452429428]
+polygon = PackedVector2Array(-444.6, -573.4, -447, -572.3, -447, -570.9, -458, -560.9, -458, -556.2, 619, 624.69995, 619, 626.9, 627, 633.80005, 627, 636.4, 641.30005, 634, 643.30005, 634, 644.4, 631.6, -423, -550.8, -423, -552.9)
 
 [node name="BG" type="Sprite2D" parent="." unique_id=101546485]
 z_index = 1
@@ -314,29 +379,237 @@ scale = Vector2(150, 200)
 z_index = -60
 material = SubResource("ShaderMaterial_nch4o")
 anchors_preset = -1
-anchor_top = 87.53999
-anchor_right = 1057.5021
-anchor_bottom = 124.40704
-offset_left = -38.65853
-offset_top = 11.621808
-offset_right = 666.38
-offset_bottom = 29.278316
+anchor_top = 221.925
+anchor_right = 3616.1611
+anchor_bottom = 315.38763
+offset_left = -38.991863
+offset_top = 19.101791
+offset_right = 666.0469
+offset_bottom = 36.7583
 scale = Vector2(0.17991452, -2.3744788)
 color = Color(1, 0.79, 0.79, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Gopichand" parent="." unique_id=666133277 node_paths=PackedStringArray("player") instance=ExtResource("13_ut8v4")]
-position = Vector2(17371, 2174)
+position = Vector2(18570, 2513)
 player = NodePath("../Player")
 
-[node name="tunerbutterflycontroller" parent="Gopichand" index="7" unique_id=566946090 node_paths=PackedStringArray("player")]
+[node name="tunerbutterflycontroller" parent="Gopichand" index="7" unique_id=566946090 node_paths=PackedStringArray("player", "level_build_targets")]
 player = NodePath("../../Player")
+camera_zoom_duration = 2.0
+camera_offset_x = 1000.0
+camera_offset_duration = 2.0
+camera_offset_revert_delay = 5.0
+stagger_delay = 0.3
+level_build_targets = [NodePath("../../Bowing/BowMover1u"), NodePath("../../Bowing/BowMover1Oben"), NodePath("../../Bowing/BowMover2Unten"), NodePath("../../Bowing/BowMover2Oben"), NodePath("../../Bowing/BowMover3Oben"), NodePath("../../Bowing/BowMover3Unten"), NodePath("../../Bowing/BowMoverLtoR")]
+level_build_stagger_delay = 0.0
 
-[editable path="1stPart/Bouncestring3"]
-[editable path="1stPart/String"]
-[editable path="1stPart/Bouncestring2"]
-[editable path="1stPart/StringSlide"]
-[editable path="1stPart/Stringwall"]
-[editable path="1stPart/Bouncestring4"]
-[editable path="1stPart/Bouncestring5"]
+[node name="FallDown" parent="Gopichand" unique_id=688781110 node_paths=PackedStringArray("player", "respawn_point") instance=ExtResource("10_45x2h")]
+position = Vector2(1970, 1623)
+scale = Vector2(23.304323, 4.96)
+player = NodePath("../../Player")
+respawn_point = NodePath("../../1stPart/StartJump Riddle/RespawnPoint")
+
+[node name="Respawnpoint" type="Marker2D" parent="Gopichand" unique_id=201451519]
+position = Vector2(-4, -142)
+
+[node name="BassSlideZone" parent="." unique_id=1304215454 instance=ExtResource("16_emxea")]
+position = Vector2(36155, 3763)
+
+[node name="SlideJumpSlide" parent="." unique_id=11059178 instance=ExtResource("17_7g4j0")]
+position = Vector2(36538, 23354)
+
+[node name="Bowing" type="Node2D" parent="." unique_id=1131978483]
+position = Vector2(3112, 99)
+
+[node name="BowMover1u" parent="Bowing" unique_id=401476511 instance=ExtResource("21_a57k7")]
+position = Vector2(18669, 2433.999)
+scale = Vector2(0.25, 0.25)
+move_distance_px = 300.0
+bpm = 90.0
+move_from_offset = Vector2(0, 2500)
+fly_in_count = 8
+
+[node name="BowMover1Oben" parent="Bowing" unique_id=2138283271 instance=ExtResource("21_a57k7")]
+position = Vector2(18668, 1383)
+rotation = 2.3928463
+scale = Vector2(0.25, -0.25)
+move_distance_px = 300.0
+move_direction = Vector2(0, 1)
+bpm = 90.0
+move_from_offset = Vector2(0, -2500)
+fly_in_count = 8
+
+[node name="BowMover2Unten" parent="Bowing" unique_id=1298633946 instance=ExtResource("21_a57k7")]
+position = Vector2(19402, 2442.9995)
+scale = Vector2(0.25, 0.25)
+move_distance_px = 300.0
+bpm = 90.0
+delay_count = 1
+move_from_offset = Vector2(0, 2500)
+fly_in_count = 8
+
+[node name="BowMover2Oben" parent="Bowing" unique_id=449081800 instance=ExtResource("21_a57k7")]
+position = Vector2(19395, 1369)
+rotation = 2.4085543
+scale = Vector2(0.25, -0.25)
+move_distance_px = 300.0
+move_direction = Vector2(0, 1)
+bpm = 90.0
+delay_count = 1
+move_from_offset = Vector2(0, -2500)
+fly_in_count = 8
+
+[node name="BowMover3Oben" parent="Bowing" unique_id=841860547 instance=ExtResource("21_a57k7")]
+position = Vector2(20133, 2443.999)
+scale = Vector2(0.25, 0.25)
+move_distance_px = 300.0
+bpm = 90.0
+move_from_offset = Vector2(0, 2500)
+fly_in_count = 8
+
+[node name="BowMover3Unten" parent="Bowing" unique_id=1026710487 instance=ExtResource("21_a57k7")]
+position = Vector2(20132, 1393)
+rotation = 2.3928463
+scale = Vector2(0.25, -0.25)
+move_distance_px = 300.0
+move_direction = Vector2(0, 1)
+bpm = 90.0
+move_from_offset = Vector2(0, -2500)
+fly_in_count = 8
+
+[node name="VibratingStringOben1" type="Node2D" parent="Bowing" unique_id=461718757 node_paths=PackedStringArray("line", "string_points")]
+z_index = -10
+position = Vector2(-10, 124)
+script = ExtResource("22_a57k7")
+line = NodePath("Line2D")
+string_points = [NodePath("BowL"), NodePath("BowR")]
+bpm = 90.0
+
+[node name="Line2D" type="Line2D" parent="Bowing/VibratingStringOben1" unique_id=183970481]
+points = PackedVector2Array(15424, 1478, 24391, 1467)
+width = 4.0
+
+[node name="BowL" type="Marker2D" parent="Bowing/VibratingStringOben1" unique_id=1275832498]
+position = Vector2(18495, 1477)
+script = ExtResource("23_45x2h")
+
+[node name="BowR" type="Marker2D" parent="Bowing/VibratingStringOben1" unique_id=2003980249]
+position = Vector2(19319, 1473)
+script = ExtResource("23_45x2h")
+delay_count = 1
+
+[node name="VibratingStringOben2" type="Node2D" parent="Bowing" unique_id=461208225 node_paths=PackedStringArray("line", "string_points")]
+z_index = -10
+position = Vector2(-37, 277)
+script = ExtResource("22_a57k7")
+line = NodePath("Line2D")
+string_points = [NodePath("BowL"), NodePath("BowR")]
+bpm = 90.0
+
+[node name="Line2D" type="Line2D" parent="Bowing/VibratingStringOben2" unique_id=1513414918]
+position = Vector2(-8205.979, -699.3783)
+scale = Vector2(1.3454376, 1.3454397)
+points = PackedVector2Array(17379, 1478, 23815, 1467)
+width = 4.0
+
+[node name="BowL" type="Marker2D" parent="Bowing/VibratingStringOben2" unique_id=682256555]
+position = Vector2(18545, 1282)
+script = ExtResource("23_45x2h")
+
+[node name="BowR" type="Marker2D" parent="Bowing/VibratingStringOben2" unique_id=73579863]
+position = Vector2(19369, 1278)
+script = ExtResource("23_45x2h")
+delay_count = 1
+
+[node name="VibratingString3" type="Node2D" parent="Bowing" unique_id=767172036 node_paths=PackedStringArray("line", "string_points")]
+z_index = -10
+position = Vector2(2, -204)
+script = ExtResource("22_a57k7")
+line = NodePath("Line2D")
+string_points = [NodePath("BowL"), NodePath("BowR")]
+bpm = 90.0
+
+[node name="Line2D" type="Line2D" parent="Bowing/VibratingString3" unique_id=1717767527]
+position = Vector2(-15483.111, 77.437256)
+scale = Vector2(1.6497331, 1.6497353)
+points = PackedVector2Array(17379, 1478, 23926, 1467)
+width = 4.0
+
+[node name="BowL" type="Marker2D" parent="Bowing/VibratingString3" unique_id=1723797006]
+position = Vector2(18508, 2521)
+script = ExtResource("23_45x2h")
+
+[node name="BowR" type="Marker2D" parent="Bowing/VibratingString3" unique_id=1133311258]
+position = Vector2(19332, 2517)
+script = ExtResource("23_45x2h")
+delay_count = 1
+
+[node name="VibratingString4" type="Node2D" parent="Bowing" unique_id=1362152992 node_paths=PackedStringArray("line", "string_points")]
+z_index = -10
+position = Vector2(17, -476)
+script = ExtResource("22_a57k7")
+line = NodePath("Line2D")
+string_points = [NodePath("BowL"), NodePath("BowR")]
+bpm = 90.0
+
+[node name="Line2D" type="Line2D" parent="Bowing/VibratingString4" unique_id=1794998500]
+position = Vector2(86, 1259)
+points = PackedVector2Array(13995, 1478, 24184, 1467)
+width = 4.0
+
+[node name="BowL" type="Marker2D" parent="Bowing/VibratingString4" unique_id=1724306963]
+position = Vector2(18495, 2737)
+script = ExtResource("23_45x2h")
+
+[node name="BowR" type="Marker2D" parent="Bowing/VibratingString4" unique_id=1351770083]
+position = Vector2(19319, 2733)
+script = ExtResource("23_45x2h")
+delay_count = 1
+
+[node name="Bouncestring3" parent="Bowing" unique_id=324377940 instance=ExtResource("1_ihm0d")]
+position = Vector2(20836, 2160.0002)
+rotation = -3.1415925
+scale = Vector2(0.7, -0.7)
+
+[node name="Bouncestring4" parent="Bowing" unique_id=198776180 instance=ExtResource("1_ihm0d")]
+position = Vector2(21251, 1815)
+rotation = -3.700098
+scale = Vector2(0.7, -0.7)
+
+[node name="BowMoverLtoR" parent="Bowing" unique_id=330046586 instance=ExtResource("21_a57k7")]
+position = Vector2(16775.002, 1168.999)
+rotation = -5.4454274
+scale = Vector2(0.5, -0.5)
+move_distance_px = 1000.0
+move_direction = Vector2(1, 0)
+bpm = 45.0
+note_value = 0
+move_from_offset = Vector2(-5000, 0)
+fly_in_count = 8
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=413364070]
+custom_minimum_size = Vector2(600, 400)
+offset_left = -2544.0
+offset_top = -4335.0
+offset_right = -1637.0
+offset_bottom = -3935.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_axxh8")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ms32o")
+text = "1. Strings"
+
+[editable path="1stPart/StartJump Riddle/Bouncestring3"]
+[editable path="1stPart/StartJump Riddle/String"]
+[editable path="1stPart/StartJump Riddle/Bouncestring2"]
+[editable path="1stPart/StartJump Riddle/StringSlide"]
+[editable path="1stPart/Saite blockiert Riddle/Stringwall"]
+[editable path="1stPart/Saite blockiert Riddle/Uku1"]
+[editable path="1stPart/Saite blockiert Riddle/TuningPeg1"]
+[editable path="1stPart/Saite blockiert Riddle/Uku2"]
+[editable path="1stPart/Saite blockiert Riddle/TuningPeg2"]
+[editable path="1stPart/Saite blockiert Riddle/Uku3"]
 [editable path="Gopichand"]
+[editable path="Bowing/Bouncestring3"]
+[editable path="Bowing/Bouncestring4"]

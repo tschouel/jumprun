@@ -246,6 +246,7 @@
 [ext_resource type="Texture2D" uid="uid://bihuivdiwo4vb" path="res://animation/__SlideBass.png" id="123_8fc1w"]
 [ext_resource type="Script" uid="uid://ch5antkg8o5il" path="res://simple_arm.gd" id="148_yskhe"]
 [ext_resource type="Script" uid="uid://cd8cw8mn8mq7d" path="res://path_bass_movement.gd" id="245_ebsb2"]
+[ext_resource type="Script" uid="uid://doik52svy0qv0" path="res://ramp_path_movement.gd" id="247_jajrg"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3a0q"]
 polygon = PackedVector2Array(85.778336, -211.79834, 188.23581, -191.94226, 200.14946, -145.61139, 0, -142.302)
@@ -1256,7 +1257,7 @@ scale = Vector2(0.41968638, 0.3021742)
 occluder = SubResource("OccluderPolygon2D_w3a0q")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=312779655]
-offset = Vector2(0, -200)
+position = Vector2(0, -312)
 zoom = Vector2(0.8, 0.8)
 process_callback = 0
 limit_enabled = false
@@ -1354,3 +1355,7 @@ unique_name_in_owner = true
 [node name="PathBassMovement" type="Node2D" parent="." unique_id=599059943]
 script = ExtResource("245_ebsb2")
 sprite_x_offset = -23.0
+
+[node name="PathRampMovement" type="Node2D" parent="." unique_id=980576393]
+script = ExtResource("247_jajrg")
+fall_gravity_multiplier = 4.0

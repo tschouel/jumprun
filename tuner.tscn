@@ -23,6 +23,26 @@ animations = [{
 "texture": ExtResource("3_c7v6u")
 }, {
 "duration": 1.0,
+"texture": ExtResource("2_rsy4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_iebq0")
+}],
+"loop": 0,
+"name": &"stuck",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iebq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rsy4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c7v6u")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_2gel1")
 }, {
 "duration": 1.0,
@@ -69,7 +89,9 @@ unique_name_in_owner = true
 position = Vector2(75, -52.000004)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_u0jqh")
-animation = &"turn"
+animation = &"stuck"
+frame = 4
+frame_progress = 1.0
 
 [node name="HandPoint" type="Marker2D" parent="TuningPeg" unique_id=170060936]
 

@@ -4,6 +4,12 @@ extends Node2D
 @export var path: Path2D
 @export var slide_speed: float = 400.0
 @export var steps: Array[SlidingObstacleStep] = []
+## Verschiebt jedes gespawnte Hindernis senkrecht (im rechten Winkel) zur
+## Kurve, statt es direkt AUF der Linie zu platzieren - negative Werte
+## verschieben "nach oben" relativ zur Bewegungsrichtung, positive Werte
+## "nach unten". Falls die Richtung falsch rum ist (Hindernis wandert nach
+## unten statt oben), einfach das Vorzeichen umdrehen.
+@export var perpendicular_offset: float = 0.0
 
 var _spawned: Array[Node2D] = []
 
@@ -41,10 +47,19 @@ func _spawn_obstacles() -> void:
 			push_warning("SlidingObstacleSequencer: obstacle_scene ist kein Node2D")
 			continue
 
+		var tangent_angle: float = _get_tangent_angle(cumulative_distance, curve_length)
 		var local_pos: Vector2 = path.curve.sample_baked(cumulative_distance, true)
+
+		# Senkrecht zur Kurve verschieben (Tangente um 90 Grad gedreht),
+		# damit das Hindernis optisch "ueber" statt "auf" der Linie sitzt -
+		# funktioniert unabhaengig von der Neigung der Kurve an dieser Stelle.
+		if perpendicular_offset != 0.0:
+			var normal: Vector2 = Vector2.RIGHT.rotated(tangent_angle).rotated(-PI / 2.0)
+			local_pos += normal * perpendicular_offset
+
 		path.add_child(obstacle)
 		obstacle.position = local_pos
-		obstacle.rotation = _get_tangent_angle(cumulative_distance, curve_length)
+		obstacle.rotation = tangent_angle
 		_spawned.append(obstacle)
 
 

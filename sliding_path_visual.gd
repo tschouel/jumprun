@@ -19,6 +19,12 @@ extends Node2D
 ## Deaktiviere Antialiasing, wenn der Renderer einen 1px Halbpixel-Versatz erzeugt:
 @export var antialiased: bool = false
 
+@export_group("Ausgeblendeter Abschnitt (Ramp-Test)")
+## Optional: RampTestSequencer, dessen Testfenster-Bereich NIE gezeichnet
+## wird - unabhaengig davon, ob der Spieler dort gerade rutscht oder nicht.
+## Leer lassen, wenn kein Abschnitt dauerhaft ausgeblendet werden soll.
+@export var hidden_segment_source: RampTestSequencer
+
 var _player: CharacterBody2D = null
 var _time: float = 0.0
 var _fade_strength: float = 0.0
@@ -54,11 +60,6 @@ func _draw() -> void:
 	if total_length <= 0.0:
 		return
 
-	# NEU: die Basislinie wird jetzt IMMER gezeichnet, unabhaengig von
-	# _fade_strength. Vorher gab es hier "if _fade_strength <= 0.0: return",
-	# wodurch die Linie komplett unsichtbar war, solange der Spieler nicht
-	# auf dem Pfad ist. Die Vibration/Wave bleibt an _fade_strength > 0
-	# gekoppelt, die Basislinie ist aber ab jetzt immer da.
 	if _is_player_on_this_path():
 		var player_pos_in_path: Vector2 = path.to_local(_player.global_position)
 		var offset_along: float = path.curve.get_closest_offset(player_pos_in_path)
@@ -66,18 +67,38 @@ func _draw() -> void:
 
 	var half_width_t: float = (envelope_width * 0.5) / total_length
 
-	var points := PackedVector2Array()
-	points.resize(segments + 1)
+	# Dauerhaft ausgeblendete Abschnitte (eine oder mehrere Ramp-Test-
+	# Stationen) - werden IMMER ausgespart, unabhaengig vom aktuellen
+	# Spielerstatus. Dafuer wird die Linie als mehrere getrennte Polylines
+	# gezeichnet statt einer durchgehenden.
+	var hidden_ranges: Array[Vector2] = []
+	if hidden_segment_source:
+		hidden_ranges = hidden_segment_source.get_hidden_ranges()
+
+	var current_run := PackedVector2Array()
 
 	for i in range(segments + 1):
 		var t: float = float(i) / float(segments)
 		var current_dist: float = t * total_length
+
+		var is_hidden: bool = false
+		for r in hidden_ranges:
+			if current_dist >= r.x and current_dist <= r.y:
+				is_hidden = true
+				break
+
+		if is_hidden:
+			if current_run.size() > 1:
+				draw_polyline(current_run, line_color, line_width, antialiased)
+			current_run = PackedVector2Array()
+			continue
+
 		# Punkt in Path2D-lokalen Koordinaten, dann explizit ueber
 		# global_position in GLOBALE Koordinaten und zurueck in den lokalen
 		# Zeichen-Raum DIESES Nodes umgerechnet - umgeht
 		# draw_set_transform_matrix komplett, dadurch unempfindlich gegen
 		# Transform-Diskrepanzen zwischen diesem Node und dem Path2D.
-		var local_pt: Vector2 = path.curve.sample_baked(current_dist)
+		var local_pt: Vector2 = path.curve.sample_baked(current_dist, true)
 		var global_pt: Vector2 = path.to_global(local_pt)
 
 		if _fade_strength > 0.0:
@@ -91,9 +112,10 @@ func _draw() -> void:
 				var wave: float = sin((current_dist * spatial_frequency) - (_time * frequency * TAU))
 				global_pt += perpendicular * (amplitude * envelope * wave * _fade_strength)
 
-		points[i] = to_local(global_pt)
+		current_run.append(to_local(global_pt))
 
-	draw_polyline(points, line_color, line_width, antialiased)
+	if current_run.size() > 1:
+		draw_polyline(current_run, line_color, line_width, antialiased)
 
 
 func _is_player_on_this_path() -> bool:

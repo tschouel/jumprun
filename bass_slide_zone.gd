@@ -41,6 +41,18 @@ extends Area2D
 ## Dauer der Kamera-Ein-/Ausblendung (Tween) beim Betreten/Verlassen.
 @export var camera_transition_duration: float = 0.4
 
+@export_group("F-Prompt Anzeige")
+## Optional: AnimatedSprite2D, das einen blinkenden "F"-Hinweis zeigt,
+## solange der Spieler in der Zone steht und noch nicht rutscht. Wird
+## automatisch gestoppt, sobald F erfolgreich gedrueckt wurde, und wieder
+## gestartet, sobald der Spieler die Saite wieder verlaesst (normal ODER
+## per Checkpoint-Respawn) und erneut F druecken muss. Leer lassen = kein
+## Effekt.
+@export var f_prompt_sprite: AnimatedSprite2D
+## Zusaetzlich zum Stoppen des Loops auch komplett ausblenden, solange
+## gerutscht wird.
+@export var hide_f_prompt_while_sliding: bool = true
+
 var _previous_parent: Node = null
 var _player_in_zone: bool = false
 var _current_player: CharacterBody2D = null
@@ -55,6 +67,9 @@ var _previous_player_z_index: int = 0
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	if f_prompt_sprite:
+		f_prompt_sprite.visible = true
+		f_prompt_sprite.play()
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -154,19 +169,10 @@ func _attach_to_path(player: CharacterBody2D) -> void:
 		ground_module.set_camera_zoom_override(camera_zoom_target, camera_transition_duration)
 		ground_module.set_camera_offset_override(camera_offset_target, camera_transition_duration)
 
-	# DIAGNOSE - temporär, um die Unsichtbarkeit auf Saite 3 einzugrenzen
-	print("--- BassSlideZone Attach-Diagnose ---")
-	print("best_index (gewaehlte Saite): ", best_index)
-	print("path_follow global_position: ", path_follow.global_position)
-	print("player global_position NACH attach: ", player.global_position)
-	print("player visible: ", player.visible)
-	print("player modulate: ", player.modulate)
-	print("player z_index: ", player.z_index)
-	print("path_follow visible: ", path_follow.visible)
-	print("path_follow modulate: ", path_follow.modulate)
-	print("path2d (Saite) visible: ", path2d.visible if path2d else "kein path2d")
-	print("path2d (Saite) modulate: ", path2d.modulate if path2d else "kein path2d")
-	print("--------------------------------------")
+	if f_prompt_sprite:
+		f_prompt_sprite.stop()
+		if hide_f_prompt_while_sliding:
+			f_prompt_sprite.visible = false
 
 
 ## Wird von PathMovement aufgerufen, sobald das Pfadende (progress_ratio
@@ -199,6 +205,10 @@ func detach_from_path(player: CharacterBody2D) -> void:
 	if ground_module:
 		ground_module.clear_camera_zoom_override(camera_transition_duration)
 		ground_module.clear_camera_offset_override(camera_transition_duration)
+
+	if f_prompt_sprite:
+		f_prompt_sprite.visible = true
+		f_prompt_sprite.play()
 
 
 ## Wird von PathMovement bei einem Hindernis-Treffer aufgerufen: blendet
@@ -236,6 +246,10 @@ func respawn_after_obstacle_hit(player: CharacterBody2D) -> void:
 	if ground_module:
 		ground_module.clear_camera_zoom_override(camera_transition_duration)
 		ground_module.clear_camera_offset_override(camera_transition_duration)
+
+	if f_prompt_sprite:
+		f_prompt_sprite.visible = true
+		f_prompt_sprite.play()
 
 	var cam := player.get_node_or_null("Camera2D") as Camera2D
 	if cam:

@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://n8sudsu6ycl5"]
+
+[ext_resource type="Script" uid="uid://buu8u0xcjk3vg" path="res://tuning_peg_weight.gd" id="1_vsmhj"]
+[ext_resource type="Texture2D" uid="uid://ibb68ua80veq" path="res://animation/__Key1.png" id="2_x8xbg"]
+[ext_resource type="Texture2D" uid="uid://beww6ce42lu6v" path="res://animation/__Key2.png" id="3_5t0ac"]
+[ext_resource type="Texture2D" uid="uid://ctrnftebdqcbc" path="res://animation/__Key3.png" id="4_g2hbg"]
+[ext_resource type="Texture2D" uid="uid://cx34y036x8jgm" path="res://animation/__Key4.png" id="5_3gaod"]
+[ext_resource type="Texture2D" uid="uid://d0ls8mci38tnq" path="res://animation/__Key5.png" id="6_gq3lj"]
+[ext_resource type="Texture2D" uid="uid://d2rw0mw5q1gr" path="res://animation/__Key6.png" id="7_o4li8"]
+[ext_resource type="Texture2D" uid="uid://ds15rslirukba" path="res://animation/turntable__4norm.png" id="10_xelrh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hkktn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x8xbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5t0ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g2hbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5t0ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x8xbg")
+}],
+"loop": 0,
+"name": &"stuck",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x8xbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5t0ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g2hbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3gaod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gq3lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o4li8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o4li8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gq3lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3gaod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g2hbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5t0ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x8xbg")
+}],
+"loop": 0,
+"name": &"turn",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shhik"]
+size = Vector2(157, 244.11797)
+
+[node name="TuningPegWeight" type="Node2D" unique_id=1668087887 node_paths=PackedStringArray("sprite", "interaction_zone", "player", "hand_grip", "weight", "rope_start_point", "rope_end_point", "rope_line")]
+script = ExtResource("1_vsmhj")
+sprite = NodePath("TuningPeg")
+interaction_zone = NodePath("TuningPeg/InteractionZone")
+turn_step = 0.34
+toggle_key = 4194321
+player = NodePath("")
+hand_grip = NodePath("TuningPeg/HandPoint")
+weight = NodePath("RigidBody2D")
+rope_start_point = NodePath("Startpoint")
+rope_end_point = NodePath("Endpoint")
+rope_line = NodePath("Line2D")
+
+[node name="TuningPeg" type="AnimatedSprite2D" parent="." unique_id=302274910]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hkktn")
+animation = &"stuck"
+
+[node name="HandPoint" type="Marker2D" parent="TuningPeg" unique_id=1708641287]
+
+[node name="InteractionZone" type="Area2D" parent="TuningPeg" unique_id=1288566087]
+scale = Vector2(2.1200023, 2.039997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TuningPeg/InteractionZone" unique_id=1123267978]
+position = Vector2(1.9999542, -15.628593)
+shape = SubResource("RectangleShape2D_shhik")
+
+[node name="Startpoint" type="Marker2D" parent="." unique_id=417889396]
+
+[node name="Endpoint" type="Marker2D" parent="." unique_id=705543088]
+position = Vector2(1008, -623)
+
+[node name="Middlepoint" type="Marker2D" parent="." unique_id=397397600]
+position = Vector2(377, -807)
+scale = Vector2(0.5, 0.5)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2029680461]
+width = 8.0
+default_color = Color(0.7275229, 0.76235574, 0.664347, 0.654902)
+joint_mode = 2
+antialiased = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=2029360696]
+position = Vector2(1246, -448)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1600792086]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xelrh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=933507957]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-192, -194, -192, -192.3, -194, -191.2, -194, 192, 194, 192, 194, -192)

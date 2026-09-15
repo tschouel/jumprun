@@ -10,10 +10,10 @@ solid_block_depth = 20.0
 bounce_velocity = 1500.0
 
 [node name="AnchorLeft" type="Marker2D" parent="." unique_id=1138421449]
-position = Vector2(91, -154)
+position = Vector2(-678.1288, -9.232544)
 
 [node name="AnchorRight" type="Marker2D" parent="." unique_id=176412402]
-position = Vector2(734, -355)
+position = Vector2(-6.1287537, -15.232544)
 
 [node name="StringLine" type="Line2D" parent="." unique_id=901622392]
 unique_name_in_owner = true
@@ -32,5 +32,6 @@ unique_name_in_owner = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SolidBlock" unique_id=790867579]
 
 [node name="Ukulele" type="Sprite2D" parent="." unique_id=1044888036]
-position = Vector2(410, -196)
+position = Vector2(-364.12875, 39.76746)
+rotation = 0.29147
 texture = ExtResource("2_ml70y")

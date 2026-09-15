@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://5f1uwxulouoi"]
+
+[ext_resource type="PackedScene" uid="uid://bitrk61nlwmut" path="res://string_harp.tscn" id="1_v42wu"]
+[ext_resource type="Script" uid="uid://ctqw6gd2ofaxj" path="res://sliding_obstacle_sequencer.gd" id="2_o286b"]
+[ext_resource type="Script" uid="uid://q3e40vrqcq25" path="res://sliding_obstacle_step.gd" id="3_ytm4l"]
+[ext_resource type="PackedScene" uid="uid://uymmwup660xg" path="res://obstacleslide.tscn" id="4_yfd3b"]
+[ext_resource type="Script" uid="uid://baf6qsjuhshdq" path="res://sliding_path_visual.gd" id="5_e5d5a"]
+[ext_resource type="Script" uid="uid://bk0vv8qsyk1ys" path="res://slidingzone.gd" id="6_7e7wg"]
+[ext_resource type="PackedScene" uid="uid://pp8h55papmcy" path="res://Use_F.tscn" id="7_3wrmj"]
+[ext_resource type="PackedScene" uid="uid://i5yg6y73j2je" path="res://Screenfade.tscn" id="8_n6oob"]
+
+[sub_resource type="Curve2D" id="Curve2D_b34n4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8925, -1431, 0, 0, 0, 0, 9279, -1347, 0, 0, 0, 0, 16739, 1961)
+}
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_eb6hj"]
+script = ExtResource("3_ytm4l")
+beats = 5.0
+obstacle_scene = ExtResource("4_yfd3b")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_8mwl4"]
+script = ExtResource("3_ytm4l")
+obstacle_scene = ExtResource("4_yfd3b")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_ebsb2"]
+script = ExtResource("3_ytm4l")
+obstacle_scene = ExtResource("4_yfd3b")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_8fc1w"]
+script = ExtResource("3_ytm4l")
+obstacle_scene = ExtResource("4_yfd3b")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_jajrg"]
+script = ExtResource("3_ytm4l")
+obstacle_scene = ExtResource("4_yfd3b")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
+size = Vector2(87, 211)
+
+[node name="Sliding" type="Area2D" unique_id=1760192210]
+
+[node name="StringHarp" parent="." unique_id=552625837 node_paths=PackedStringArray("start_point", "end_point") instance=ExtResource("1_v42wu")]
+position = Vector2(9101, -1387)
+start_point = NodePath("start")
+end_point = NodePath("end")
+count = 21
+spacing = 80.0
+
+[node name="start" type="Marker2D" parent="StringHarp" unique_id=2059667926]
+position = Vector2(2021, 3530)
+
+[node name="end" type="Marker2D" parent="StringHarp" unique_id=377775280]
+position = Vector2(5428, -1812)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2084953863]
+curve = SubResource("Curve2D_b34n4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=560323514]
+position = Vector2(8925, -1431)
+rotation = 0.23297924
+loop = false
+
+[node name="sequencer" type="Node2D" parent="Path2D" unique_id=1048143286 node_paths=PackedStringArray("path")]
+position = Vector2(1, 0)
+script = ExtResource("2_o286b")
+path = NodePath("..")
+slide_speed = 800.0
+steps = Array[ExtResource("3_ytm4l")]([SubResource("Resource_eb6hj"), SubResource("Resource_8mwl4"), SubResource("Resource_ebsb2"), SubResource("Resource_8fc1w"), SubResource("Resource_jajrg")])
+perpendicular_offset = 10.0
+
+[node name="SlidingPath" type="Node2D" parent="Path2D" unique_id=631075304 node_paths=PackedStringArray("path")]
+script = ExtResource("5_e5d5a")
+path = NodePath("..")
+line_width = 10.0
+
+[node name="SlidingZoneStart" type="Area2D" parent="." unique_id=1844679901 node_paths=PackedStringArray("path_follow", "respawn_point", "screen_fade", "f_prompt_sprite")]
+script = ExtResource("6_7e7wg")
+path_follow = NodePath("../Path2D/PathFollow2D")
+override_bpm = 140.0
+override_units_per_bar = 2500.0
+respawn_point = NodePath("Respawn")
+screen_fade = NodePath("../Screenfade")
+f_prompt_sprite = NodePath("../UseF")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlidingZoneStart" unique_id=459853716]
+position = Vector2(8944.5, -1510)
+shape = SubResource("RectangleShape2D_3gcn6")
+
+[node name="Respawn" type="Marker2D" parent="SlidingZoneStart" unique_id=1489944062]
+position = Vector2(8769, -1523)
+
+[node name="UseF" parent="." unique_id=1096380668 instance=ExtResource("7_3wrmj")]
+position = Vector2(8954, -1582)
+scale = Vector2(0.25, 0.25)
+
+[node name="Screenfade" parent="." unique_id=2127022392 instance=ExtResource("8_n6oob")]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://buccluavwr2lr"]
+
+[ext_resource type="Script" uid="uid://d4dpahkr5i65m" path="res://ramp_pie_control.gd" id="1_apiho"]
+[ext_resource type="Script" uid="uid://cpay6bmuq7bi5" path="res://ramp_timer_ui.gd" id="1_pwxwt"]
+
+[node name="RampTimerUI" type="CanvasLayer" unique_id=35372267]
+script = ExtResource("1_pwxwt")
+
+[node name="PromptContainer" type="CenterContainer" parent="." unique_id=1067233954]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PieControl" type="Control" parent="PromptContainer" unique_id=1534162052]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("1_apiho")
+
+[node name="KeyLabel" type="Label" parent="PromptContainer/PieControl" unique_id=1369357632]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

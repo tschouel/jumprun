@@ -140,10 +140,9 @@ size = Vector2(20, 28.722223)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f6i5"]
 size = Vector2(36.33701, 9.318848)
 
-[node name="Gopichand" type="Area2D" unique_id=666133277 node_paths=PackedStringArray("interaction_zone", "player", "string_node", "call_and_response", "pluck_sprite")]
+[node name="Gopichand" type="Area2D" unique_id=666133277 node_paths=PackedStringArray("interaction_zone", "string_node", "call_and_response", "pluck_sprite")]
 script = ExtResource("1_6617k")
 interaction_zone = NodePath("InteractionZone")
-player = NodePath("")
 string_node = NodePath("Saite")
 call_and_response = NodePath("Callandresponse")
 pluck_sprite = NodePath("animation/PedalRechts")
@@ -248,11 +247,15 @@ feedback_label = NodePath("../Label")
 success_target = NodePath("../LevelStringDisplay")
 final_target = NodePath("../tunerbutterflycontroller")
 
-[node name="tunerbutterflycontroller" type="Node" parent="." unique_id=566946090 node_paths=PackedStringArray("player", "butterflies")]
+[node name="tunerbutterflycontroller" type="Node" parent="." unique_id=566946090 node_paths=PackedStringArray("gopichand", "butterflies", "level_build_targets")]
 script = ExtResource("24_vr6rc")
-player = NodePath("")
 camera_zoom_target = Vector2(0.3, 0.3)
-butterflies = [NodePath("../TunerButterfly"), NodePath("../TunerButterfly2"), NodePath("../TunerButterfly3")]
+camera_offset_x = 500.0
+gopichand = NodePath("..")
+exit_lock_duration = 4.0
+butterflies = [NodePath("../TunerButterfly"), NodePath("../TunerButterfly2"), NodePath("../TunerButterfly3"), NodePath("../TunerOben1/TunerButterfly4"), NodePath("../TunerOben2/TunerButterfly5"), NodePath("../TunerOben3/TunerButterfly6"), NodePath("../TunerOben4/TunerButterfly7"), NodePath("../TunerButterfly8")]
+stagger_delay = 0.2
+level_build_targets = [null, null, null, null, null]
 
 [node name="Label" type="Label" parent="." unique_id=2014038529]
 offset_left = 1313.0
@@ -277,19 +280,86 @@ position = Vector2(2104, -330)
 position = Vector2(2096, -1609)
 
 [node name="TunerButterfly" parent="." unique_id=1235848640 instance=ExtResource("27_kt4yg")]
-position = Vector2(2763, -68)
+position = Vector2(2826, -68)
+frame = 0
+frame_progress = 0.0
 move_from_offset = Vector2(0, 2000)
 move_duration = 4.0
 loop_count = 5
 
 [node name="TunerButterfly2" parent="." unique_id=566693395 instance=ExtResource("27_kt4yg")]
-position = Vector2(3262, -84)
+position = Vector2(3582, -64)
 move_from_offset = Vector2(0, 2000)
 move_duration = 4.0
 loop_count = 5
 
 [node name="TunerButterfly3" parent="." unique_id=638506664 instance=ExtResource("27_kt4yg")]
-position = Vector2(3822, -83)
+position = Vector2(4318, -59)
 move_from_offset = Vector2(0, 2000)
 move_duration = 4.0
 loop_count = 5
+
+[node name="TunerButterfly8" parent="." unique_id=30409577 instance=ExtResource("27_kt4yg")]
+position = Vector2(5051, -55)
+move_from_offset = Vector2(0, 2000)
+move_duration = 4.0
+loop_count = 5
+
+[node name="TunerOben1" type="StaticBody2D" parent="." unique_id=2037828028]
+
+[node name="TunerButterfly4" parent="TunerOben1" unique_id=103297283 instance=ExtResource("27_kt4yg")]
+position = Vector2(2842, -902)
+rotation = -3.1415925
+frame = 0
+frame_progress = 0.0
+move_from_offset = Vector2(0, -2000)
+move_duration = 4.0
+loop_count = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TunerOben1" unique_id=105597587]
+polygon = PackedVector2Array(2806, -1098, 2846, -1104, 2889, -1103, 2891, -1013, 2880, -1007, 2879, -904, 2893, -892, 2895, -858, 3003, -833, 3020, -808, 3014, -771, 2898, -751, 2688, -764, 2663, -803, 2691, -849, 2787, -864, 2789, -894, 2811, -904, 2814, -1010, 2806, -1017)
+
+[node name="TunerOben2" type="StaticBody2D" parent="." unique_id=330342817]
+
+[node name="TunerButterfly5" parent="TunerOben2" unique_id=990605783 instance=ExtResource("27_kt4yg")]
+position = Vector2(3582, -898)
+rotation = -3.1415925
+frame = 0
+frame_progress = 0.0
+move_from_offset = Vector2(0, -2000)
+move_duration = 4.0
+loop_count = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TunerOben2" unique_id=1558455446]
+position = Vector2(740, -1)
+polygon = PackedVector2Array(2806, -1098, 2846, -1104, 2889, -1103, 2891, -1013, 2880, -1007, 2879, -904, 2893, -892, 2895, -858, 3003, -833, 3020, -808, 3014, -771, 2898, -751, 2688, -764, 2663, -803, 2691, -849, 2787, -864, 2789, -894, 2811, -904, 2814, -1010, 2806, -1017)
+
+[node name="TunerOben3" type="StaticBody2D" parent="." unique_id=1708934337]
+
+[node name="TunerButterfly6" parent="TunerOben3" unique_id=1091309007 instance=ExtResource("27_kt4yg")]
+position = Vector2(4302, -898)
+rotation = -3.1415925
+frame = 0
+frame_progress = 0.0
+move_from_offset = Vector2(0, -2000)
+move_duration = 4.0
+loop_count = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TunerOben3" unique_id=966013172]
+position = Vector2(1459, 9)
+polygon = PackedVector2Array(2806, -1098, 2846, -1104, 2889, -1103, 2891, -1013, 2880, -1007, 2879, -904, 2893, -892, 2895, -858, 3003, -833, 3020, -808, 3014, -771, 2898, -751, 2688, -764, 2663, -803, 2691, -849, 2787, -864, 2789, -894, 2811, -904, 2814, -1010, 2806, -1017)
+
+[node name="TunerOben4" type="StaticBody2D" parent="." unique_id=1443729532]
+
+[node name="TunerButterfly7" parent="TunerOben4" unique_id=598315816 instance=ExtResource("27_kt4yg")]
+position = Vector2(5046, -898)
+rotation = -3.1415925
+frame = 0
+frame_progress = 0.0
+move_from_offset = Vector2(0, -2000)
+move_duration = 4.0
+loop_count = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TunerOben4" unique_id=188289760]
+position = Vector2(2205, 4)
+polygon = PackedVector2Array(2806, -1098, 2846, -1104, 2889, -1103, 2891, -1013, 2880, -1007, 2879, -904, 2893, -892, 2895, -858, 3003, -833, 3020, -808, 3014, -771, 2898, -751, 2688, -764, 2663, -803, 2691, -849, 2787, -864, 2789, -894, 2811, -904, 2814, -1010, 2806, -1017)

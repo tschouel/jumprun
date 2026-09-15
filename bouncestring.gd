@@ -22,6 +22,18 @@ class_name BounceString
 ## beide Saitentypen im Spiel einheitlich aussehen. Ebenfalls mit dem
 ## gleichen Mehrfach-Bounce-Fix wie MusicString.gd.
 ##
+## OPTIONAL - PEG-DREHUNG: Falls tuning_peg gesetzt ist, dreht sich die
+## GESAMTE Saite (dieser Node, samt AnchorLeft/AnchorRight/StringLine/
+## BounceArea/SolidBlock als Kinder) auf einen fest definierten
+## rotation_degrees-Wert, sobald sich die Stufe (level) des TuningPeg
+## aendert - ein Wert pro Stufe, siehe rotations_degrees. Da sich dabei die
+## Anchor-Positionen mitdrehen, aendert sich automatisch auch die
+## Bounce-Richtung (siehe _get_bounce_direction) - genau wie beim manuellen
+## Drehen im Editor. Die Start-Rotation wird per call_deferred angewendet,
+## NICHT direkt in _ready() - so ist es egal, ob dieser Node oder der
+## TuningPeg im Szenenbaum zuerst drankommt: tuning_peg.level ist zum
+## Zeitpunkt des deferred Calls garantiert schon auf start_level gesetzt.
+##
 ## SETUP:
 ## 1. AnchorLeft und AnchorRight (Marker2D) im Editor auf die zwei
 ##    Befestigungspunkte der Saite ziehen. Die NEIGUNG dieser beiden Punkte
@@ -41,6 +53,8 @@ class_name BounceString
 ##    gelangt. Ohne diesen Node funktioniert die Saite trotzdem, nur kann
 ##    der Spieler dann bei starkem Durchhang eventuell seitlich darunter
 ##    hindurchlaufen.
+## 5. OPTIONAL, fuer Peg-Drehung: tuning_peg auf einen TuningPeg zeigen
+##    lassen, rotations_degrees mit einem Gradwert pro Peg-Stufe fuellen.
 
 @export_group("Durchhang (Line2D-Kurve)")
 ## Wie stark die Saite durchhaengt (in Pixeln). Kleiner = straffer gespannt.
@@ -82,6 +96,23 @@ class_name BounceString
 ## der Saite aufkommt.
 @export_range(0.01, 0.49, 0.01) var vibration_edge_margin: float = 0.05
 
+@export_group("Optik (Line2D)")
+## Schaltet Antialiasing sowie runde Gelenke/Enden fuer StringLine ein -
+## behebt das treppige/pixelige Aussehen bei schraegen Linien, rein optisch,
+## kein Einfluss auf Physik/Kollision/Verhalten.
+@export var smooth_line_rendering: bool = true
+
+@export_group("Peg-Drehung (optional)")
+## TuningPeg, dessen Stufe (level) diese Saite dreht. Leer lassen, um diese
+## Saite fest/unbeweglich zu lassen.
+@export var tuning_peg: TuningPeg
+## Ein Rotationswert (in Grad) pro Peg-Stufe (Index 0 = level 0, Index 1 =
+## level 1, usw.). Weniger Werte als Stufen -> fehlende Stufen behalten den
+## letzten definierten Wert.
+@export var rotations_degrees: PackedFloat32Array = PackedFloat32Array([0.0, 90.0, 180.0, 270.0])
+## 0.0 = sofort springen, > 0 = ueber diese Dauer sanft drehen.
+@export var rotation_duration: float = 0.3
+
 @onready var anchor_left: Marker2D = $AnchorLeft
 @onready var anchor_right: Marker2D = $AnchorRight
 @onready var string_line: Line2D = %StringLine
@@ -91,17 +122,14 @@ class_name BounceString
 @onready var solid_block: StaticBody2D = get_node_or_null("%SolidBlock")
 @onready var solid_block_collision: CollisionPolygon2D = get_node_or_null("%SolidBlock/CollisionPolygon2D")
 
-@export_group("Optik (Line2D)")
-## Schaltet Antialiasing sowie runde Gelenke/Enden fuer StringLine ein -
-## behebt das treppige/pixelige Aussehen bei schraegen Linien, rein optisch,
-## kein Einfluss auf Physik/Kollision/Verhalten.
-@export var smooth_line_rendering: bool = true
-
 ## body -> true, solange dieser Koerper gerade "bounce-bereit" ist - gleicher
 ## Mehrfach-Bounce-Schutz wie in MusicString.gd.
 var _bodies_falling_ready: Dictionary = {}
 var _vibration_time: float = -1.0  # -1 = keine Vibration aktiv
 var _vibration_center_t: float = 0.5
+
+var _rotation_tween: Tween
+var _is_rotating: bool = false
 
 func _ready() -> void:
 	if smooth_line_rendering:
@@ -109,6 +137,18 @@ func _ready() -> void:
 	_rebuild_visual_and_collision()
 	bounce_area.body_entered.connect(_on_bounce_area_body_entered)
 	bounce_area.body_exited.connect(_on_bounce_area_body_exited)
+
+	if tuning_peg:
+		tuning_peg.level_changed.connect(_on_peg_level_changed)
+		call_deferred("_apply_initial_peg_rotation")
+
+## Wird erst NACH der kompletten Baum-Initialisierung aufgerufen (siehe
+## call_deferred oben) - dadurch ist tuning_peg.level garantiert schon auf
+## start_level gesetzt, egal ob dieser Node oder der TuningPeg im
+## Szenenbaum zuerst drankommt.
+func _apply_initial_peg_rotation() -> void:
+	if tuning_peg:
+		_apply_peg_rotation(tuning_peg.level, false)
 
 ## Rein optische Zeicheneinstellungen fuer ein Line2D: Antialiasing an,
 ## runde Gelenke/Enden statt eckiger. Behebt das treppige Aussehen bei
@@ -168,12 +208,41 @@ func _start_vibration(impact_t: float = 0.5) -> void:
 	_vibration_time = 0.0
 
 func _process(delta: float) -> void:
+	var needs_rebuild: bool = false
 	if _vibration_time >= 0.0:
 		_vibration_time += delta
 		var amp: float = vibration_amplitude * exp(-vibration_decay * _vibration_time)
 		if amp < 0.5:
 			_vibration_time = -1.0
+		needs_rebuild = true
+	if _is_rotating:
+		needs_rebuild = true
+	if needs_rebuild:
 		_rebuild_visual_and_collision()
+
+## Wird bei jeder Aenderung der Peg-Stufe aufgerufen (siehe tuning_peg
+## oben) und dreht diesen Node (samt allen Kindern: Anchors, StringLine,
+## BounceArea, SolidBlock) auf den fuer diese Stufe hinterlegten Gradwert.
+func _on_peg_level_changed(new_level: int) -> void:
+	_apply_peg_rotation(new_level, true)
+
+func _apply_peg_rotation(level: int, animate: bool) -> void:
+	if rotations_degrees.is_empty():
+		return
+	var index: int = clampi(level, 0, rotations_degrees.size() - 1)
+	var target_degrees: float = rotations_degrees[index]
+
+	if not animate or rotation_duration <= 0.0:
+		rotation_degrees = target_degrees
+		_rebuild_visual_and_collision()
+		return
+
+	if _rotation_tween and _rotation_tween.is_valid():
+		_rotation_tween.kill()
+	_is_rotating = true
+	_rotation_tween = create_tween()
+	_rotation_tween.tween_property(self, "rotation_degrees", target_degrees, rotation_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	_rotation_tween.finished.connect(func(): _is_rotating = false)
 
 ## Berechnet die Flaechennormale der Saite (senkrecht zur Verbindungslinie
 ## AnchorLeft->AnchorRight), IMMER nach oben orientiert (negative Y-Haelfte)

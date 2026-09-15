@@ -5,10 +5,12 @@ class_name MusicString
 ## max_tension mal nachgespannt (request_tension_increase) oder wieder
 ## gelockert (request_tension_decrease) werden kann. Je hoeher die Spannung,
 ## desto weniger haengt die Saite durch UND desto staerker federt sie, wenn
-## der Spieler reinfaellt. Ist max_tension erreicht und wird trotzdem
-## request_tension_increase() aufgerufen, spielt der Stimmschluessel eine
-## eigene "schon ganz gespannt"-Animation ab, statt dass irgendwas reisst
-## (keine Reissmechanik mehr in diesem Skript - dafuer gibt es StringWall.gd).
+## der Spieler reinfaellt. Ist max_tension erreicht bzw. Spannung 0
+## unterschritten und wird trotzdem request_tension_increase()/
+## request_tension_decrease() aufgerufen, spielt der Stimmschluessel eine
+## eigene "schon am Limit"-Animation ab, statt dass irgendwas reisst oder
+## einfach nichts passiert (keine Reissmechanik mehr in diesem Skript -
+## dafuer gibt es StringWall.gd).
 ##
 ## VIBRATION IST NUR VISUELL, NIEMALS PHYSISCH:
 ## Es gibt zwei getrennte Kurvenfunktionen. _curve_point_global(t) liefert
@@ -81,8 +83,8 @@ class_name MusicString
 ## 3. TuningPeg (AnimatedSprite2D) als Kind, als Scene Unique Name markieren.
 ##    Zwei Animationen ohne Loop noetig: eine normale Dreh-Animation
 ##    (tuning_peg_animation, z.B. "turn") und eine fuer den Fall, dass schon
-##    voll gespannt ist und man trotzdem weiter drehen will
-##    (tuning_peg_max_animation, z.B. "turn_stuck" - z.B. ein kurzes
+##    voll gespannt ist (oder schon bei 0) und man trotzdem weiter drehen
+##    will (tuning_peg_max_animation, z.B. "turn_stuck" - z.B. ein kurzes
 ##    Rattern/Anschlagen statt einer vollen Umdrehung).
 ## 4. BounceArea (Area2D) + CollisionPolygon2D als Kind, beide als Scene
 ##    Unique Name markieren. Polygon-Punkte werden automatisch gesetzt
@@ -174,8 +176,9 @@ signal tension_changed(new_level: int)
 ## Name der normalen Dreh-Animation (Loop AUS).
 @export var tuning_peg_animation: String = "turn"
 ## Name der Animation, die abgespielt wird, wenn man versucht ueber
-## max_tension hinaus anzuspannen (Loop AUS). Rein optisches Feedback, es
-## passiert danach nichts weiter (kein Reissen in diesem Skript).
+## max_tension hinaus anzuspannen ODER unter 0 zu lockern (Loop AUS). Rein
+## optisches Feedback an BEIDEN Limits, es passiert danach nichts weiter
+## (kein Reissen in diesem Skript, keine Spannungsaenderung).
 @export var tuning_peg_max_animation: String = "turn_stuck"
 
 @export_group("Optik (Line2D)")
@@ -253,16 +256,23 @@ func request_tension_increase() -> bool:
 ## Von einem TensionTrigger.gd aufgerufen, wenn der Spieler in der Zone die
 ## Lockern-Taste drueckt. Spielt die normale Dreh-Animation RUECKWAERTS ab
 ## (play_backwards() - speed_scale = -1.0 ist in Godot 4 unzuverlaessig).
-## Bei Spannung 0 passiert nichts (gibt false zurueck).
+## Ist bereits Spannung 0 erreicht, spielt stattdessen tuning_peg_max_animation
+## ab - dasselbe "schon am Limit"-Feedback wie beim Ueberdrehen nach oben bei
+## request_tension_increase, nur eben am unteren Ende. Reines optisches
+## Feedback, die Spannung aendert sich dabei NICHT. Gibt true zurueck, wenn
+## tatsaechlich eine Animation gestartet wurde.
 func request_tension_decrease() -> bool:
 	if _is_turning:
 		return false
-	if tension_level <= 0:
-		return false
 	_is_turning = true
-	_pending_action = PendingAction.DECREASE
-	_active_anim_name = tuning_peg_animation
-	tuning_peg.play_backwards(tuning_peg_animation)
+	if tension_level <= 0:
+		_pending_action = PendingAction.MAX_FEEDBACK
+		_active_anim_name = tuning_peg_max_animation
+		tuning_peg.play(tuning_peg_max_animation)
+	else:
+		_pending_action = PendingAction.DECREASE
+		_active_anim_name = tuning_peg_animation
+		tuning_peg.play_backwards(tuning_peg_animation)
 	return true
 
 func _on_tuning_peg_animation_finished() -> void:

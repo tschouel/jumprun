@@ -40,11 +40,17 @@ var is_ground_active: bool = true
 ## zwischen der alten PathMovement (einspurig) und PathBassMovement
 ## (mehrspurig) unterscheiden kann.
 var is_bass_slide_active: bool = false
+## Aktiv, waehrend der Schanzen-Launch/Zeitlupen-Minigame-Sequenz laeuft
+## (von RampSlideZone.handle_path_end() gesetzt). Waehrenddessen uebernimmt
+## PathRampMovement komplett - keine move_and_slide(), keine anderen
+## Module.
+var is_ramp_launch_active: bool = false
 # Modul-Referenzen
 @onready var flying_module = $FlyingMovement
 @onready var ground_module = $GroundMovement
 @onready var path_module = $PathMovement
 @onready var bass_path_module = $PathBassMovement
+@onready var ramp_path_module = $PathRampMovement
 @onready var driving_module = $DrivingMovement
 @onready var lane_module = $LaneMovement
 var _last_global_x: float = 0.0
@@ -74,6 +80,8 @@ func _ready() -> void:
 		path_module.setup(self)
 	if bass_path_module:
 		bass_path_module.setup(self)
+	if ramp_path_module:
+		ramp_path_module.setup(self)
 	if driving_module:
 		driving_module.setup(self)
 	if lane_module:
@@ -134,19 +142,27 @@ func _physics_process(delta: float) -> void:
 			flying_module.process_movement(delta)
 		move_and_slide()
 		return
-	# 4. Kontrabass-Pfad-Modus (mehrspurig, per Taste F gestartet) - MUSS
+	# 4. Schanzen-Launch/Zeitlupen-Minigame (eigene Flugbahn-Integration
+	# OHNE move_and_slide) - MUSS vor dem Kontrabass- UND dem normalen
+	# Pfad-Modus geprueft werden, da is_on_path waehrenddessen bereits
+	# false ist, aber trotzdem keines der anderen Module laufen soll.
+	if is_ramp_launch_active:
+		if ramp_path_module:
+			ramp_path_module.process_movement(delta)
+		return
+	# 5. Kontrabass-Pfad-Modus (mehrspurig, per Taste F gestartet) - MUSS
 	# vor dem normalen Pfad-Modus geprüft werden, da is_on_path in beiden
 	# Fällen true ist, aber unterschiedliche Module ansteuert.
 	if is_bass_slide_active:
 		if bass_path_module:
 			bass_path_module.process_movement(delta)
 		return
-	# 5. Pfad- / Schlitten-Modus (auf vorgegebenem Pfad)
+	# 6. Pfad- / Schlitten-Modus (auf vorgegebenem Pfad)
 	if is_on_path:
 		if path_module:
 			path_module.process_movement(delta)
 		return
-	# 6. Normaler Boden-Modus (Standard = Sliding / Schlittern, ausser Fermata ist aktiv)
+	# 7. Normaler Boden-Modus (Standard = Sliding / Schlittern, ausser Fermata ist aktiv)
 	_check_default_sprite_state()
 	if ground_module:
 		ground_module.process_movement(delta)

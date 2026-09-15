@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://btmaiciliu3dr"]
+
+[ext_resource type="Script" uid="uid://ctqw6gd2ofaxj" path="res://sliding_obstacle_sequencer.gd" id="1_7ksro"]
+[ext_resource type="Script" uid="uid://bk0vv8qsyk1ys" path="res://slidingzone.gd" id="1_037yh"]
+[ext_resource type="PackedScene" uid="uid://pp8h55papmcy" path="res://Use_F.tscn" id="1_lqovw"]
+[ext_resource type="Script" uid="uid://q3e40vrqcq25" path="res://sliding_obstacle_step.gd" id="2_fnqy6"]
+[ext_resource type="PackedScene" uid="uid://uymmwup660xg" path="res://obstacleslide.tscn" id="3_xxf1y"]
+[ext_resource type="Script" uid="uid://dcofjluqli2dy" path="res://ramp_test_sequencer.gd" id="4_yxlkw"]
+[ext_resource type="Script" uid="uid://smkq6ksahmkk" path="res://RampTestTiming.gd" id="5_yxlkw"]
+[ext_resource type="Script" uid="uid://baf6qsjuhshdq" path="res://sliding_path_visual.gd" id="6_huxdx"]
+[ext_resource type="Script" uid="uid://c1b3lbjvmpy4p" path="res://RampTestEntry.gd" id="6_ruwx6"]
+[ext_resource type="PackedScene" uid="uid://buccluavwr2lr" path="res://ramp_timer_ui.tscn" id="7_lqovw"]
+[ext_resource type="PackedScene" uid="uid://i5yg6y73j2je" path="res://Screenfade.tscn" id="11_ppbg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0jqh"]
+size = Vector2(152, 253)
+
+[sub_resource type="Curve2D" id="Curve2D_huxdx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, -3, 0, 0, 0, 0, 127, 128, 0, 0, 0, 0, 480, 593, 0, 0, 0, 0, 1103, 1296, -346.93903, -102.30253, 346.93903, 102.30253, 1851, 1846, 0, 0, 0, 0, 2810, 1508, -369.17868, 88.958725, 369.17868, -88.958725, 3575, 1170, 0, 0, 0, 0, 4375, 1546, -651.22235, -19.53667, 651.22235, 19.53667, 6898.9863, 3005.5732, -449.34344, 97.68336, 449.34344, -97.68336, 8547, 2068, 0, 0, 0, 0, 9465, 2263, -1632.1454, 67.828064, 1632.1454, -67.828064, 12895, 4162)
+}
+point_count = 12
+
+[sub_resource type="Resource" id="Resource_eb6hj"]
+script = ExtResource("2_fnqy6")
+beats = 5.0
+obstacle_scene = ExtResource("3_xxf1y")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_8mwl4"]
+script = ExtResource("2_fnqy6")
+obstacle_scene = ExtResource("3_xxf1y")
+metadata/_custom_type_script = "uid://q3e40vrqcq25"
+
+[sub_resource type="Resource" id="Resource_ruwx6"]
+script = ExtResource("5_yxlkw")
+start_bars = 1
+start_beats = 2.0
+bpm = 100.0
+metadata/_custom_type_script = "uid://smkq6ksahmkk"
+
+[sub_resource type="Resource" id="Resource_ppbg6"]
+script = ExtResource("6_ruwx6")
+timing = SubResource("Resource_ruwx6")
+required_key = 4194320
+metadata/_custom_type_script = "uid://c1b3lbjvmpy4p"
+
+[sub_resource type="Resource" id="Resource_32a41"]
+script = ExtResource("5_yxlkw")
+start_bars = 3
+bpm = 100.0
+metadata/_custom_type_script = "uid://smkq6ksahmkk"
+
+[sub_resource type="Resource" id="Resource_wet32"]
+script = ExtResource("6_ruwx6")
+timing = SubResource("Resource_32a41")
+required_key = 4194320
+metadata/_custom_type_script = "uid://c1b3lbjvmpy4p"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqovw"]
+size = Vector2(4.71, 373.44922)
+
+[node name="SlideJumpSlide" type="Node2D" unique_id=11059178]
+
+[node name="SlidingZone" type="Area2D" parent="." unique_id=1330477246 node_paths=PackedStringArray("path_follow", "respawn_point", "screen_fade", "f_prompt_sprite")]
+script = ExtResource("1_037yh")
+path_follow = NodePath("RampPath/PathFollow2D")
+respawn_point = NodePath("RespawnPoint")
+screen_fade = NodePath("../Screenfade")
+f_prompt_sprite = NodePath("../UseF")
+
+[node name="RespawnPoint" type="Marker2D" parent="SlidingZone" unique_id=1734205959]
+position = Vector2(-328, -97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlidingZone" unique_id=320793234]
+position = Vector2(66, -116.5)
+shape = SubResource("RectangleShape2D_u0jqh")
+
+[node name="RampPath" type="Path2D" parent="SlidingZone" unique_id=437713209]
+curve = SubResource("Curve2D_huxdx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SlidingZone/RampPath" unique_id=187108751]
+position = Vector2(-2, -3)
+rotation = 0.79309034
+loop = false
+
+[node name="sequencer" type="Node2D" parent="SlidingZone/RampPath" unique_id=286444406 node_paths=PackedStringArray("path")]
+position = Vector2(1, 0)
+script = ExtResource("1_7ksro")
+path = NodePath("..")
+slide_speed = 1100.0
+steps = Array[ExtResource("2_fnqy6")]([SubResource("Resource_eb6hj"), SubResource("Resource_8mwl4")])
+perpendicular_offset = 10.0
+
+[node name="RampTestSequencer" type="Node2D" parent="SlidingZone/RampPath" unique_id=376978472 node_paths=PackedStringArray("path", "timer_ui")]
+script = ExtResource("4_yxlkw")
+path = NodePath("..")
+tests = Array[ExtResource("6_ruwx6")]([SubResource("Resource_ppbg6"), SubResource("Resource_wet32")])
+slowdown_factor = 0.25
+timer_ui = NodePath("../RampTimerUI")
+fail_fall_duration = 1.0
+marker_radius = 30.0
+
+[node name="Boden" type="StaticBody2D" parent="SlidingZone/RampPath/RampTestSequencer" unique_id=493149847]
+position = Vector2(-980.9999, 154.00002)
+scale = Vector2(0.6932027, 0.2611028)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SlidingZone/RampPath/RampTestSequencer/Boden" unique_id=1454310576]
+position = Vector2(1141.7661, -363.8803)
+scale = Vector2(400, 1)
+shape = SubResource("RectangleShape2D_lqovw")
+
+[node name="ColorRect" type="ColorRect" parent="SlidingZone/RampPath/RampTestSequencer/Boden" unique_id=1994496564]
+offset_left = 191.86293
+offset_top = -559.1668
+offset_right = 231.86293
+offset_bottom = -519.1668
+scale = Vector2(47.43999, 1)
+color = Color(0.24, 0.24, 0.24, 1)
+
+[node name="Screenfade" parent="SlidingZone/RampPath/RampTestSequencer" unique_id=2127022392 instance=ExtResource("11_ppbg6")]
+
+[node name="SlidingPathVisual" type="Node2D" parent="SlidingZone/RampPath" unique_id=1682795058 node_paths=PackedStringArray("path", "hidden_segment_source")]
+script = ExtResource("6_huxdx")
+path = NodePath("..")
+line_width = 10.0
+hidden_segment_source = NodePath("../RampTestSequencer")
+
+[node name="RampTimerUI" parent="SlidingZone/RampPath" unique_id=35372267 node_paths=PackedStringArray("prompt_container", "key_label", "pie") instance=ExtResource("7_lqovw")]
+prompt_container = NodePath("PromptContainer")
+key_label = NodePath("PromptContainer/PieControl/KeyLabel")
+pie = NodePath("PromptContainer/PieControl")
+
+[node name="UseF" parent="." unique_id=1096380668 instance=ExtResource("1_lqovw")]
+position = Vector2(65, -211)
+scale = Vector2(0.25, 0.25)
+animation = &"lr"
+frame_progress = 0.42953482
+
+[node name="Screenfade" parent="." unique_id=960213274 instance=ExtResource("11_ppbg6")]
+
+[editable path="SlidingZone/RampPath/RampTimerUI"]

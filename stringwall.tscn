@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ls8mci38tnq" path="res://animation/__Key5.png" id="6_ae4om"]
 [ext_resource type="Texture2D" uid="uid://d2rw0mw5q1gr" path="res://animation/__Key6.png" id="7_llin7"]
 [ext_resource type="Script" uid="uid://df0h3vkd32fvv" path="res://tension_trigger.gd" id="8_2fd6r"]
-[ext_resource type="Texture2D" uid="uid://by3acwj3j61wf" path="res://animation/Violin.png" id="9_4unyf"]
+[ext_resource type="Texture2D" uid="uid://blbpbjnk7mcpm" path="res://animation/special__Violin.png" id="9_wqj7m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
 animations = [{
@@ -65,6 +65,13 @@ break_gravity = 3000.0
 break_snap_strength = 100.0
 break_time_scale = 2.0
 
+[node name="SpecialViolin" type="Sprite2D" parent="." unique_id=1976410993]
+z_index = -10
+position = Vector2(273, -616)
+rotation = -0.3211406
+skew = -0.118682384
+texture = ExtResource("9_wqj7m")
+
 [node name="TuningPeg" type="AnimatedSprite2D" parent="." unique_id=1723540039]
 unique_name_in_owner = true
 position = Vector2(-4.5, -1122.5)
@@ -97,13 +104,6 @@ hand_grip = NodePath("../TuningPeg/HandPoint")
 position = Vector2(188.00002, -31.441162)
 scale = Vector2(4.534101, 19.641516)
 shape = SubResource("RectangleShape2D_c7v6u")
-
-[node name="Violin" type="Sprite2D" parent="." unique_id=589289601]
-z_index = -50
-position = Vector2(273.0001, -616)
-rotation = -0.32157204
-skew = -0.11869609
-texture = ExtResource("9_4unyf")
 
 [node name="StringLineRight" type="Line2D" parent="." unique_id=1912668374]
 unique_name_in_owner = true

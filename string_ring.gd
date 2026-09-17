@@ -9,16 +9,29 @@ class_name StringRing
 ## DAUER-VIBRATION (continuous_vibration): Ist dieses Flag gesetzt,
 ## schwingt die Saite ab _ready() (bzw. sobald das Flag zur Laufzeit auf
 ## true gesetzt wird) UNUNTERBROCHEN mit konstanter Staerke, statt nach
-## einer Beruehrung/pluck() abzuklingen - vibration_decay wird in diesem
-## Modus komplett ignoriert. Zentriert ist die Dauerschwingung bei t=0.5
-## (Mitte der Saite), es sei denn pluck() wurde zuvor mit einem anderen
-## impact_t aufgerufen - dann bleibt dieser Zentrierungspunkt bestehen.
-## Gedacht z.B. fuer "Erfolgs-Saiten" (siehe LevelStringDisplay.gd), die
-## dauerhaft sichtbar in Bewegung bleiben sollen, statt nach kurzem
-## Ausschwingen zur Ruhe zu kommen. touch() durch den Spieler funktioniert
-## in diesem Modus weiterhin (zentriert die Schwingung neu auf die
-## Beruehrungsstelle), klingt danach aber NICHT ab, sondern bleibt bei
-## voller Staerke weiterlaufen.
+## einer Beruehrung/pluck() abzuklingen - vibration_decay wird fuer DIESE
+## Grundschwingung komplett ignoriert. Zentriert ist die Dauerschwingung
+## bei t=0.5 (Mitte der Saite), es sei denn pluck() wurde zuvor mit einem
+## anderen impact_t aufgerufen - dann bleibt dieser Zentrierungspunkt
+## bestehen. Gedacht z.B. fuer "Erfolgs-Saiten" (siehe
+## LevelStringDisplay.gd), die dauerhaft sichtbar in Bewegung bleiben
+## sollen, statt nach kurzem Ausschwingen zur Ruhe zu kommen.
+##
+## SPIELER-BERUEHRUNG BEI DAUER-VIBRATION (continuous_touch_strength):
+## Die Dauer-Grundschwingung selbst bleibt von einer Beruehrung komplett
+## UNBERUEHRT (Staerke, Zentrierung, alles wie zuvor) - eine Beruehrung
+## legt stattdessen einen ZWEITEN, EIGENEN Ausschlag obendrauf, zentriert
+## auf die Beruehrungsstelle, der mit continuous_touch_strength startet
+## und dann ganz normal ueber vibration_decay wieder auf 0 abklingt (genau
+## wie bei einer nicht-dauerhaften Saite) - nur dass die Grundschwingung
+## danach unveraendert weiterlaeuft statt (wie bei nicht-dauerhaften
+## Saiten) komplett zur Ruhe zu kommen. continuous_touch_strength ist der
+## Start-Wert dieses Zusatz-Ausschlags: 1.0 = so kraeftig wie eine normale
+## Beruehrung anderswo, kleiner = von Anfang an schwaecher (z.B. 0.5 bei
+## LevelStringDisplay, weil die grosse override_vibration_amplitude dort
+## sonst zu stark wirkt). Wirkt NICHT auf externe pluck()-Aufrufe (z.B.
+## LevelStringDisplay's Aktivierungs-Zupfer beim Freischalten - der setzt
+## direkt die Grundschwingung).
 ##
 ## WELLENLAENGE UNABHAENGIG VON DER SAITENLAENGE:
 ## Die sichtbare Wellenanzahl haengt NICHT von einer festen Konstante ab,
@@ -51,8 +64,11 @@ class_name StringRing
 @export_group("Vibration")
 @export var vibration_amplitude: float = 10.0
 ## Wie SCHNELL die Vibration nach der Beruehrung wieder abklingt (pro
-## Sekunde). Groesser = schneller weg, kleiner = laenger sichtbar. Wird
-## ignoriert, solange continuous_vibration = true ist.
+## Sekunde). Groesser = schneller weg, kleiner = laenger sichtbar. Gilt
+## fuer die normale (nicht-dauerhafte) Saite direkt, und bei
+## continuous_vibration = true fuer den zusaetzlichen Beruehrungs-Ausschlag
+## (siehe continuous_touch_strength) - die Dauer-Grundschwingung selbst
+## ignoriert vibration_decay immer.
 @export_range(0.1, 10.0, 0.1) var vibration_decay: float = 2.5
 @export var vibration_frequency: float = 18.0
 ## Raeumliche Wellenlaenge in Pixeln - bestimmt, wie viele Wellenberge pro
@@ -61,8 +77,14 @@ class_name StringRing
 @export var wave_length_px: float = 40.0
 ## Wenn true: die Saite schwingt DAUERHAFT mit konstanter Staerke, statt
 ## nach einer Beruehrung/pluck() abzuklingen (siehe Klassenkommentar oben
-## zu DAUER-VIBRATION). vibration_decay wird dann ignoriert.
+## zu DAUER-VIBRATION). vibration_decay wird fuer diese Grundschwingung
+## dann ignoriert.
 @export var continuous_vibration: bool = false
+## Nur relevant bei continuous_vibration = true - Start-Staerke des
+## zusaetzlichen, abklingenden Ausschlags bei einer echten Spieler-
+## Beruehrung (siehe Klassenkommentar oben). 1.0 = wirkt wie eine normale
+## Beruehrung anderswo, kleiner = von Anfang an schwaecher.
+@export_range(0.0, 2.0, 0.01) var continuous_touch_strength: float = 1.0
 
 @export_group("Erkennung")
 ## Dicke der Beruehrungszone quer zur Saite (in Pixeln).
@@ -74,6 +96,8 @@ class_name StringRing
 var _vibration_time: float = 0.0
 var _vibration_strength: float = 0.0
 var _vibration_center_t: float = 0.5
+var _touch_strength: float = 0.0
+var _touch_center_t: float = 0.5
 
 func _ready() -> void:
 	antialiased = true
@@ -95,17 +119,21 @@ func _process(delta: float) -> void:
 		return
 	_vibration_time += delta
 	if continuous_vibration:
-		# Dauerschwingung: Staerke bleibt konstant bei 1.0, kein Abklingen.
+		# Dauer-Grundschwingung: Staerke bleibt konstant bei 1.0, kein
+		# Abklingen - nur der separate Beruehrungs-Ausschlag klingt ab.
 		_vibration_strength = 1.0
+		_touch_strength = max(_touch_strength - vibration_decay * delta, 0.0)
 	else:
 		_vibration_strength = max(_vibration_strength - vibration_decay * delta, 0.0)
 	_update_touch_shape()
 	_update_points()
 
 ## Loest eine (bei continuous_vibration=false abklingende, sonst dauerhaft
-## bei voller Staerke bleibende) Vibration aus, zentriert um impact_t (0..1
-## entlang der Saite). Von aussen aufrufbar, falls du zusaetzlich noch
-## manuell zupfen willst.
+## bei voller Staerke bleibende) Vibration der GRUNDSCHWINGUNG aus,
+## zentriert um impact_t (0..1 entlang der Saite). Von aussen aufrufbar,
+## falls du zusaetzlich noch manuell zupfen willst (z.B.
+## LevelStringDisplay's Aktivierungs-Zupfer). Ruehrt den separaten
+## Beruehrungs-Ausschlag (siehe continuous_touch_strength) NICHT an.
 func pluck(impact_t: float = 0.5) -> void:
 	_vibration_strength = 1.0
 	_vibration_center_t = clamp(impact_t, 0.02, 0.98)
@@ -120,7 +148,14 @@ func _on_touch_area_body_entered(body: Node2D) -> void:
 	if length <= 0.0:
 		return
 	var t: float = clamp((body.global_position - from).dot(dir / length) / length, 0.0, 1.0)
-	pluck(t)
+	if continuous_vibration:
+		# Grundschwingung bleibt unangetastet (siehe Klassenkommentar oben)
+		# - nur der separate, abklingende Beruehrungs-Ausschlag wird
+		# (neu) ausgeloest.
+		_touch_center_t = t
+		_touch_strength = continuous_touch_strength
+	else:
+		pluck(t)
 
 ## Positioniert/dreht/skaliert die TouchArea-Kollisionsform JEDEN FRAME neu,
 ## sodass sie exakt zwischen start_point und end_point liegt.
@@ -144,6 +179,22 @@ func _update_touch_shape() -> void:
 	touch_shape.position = Vector2.ZERO
 	touch_shape.rotation = 0.0
 
+## Auslenkung (Oszillation * Rand-Abklingen zu den Saitenenden hin) an
+## Position t (0..1) fuer eine Schwingung, die um center_t zentriert ist -
+## OHNE Staerke/Amplitude, die multipliziert der Aufrufer noch drauf.
+## Gemeinsam genutzt von der Grundschwingung und dem separaten
+## Beruehrungs-Ausschlag (siehe _update_points()).
+func _wave_displacement(t: float, center_t: float, wave_count: float) -> float:
+	var edge_fade: float
+	if t <= center_t:
+		var denom_left: float = center_t
+		edge_fade = sin((t / denom_left) * (PI * 0.5)) if denom_left > 0.0001 else 1.0
+	else:
+		var denom_right: float = 1.0 - center_t
+		edge_fade = sin(((1.0 - t) / denom_right) * (PI * 0.5)) if denom_right > 0.0001 else 0.0
+	var wave: float = sin(t * TAU * wave_count + _vibration_time * vibration_frequency)
+	return wave * edge_fade
+
 func _update_points() -> void:
 	var from: Vector2 = start_point.global_position
 	var to: Vector2 = end_point.global_position
@@ -164,14 +215,14 @@ func _update_points() -> void:
 		var t: float = float(i) / float(segments)
 		var base: Vector2 = from.lerp(to, t)
 		var local_point: Vector2 = to_local(base)
-		var edge_fade: float
-		if t <= _vibration_center_t:
-			var denom_left: float = _vibration_center_t
-			edge_fade = sin((t / denom_left) * (PI * 0.5)) if denom_left > 0.0001 else 1.0
-		else:
-			var denom_right: float = 1.0 - _vibration_center_t
-			edge_fade = sin(((1.0 - t) / denom_right) * (PI * 0.5)) if denom_right > 0.0001 else 0.0
-		var wave: float = sin(t * TAU * wave_count + _vibration_time * vibration_frequency)
-		local_point += normal * wave * edge_fade * vibration_amplitude * _vibration_strength
+
+		var displacement: float = _wave_displacement(t, _vibration_center_t, wave_count) * _vibration_strength
+		if continuous_vibration and _touch_strength > 0.0:
+			# Separater Beruehrungs-Ausschlag obendrauf, siehe
+			# Klassenkommentar oben - klingt eigenstaendig ab, ohne die
+			# Grundschwingung zu beeinflussen.
+			displacement += _wave_displacement(t, _touch_center_t, wave_count) * _touch_strength
+
+		local_point += normal * displacement * vibration_amplitude
 		new_points.append(local_point)
 	points = new_points

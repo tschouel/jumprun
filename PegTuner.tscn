@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://84de2sn3mg1w" path="res://tuning_peg.gd" id="1_44c3r"]
 [ext_resource type="Texture2D" uid="uid://ibb68ua80veq" path="res://animation/__Key1.png" id="2_48420"]
+[ext_resource type="Shader" uid="uid://dvhnbswju1bjb" path="res://Recolor.gdshader" id="2_v6pg6"]
 [ext_resource type="Texture2D" uid="uid://beww6ce42lu6v" path="res://animation/__Key2.png" id="3_30rto"]
 [ext_resource type="Texture2D" uid="uid://ctrnftebdqcbc" path="res://animation/__Key3.png" id="4_oxufo"]
 [ext_resource type="Texture2D" uid="uid://cx34y036x8jgm" path="res://animation/__Key4.png" id="5_d6eiw"]
 [ext_resource type="Texture2D" uid="uid://d0ls8mci38tnq" path="res://animation/__Key5.png" id="6_31p87"]
 [ext_resource type="Texture2D" uid="uid://d2rw0mw5q1gr" path="res://animation/__Key6.png" id="7_og8el"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44wr8"]
+shader = ExtResource("2_v6pg6")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkktn"]
 animations = [{
@@ -84,6 +89,7 @@ interaction_zone = NodePath("InteractionZone")
 scale = Vector2(0.5, 0.5)
 
 [node name="TuningPegAn" type="AnimatedSprite2D" parent="." unique_id=302274910]
+material = SubResource("ShaderMaterial_44wr8")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_hkktn")
 animation = &"stuck"

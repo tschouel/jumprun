@@ -1,3 +1,4 @@
+@tool
 class_name TuningPeg
 extends Node2D
 
@@ -14,6 +15,32 @@ extends Node2D
 ## Was das Erreichen einer Stufe konkret bewirkt (Saite spannen, Gewicht
 ## fallen lassen, Tuer oeffnen ...) ist NICHT Teil dieses Skripts - dafuer
 ## einfach level_changed abonnieren.
+##
+## GEMEINSAME FARBE (color_theme, neu): optional eine TuningPegColor-Resource
+## (siehe tuning_peg_color.gd) zuweisen, um sprite einzufaerben.
+## Referenzieren MEHRERE TuningPegs dieselbe .tres-Datei, faerben sie sich
+## alle gemeinsam - die Farbe dann an EINER Stelle aendern (siehe
+## tuning_peg_color.gd fuer die genaue Anleitung) faerbt automatisch ALLE
+## verknuepften Instanzen um, ohne jede einzeln anfassen zu muessen. Leer
+## lassen = sprite behaelt seine normale, unveraenderte Farbe.
+##
+## WICHTIG bei schwarzer/dunkler Grafik: standardmaessig wird die Farbe ueber
+## sprite.modulate gesetzt - das MULTIPLIZIERT aber nur mit der Texturfarbe,
+## kann schwarze Pixel (0,0,0) also niemals aufhellen (schwarz mal irgendeine
+## Farbe bleibt schwarz). Hat sprite ein ShaderMaterial mit dem Shader
+## recolor_silhouette.gdshader zugewiesen (Inspector -> CanvasItem ->
+## Material), wird stattdessen dessen tint_color-Parameter gesetzt, der die
+## Farbe komplett ERSETZT statt zu multiplizieren - das faerbt auch rein
+## schwarz gezeichnete PNGs korrekt ein. Ohne so ein ShaderMaterial faellt
+## der Code automatisch auf modulate zurueck (fuer helle/weisse Grafik reicht
+## das weiterhin aus).
+##
+## @tool (wichtig): dieses Skript laeuft dadurch AUCH direkt im Godot-Editor,
+## nicht erst beim Spielstart - die Farbe erscheint deshalb sofort im
+## 2D-Viewport, sobald du color_theme (bzw. dessen color-Wert) aenderst,
+## genau wie bei color_tint.gd. Alle anderen _ready()-Aufrufe (Signale
+## verbinden etc.) sind reine Verbindungen ohne Seiteneffekte und daher auch
+## im Editor unbedenklich.
 ##
 ## Setup: sprite (AnimatedSprite2D, mit den beiden Animationen
 ## turn_animation_name/stuck_animation_name als Kind anlegen), interaction_zone
@@ -32,6 +59,19 @@ signal level_changed(new_level: int)
 @export var start_level: int = 0
 @export var turn_animation_name: String = "turn"
 @export var stuck_animation_name: String = "stuck"
+
+@export_group("Farbe")
+## Optional: eine TuningPegColor-Resource (.tres) - dieselbe Datei bei
+## mehreren TuningPegs zuweisen, um sie alle gemeinsam ueber EINE Stelle
+## einfaerben zu koennen (siehe tuning_peg_color.gd).
+@export var color_theme: TuningPegColor:
+	set(value):
+		if color_theme and color_theme.changed.is_connected(_apply_color_theme):
+			color_theme.changed.disconnect(_apply_color_theme)
+		color_theme = value
+		if color_theme and not color_theme.changed.is_connected(_apply_color_theme):
+			color_theme.changed.connect(_apply_color_theme)
+		_apply_color_theme()
 
 @export_group("Steuerung")
 @export var engage_key: Key = KEY_F
@@ -75,11 +115,39 @@ func _ready() -> void:
 	if sprite:
 		sprite.animation_finished.connect(_on_animation_finished)
 
+	_apply_color_theme()
+
 func is_at_max() -> bool:
 	return level >= num_steps
 
 func is_at_min() -> bool:
 	return level <= 0
+
+## Faerbt sprite gemaess color_theme.color ein, falls color_theme gesetzt
+## ist - siehe tuning_peg_color.gd. Wird einmal in _ready() sowie danach
+## automatisch bei jeder Aenderung an color_theme selbst aufgerufen (ueber
+## Resource's eingebautes changed-Signal), damit eine Farbaenderung an der
+## gemeinsamen .tres-Datei sofort bei ALLEN TuningPegs ankommt, die sie
+## referenzieren - ohne erneuten Szenenstart.
+func _apply_color_theme() -> void:
+	if color_theme and sprite:
+		_apply_tint(sprite, color_theme.color)
+
+## Setzt die Farbe entweder ueber ein zugewiesenes ShaderMaterial (siehe
+## recolor_silhouette.gdshader - ersetzt die Farbe komplett, funktioniert
+## auch bei schwarzer Grafik) oder, falls kein solches Material vorhanden
+## ist, als Fallback ueber modulate (multipliziert nur - reicht bei
+## heller/weisser Grafik). queue_redraw() am Ende ist noetig, damit die
+## Aenderung auch im EDITOR (nicht nur im laufenden Spiel) sofort sichtbar
+## wird - ohne das haelt der Editor-Viewport die Node faelschlich fuer
+## unveraendert und zeichnet sie nicht neu, bis irgendwas anderes einen
+## Redraw auslsst.
+func _apply_tint(node: CanvasItem, color: Color) -> void:
+	if node.material is ShaderMaterial:
+		(node.material as ShaderMaterial).set_shader_parameter("tint_color", color)
+	else:
+		node.modulate = color
+	node.queue_redraw()
 
 func _on_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

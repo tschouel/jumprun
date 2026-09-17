@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://03fn8qkpus78"]
+
+[ext_resource type="Script" uid="uid://kgux3a78v3ks" path="res://musicstring.gd" id="1_48boo"]
+[ext_resource type="Texture2D" uid="uid://by3acwj3j61wf" path="res://animation/Violin.png" id="9_7y14g"]
+
+[node name="String" type="StaticBody2D" unique_id=1856773652]
+script = ExtResource("1_48boo")
+max_sag = 200.0
+bounce_velocity_per_tension = 200.0
+vibration_decay = 0.5
+vibration_frequency_increase_per_tension = 1.0
+
+[node name="AnchorLeft" type="Marker2D" parent="." unique_id=1138421449]
+position = Vector2(73, 6)
+
+[node name="AnchorRight" type="Marker2D" parent="." unique_id=176412402]
+position = Vector2(1285, 78)
+
+[node name="StringLine" type="Line2D" parent="." unique_id=901622392]
+unique_name_in_owner = true
+position = Vector2(-349, 0.4411621)
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="BounceArea" type="Area2D" parent="." unique_id=299184704]
+unique_name_in_owner = true
+position = Vector2(-349, 0.4411621)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BounceArea" unique_id=292539694]
+
+[node name="Violin" type="Sprite2D" parent="." unique_id=589289601]
+z_index = -50
+position = Vector2(628.99994, 38.999996)
+rotation = 1.6336281
+scale = Vector2(1, -0.999)
+texture = ExtResource("9_7y14g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Violin" unique_id=237469468]
+
+[node name="SolidBlock" type="StaticBody2D" parent="." unique_id=1050579036]
+unique_name_in_owner = true
+position = Vector2(-349, 0.4411621)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SolidBlock" unique_id=790867579]
+
+[node name="ViolinBody" type="CollisionPolygon2D" parent="." unique_id=1462930345]
+polygon = PackedVector2Array(1063, 32, 1082, 25, 1156, 52, 1262, 62, 1293, 61, 1284, 154, 1252, 132, 1251, 100, 1170, 88, 1112, 108, 1105, 118, 1052, 111)

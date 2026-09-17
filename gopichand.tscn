@@ -18,10 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://beww6ce42lu6v" path="res://animation/__Key2.png" id="17_flvy6"]
 [ext_resource type="Texture2D" uid="uid://ctrnftebdqcbc" path="res://animation/__Key3.png" id="18_sykg5"]
 [ext_resource type="Texture2D" uid="uid://cx34y036x8jgm" path="res://animation/__Key4.png" id="19_vh3i8"]
+[ext_resource type="Script" uid="uid://6xyf4xcy8lse" path="res://color_tint.gd" id="20_4ntvk"]
 [ext_resource type="Texture2D" uid="uid://d0ls8mci38tnq" path="res://animation/__Key5.png" id="20_vr6rc"]
+[ext_resource type="Script" uid="uid://jsa1xr8s0ldy" path="res://tuning_peg_color.gd" id="21_18tnm"]
 [ext_resource type="Texture2D" uid="uid://d2rw0mw5q1gr" path="res://animation/__Key6.png" id="21_kt4yg"]
 [ext_resource type="Script" uid="uid://df0h3vkd32fvv" path="res://tension_trigger.gd" id="22_uusry"]
 [ext_resource type="Script" uid="uid://mfwmlwd21kgn" path="res://callandresponse.gd" id="23_flvy6"]
+[ext_resource type="FontFile" uid="uid://v2iw8q25268g" path="res://OrchestralAlphabet_1.otf" id="24_kt4yg"]
 [ext_resource type="Script" uid="uid://buswmpbrgwxqs" path="res://level_string_display.gd" id="24_sykg5"]
 [ext_resource type="Script" uid="uid://d7g4hupdmlcw" path="res://tunerbutterflycontroller.gd" id="24_vr6rc"]
 [ext_resource type="PackedScene" uid="uid://bk3shck6s4311" path="res://string_ring.tscn" id="25_vh3i8"]
@@ -134,6 +137,11 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_kt4yg"]
+script = ExtResource("21_18tnm")
+color = Color(1, 0, 1, 1)
+metadata/_custom_type_script = "uid://jsa1xr8s0ldy"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cud7f"]
 size = Vector2(20, 28.722223)
 
@@ -186,12 +194,15 @@ position = Vector2(-642, 56)
 [node name="StringLine" type="Line2D" parent="Saite" unique_id=288383167]
 unique_name_in_owner = true
 
-[node name="TuningPeg" type="AnimatedSprite2D" parent="Saite" unique_id=840699904]
+[node name="TuningPeg" type="AnimatedSprite2D" parent="Saite" unique_id=840699904 node_paths=PackedStringArray("target")]
 unique_name_in_owner = true
 position = Vector2(-449, -114)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_4ntvk")
 animation = &"stuck"
+script = ExtResource("20_4ntvk")
+target = NodePath(".")
+color_theme = SubResource("Resource_kt4yg")
 
 [node name="HandPoint" type="Marker2D" parent="Saite/TuningPeg" unique_id=874861673]
 
@@ -258,10 +269,12 @@ stagger_delay = 0.2
 level_build_targets = [null, null, null, null, null]
 
 [node name="Label" type="Label" parent="." unique_id=2014038529]
-offset_left = 1313.0
-offset_top = -449.0
-offset_right = 1353.0
-offset_bottom = -426.0
+custom_minimum_size = Vector2(50, 50)
+offset_left = 626.0
+offset_top = -897.0
+offset_right = 876.0
+offset_bottom = -647.0
+theme_override_fonts/font = ExtResource("24_kt4yg")
 
 [node name="LevelStringDisplay" type="Node2D" parent="." unique_id=506952954 node_paths=PackedStringArray("start_point", "end_point")]
 script = ExtResource("24_sykg5")
@@ -277,7 +290,7 @@ override_wave_length_px = 150.0
 position = Vector2(2104, -330)
 
 [node name="Endpoint" type="Marker2D" parent="LevelStringDisplay" unique_id=394318672]
-position = Vector2(2096, -1609)
+position = Vector2(2096, -7666)
 
 [node name="TunerButterfly" parent="." unique_id=1235848640 instance=ExtResource("27_kt4yg")]
 position = Vector2(2826, -68)

@@ -1,8 +1,24 @@
 class_name PathMovement
 extends Node
 
+const NOTE_FRACTIONS: Array[float] = [1.0, 0.5, 0.25, 0.125, 0.0625]  # Ganze, Halbe, Viertel, Achtel, Sechzehntel
+
 var player: CharacterBody2D
 var _last_global_pos: Vector2 = Vector2.ZERO
+
+@export_group("Countoff (Einzähler vor Bewegungsstart)")
+## Eigenes Tempo fuer den Countoff - unabhaengig von slide_speed/den
+## bpm-Werten der einzelnen SlidingObstacleStep-Eintraege. Am besten auf
+## denselben Wert stellen wie den Einzaehler, den deine Musik beim Einstieg
+## in diesen Pfad spielt.
+@export var countoff_bpm: float = 130.0
+@export_enum("Ganze", "Halbe", "Viertel", "Achtel", "Sechzehntel") var countoff_note_value: int = 2
+## Anzahl Notenwerte, die nach dem Attachen auf den Pfad abgewartet werden,
+## bevor die eigentliche Vorwaertsbewegung (das Sliden) losgeht - der
+## Spieler haengt bis dahin schon auf dem Pfad (Sprite/Ausrichtung normal),
+## bewegt sich aber noch nicht vorwaerts. 0 = kein Countoff (Standard,
+## Bewegung startet wie bisher sofort beim Attach).
+@export var countoff_count: int = 0
 
 @export_group("Hindernis-Sprung (beat-synchron)")
 @export var obstacle_mask_bit: int = 1
@@ -36,6 +52,9 @@ var _sliding_sprite_base_y_cached: bool = false
 
 var _stopped_by_obstacle: bool = false
 var _was_on_path: bool = false
+
+var _countoff_elapsed: float = 0.0
+var _countoff_done: bool = false
 
 var _cached_path_follow: PathFollow2D = null
 var _cached_sequencer: SlidingObstacleSequencer = null
@@ -80,6 +99,13 @@ func process_movement(delta: float) -> void:
 			_set_dust_emitting(false)
 			_was_on_path = false
 		return
+
+	# Frisch attached (letzter Frame noch nicht auf dem Pfad, jetzt schon)?
+	# -> Countoff fuer diesen Durchlauf zuruecksetzen, bevor _was_on_path
+	# ueberschrieben wird.
+	if not _was_on_path:
+		_countoff_elapsed = 0.0
+		_countoff_done = countoff_count <= 0
 
 	_was_on_path = true
 
@@ -133,8 +159,17 @@ func process_movement(delta: float) -> void:
 		clear_respawn_zone()
 		return
 
-	# 1. Vorwärtsbewegung entlang des Pfads
-	if parent_path_follow and not _stopped_by_obstacle:
+	# Countoff: countoff_count Notenwerte bei countoff_bpm abwarten, bevor
+	# die eigentliche Vorwaertsbewegung losgeht (siehe _countoff_duration()).
+	# Laeuft nur hoch, wenn noch nicht fertig - danach bleibt _countoff_done
+	# fuer den Rest dieses Pfad-Durchlaufs einfach true.
+	if not _countoff_done:
+		_countoff_elapsed += delta
+		if _countoff_elapsed >= _countoff_duration():
+			_countoff_done = true
+
+	# 1. Vorwärtsbewegung entlang des Pfads (erst NACH dem Countoff)
+	if _countoff_done and parent_path_follow and not _stopped_by_obstacle:
 		var speed: float = _get_slide_speed(parent_path_follow)
 		var ramp_test := _get_ramp_test(parent_path_follow)
 		var speed_multiplier: float = 1.0
@@ -224,6 +259,16 @@ func trigger_success_hop() -> void:
 func _set_dust_emitting(value: bool) -> void:
 	if dust_particles:
 		dust_particles.emitting = value
+
+
+## Dauer des Countoffs in Sekunden, aus countoff_count Notenwerten à
+## countoff_note_value im countoff_bpm-Tempo - gleiche Rechnung wie
+## _delay_seconds() in VibratingString.gd/BowRotator.gd.
+func _countoff_duration() -> float:
+	if countoff_count <= 0 or countoff_bpm <= 0.0:
+		return 0.0
+	var fraction: float = NOTE_FRACTIONS[countoff_note_value]
+	return float(countoff_count) * fraction * 4.0 * (60.0 / countoff_bpm)
 
 
 func _get_slide_speed(parent_path_follow: PathFollow2D) -> float:

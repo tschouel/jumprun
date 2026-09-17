@@ -13,140 +13,759 @@
 [ext_resource type="PackedScene" uid="uid://pp8h55papmcy" path="res://Use_F.tscn" id="8_ut8v4"]
 [ext_resource type="PackedScene" uid="uid://i5yg6y73j2je" path="res://Screenfade.tscn" id="9_m1rte"]
 [ext_resource type="PackedScene" uid="uid://dkievakbu1ud" path="res://deathfall.tscn" id="10_45x2h"]
+[ext_resource type="Texture2D" uid="uid://dm3542qbrumm8" path="res://animation/HandPiz 00.png" id="10_ub4qf"]
+[ext_resource type="Texture2D" uid="uid://ddp82gsbhoubi" path="res://animation/HandPiz 01.png" id="11_j3eb5"]
+[ext_resource type="Texture2D" uid="uid://c00ubigqcxntn" path="res://animation/HandPiz 02.png" id="12_ysd03"]
+[ext_resource type="Texture2D" uid="uid://8ifh5ytwrr0s" path="res://animation/HandPiz 03.png" id="13_l8ud1"]
 [ext_resource type="Texture2D" uid="uid://bmnxs4us4na8v" path="res://animation/Ebass.png" id="13_mkbvl"]
 [ext_resource type="PackedScene" uid="uid://cvvvut563eaga" path="res://gopichand.tscn" id="13_ut8v4"]
 [ext_resource type="PackedScene" uid="uid://bitrk61nlwmut" path="res://string_harp.tscn" id="13_x5fvb"]
+[ext_resource type="Texture2D" uid="uid://e5povypxnd7h" path="res://animation/HandPiz 04.png" id="14_ua0an"]
 [ext_resource type="Texture2D" uid="uid://d0ss155tfk04t" path="res://animation/Bow.png" id="15_mkbvl"]
+[ext_resource type="Texture2D" uid="uid://cevvajkvln1nu" path="res://animation/HandPiz 05.png" id="15_p8ihp"]
 [ext_resource type="PackedScene" uid="uid://nw00esy8tk0y" path="res://PegTuner.tscn" id="15_yi0be"]
+[ext_resource type="Texture2D" uid="uid://nvwogo22bxsb" path="res://animation/HandPiz 06.png" id="16_0k6e1"]
 [ext_resource type="PackedScene" uid="uid://cmlysd7bc7ye" path="res://bass_slide_zone.tscn" id="16_emxea"]
 [ext_resource type="PackedScene" uid="uid://btmaiciliu3dr" path="res://slide_jump_slide.tscn" id="17_7g4j0"]
+[ext_resource type="Texture2D" uid="uid://byn2lxslywadd" path="res://animation/HandPiz 07.png" id="17_fxxou"]
+[ext_resource type="Texture2D" uid="uid://b7n1ywo1ttg0p" path="res://animation/HandPiz 08.png" id="18_khfwy"]
+[ext_resource type="Texture2D" uid="uid://kid6lnw0kl2n" path="res://animation/HandPiz 09.png" id="19_dq4mp"]
+[ext_resource type="Texture2D" uid="uid://cm1r4o54vtjl1" path="res://animation/HandPiz 10.png" id="20_yc6pv"]
 [ext_resource type="PackedScene" uid="uid://b31llrikqcrt3" path="res://bow.tscn" id="21_a57k7"]
+[ext_resource type="Texture2D" uid="uid://dqu5bg77rk12s" path="res://animation/HandPiz 11.png" id="21_uaeuy"]
+[ext_resource type="Texture2D" uid="uid://dj2nil6sshlwu" path="res://animation/HandPiz 12.png" id="22_3knra"]
 [ext_resource type="Script" uid="uid://cvekb7pxjw0nx" path="res://vibrating_string.gd" id="22_a57k7"]
 [ext_resource type="Script" uid="uid://1au8o0bjnu8v" path="res://string_pulse_point.gd" id="23_45x2h"]
+[ext_resource type="Texture2D" uid="uid://0v2dlf0lew1p" path="res://animation/HandPiz 13.png" id="23_nwfyu"]
+[ext_resource type="Script" uid="uid://csbb2yhdymf0k" path="res://bow_rotator_state.gd" id="23_ph16p"]
 [ext_resource type="FontFile" uid="uid://v2iw8q25268g" path="res://OrchestralAlphabet_1.otf" id="24_axxh8"]
+[ext_resource type="Texture2D" uid="uid://b6luoy7sl5grp" path="res://animation/HandPiz 14.png" id="24_kfb2j"]
+[ext_resource type="Script" uid="uid://bq1ojdurj1euu" path="res://bow_rotator.gd" id="24_ms32o"]
+[ext_resource type="Texture2D" uid="uid://ddtbnarrswunp" path="res://animation/HandPiz 15.png" id="25_6dtai"]
+[ext_resource type="PackedScene" uid="uid://f736vyikyldn" path="res://vibrating_berimbau.tscn" id="26_6thac"]
+[ext_resource type="Texture2D" uid="uid://wr7axm02cw5k" path="res://animation/HandPiz 16.png" id="26_fnf8h"]
+[ext_resource type="Texture2D" uid="uid://bhojwackvpx0h" path="res://animation/TunerButterfly 00.png" id="27_523a1"]
+[ext_resource type="Texture2D" uid="uid://brt6pk6n4inco" path="res://animation/HandPiz 17.png" id="27_p5fo1"]
+[ext_resource type="Texture2D" uid="uid://c32e7sl8lvltl" path="res://animation/HandPiz 18.png" id="28_npepl"]
+[ext_resource type="Texture2D" uid="uid://dyu3upeg5gdi7" path="res://animation/HandPiz 19.png" id="29_e6fbf"]
+[ext_resource type="Texture2D" uid="uid://cqbv0hb1061lf" path="res://animation/HandPiz 20.png" id="30_mylud"]
+[ext_resource type="Texture2D" uid="uid://buxax2le434n3" path="res://animation/HandPiz 21.png" id="31_jkri7"]
+[ext_resource type="Texture2D" uid="uid://wi6qqdnj2ccu" path="res://animation/HandPiz 22.png" id="32_j8gju"]
+[ext_resource type="Texture2D" uid="uid://c4yj56kkjjpsl" path="res://animation/HandPiz 23.png" id="33_7xnuw"]
+[ext_resource type="Texture2D" uid="uid://8moxnawo4nik" path="res://animation/HandPiz 24.png" id="34_0etbq"]
+[ext_resource type="Texture2D" uid="uid://wb8x18gbrbp2" path="res://animation/HandPiz 25.png" id="35_cljdh"]
+[ext_resource type="Texture2D" uid="uid://ba8h3b04nfguq" path="res://animation/HandPiz 26.png" id="36_6e8ad"]
+[ext_resource type="Texture2D" uid="uid://d3os1w3dbk3es" path="res://animation/HandPiz 27.png" id="37_m5xfc"]
+[ext_resource type="Texture2D" uid="uid://dkwyddhhoypsr" path="res://animation/HandPiz 28.png" id="38_ekh2o"]
+[ext_resource type="Texture2D" uid="uid://bgxffwvqpg8qo" path="res://animation/HandPiz 29.png" id="39_4fi4t"]
+[ext_resource type="Texture2D" uid="uid://bi0v1ffwevgqt" path="res://animation/HandPiz 30.png" id="40_or7f7"]
+[ext_resource type="Texture2D" uid="uid://bj3uag33no65l" path="res://animation/HandPiz 31.png" id="41_f362r"]
+[ext_resource type="Texture2D" uid="uid://tmxv4nyhl6by" path="res://animation/HandPiz 32.png" id="42_j6h4k"]
+[ext_resource type="Texture2D" uid="uid://chxt5h7ywj1ro" path="res://animation/HandPiz 33.png" id="43_jotmf"]
+[ext_resource type="Texture2D" uid="uid://dt37apc8s3p04" path="res://animation/HandPiz 34.png" id="44_454as"]
+[ext_resource type="Script" uid="uid://cvg0xxw5makt4" path="res://bouncestring.gd" id="46_l8ud1"]
+[ext_resource type="PackedScene" uid="uid://03fn8qkpus78" path="res://violin_jump_simple.tscn" id="48_ysd03"]
+[ext_resource type="Resource" uid="uid://bcicdsdexpvku" path="res://tuning_peg_color.tres" id="53_j3eb5"]
+[ext_resource type="Shader" uid="uid://dvhnbswju1bjb" path="res://Recolor.gdshader" id="56_ua0an"]
+[ext_resource type="Texture2D" uid="uid://b10ioldde3l01" path="res://animation/Fhole.png" id="59_kpdhg"]
+[ext_resource type="Script" uid="uid://dtgq1lu3m8ig4" path="res://animation_temposync.gd" id="86_rncnn"]
+[ext_resource type="Texture2D" uid="uid://defpmkv5ju2dk" path="res://animation/HandTap 00.png" id="123_gg2nb"]
+[ext_resource type="Texture2D" uid="uid://b8be404wi52xs" path="res://animation/HandTap 01.png" id="124_kjggd"]
+[ext_resource type="Texture2D" uid="uid://b3irkhmgsqbvb" path="res://animation/HandTap 02.png" id="125_i7kmi"]
+[ext_resource type="Texture2D" uid="uid://do4mqe8qr31hr" path="res://animation/HandTap 03.png" id="126_uftdu"]
+[ext_resource type="Texture2D" uid="uid://b8ptwvlpdjobl" path="res://animation/HandTap 04.png" id="127_0mpjb"]
+[ext_resource type="Texture2D" uid="uid://b4bqwwle3t2v2" path="res://animation/HandTap 05.png" id="128_y8t7k"]
+[ext_resource type="Texture2D" uid="uid://bybxosg014enp" path="res://animation/HandArp 00.png" id="129_arj44"]
+[ext_resource type="Texture2D" uid="uid://csvfsyq3vtoey" path="res://animation/HandTap 06.png" id="129_wnf2v"]
+[ext_resource type="Texture2D" uid="uid://cqq513rnin81v" path="res://animation/HandTap 07.png" id="130_fmcm6"]
+[ext_resource type="Texture2D" uid="uid://bmetqn14fsn3n" path="res://animation/HandArp 01.png" id="130_thhf8"]
+[ext_resource type="Texture2D" uid="uid://736ihl1xqkby" path="res://animation/HandArp 02.png" id="131_6i53m"]
+[ext_resource type="Texture2D" uid="uid://53026cieoosl" path="res://animation/HandTap 08.png" id="131_s5se7"]
+[ext_resource type="Texture2D" uid="uid://bb6nmhdinw6ks" path="res://animation/HandTap 09.png" id="132_b37vi"]
+[ext_resource type="Texture2D" uid="uid://vjb4x4thjub5" path="res://animation/HandArp 03.png" id="132_v7vii"]
+[ext_resource type="Texture2D" uid="uid://b5pjo8di2i7ga" path="res://animation/HandArp 04.png" id="133_6tnqd"]
+[ext_resource type="Texture2D" uid="uid://coheniykhdpc" path="res://animation/HandTap 10.png" id="133_arj44"]
+[ext_resource type="Texture2D" uid="uid://73xtdry36q4a" path="res://animation/HandArp 05.png" id="134_ss4mj"]
+[ext_resource type="Texture2D" uid="uid://crxwfvbh1wpym" path="res://animation/HandTap 11.png" id="134_thhf8"]
+[ext_resource type="Texture2D" uid="uid://dvb1seewothiq" path="res://animation/HandTap 12.png" id="135_6i53m"]
+[ext_resource type="Texture2D" uid="uid://5uchtlhrcjrn" path="res://animation/HandArp 06.png" id="135_o808l"]
+[ext_resource type="Texture2D" uid="uid://ceyh0bs866s44" path="res://animation/HandArp 07.png" id="136_25v0h"]
+[ext_resource type="Texture2D" uid="uid://ifsd5jykf0k3" path="res://animation/HandTap 13.png" id="136_v7vii"]
+[ext_resource type="Texture2D" uid="uid://clh876kqfbdwy" path="res://animation/HandTap 14.png" id="137_6tnqd"]
+[ext_resource type="Texture2D" uid="uid://bacn7q82fnsv8" path="res://animation/HandArp 08.png" id="137_x62qm"]
+[ext_resource type="Texture2D" uid="uid://botgf1ujeguma" path="res://animation/HandTap 15.png" id="138_ss4mj"]
+[ext_resource type="Texture2D" uid="uid://2l22vywky26s" path="res://animation/HandArp 09.png" id="138_tghxp"]
+[ext_resource type="Texture2D" uid="uid://d3chrb83lhccg" path="res://animation/HandTap 16.png" id="139_o808l"]
+[ext_resource type="Texture2D" uid="uid://nqiovdqn8me4" path="res://animation/HandArp 10.png" id="139_onxq4"]
+[ext_resource type="Texture2D" uid="uid://cih40lmwhnw3f" path="res://animation/HandArp 11.png" id="140_4pjn7"]
+[ext_resource type="Texture2D" uid="uid://dorb74qap8urj" path="res://animation/HandTap 17.png" id="140_25v0h"]
+[ext_resource type="Texture2D" uid="uid://dsg48l6rxd2t6" path="res://animation/HandTap 18.png" id="141_x62qm"]
+[ext_resource type="Texture2D" uid="uid://dc1rqgthmlqel" path="res://animation/HandArp 12.png" id="141_xrqy7"]
+[ext_resource type="Texture2D" uid="uid://dli3juecoimyi" path="res://animation/HandTap 19.png" id="142_tghxp"]
+[ext_resource type="Texture2D" uid="uid://ckvxhiq433xlu" path="res://animation/HandArp 13.png" id="142_ttke2"]
+[ext_resource type="Texture2D" uid="uid://cb2fy3a2keox7" path="res://animation/HandArp 14.png" id="143_4vl4y"]
+[ext_resource type="Texture2D" uid="uid://c7xf277vya34c" path="res://animation/HandTap 20.png" id="143_onxq4"]
+[ext_resource type="Texture2D" uid="uid://cfbwb6xrc83i0" path="res://animation/HandTap 21.png" id="144_4pjn7"]
+[ext_resource type="Texture2D" uid="uid://cym71kbuvt7f2" path="res://animation/HandArp 15.png" id="144_tqd32"]
+[ext_resource type="Texture2D" uid="uid://d0qmln2osyqn8" path="res://animation/HandArp 16.png" id="145_bxstw"]
+[ext_resource type="Texture2D" uid="uid://pnosbex3765j" path="res://animation/HandTap 22.png" id="145_xrqy7"]
+[ext_resource type="Texture2D" uid="uid://cc5evnbaapoxg" path="res://animation/HandTap 23.png" id="146_ttke2"]
+[ext_resource type="Texture2D" uid="uid://da7jqidnfglo6" path="res://animation/HandArp 17.png" id="146_txvdw"]
+[ext_resource type="Texture2D" uid="uid://cuse1qu3bhqdb" path="res://animation/HandTap 24.png" id="147_4vl4y"]
+[ext_resource type="Texture2D" uid="uid://cqvw13rae1gb" path="res://animation/HandArp 18.png" id="147_s7onf"]
+[ext_resource type="Texture2D" uid="uid://xea1s2yclu53" path="res://animation/HandArp 19.png" id="148_42a4a"]
+[ext_resource type="Texture2D" uid="uid://cua6rwewixubw" path="res://animation/HandTap 25.png" id="148_tqd32"]
+[ext_resource type="Texture2D" uid="uid://b6tyxb85wxovf" path="res://animation/HandArp 20.png" id="149_axv0u"]
+[ext_resource type="Texture2D" uid="uid://b36s1y6obrkbm" path="res://animation/HandTap 26.png" id="149_bxstw"]
+[ext_resource type="Texture2D" uid="uid://4ohgsbd6opd5" path="res://animation/HandArp 21.png" id="150_or6rs"]
+[ext_resource type="Texture2D" uid="uid://d0ldt2j2kl3jm" path="res://animation/HandTap 27.png" id="150_txvdw"]
+[ext_resource type="Texture2D" uid="uid://ba3gn2myw6s03" path="res://animation/HandArp 22.png" id="151_4o1ie"]
+[ext_resource type="Texture2D" uid="uid://bvwkoha6e2kts" path="res://animation/HandTap 28.png" id="151_s7onf"]
+[ext_resource type="Texture2D" uid="uid://df480n7x2m7cr" path="res://animation/HandArp 23.png" id="152_002cd"]
+[ext_resource type="Texture2D" uid="uid://dpdl7h3bpksoq" path="res://animation/HandTap 29.png" id="152_42a4a"]
+[ext_resource type="Texture2D" uid="uid://4sjp77ejxrg5" path="res://animation/HandTap 30.png" id="153_axv0u"]
+[ext_resource type="Texture2D" uid="uid://ck0tphqa3r443" path="res://animation/HandArp 24.png" id="153_ethil"]
+[ext_resource type="Texture2D" uid="uid://d1erg2l2simdj" path="res://animation/HandArp 25.png" id="154_71b5e"]
+[ext_resource type="Texture2D" uid="uid://qyj7g4m3rk30" path="res://animation/HandTap 31.png" id="154_or6rs"]
+[ext_resource type="Texture2D" uid="uid://dnqa5unb5dy48" path="res://animation/HandTap 32.png" id="155_4o1ie"]
+[ext_resource type="Texture2D" uid="uid://4a3ntjjcxq3j" path="res://animation/HandArp 26.png" id="155_8n6ra"]
+[ext_resource type="Texture2D" uid="uid://b31wj7lawtkgf" path="res://animation/HandTap 33.png" id="156_002cd"]
+[ext_resource type="Texture2D" uid="uid://bynxs322bkarp" path="res://animation/HandArp 27.png" id="156_h45y1"]
+[ext_resource type="Texture2D" uid="uid://dsjdrmrvba3us" path="res://animation/HandTap 34.png" id="157_ethil"]
+[ext_resource type="Texture2D" uid="uid://plaw5hvr8lo1" path="res://animation/HandArp 28.png" id="157_h1mly"]
+[ext_resource type="Texture2D" uid="uid://bmwr0y2n667h3" path="res://animation/HandArp 29.png" id="158_8pw6i"]
+[ext_resource type="Texture2D" uid="uid://y70xjwabufty" path="res://animation/HandTap 35.png" id="158_71b5e"]
+[ext_resource type="Texture2D" uid="uid://d1x1l7bcgvxsy" path="res://animation/HandArp 30.png" id="159_3yjj1"]
+[ext_resource type="Texture2D" uid="uid://c6qcnft3jq74p" path="res://animation/HandTap 36.png" id="159_8n6ra"]
+[ext_resource type="Texture2D" uid="uid://dttxffnflogcc" path="res://animation/HandArp 31.png" id="160_20rqr"]
+[ext_resource type="Texture2D" uid="uid://dqtlhf1jvepaw" path="res://animation/HandTap 37.png" id="160_h45y1"]
+[ext_resource type="Texture2D" uid="uid://b077lah7dris2" path="res://animation/HandArp 32.png" id="161_b8d0i"]
+[ext_resource type="Texture2D" uid="uid://qylr4cp6fxng" path="res://animation/HandTap 38.png" id="161_h1mly"]
+[ext_resource type="Texture2D" uid="uid://c6lrteioy4dgg" path="res://animation/HandTap 39.png" id="162_8pw6i"]
+[ext_resource type="Texture2D" uid="uid://wfyky0jcu8s7" path="res://animation/HandArp 33.png" id="162_p8t5a"]
+[ext_resource type="Texture2D" uid="uid://b14h2c5sjfire" path="res://animation/HandTap 40.png" id="163_3yjj1"]
+[ext_resource type="Texture2D" uid="uid://df2gsqttrl6ws" path="res://animation/HandArp 34.png" id="163_431go"]
+[ext_resource type="Texture2D" uid="uid://r8c2fxt4pytl" path="res://animation/HandArp 35.png" id="164_8rrrj"]
+[ext_resource type="Texture2D" uid="uid://cmugm7v3s3otq" path="res://animation/HandTap 41.png" id="164_20rqr"]
+[ext_resource type="Texture2D" uid="uid://balwnwu2it3k7" path="res://animation/HandArp 36.png" id="165_8rmc5"]
+[ext_resource type="Texture2D" uid="uid://0rogd2cb26gp" path="res://animation/HandTap 42.png" id="165_b8d0i"]
+[ext_resource type="Texture2D" uid="uid://baifpepb2hlwo" path="res://animation/HandTap 43.png" id="166_p8t5a"]
+[ext_resource type="Texture2D" uid="uid://dd2vqdrywn4cd" path="res://animation/HandArp 37.png" id="166_sokvi"]
+[ext_resource type="Texture2D" uid="uid://cvc4nkg2p68gp" path="res://animation/HandTap 44.png" id="167_431go"]
+[ext_resource type="Texture2D" uid="uid://cklnwwyy6bs13" path="res://animation/HandArp 38.png" id="167_nnbt8"]
+[ext_resource type="Texture2D" uid="uid://bt7xpuglgmk37" path="res://animation/HandTap 45.png" id="168_8rrrj"]
+[ext_resource type="Texture2D" uid="uid://ma87i4c065fc" path="res://animation/HandArp 39.png" id="168_vpgjy"]
+[ext_resource type="Texture2D" uid="uid://dkr64gwkwfmur" path="res://animation/HandTap 46.png" id="169_8rmc5"]
+[ext_resource type="Texture2D" uid="uid://dxh7jpuiu3mjl" path="res://animation/HandArp 40.png" id="169_ff8g7"]
+[ext_resource type="Texture2D" uid="uid://dlpknlpfek2oa" path="res://animation/HandArp 41.png" id="170_4nfg3"]
+[ext_resource type="Texture2D" uid="uid://by0do122812ki" path="res://animation/HandTap 47.png" id="170_sokvi"]
+[ext_resource type="Texture2D" uid="uid://biie7drpm51j6" path="res://animation/HandArp 42.png" id="171_0o4ox"]
+[ext_resource type="Texture2D" uid="uid://d4m5cdt2n0plw" path="res://animation/HandTap 48.png" id="171_nnbt8"]
+[ext_resource type="Texture2D" uid="uid://d0yyrokv6663b" path="res://animation/HandArp 43.png" id="172_i0s5j"]
+[ext_resource type="Texture2D" uid="uid://7c6o5ese3gu5" path="res://animation/HandTap 49.png" id="172_vpgjy"]
+[ext_resource type="Texture2D" uid="uid://f3nb5umg515j" path="res://animation/HandArp 44.png" id="173_8im35"]
+[ext_resource type="Texture2D" uid="uid://bcnpfyi57p4jb" path="res://animation/HandArp 45.png" id="174_iojrk"]
+[ext_resource type="Texture2D" uid="uid://bvhqkiv00m888" path="res://animation/HandArp 46.png" id="175_ryr6u"]
+[ext_resource type="Texture2D" uid="uid://dd3at1gcf78u0" path="res://animation/HandArp 47.png" id="176_smeb6"]
+[ext_resource type="Texture2D" uid="uid://bfjlkdt7wi2nd" path="res://animation/HandArp 48.png" id="177_rus2a"]
+[ext_resource type="Texture2D" uid="uid://twbdu2a7ek7a" path="res://animation/HandArp 49.png" id="178_x0rvf"]
+[ext_resource type="Texture2D" uid="uid://ce27qivad53qc" path="res://animation/HandArp 50.png" id="179_ny63j"]
+[ext_resource type="Texture2D" uid="uid://dp8hrot7pbw0k" path="res://animation/HandArp 51.png" id="180_erpmi"]
+[ext_resource type="Texture2D" uid="uid://ckrpqp8si4wxf" path="res://animation/HandArp 52.png" id="181_itrk4"]
+[ext_resource type="Texture2D" uid="uid://spoa7mbmjxbl" path="res://animation/HandArp 53.png" id="182_gqsmk"]
+[ext_resource type="Script" uid="uid://ci7fpx2vgxrn5" path="res://animation/vibrating_string_state.gd" id="187_ss4mj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ms32o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8ud1"]
+shader = ExtResource("56_ua0an")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Curve2D" id="Curve2D_b34n4"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 8925, -1431, 0, 0, 0, 0, 9279, -1347, 0, 0, 0, 0, 16739, 1961)
+"points": PackedVector2Array(0, 0, 0, 0, 8870, -1463, -97.68001, -40.480003, 97.68001, 40.480003, 9208, -1416, 0, 0, 0, 0, 16739, 1961)
 }
 point_count = 3
 
 [sub_resource type="Resource" id="Resource_eb6hj"]
 script = ExtResource("2_eb6hj")
-beats = 5.0
+beats = 4.0
+bpm = 90.0
+step_type = 1
 obstacle_scene = ExtResource("3_gtma5")
 metadata/_custom_type_script = "uid://q3e40vrqcq25"
 
 [sub_resource type="Resource" id="Resource_8mwl4"]
 script = ExtResource("2_eb6hj")
+bpm = 90.0
 obstacle_scene = ExtResource("3_gtma5")
+invisible = true
 metadata/_custom_type_script = "uid://q3e40vrqcq25"
 
 [sub_resource type="Resource" id="Resource_ebsb2"]
 script = ExtResource("2_eb6hj")
+bpm = 90.0
 obstacle_scene = ExtResource("3_gtma5")
 metadata/_custom_type_script = "uid://q3e40vrqcq25"
 
 [sub_resource type="Resource" id="Resource_8fc1w"]
 script = ExtResource("2_eb6hj")
+bpm = 90.0
 obstacle_scene = ExtResource("3_gtma5")
 metadata/_custom_type_script = "uid://q3e40vrqcq25"
 
 [sub_resource type="Resource" id="Resource_jajrg"]
 script = ExtResource("2_eb6hj")
+bpm = 90.0
 obstacle_scene = ExtResource("3_gtma5")
 metadata/_custom_type_script = "uid://q3e40vrqcq25"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcn6"]
 size = Vector2(87, 211)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nch4o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ub4qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j3eb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ysd03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l8ud1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ua0an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_p8ihp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0k6e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fxxou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_khfwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dq4mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yc6pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_uaeuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3knra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nwfyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kfb2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6dtai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fnf8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_p5fo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_npepl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_e6fbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mylud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jkri7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_j8gju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7xnuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0etbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_cljdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_6e8ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_m5xfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ekh2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4fi4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_or7f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_f362r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_j6h4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_jotmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_454as")
+}],
+"loop": 1,
+"name": &"fingerpiz",
+"speed": 40.0
+}]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ms32o"]
+[sub_resource type="Resource" id="Resource_6thac"]
+script = ExtResource("23_ph16p")
+bars = 2
+rotate_degrees = 20.0
+repeat_note_value = 3
+repeat_note_count = 1
+metadata/_custom_type_script = "uid://csbb2yhdymf0k"
+
+[sub_resource type="Resource" id="Resource_523a1"]
+script = ExtResource("23_ph16p")
+note_count = 1
+rotation_mode = 1
+direction = 1
+rotate_degrees = 95.0
+metadata/_custom_type_script = "uid://csbb2yhdymf0k"
+
+[sub_resource type="Resource" id="Resource_ph16p"]
+script = ExtResource("23_ph16p")
+note_count = 2
+rotate_degrees = 0.0
+metadata/_custom_type_script = "uid://csbb2yhdymf0k"
+
+[sub_resource type="Resource" id="Resource_qgvb1"]
+script = ExtResource("23_ph16p")
+note_count = 1
+rotation_mode = 1
+rotate_degrees = 95.0
+repeat_note_count = 1
+metadata/_custom_type_script = "uid://csbb2yhdymf0k"
+
+[sub_resource type="Resource" id="Resource_6tnqd"]
+script = ExtResource("187_ss4mj")
+bars = 1
+note_value = 1
+note_count = 1
+repeat_note_value = 1
+repeat_predelay = 0.10000000000000009
+metadata/_custom_type_script = "uid://ci7fpx2vgxrn5"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0uk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("129_arj44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_thhf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_6i53m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_v7vii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_6tnqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_ss4mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_o808l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_25v0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_x62qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_tghxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_onxq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_4pjn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_xrqy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_ttke2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_4vl4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_tqd32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_bxstw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_txvdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_s7onf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_42a4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_axv0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_or6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_4o1ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_002cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_ethil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_71b5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_8n6ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_h45y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_h1mly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_8pw6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_3yjj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_20rqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_b8d0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_p8t5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_431go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_8rrrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_8rmc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_sokvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_nnbt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_vpgjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_ff8g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_4nfg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_0o4ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_i0s5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_8im35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_iojrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_ryr6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_smeb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_rus2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_x0rvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_ny63j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_erpmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_itrk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_gqsmk")
+}],
+"loop": 1,
+"name": &"arp",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4r8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("123_gg2nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_kjggd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_i7kmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_uftdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_0mpjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_y8t7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_wnf2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_fmcm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_s5se7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_b37vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_arj44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_thhf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_6i53m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_v7vii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_6tnqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_ss4mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_o808l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_25v0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_x62qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_tghxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_onxq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_4pjn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_xrqy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_ttke2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_4vl4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_tqd32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_bxstw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_txvdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_s7onf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_42a4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_axv0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_or6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_4o1ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_002cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_ethil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_71b5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_8n6ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_h45y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_h1mly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_8pw6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_3yjj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_20rqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_b8d0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_p8t5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_431go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_8rrrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_8rmc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_sokvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_nnbt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_vpgjy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_gg2nb"]
+script = ExtResource("187_ss4mj")
+bars = 1
+note_count = 1
+repeat_predelay = 0.19999999999999996
+metadata/_custom_type_script = "uid://ci7fpx2vgxrn5"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nch4o"]
 
 [node name="Level1" type="Area2D" unique_id=1941508753]
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("3_b56y6")]
-position = Vector2(-2773, -3937)
-
-[node name="Sliding" type="Area2D" parent="." unique_id=517695625]
-position = Vector2(1247, 0)
-
-[node name="StringHarp" parent="Sliding" unique_id=552625837 node_paths=PackedStringArray("start_point", "end_point") instance=ExtResource("13_x5fvb")]
-position = Vector2(9101, -1387)
-start_point = NodePath("start")
-end_point = NodePath("end")
-count = 21
-spacing = 80.0
-
-[node name="start" type="Marker2D" parent="Sliding/StringHarp" unique_id=670457606]
-position = Vector2(2021, 3530)
-
-[node name="end" type="Marker2D" parent="Sliding/StringHarp" unique_id=502673156]
-position = Vector2(5428, -1812)
-
-[node name="Path2D" type="Path2D" parent="Sliding" unique_id=27412297]
-curve = SubResource("Curve2D_b34n4")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Sliding/Path2D" unique_id=1807201270]
-position = Vector2(8925, -1431)
-rotation = 0.23297924
-loop = false
-
-[node name="sequencer" type="Node2D" parent="Sliding/Path2D" unique_id=129207006 node_paths=PackedStringArray("path")]
-position = Vector2(1, 0)
-script = ExtResource("1_b34n4")
-path = NodePath("..")
-slide_speed = 800.0
-steps = Array[ExtResource("2_eb6hj")]([SubResource("Resource_eb6hj"), SubResource("Resource_8mwl4"), SubResource("Resource_ebsb2"), SubResource("Resource_8fc1w"), SubResource("Resource_jajrg")])
-perpendicular_offset = 10.0
-
-[node name="SlidingPath" type="Node2D" parent="Sliding/Path2D" unique_id=202849235 node_paths=PackedStringArray("path")]
-script = ExtResource("4_o75kk")
-path = NodePath("..")
-line_width = 10.0
-
-[node name="SlidingZoneStart" type="Area2D" parent="Sliding" unique_id=254374237 node_paths=PackedStringArray("path_follow", "respawn_point", "screen_fade", "f_prompt_sprite")]
-script = ExtResource("1_b56y6")
-path_follow = NodePath("../Path2D/PathFollow2D")
-override_bpm = 140.0
-override_units_per_bar = 2500.0
-respawn_point = NodePath("Respawn")
-screen_fade = NodePath("../Screenfade")
-f_prompt_sprite = NodePath("../UseF")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sliding/SlidingZoneStart" unique_id=1379460014]
-position = Vector2(8944.5, -1510)
-shape = SubResource("RectangleShape2D_3gcn6")
-
-[node name="Respawn" type="Marker2D" parent="Sliding/SlidingZoneStart" unique_id=1932583639]
-position = Vector2(8769, -1523)
-
-[node name="UseF" parent="Sliding" unique_id=1096380668 instance=ExtResource("8_ut8v4")]
-position = Vector2(8954, -1582)
-scale = Vector2(0.25, 0.25)
-animation = &"f"
-frame_progress = 0.0
-
-[node name="Screenfade" parent="Sliding" unique_id=2127022392 instance=ExtResource("9_m1rte")]
+position = Vector2(21564, -1036)
 
 [node name="1stPart" type="Node" parent="." unique_id=1287981784]
 
 [node name="StartJump Riddle" type="Node2D" parent="1stPart" unique_id=2043910869]
 
+[node name="SlideDown" type="Node2D" parent="1stPart/StartJump Riddle" unique_id=1554450281]
+position = Vector2(824, 207)
+
+[node name="SimpleViolinJump" parent="1stPart/StartJump Riddle" unique_id=1321114405 instance=ExtResource("48_ysd03")]
+position = Vector2(-990, 316)
+rotation = -0.16580628
+script = ExtResource("46_l8ud1")
+sag = 20.0
+bounce_thickness = 30.0
+bounce_velocity = 700.0
+use_surface_angle = true
+angle_influence = 1.0
+vibration_amplitude = 12.0
+vibration_decay = 1.0
+rotations_degrees = null
+rotation_duration = 0.3
+
+[node name="LineEdit" type="LineEdit" parent="1stPart/StartJump Riddle" unique_id=413364070]
+custom_minimum_size = Vector2(600, 400)
+offset_left = -4745.0
+offset_top = -4399.0
+offset_right = -3033.0
+offset_bottom = -3602.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_axxh8")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ms32o")
+text = "1. Strings"
+
 [node name="RespawnPoint" type="Marker2D" parent="1stPart/StartJump Riddle" unique_id=1969144707]
-position = Vector2(-2764, -3880)
+position = Vector2(-4059, -3715)
 
 [node name="FallDown" parent="1stPart/StartJump Riddle" unique_id=2131316012 node_paths=PackedStringArray("player", "respawn_point") instance=ExtResource("10_45x2h")]
-position = Vector2(-3754, -3567.0002)
+position = Vector2(-5049, -3402.0002)
 scale = Vector2(2.6799998, 4.96)
 player = NodePath("../../../Player")
 respawn_point = NodePath("../RespawnPoint")
 
+[node name="StringSlide" parent="1stPart/StartJump Riddle" unique_id=1302506947 instance=ExtResource("4_b34n4")]
+position = Vector2(-3615, -2977)
+
 [node name="FallDown2" parent="1stPart/StartJump Riddle" unique_id=21872052 node_paths=PackedStringArray("player", "respawn_point") instance=ExtResource("10_45x2h")]
-position = Vector2(4037.0002, -127.00014)
+position = Vector2(2041, 1060.9999)
 rotation = -0.52565265
-scale = Vector2(4.657134, 11.564026)
+scale = Vector2(12.666647, 11.564026)
 player = NodePath("../../../Player")
 respawn_point = NodePath("../RespawnPoint")
 
@@ -170,7 +789,7 @@ polygon = PackedVector2Array(-628, -684.8, -651.2, -708, -656, -708, -661, -698.
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="1stPart/StartJump Riddle/Bow2" unique_id=9109190]
 polygon = PackedVector2Array(-444.6, -573.4, -447, -572.3, -447, -570.9, -458, -560.9, -458, -556.2, 619, 624.69995, 619, 626.9, 627, 633.80005, 627, 636.4, 641.30005, 634, 643.30005, 634, 644.4, 631.6, -423, -550.8, -423, -552.9)
 
-[node name="Bouncestring3" parent="1stPart/StartJump Riddle" unique_id=1321114405 instance=ExtResource("1_ihm0d")]
+[node name="Bouncestring3" parent="1stPart/StartJump Riddle" unique_id=1706681915 instance=ExtResource("1_ihm0d")]
 position = Vector2(2947.0002, -1027)
 rotation = -3.1415925
 scale = Vector2(0.7, -0.7)
@@ -221,9 +840,6 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Ukulele" parent="1stPart/StartJump Riddle/Bouncestring2" index="5" unique_id=1044888036]
 z_index = -10
-
-[node name="StringSlide" parent="1stPart/StartJump Riddle" unique_id=1302506947 instance=ExtResource("4_b34n4")]
-position = Vector2(-2320, -3142)
 
 [node name="Saite blockiert Riddle" type="Node2D" parent="1stPart" unique_id=68522693]
 position = Vector2(1162, -114.99988)
@@ -321,10 +937,12 @@ rotations_degrees = PackedFloat32Array(360, 270, 180)
 rotation_duration = 0.5
 
 [node name="TuningPeg1" parent="1stPart/Saite blockiert Riddle" unique_id=1606043576 node_paths=PackedStringArray("player", "hand_grip") instance=ExtResource("15_yi0be")]
+material = SubResource("ShaderMaterial_l8ud1")
 position = Vector2(5424, -1141)
 scale = Vector2(0.6, 0.6)
 num_steps = 2
 start_level = 2
+color_theme = ExtResource("53_j3eb5")
 player = NodePath("../../../Player")
 hand_grip = NodePath("HandPoint")
 camera_offset_x = -300.0
@@ -370,68 +988,225 @@ polygon = PackedVector2Array(-628, -684.8, -651.2, -708, -656, -708, -661, -698.
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="1stPart/Saite blockiert Riddle/Bow" unique_id=1452429428]
 polygon = PackedVector2Array(-444.6, -573.4, -447, -572.3, -447, -570.9, -458, -560.9, -458, -556.2, 619, 624.69995, 619, 626.9, 627, 633.80005, 627, 636.4, 641.30005, 634, 643.30005, 634, 644.4, 631.6, -423, -550.8, -423, -552.9)
 
-[node name="BG" type="Sprite2D" parent="." unique_id=101546485]
-z_index = 1
-position = Vector2(-13.220276, -6.3615623)
-scale = Vector2(150, 200)
+[node name="Sliding" type="Area2D" parent="." unique_id=517695625]
+position = Vector2(1247, 0)
 
-[node name="BG" type="ColorRect" parent="BG" unique_id=844718547]
-z_index = -60
-material = SubResource("ShaderMaterial_nch4o")
-anchors_preset = -1
-anchor_top = 221.925
-anchor_right = 3616.1611
-anchor_bottom = 315.38763
-offset_left = -38.991863
-offset_top = 19.101791
-offset_right = 666.0469
-offset_bottom = 36.7583
-scale = Vector2(0.17991452, -2.3744788)
-color = Color(1, 0.79, 0.79, 1)
-metadata/_edit_use_anchors_ = true
+[node name="StringHarp" parent="Sliding" unique_id=552625837 node_paths=PackedStringArray("start_point", "end_point") instance=ExtResource("13_x5fvb")]
+position = Vector2(9101, -1387)
+start_point = NodePath("start")
+end_point = NodePath("end")
+count = 18
+spacing = 30.0
+
+[node name="start" type="Marker2D" parent="Sliding/StringHarp" unique_id=670457606]
+position = Vector2(2021, 3530)
+
+[node name="end" type="Marker2D" parent="Sliding/StringHarp" unique_id=502673156]
+position = Vector2(5428, -1812)
+
+[node name="Path2D" type="Path2D" parent="Sliding" unique_id=27412297]
+position = Vector2(2, -33)
+curve = SubResource("Curve2D_b34n4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Sliding/Path2D" unique_id=1807201270]
+position = Vector2(8870, -1463)
+rotation = 0.027123885
+loop = false
+
+[node name="sequencer" type="Node2D" parent="Sliding/Path2D" unique_id=129207006 node_paths=PackedStringArray("path")]
+position = Vector2(1, 0)
+script = ExtResource("1_b34n4")
+path = NodePath("..")
+slide_speed = 1200.0
+steps = Array[ExtResource("2_eb6hj")]([SubResource("Resource_eb6hj"), SubResource("Resource_8mwl4"), SubResource("Resource_ebsb2"), SubResource("Resource_8fc1w"), SubResource("Resource_jajrg")])
+perpendicular_offset = 10.0
+
+[node name="SlidingPath" type="Node2D" parent="Sliding/Path2D" unique_id=202849235 node_paths=PackedStringArray("path", "pluck_points")]
+z_index = -5
+script = ExtResource("4_o75kk")
+path = NodePath("..")
+envelope_width = 800.0
+line_width = 10.0
+antialiased = true
+pluck_points = [NodePath("Zupf1"), NodePath("Zupf2"), NodePath("Zupf3")]
+pluck_predelay = -0.5
+pluck_amplitude = 12.0
+
+[node name="Zupf1" type="Marker2D" parent="Sliding/Path2D/SlidingPath" unique_id=1892763239]
+position = Vector2(14118, 752)
+
+[node name="Zupf2" type="Marker2D" parent="Sliding/Path2D/SlidingPath" unique_id=887271340]
+position = Vector2(15095, 1142)
+
+[node name="Zupf3" type="Marker2D" parent="Sliding/Path2D/SlidingPath" unique_id=1660188497]
+position = Vector2(12606, 114)
+
+[node name="SlidingZoneStart" type="Area2D" parent="Sliding" unique_id=254374237 node_paths=PackedStringArray("path_follow", "respawn_point", "screen_fade", "f_prompt_sprite")]
+position = Vector2(-62, -79)
+script = ExtResource("1_b56y6")
+path_follow = NodePath("../Path2D/PathFollow2D")
+override_bpm = 140.0
+override_units_per_bar = 2500.0
+respawn_point = NodePath("RespawnSliding")
+screen_fade = NodePath("../Screenfade")
+f_prompt_sprite = NodePath("../UseF")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sliding/SlidingZoneStart" unique_id=1379460014]
+position = Vector2(8944.5, -1510)
+shape = SubResource("RectangleShape2D_3gcn6")
+
+[node name="RespawnSliding" type="Marker2D" parent="Sliding/SlidingZoneStart" unique_id=1932583639]
+position = Vector2(8770, -1523)
+
+[node name="UseF" parent="Sliding" unique_id=1096380668 instance=ExtResource("8_ut8v4")]
+position = Vector2(8868, -1721)
+scale = Vector2(0.25, 0.25)
+animation = &"f"
+frame_progress = 0.0
+
+[node name="Screenfade" parent="Sliding" unique_id=2127022392 instance=ExtResource("9_m1rte")]
+
+[node name="Handpiz1" type="AnimatedSprite2D" parent="Sliding" unique_id=470007477 node_paths=PackedStringArray("sprite")]
+z_index = 5
+position = Vector2(14062.0205, 895.0209)
+rotation = 0.5061455
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+animation = &"fingerpiz"
+autoplay = "fingerpiz"
+speed_scale = 2.625
+script = ExtResource("86_rncnn")
+sprite = NodePath(".")
+animation_name = "fingerpiz"
+frame_count = 35
+note_value = 3
+
+[node name="Handpiz2" type="AnimatedSprite2D" parent="Sliding" unique_id=1801684395 node_paths=PackedStringArray("sprite")]
+z_index = 5
+position = Vector2(15052.02, 1320.0204)
+rotation = 0.5061455
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+animation = &"fingerpiz"
+autoplay = "fingerpiz"
+speed_scale = 1.3125
+script = ExtResource("86_rncnn")
+sprite = NodePath(".")
+animation_name = "fingerpiz"
+frame_count = 35
+
+[node name="Handpiz3" type="AnimatedSprite2D" parent="Sliding" unique_id=2037179648 node_paths=PackedStringArray("sprite")]
+z_index = 5
+position = Vector2(12588, 222.99963)
+rotation = 0.5061455
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_u0jqh")
+animation = &"fingerpiz"
+autoplay = "fingerpiz"
+speed_scale = 2.625
+script = ExtResource("86_rncnn")
+sprite = NodePath(".")
+animation_name = "fingerpiz"
+frame_count = 35
+note_value = 3
+
+[node name="LineEdit" type="LineEdit" parent="Sliding" unique_id=1157715294]
+custom_minimum_size = Vector2(600, 400)
+offset_left = 7934.0
+offset_top = -2300.0
+offset_right = 10314.0
+offset_bottom = -1503.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_axxh8")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ms32o")
+text = "arrow up to jump over obstacles"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sliding" unique_id=1893435296]
+z_index = -10
+
+[node name="Fhole" type="Sprite2D" parent="Sliding/StaticBody2D" unique_id=334545680]
+position = Vector2(8878, -1588)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("59_kpdhg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sliding/StaticBody2D" unique_id=531031516]
+position = Vector2(8878, -1588)
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(97, -140.9, 79.5, -142, 78, -142, 78, -140.5, 76.70001, -140, 74.100006, -140, 68.100006, -133, 66.20001, -133, 65, -119.1, 65, -114, 72, -109, 72, -105.9, 85.20001, -112, 86.20001, -111, 121, 30, 121, 34.300003, 148, 119.20001, 148, 121.899994, 158, 130.79999, 158, 132.29999, 173.6, 139, 188.5, 139, 196.5, 135, 198.79999, 135, 206.79999, 127, 208.29999, 127, 216.29999, 109, 218, 109, 218, 95.3, 208, 82, 193.4, 82, 186.4, 87, 184.1, 87, 182, 115.899994, 182, 116.70001, 181.5, 117, 177.79999, 117, 174.79999, 114, 133, -37, 133, -41.300003, 106, -128.3, 106, -132, 97, -139)
+
+[node name="FallDown2" parent="Sliding" unique_id=2040683138 node_paths=PackedStringArray("player", "respawn_point") instance=ExtResource("10_45x2h")]
+position = Vector2(9481, 2387)
+rotation = 0.027498186
+scale = Vector2(12.666647, 11.564026)
+player = NodePath("../../Player")
+respawn_point = NodePath("../SlidingZoneStart/RespawnSliding")
 
 [node name="Gopichand" parent="." unique_id=666133277 node_paths=PackedStringArray("player") instance=ExtResource("13_ut8v4")]
 position = Vector2(18570, 2513)
 player = NodePath("../Player")
 
+[node name="TuningPeg" parent="Gopichand/Saite" parent_id_path=PackedInt32Array(666133277, 1571158824) index="3" unique_id=840699904]
+modulate = Color(1, 0, 1, 1)
+
+[node name="Callandresponse" parent="Gopichand" index="6" unique_id=1279517241]
+input_timeout_seconds = 4.0
+success_color = Color(0, 0, 0, 1)
+intro_color = Color(0, 0, 0, 1)
+fail_color = Color(0, 0, 0, 1)
+
 [node name="tunerbutterflycontroller" parent="Gopichand" index="7" unique_id=566946090 node_paths=PackedStringArray("player", "level_build_targets")]
 player = NodePath("../../Player")
+camera_zoom_target = Vector2(0.4, 0.4)
 camera_zoom_duration = 2.0
-camera_offset_x = 1000.0
+camera_offset_x = 1500.0
+camera_offset_y = -300.0
 camera_offset_duration = 2.0
 camera_offset_revert_delay = 5.0
 stagger_delay = 0.3
-level_build_targets = [NodePath("../../Bowing/BowMover1u"), NodePath("../../Bowing/BowMover1Oben"), NodePath("../../Bowing/BowMover2Unten"), NodePath("../../Bowing/BowMover2Oben"), NodePath("../../Bowing/BowMover3Oben"), NodePath("../../Bowing/BowMover3Unten"), NodePath("../../Bowing/BowMoverLtoR")]
+level_build_targets = [NodePath("../../Bowing/BowMover1unten"), NodePath("../../Bowing/BowMover1Oben"), NodePath("../../Bowing/BowMover2Unten"), NodePath("../../Bowing/BowMover2Oben"), NodePath("../../Bowing/BowMover3Unten"), NodePath("../../Bowing/BowMover3Oben"), NodePath("../../Bowing/BowMoverLtoR"), NodePath("../../Bowing/VibratingStringOben1"), NodePath("../../Bowing/VibratingStringOben2"), NodePath("../../Bowing/VibratingString3"), NodePath("../../Bowing/VibratingString4")]
 level_build_stagger_delay = 0.0
+
+[node name="Label" parent="Gopichand" index="8" unique_id=2014038529]
+theme_override_font_sizes/font_size = 60
+
+[node name="LevelStringDisplay" parent="Gopichand" index="9" unique_id=506952954]
+invert_direction = true
+override_vibration_amplitude = 20.0
 
 [node name="FallDown" parent="Gopichand" unique_id=688781110 node_paths=PackedStringArray("player", "respawn_point") instance=ExtResource("10_45x2h")]
 position = Vector2(1970, 1623)
 scale = Vector2(23.304323, 4.96)
 player = NodePath("../../Player")
-respawn_point = NodePath("../../1stPart/StartJump Riddle/RespawnPoint")
+respawn_point = NodePath("../RespawnpointGopichand")
 
-[node name="Respawnpoint" type="Marker2D" parent="Gopichand" unique_id=201451519]
+[node name="RespawnpointGopichand" type="Marker2D" parent="Gopichand" unique_id=201451519]
 position = Vector2(-4, -142)
-
-[node name="BassSlideZone" parent="." unique_id=1304215454 instance=ExtResource("16_emxea")]
-position = Vector2(36155, 3763)
-
-[node name="SlideJumpSlide" parent="." unique_id=11059178 instance=ExtResource("17_7g4j0")]
-position = Vector2(36538, 23354)
 
 [node name="Bowing" type="Node2D" parent="." unique_id=1131978483]
 position = Vector2(3112, 99)
 
-[node name="BowMover1u" parent="Bowing" unique_id=401476511 instance=ExtResource("21_a57k7")]
-position = Vector2(18669, 2433.999)
+[node name="BowMover1unten" parent="Bowing" unique_id=401476511 instance=ExtResource("21_a57k7")]
+position = Vector2(18670, 2700)
 scale = Vector2(0.25, 0.25)
 move_distance_px = 300.0
 bpm = 90.0
 move_from_offset = Vector2(0, 2500)
 fly_in_count = 8
 
-[node name="BowMover1Oben" parent="Bowing" unique_id=2138283271 instance=ExtResource("21_a57k7")]
-position = Vector2(18668, 1383)
+[node name="BowRotator" parent="Bowing/BowMover1unten" unique_id=2138283271 node_paths=PackedStringArray("target") instance=ExtResource("21_a57k7")]
+position = Vector2(18361, -828)
+rotation = -5.4454274
+scale = Vector2(0.25, -0.25)
+script = ExtResource("24_ms32o")
+target = NodePath(".")
+states = Array[ExtResource("23_ph16p")]([])
+loop = true
+bpm = 90.0
+autostart = true
+
+[node name="BowMover1Oben" parent="Bowing" unique_id=1999443135 instance=ExtResource("21_a57k7")]
+position = Vector2(18670, 1200)
 rotation = 2.3928463
 scale = Vector2(0.25, -0.25)
 move_distance_px = 300.0
@@ -441,7 +1216,7 @@ move_from_offset = Vector2(0, -2500)
 fly_in_count = 8
 
 [node name="BowMover2Unten" parent="Bowing" unique_id=1298633946 instance=ExtResource("21_a57k7")]
-position = Vector2(19402, 2442.9995)
+position = Vector2(19400, 2700)
 scale = Vector2(0.25, 0.25)
 move_distance_px = 300.0
 bpm = 90.0
@@ -450,7 +1225,7 @@ move_from_offset = Vector2(0, 2500)
 fly_in_count = 8
 
 [node name="BowMover2Oben" parent="Bowing" unique_id=449081800 instance=ExtResource("21_a57k7")]
-position = Vector2(19395, 1369)
+position = Vector2(19400, 1200)
 rotation = 2.4085543
 scale = Vector2(0.25, -0.25)
 move_distance_px = 300.0
@@ -460,16 +1235,16 @@ delay_count = 1
 move_from_offset = Vector2(0, -2500)
 fly_in_count = 8
 
-[node name="BowMover3Oben" parent="Bowing" unique_id=841860547 instance=ExtResource("21_a57k7")]
-position = Vector2(20133, 2443.999)
+[node name="BowMover3Unten" parent="Bowing" unique_id=841860547 instance=ExtResource("21_a57k7")]
+position = Vector2(20130, 2700)
 scale = Vector2(0.25, 0.25)
 move_distance_px = 300.0
 bpm = 90.0
 move_from_offset = Vector2(0, 2500)
 fly_in_count = 8
 
-[node name="BowMover3Unten" parent="Bowing" unique_id=1026710487 instance=ExtResource("21_a57k7")]
-position = Vector2(20132, 1393)
+[node name="BowMover3Oben" parent="Bowing" unique_id=1026710487 instance=ExtResource("21_a57k7")]
+position = Vector2(20130, 1200)
 rotation = 2.3928463
 scale = Vector2(0.25, -0.25)
 move_distance_px = 300.0
@@ -485,9 +1260,11 @@ script = ExtResource("22_a57k7")
 line = NodePath("Line2D")
 string_points = [NodePath("BowL"), NodePath("BowR")]
 bpm = 90.0
+move_from_offset = Vector2(1500, 0)
+fly_in_count = 8
 
 [node name="Line2D" type="Line2D" parent="Bowing/VibratingStringOben1" unique_id=183970481]
-points = PackedVector2Array(15424, 1478, 24391, 1467)
+points = PackedVector2Array(18329, 1478, 24391, 1467)
 width = 4.0
 
 [node name="BowL" type="Marker2D" parent="Bowing/VibratingStringOben1" unique_id=1275832498]
@@ -506,11 +1283,13 @@ script = ExtResource("22_a57k7")
 line = NodePath("Line2D")
 string_points = [NodePath("BowL"), NodePath("BowR")]
 bpm = 90.0
+move_from_offset = Vector2(1500, 0)
+fly_in_count = 8
 
 [node name="Line2D" type="Line2D" parent="Bowing/VibratingStringOben2" unique_id=1513414918]
 position = Vector2(-8205.979, -699.3783)
 scale = Vector2(1.3454376, 1.3454397)
-points = PackedVector2Array(17379, 1478, 23815, 1467)
+points = PackedVector2Array(19745.23, 1478, 23815, 1467)
 width = 4.0
 
 [node name="BowL" type="Marker2D" parent="Bowing/VibratingStringOben2" unique_id=682256555]
@@ -529,11 +1308,13 @@ script = ExtResource("22_a57k7")
 line = NodePath("Line2D")
 string_points = [NodePath("BowL"), NodePath("BowR")]
 bpm = 90.0
+move_from_offset = Vector2(1500, 0)
+fly_in_count = 8
 
 [node name="Line2D" type="Line2D" parent="Bowing/VibratingString3" unique_id=1717767527]
 position = Vector2(-15483.111, 77.437256)
 scale = Vector2(1.6497331, 1.6497353)
-points = PackedVector2Array(17379, 1478, 23926, 1467)
+points = PackedVector2Array(20474.895, 1478, 23926, 1467)
 width = 4.0
 
 [node name="BowL" type="Marker2D" parent="Bowing/VibratingString3" unique_id=1723797006]
@@ -552,9 +1333,12 @@ script = ExtResource("22_a57k7")
 line = NodePath("Line2D")
 string_points = [NodePath("BowL"), NodePath("BowR")]
 bpm = 90.0
+move_from_offset = Vector2(1500, 0)
+fly_in_count = 8
 
 [node name="Line2D" type="Line2D" parent="Bowing/VibratingString4" unique_id=1794998500]
-position = Vector2(86, 1259)
+position = Vector2(10034.463, 1860.7317)
+scale = Vector2(0.58870256, 0.5887001)
 points = PackedVector2Array(13995, 1478, 24184, 1467)
 width = 4.0
 
@@ -578,32 +1362,195 @@ rotation = -3.700098
 scale = Vector2(0.7, -0.7)
 
 [node name="BowMoverLtoR" parent="Bowing" unique_id=330046586 instance=ExtResource("21_a57k7")]
-position = Vector2(16775.002, 1168.999)
+position = Vector2(17158.002, 1331.001)
 rotation = -5.4454274
 scale = Vector2(0.5, -0.5)
-move_distance_px = 1000.0
-move_direction = Vector2(1, 0)
-bpm = 45.0
+move_distance_px = 2500.0
+bpm = 90.0
 note_value = 0
-move_from_offset = Vector2(-5000, 0)
-fly_in_count = 8
+move_from_offset = Vector2(0, -5000)
+fly_in_count = 16
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=413364070]
-custom_minimum_size = Vector2(600, 400)
-offset_left = -2544.0
-offset_top = -4335.0
-offset_right = -1637.0
-offset_bottom = -3935.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("24_axxh8")
-theme_override_font_sizes/font_size = 150
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ms32o")
-text = "1. Strings"
+[node name="Node2D" type="Node2D" parent="Bowing" unique_id=840337207]
 
+[node name="BowRotator" parent="Bowing" unique_id=1492348876 node_paths=PackedStringArray("target") instance=ExtResource("21_a57k7")]
+position = Vector2(19046, -745)
+rotation = -5.4454274
+scale = Vector2(0.25, -0.25)
+script = ExtResource("24_ms32o")
+target = NodePath(".")
+states = Array[ExtResource("23_ph16p")]([SubResource("Resource_6thac"), SubResource("Resource_523a1"), SubResource("Resource_ph16p"), SubResource("Resource_qgvb1")])
+loop = true
+bpm = 90.0
+autostart = true
+
+[node name="BowRotator2" parent="Bowing" unique_id=208124270 node_paths=PackedStringArray("target") instance=ExtResource("21_a57k7")]
+position = Vector2(19723, -745)
+rotation = -5.4454274
+scale = Vector2(0.25, -0.25)
+script = ExtResource("24_ms32o")
+target = NodePath(".")
+states = Array[ExtResource("23_ph16p")]([SubResource("Resource_6thac"), SubResource("Resource_523a1"), SubResource("Resource_ph16p"), SubResource("Resource_qgvb1")])
+loop = true
+bpm = 90.0
+autostart = true
+
+[node name="BowRotator3" parent="Bowing" unique_id=1652988890 node_paths=PackedStringArray("target") instance=ExtResource("21_a57k7")]
+position = Vector2(20435, -745)
+rotation = -5.4454274
+scale = Vector2(0.25, -0.25)
+script = ExtResource("24_ms32o")
+target = NodePath(".")
+states = Array[ExtResource("23_ph16p")]([SubResource("Resource_6thac"), SubResource("Resource_523a1"), SubResource("Resource_ph16p"), SubResource("Resource_qgvb1")])
+loop = true
+bpm = 90.0
+autostart = true
+
+[node name="VibratingBerimbau" parent="Bowing" unique_id=1211508558 instance=ExtResource("26_6thac")]
+position = Vector2(19280, -655)
+rotation = 0.46949357
+scale = Vector2(0.7, 0.7)
+
+[node name="Bow" parent="Bowing/VibratingBerimbau" index="1" unique_id=478758162]
+position = Vector2(27.574112, -102.574844)
+
+[node name="VibratingBerimbau2" parent="Bowing" unique_id=15980051 instance=ExtResource("26_6thac")]
+position = Vector2(19937.002, -655)
+rotation = 0.46949357
+scale = Vector2(0.7, 0.7)
+
+[node name="Bow" parent="Bowing/VibratingBerimbau2" index="1" unique_id=478758162]
+position = Vector2(27.574112, -102.574844)
+
+[node name="VibratingBerimbau3" parent="Bowing" unique_id=1521086415 instance=ExtResource("26_6thac")]
+position = Vector2(20661.002, -655)
+rotation = 0.46949357
+scale = Vector2(0.7, 0.7)
+
+[node name="Bow" parent="Bowing/VibratingBerimbau3" index="1" unique_id=478758162]
+position = Vector2(27.574112, -102.574844)
+
+[node name="Tuner" type="StaticBody2D" parent="Bowing" unique_id=1220133142]
+position = Vector2(498, 35)
+
+[node name="TunerButterfly00" type="Sprite2D" parent="Bowing/Tuner" unique_id=1301898030]
+position = Vector2(18030, -727)
+texture = ExtResource("27_523a1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bowing/Tuner" unique_id=1819230355]
+position = Vector2(18030, -727)
+polygon = PackedVector2Array(-49, -172.1, -49, -170.5, -163.4, -131, -167.4, -131, -177, -102.3, -177, -97.7, -175, -91, -175, -86.3, -170, -80.3, -170, -77.899994, -158, -69.899994, -158, -68.399994, -59.199997, -46, -54.600006, -46, -49.300003, -42.5, -51, -31.199997, -51, -11, -36.100006, -0.3999939, -38, 58, -38, 103.29999, -43, 110, -45, 110, -45, 135, -46, 135, -45, 182, -45, 194, -40, 197.9, -40, 199.70001, -26.199997, 202, 9.299988, 202, 33.299988, 195, 36.100006, 195, 34, 131.9, 34, 115.29999, 29, 109, 32, 28, 32, 10.399994, 34, 1.2000122, 34, 0.2999878, 42.5, -3, 45, -3, 49, -8, 51.100006, -8, 50, -37.100006, 105.29999, -45, 112.20001, -45, 145.1, -53, 148.9, -53, 164.9, -70, 166.4, -70, 173.4, -88, 175, -88, 175, -105.399994, 172, -112.399994, 172, -115.7, 158, -134.7, 158, -136.4, 71, -166.5, 71, -167.9)
+
+[node name="StrumHand" type="StaticBody2D" parent="Bowing" unique_id=1096334281]
+position = Vector2(-3954, -894)
+
+[node name="StringHandTap" type="Node2D" parent="Bowing" unique_id=1310254932 node_paths=PackedStringArray("line", "string_points")]
+z_index = -10
+position = Vector2(-1092, -2832)
+script = ExtResource("22_a57k7")
+line = NodePath("Line2D")
+string_points = [NodePath("HandStrumPoint")]
+vibration_influence_radius = 500.0
+states = Array[ExtResource("187_ss4mj")]([SubResource("Resource_6tnqd")])
+bpm = 90.0
+autostart = true
+vibration_amplitude = 25.0
+vibration_frequency = 16.0
+
+[node name="Line2D" type="Line2D" parent="Bowing/StringHandTap" unique_id=92297142]
+position = Vector2(-4268, -27)
+points = PackedVector2Array(22742, 1478, 24391, 1467)
+
+[node name="HandStrumPoint" type="Marker2D" parent="Bowing/StringHandTap" unique_id=106950329]
+position = Vector2(19496, 1447)
+script = ExtResource("23_45x2h")
+delay_count = 1
+
+[node name="HandArp" type="StaticBody2D" parent="Bowing" unique_id=771947398]
+position = Vector2(20316, -1648)
+
+[node name="HandArpAn" type="AnimatedSprite2D" parent="Bowing/HandArp" unique_id=21881835 node_paths=PackedStringArray("sprite")]
+position = Vector2(-605, 178)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_y0uk2")
+animation = &"arp"
+autoplay = "arp"
+frame = 53
+frame_progress = 1.0
+speed_scale = 16.2
+script = ExtResource("86_rncnn")
+sprite = NodePath(".")
+animation_name = "arp"
+frame_count = 54
+
+[node name="HandTap" type="StaticBody2D" parent="Bowing" unique_id=832265696]
+position = Vector2(19353, -1460)
+scale = Vector2(0.5, 0.5)
+
+[node name="HandTapAn" type="AnimatedSprite2D" parent="Bowing/HandTap" unique_id=510442586 node_paths=PackedStringArray("sprite")]
+position = Vector2(-1709, -140)
+sprite_frames = SubResource("SpriteFrames_p4r8s")
+autoplay = "default"
+frame = 38
+frame_progress = 0.93792474
+speed_scale = 7.5
+script = ExtResource("86_rncnn")
+sprite = NodePath(".")
+frame_count = 50
+note_value = 1
+
+[node name="StringHandArp" type="Node2D" parent="Bowing" unique_id=1341778057 node_paths=PackedStringArray("line", "string_points")]
+z_index = -10
+position = Vector2(2447, -2835)
+script = ExtResource("22_a57k7")
+line = NodePath("Line2D")
+string_points = [NodePath("HandStrumPoint2")]
+vibration_influence_radius = 500.0
+states = Array[ExtResource("187_ss4mj")]([SubResource("Resource_gg2nb")])
+bpm = 90.0
+autostart = true
+vibration_amplitude = 25.0
+vibration_frequency = 16.0
+
+[node name="Line2D" type="Line2D" parent="Bowing/StringHandArp" unique_id=488501000]
+position = Vector2(-1749, -36)
+points = PackedVector2Array(18329, 1478, 20217, 1467)
+
+[node name="HandStrumPoint2" type="Marker2D" parent="Bowing/StringHandArp" unique_id=1437325477]
+position = Vector2(17193, 1443)
+script = ExtResource("23_45x2h")
+delay_count = 1
+
+[node name="BassSlideZone" parent="." unique_id=1304215454 instance=ExtResource("16_emxea")]
+position = Vector2(36155, 3763)
+
+[node name="SlideJumpSlide" parent="." unique_id=11059178 instance=ExtResource("17_7g4j0")]
+position = Vector2(36538, 23354)
+
+[node name="BG" type="Sprite2D" parent="." unique_id=101546485]
+z_index = 1
+position = Vector2(-13.220276, -6.3615623)
+scale = Vector2(150, 200)
+
+[node name="BG" type="ColorRect" parent="BG" unique_id=844718547]
+z_index = -60
+material = SubResource("ShaderMaterial_nch4o")
+anchors_preset = -1
+anchor_top = 221.925
+anchor_right = 3616.1611
+anchor_bottom = 315.38763
+offset_left = -93.605194
+offset_top = -5.8582
+offset_right = 611.4336
+offset_bottom = 11.798309
+scale = Vector2(0.17991452, -2.3744788)
+color = Color(1, 0.79, 0.79, 1)
+metadata/_edit_use_anchors_ = true
+
+[editable path="1stPart/StartJump Riddle/StringSlide"]
 [editable path="1stPart/StartJump Riddle/Bouncestring3"]
 [editable path="1stPart/StartJump Riddle/String"]
 [editable path="1stPart/StartJump Riddle/Bouncestring2"]
-[editable path="1stPart/StartJump Riddle/StringSlide"]
 [editable path="1stPart/Saite blockiert Riddle/Stringwall"]
 [editable path="1stPart/Saite blockiert Riddle/Uku1"]
 [editable path="1stPart/Saite blockiert Riddle/TuningPeg1"]
@@ -613,3 +1560,6 @@ text = "1. Strings"
 [editable path="Gopichand"]
 [editable path="Bowing/Bouncestring3"]
 [editable path="Bowing/Bouncestring4"]
+[editable path="Bowing/VibratingBerimbau"]
+[editable path="Bowing/VibratingBerimbau2"]
+[editable path="Bowing/VibratingBerimbau3"]

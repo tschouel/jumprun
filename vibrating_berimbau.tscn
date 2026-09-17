@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://f736vyikyldn"]
+
+[ext_resource type="Script" uid="uid://cvekb7pxjw0nx" path="res://vibrating_string.gd" id="1_br82o"]
+[ext_resource type="Script" uid="uid://ci7fpx2vgxrn5" path="res://animation/vibrating_string_state.gd" id="2_5uvi6"]
+[ext_resource type="Script" uid="uid://1au8o0bjnu8v" path="res://string_pulse_point.gd" id="3_c1oky"]
+[ext_resource type="Texture2D" uid="uid://dfar0qijikkd2" path="res://animation/Berimbau.png" id="4_otcbc"]
+
+[sub_resource type="Resource" id="Resource_u0jqh"]
+script = ExtResource("2_5uvi6")
+bars = 2
+repeat_note_value = 3
+metadata/_custom_type_script = "uid://ci7fpx2vgxrn5"
+
+[sub_resource type="Resource" id="Resource_agnes"]
+script = ExtResource("2_5uvi6")
+bars = 1
+repeat_note_count = 0
+metadata/_custom_type_script = "uid://ci7fpx2vgxrn5"
+
+[node name="VibratingBerimbau" type="StaticBody2D" unique_id=1211508558 node_paths=PackedStringArray("line", "string_points")]
+z_index = -10
+script = ExtResource("1_br82o")
+line = NodePath("Line2D")
+string_points = [NodePath("Bow")]
+states = Array[ExtResource("2_5uvi6")]([SubResource("Resource_u0jqh"), SubResource("Resource_agnes")])
+bpm = 90.0
+autostart = true
+
+[node name="Line2D" type="Line2D" parent="." unique_id=608424281]
+points = PackedVector2Array(-216, 186, 190, -270)
+width = 4.0
+
+[node name="Bow" type="Marker2D" parent="." unique_id=478758162]
+position = Vector2(-34, -23)
+script = ExtResource("3_c1oky")
+delay_count = 1
+
+[node name="Berimbau" type="Sprite2D" parent="." unique_id=1282870043]
+z_index = -10
+rotation = -0.72431165
+texture = ExtResource("4_otcbc")

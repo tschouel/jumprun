@@ -19,6 +19,31 @@ class_name CallAndResponse
 ## AUTOMATISCHER STUFEN-AUFSTIEG: Nach Erfolg wird "stage" selbst
 ## automatisch um 1 erhoeht (siehe advance_stage_on_success).
 ##
+## SPIELER-EINFRIEREN (neu, exakt dasselbe Muster wie TuningPeg.gd's
+## freeze_player_while_engaged): Solange eine Herausforderung aktiv ist
+## (ab start_challenge(), also ab dem ersten F-Druck in der Zone, bis
+## cancel_challenge()), wird player.set_physics_process(false) gesetzt und
+## player.velocity sofort auf Vector2.ZERO genullt - der Spieler bleibt
+## dadurch schlagartig stehen, statt durch die zuletzt berechnete Velocity
+## noch unnatuerlich weiterzugleiten. Bleibt ueber mehrere Stufen (Erfolg mit
+## advance_stage_on_success ODER Fehlschlag mit auto_retry_on_fail) hinweg
+## durchgehend eingefroren - erst cancel_challenge() (erneuter F-Druck oder
+## Verlassen der Zone) gibt die Bewegung wieder frei. player leer lassen
+## oder freeze_player_while_engaged = false deaktiviert das Feature komplett
+## (dann wie zuvor: keine Kopplung an die Spielerbewegung).
+##
+## EINGABE-TIMEOUT (neu): Hat der Spieler waehrend einer aktiven
+## Herausforderung input_timeout_seconds lang GAR KEINEN Ton gezupft (weder
+## den ersten noch einen weiteren), werden die bisher gesammelten Toene
+## verworfen und die Eingabe beginnt von vorne - der Spieler bleibt aber in
+## der Zone und die Herausforderung selbst laeuft einfach weiter (kein
+## cancel_challenge(), kein Verlassen der Zone noetig). Das Zeitfenster wird
+## bei JEDEM registrierten Ton neu gestartet, nicht nur beim ersten - eine
+## lange Pause MITTEN in einer laufenden Tonfolge loest also genauso einen
+## Reset aus. input_timeout_seconds <= 0 deaktiviert das Feature komplett
+## (Standard-Verhalten wie zuvor: der Spieler kann sich beliebig lange Zeit
+## lassen).
+##
 ## STUFE 1 - TON KOPIEREN, STUFE 2/3 - RHYTHMUS: siehe vorherige
 ## Kommentare/Versionen dieser Datei fuer Details.
 ##
@@ -30,6 +55,10 @@ signal stage_failed(stage: int, reason: String)
 @export_group("Ausloeser")
 @export var interaction_zone: Area2D
 @export var toggle_key: Key = KEY_F
+
+@export_group("Spieler-Kopplung")
+@export var player: CharacterBody2D
+@export var freeze_player_while_engaged: bool = true
 
 @export_group("Aufgabe")
 @export var stage: int = 1
@@ -52,6 +81,18 @@ signal stage_failed(stage: int, reason: String)
 @export var advance_stage_on_success: bool = true
 @export var stage_intro_texts: Array[String] = ["", "", "Now try the rhythm: quarter - eighth - eighth", "Now try this new rhythm at a different tempo"]
 
+@export_group("Eingabe-Timeout")
+## Sekunden ohne JEDE neue Eingabe, nach denen die bisher gesammelten Toene
+## verworfen werden und die Eingabe von vorne beginnt (siehe
+## Klassenkommentar oben). <= 0 deaktiviert das Feature.
+@export var input_timeout_seconds: float = 2.0
+## Standardmaessig leer = KEIN Feedback-Text beim Reset, nur ein stiller
+## Neustart der Eingabe - bewusst getrennt von too_slow_text (das steht
+## weiterhin nur fuer "Rhythmus tatsaechlich zu langsam gespielt", siehe
+## _evaluate_rhythm_stage()). Nur befuellen, wenn du hier zusaetzlich auch
+## optisch/textlich auf den Reset hinweisen willst.
+@export var input_timeout_text: String = ""
+
 @export_group("Rueckmeldung")
 @export var feedback_label: Label
 @export var feedback_display_time: float = 1.8
@@ -73,6 +114,7 @@ var _player_in_zone: bool = false
 var _response_active: bool = false
 var _note_times: Array[float] = []
 var _note_pitches: Array[int] = []
+var _input_timeout_timer: Timer
 
 func _ready() -> void:
 	print("[CallAndResponse DIAGNOSE] _ready() - final_target=", final_target, " final_stage_number=", final_stage_number, " success_target=", success_target)
@@ -81,6 +123,11 @@ func _ready() -> void:
 	if interaction_zone:
 		interaction_zone.body_entered.connect(_on_zone_body_entered)
 		interaction_zone.body_exited.connect(_on_zone_body_exited)
+
+	_input_timeout_timer = Timer.new()
+	_input_timeout_timer.one_shot = true
+	add_child(_input_timeout_timer)
+	_input_timeout_timer.timeout.connect(_on_input_timeout)
 
 func _on_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -107,11 +154,18 @@ func start_challenge() -> void:
 	_response_active = true
 	_note_times.clear()
 	_note_pitches.clear()
+	_restart_input_timeout()
+	if freeze_player_while_engaged and player:
+		player.set_physics_process(false)
+		player.velocity = Vector2.ZERO
 
 func cancel_challenge() -> void:
 	_response_active = false
 	_note_times.clear()
 	_note_pitches.clear()
+	_stop_input_timeout()
+	if freeze_player_while_engaged and player:
+		player.set_physics_process(true)
 
 func register_note(tension_level: int) -> void:
 	if not _response_active:
@@ -119,6 +173,7 @@ func register_note(tension_level: int) -> void:
 	var now: float = Time.get_ticks_msec() / 1000.0
 	_note_times.append(now)
 	_note_pitches.append(tension_level)
+	_restart_input_timeout()
 	match stage:
 		1:
 			_evaluate_stage1()
@@ -129,9 +184,42 @@ func register_note(tension_level: int) -> void:
 		_:
 			pass
 
+## Wird faellig, wenn input_timeout_seconds lang kein register_note()-Aufruf
+## mehr kam, waehrend eine Herausforderung noch aktiv ist - verwirft die
+## bisher gesammelten Toene (die Herausforderung selbst bleibt aktiv, der
+## Spieler faengt einfach neu an zu zupfen) und startet das Zeitfenster
+## gleich wieder neu, falls der Spieler auch weiterhin nichts tut.
+func _on_input_timeout() -> void:
+	if not _response_active:
+		return
+	_note_times.clear()
+	_note_pitches.clear()
+	if input_timeout_text != "":
+		_show_feedback(input_timeout_text, fail_color)
+	_restart_input_timeout()
+
+## (Neu-)Startet das Eingabe-Timeout-Zeitfenster - aufgerufen bei jedem
+## register_note() (Fenster ruckt mit jedem Ton mit) sowie ueberall dort, wo
+## _response_active auf true gesetzt wird. Tut nichts, falls
+## input_timeout_seconds <= 0 ist (Feature deaktiviert).
+func _restart_input_timeout() -> void:
+	if not _input_timeout_timer:
+		return
+	_input_timeout_timer.stop()
+	if input_timeout_seconds > 0.0:
+		_input_timeout_timer.start(input_timeout_seconds)
+
+## Stoppt ein eventuell laufendes Eingabe-Timeout - aufgerufen ueberall dort,
+## wo _response_active auf false gesetzt wird (Herausforderung ist damit
+## nicht mehr aktiv, ein spaeter Reset waere unsinnig).
+func _stop_input_timeout() -> void:
+	if _input_timeout_timer:
+		_input_timeout_timer.stop()
+
 func _evaluate_stage1() -> void:
 	var pitch: int = _note_pitches[0]
 	_response_active = false
+	_stop_input_timeout()
 	if pitch == expected_tension_level:
 		_succeed()
 	else:
@@ -145,6 +233,7 @@ func _evaluate_rhythm_stage(expected_pitch: int, stage_bpm: float, pattern: Arra
 		var last_pitch: int = _note_pitches[count - 1]
 		if last_pitch != expected_pitch:
 			_response_active = false
+			_stop_input_timeout()
 			_fail(wrong_pitch_text)
 			return
 
@@ -152,6 +241,7 @@ func _evaluate_rhythm_stage(expected_pitch: int, stage_bpm: float, pattern: Arra
 		return
 
 	_response_active = false
+	_stop_input_timeout()
 
 	if stage_bpm <= 0.0:
 		_fail(rhythm_text)
@@ -223,6 +313,7 @@ func _succeed() -> void:
 		_response_active = true
 		_note_times.clear()
 		_note_pitches.clear()
+		_restart_input_timeout()
 
 func _fail(reason: String) -> void:
 	_show_feedback(reason, fail_color)
@@ -231,6 +322,7 @@ func _fail(reason: String) -> void:
 		_response_active = true
 		_note_times.clear()
 		_note_pitches.clear()
+		_restart_input_timeout()
 
 func _show_feedback(text: String, color: Color) -> void:
 	if not feedback_label:

@@ -1284,7 +1284,6 @@ script = ExtResource("20_pbfsw")
 speed = 600.0
 jump_velocity = -800.0
 gravity = 1300.0
-max_platform_jump_boost = 900.0
 climb_speed = 400.0
 camera_look_down_offset = 500.0
 shock_hold_time = 0.5
@@ -1297,6 +1296,8 @@ animation = &"slide"
 
 [node name="PathMovement" type="Node2D" parent="." unique_id=156126812 node_paths=PackedStringArray("dust_particles")]
 script = ExtResource("26_7hik5")
+countoff_bpm = 90.0
+countoff_count = 4
 jump_duration_multiplier = 0.3
 dust_particles = NodePath("SlideDust")
 

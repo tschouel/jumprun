@@ -68,6 +68,7 @@
 [ext_resource type="Resource" uid="uid://bcicdsdexpvku" path="res://tuning_peg_color.tres" id="53_j3eb5"]
 [ext_resource type="Shader" uid="uid://dvhnbswju1bjb" path="res://Recolor.gdshader" id="56_ua0an"]
 [ext_resource type="Texture2D" uid="uid://b10ioldde3l01" path="res://animation/Fhole.png" id="59_kpdhg"]
+[ext_resource type="PackedScene" uid="uid://gbg005rig857" path="res://bow_lift.tscn" id="66_kjggd"]
 [ext_resource type="Script" uid="uid://dtgq1lu3m8ig4" path="res://animation_temposync.gd" id="86_rncnn"]
 [ext_resource type="Texture2D" uid="uid://defpmkv5ju2dk" path="res://animation/HandTap 00.png" id="123_gg2nb"]
 [ext_resource type="Texture2D" uid="uid://b8be404wi52xs" path="res://animation/HandTap 01.png" id="124_kjggd"]
@@ -372,7 +373,7 @@ bars = 1
 note_value = 1
 note_count = 1
 repeat_note_value = 1
-repeat_predelay = 0.10000000000000009
+repeat_predelay = 0.10000000000000007
 metadata/_custom_type_script = "uid://ci7fpx2vgxrn5"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y0uk2"]
@@ -715,7 +716,7 @@ metadata/_custom_type_script = "uid://ci7fpx2vgxrn5"
 [node name="Level1" type="Area2D" unique_id=1941508753]
 
 [node name="Player" parent="." unique_id=1969377440 instance=ExtResource("3_b56y6")]
-position = Vector2(21564, -1036)
+position = Vector2(21606, -853)
 
 [node name="1stPart" type="Node" parent="." unique_id=1287981784]
 
@@ -1164,7 +1165,7 @@ camera_offset_y = -300.0
 camera_offset_duration = 2.0
 camera_offset_revert_delay = 5.0
 stagger_delay = 0.3
-level_build_targets = [NodePath("../../Bowing/BowMover1unten"), NodePath("../../Bowing/BowMover1Oben"), NodePath("../../Bowing/BowMover2Unten"), NodePath("../../Bowing/BowMover2Oben"), NodePath("../../Bowing/BowMover3Unten"), NodePath("../../Bowing/BowMover3Oben"), NodePath("../../Bowing/BowMoverLtoR"), NodePath("../../Bowing/VibratingStringOben1"), NodePath("../../Bowing/VibratingStringOben2"), NodePath("../../Bowing/VibratingString3"), NodePath("../../Bowing/VibratingString4")]
+level_build_targets = [NodePath("../../Bowing/BowMover1unten"), NodePath("../../Bowing/BowMover1Oben"), NodePath("../../Bowing/BowMover2Unten"), NodePath("../../Bowing/BowMover2Oben"), NodePath("../../Bowing/BowMover3Unten"), NodePath("../../Bowing/BowMover3Oben"), null, NodePath("../../Bowing/VibratingStringOben1"), NodePath("../../Bowing/VibratingStringOben2"), NodePath("../../Bowing/VibratingString3"), NodePath("../../Bowing/VibratingString4")]
 level_build_stagger_delay = 0.0
 
 [node name="Label" parent="Gopichand" index="8" unique_id=2014038529]
@@ -1361,15 +1362,22 @@ position = Vector2(21251, 1815)
 rotation = -3.700098
 scale = Vector2(0.7, -0.7)
 
-[node name="BowMoverLtoR" parent="Bowing" unique_id=330046586 instance=ExtResource("21_a57k7")]
-position = Vector2(17158.002, 1331.001)
+[node name="BowLift2" parent="Bowing" unique_id=1292249192 instance=ExtResource("66_kjggd")]
+position = Vector2(17151, 1335)
 rotation = -5.4454274
 scale = Vector2(0.5, -0.5)
 move_distance_px = 2500.0
 bpm = 90.0
 note_value = 0
-move_from_offset = Vector2(0, -5000)
-fly_in_count = 16
+autostart = true
+fly_in_count = 2
+
+[node name="AnimatedSprite2D" parent="Bowing/BowLift2" index="2" unique_id=31890835 node_paths=PackedStringArray("sprite")]
+speed_scale = 1.5
+sprite = NodePath(".")
+animation_name = "default"
+frame_count = 120
+note_value = 0
 
 [node name="Node2D" type="Node2D" parent="Bowing" unique_id=840337207]
 
@@ -1475,8 +1483,8 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_y0uk2")
 animation = &"arp"
 autoplay = "arp"
-frame = 53
-frame_progress = 1.0
+frame = 5
+frame_progress = 0.23171858
 speed_scale = 16.2
 script = ExtResource("86_rncnn")
 sprite = NodePath(".")
@@ -1491,8 +1499,6 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-1709, -140)
 sprite_frames = SubResource("SpriteFrames_p4r8s")
 autoplay = "default"
-frame = 38
-frame_progress = 0.93792474
 speed_scale = 7.5
 script = ExtResource("86_rncnn")
 sprite = NodePath(".")
@@ -1560,6 +1566,7 @@ metadata/_edit_use_anchors_ = true
 [editable path="Gopichand"]
 [editable path="Bowing/Bouncestring3"]
 [editable path="Bowing/Bouncestring4"]
+[editable path="Bowing/BowLift2"]
 [editable path="Bowing/VibratingBerimbau"]
 [editable path="Bowing/VibratingBerimbau2"]
 [editable path="Bowing/VibratingBerimbau3"]

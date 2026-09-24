@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfp6jawja1bwq"
-path.s3tc="res://.godot/imported/Berimbau.svg-eedf09ed07dfacff52de46ff693fd249.s3tc.ctex"
+uid="uid://b5gw3l17tmu36"
+path.s3tc="res://.godot/imported/FlyIntro 22.png-6bfb90604f9a955bea43c713988269a5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Berimbau.svg"
-dest_files=["res://.godot/imported/Berimbau.svg-eedf09ed07dfacff52de46ff693fd249.s3tc.ctex"]
+source_file="res://animation/FlyIntro 22.png"
+dest_files=["res://.godot/imported/FlyIntro 22.png-6bfb90604f9a955bea43c713988269a5.s3tc.ctex"]
 
 [params]
 
@@ -39,6 +39,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

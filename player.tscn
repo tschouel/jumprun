@@ -1,31 +1,38 @@
 [gd_scene format=3 uid="uid://cqkt7t7buduub"]
 
 [ext_resource type="Script" uid="uid://bg6ufj546tj83" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://bl3tqfxsr2ib5" path="res://animation/Hubschrauber_HubBoost1.png" id="3_606se"]
-[ext_resource type="Texture2D" uid="uid://eleq2bnlkb0a" path="res://animation/Hubschrauber_Hub1.png" id="3_b26j0"]
-[ext_resource type="Texture2D" uid="uid://cbg4m4hijv823" path="res://animation/Hubschrauber_Hub2.png" id="4_n7ghd"]
-[ext_resource type="Texture2D" uid="uid://dmy0nyfnrkb4q" path="res://animation/Hubschrauber_HubBoost3.png" id="4_u1c27"]
-[ext_resource type="Texture2D" uid="uid://dam6qltg40fm5" path="res://animation/Hubschrauber_Hub3.png" id="5_nvl01"]
-[ext_resource type="Texture2D" uid="uid://cp4qhv74niufa" path="res://animation/Hubschrauber_HubBoost4.png" id="5_op7ga"]
-[ext_resource type="Texture2D" uid="uid://c03vgfuhksnj2" path="res://animation/Hubschrauber_Hub4.png" id="6_ivps1"]
-[ext_resource type="Texture2D" uid="uid://dmavee5o6lf52" path="res://animation/Hubschrauber_HubBoost5.png" id="6_q13i1"]
-[ext_resource type="Texture2D" uid="uid://dq6ew2t1qb0er" path="res://animation/Hubschrauber_HubBoost6.png" id="7_pylmc"]
-[ext_resource type="Texture2D" uid="uid://bas5pcijcsmr6" path="res://animation/Hubschrauber_Hub5.png" id="7_urp6f"]
-[ext_resource type="Texture2D" uid="uid://dqwxhsgw7ydln" path="res://animation/Hubschrauber_Hub6.png" id="8_bwjto"]
-[ext_resource type="Texture2D" uid="uid://cf0l5860ki53r" path="res://animation/Hubschrauber_HubBoost7.png" id="8_pbfsw"]
-[ext_resource type="Texture2D" uid="uid://8vbquqs0rp30" path="res://animation/Hubschrauber_Hub7.png" id="9_606se"]
+[ext_resource type="Texture2D" uid="uid://dufprgkjfmyu3" path="res://animation/FlyBoost 60.png" id="3_dpbkd"]
+[ext_resource type="Texture2D" uid="uid://durgd5iqc4u42" path="res://animation/FlyBoost 61.png" id="4_pcxpm"]
+[ext_resource type="Texture2D" uid="uid://iuqdpj4htoog" path="res://animation/FlyBoost 62.png" id="5_1kuvh"]
+[ext_resource type="Texture2D" uid="uid://dxlcgrs366nqj" path="res://animation/FlyBoost 63.png" id="6_h8gpj"]
+[ext_resource type="Texture2D" uid="uid://cq6h5qgdm2lqa" path="res://animation/FlyBoost 64.png" id="7_3p3tc"]
+[ext_resource type="Texture2D" uid="uid://d21vb16n3wdwo" path="res://animation/FlyBoost 65.png" id="8_f5nk4"]
+[ext_resource type="Texture2D" uid="uid://dmw2ywqami2n3" path="res://animation/FlyBoost 66.png" id="9_xo80u"]
+[ext_resource type="Texture2D" uid="uid://b17hn3m8buk1a" path="res://animation/FlyBoost 67.png" id="10_jefcb"]
+[ext_resource type="Texture2D" uid="uid://d4x2xea0q4ik" path="res://animation/FlyBoost 68.png" id="11_3rt5d"]
+[ext_resource type="Texture2D" uid="uid://ckqi4td4v20u6" path="res://animation/FlyBoost 69.png" id="12_u884b"]
+[ext_resource type="Texture2D" uid="uid://eroypl03xusc" path="res://animation/Fly 40.png" id="13_4u0ps"]
+[ext_resource type="Texture2D" uid="uid://cdvx6pjavr574" path="res://animation/Fly 41.png" id="14_nl404"]
+[ext_resource type="Texture2D" uid="uid://bygeittx6gx10" path="res://animation/Fly 42.png" id="15_a8mke"]
+[ext_resource type="Texture2D" uid="uid://b3jtt6ws007d6" path="res://animation/Fly 43.png" id="16_dsqcv"]
 [ext_resource type="Script" uid="uid://dsgmxxyb0lkwl" path="res://mechanics/Flying/flying_movement.gd" id="16_u1c27"]
+[ext_resource type="Texture2D" uid="uid://drhm0t2tq7p80" path="res://animation/Fly 44.png" id="17_3itql"]
 [ext_resource type="Texture2D" uid="uid://b7dw1yvgwn4ef" path="res://animation/__Walk1.png" id="17_rk5q0"]
 [ext_resource type="Texture2D" uid="uid://de3b66ty7b4q8" path="res://animation/__jump1.png" id="17_w3a0q"]
 [ext_resource type="Texture2D" uid="uid://o0bp3dj14251" path="res://animation/__Walk2.png" id="18_0xmk7"]
+[ext_resource type="Texture2D" uid="uid://cr4vbe14a65sp" path="res://animation/Fly 45.png" id="18_ats5d"]
 [ext_resource type="Texture2D" uid="uid://dyt45egbjocwo" path="res://animation/__jump2.png" id="18_yskhe"]
 [ext_resource type="Texture2D" uid="uid://o47126uq4wcd" path="res://animation/__Walk3.png" id="19_cmmdq"]
+[ext_resource type="Texture2D" uid="uid://dmtecpwu0ug8e" path="res://animation/Fly 46.png" id="19_kgwhl"]
 [ext_resource type="Texture2D" uid="uid://87jh5ixrjvoh" path="res://animation/__jump3.png" id="19_lxrty"]
 [ext_resource type="Texture2D" uid="uid://pngqc6k1fwfo" path="res://animation/__jump4.png" id="20_66i60"]
+[ext_resource type="Texture2D" uid="uid://cdkteu22se3t1" path="res://animation/Fly 47.png" id="20_elfpg"]
 [ext_resource type="Texture2D" uid="uid://cev7y8m3sy57" path="res://animation/__Walk4.png" id="20_lhxi5"]
 [ext_resource type="Script" uid="uid://ktwod4vnctw6" path="res://ground_movement.gd" id="20_pbfsw"]
 [ext_resource type="Texture2D" uid="uid://d3ufv0y8h1db0" path="res://animation/__jump5.png" id="21_mqy1v"]
+[ext_resource type="Texture2D" uid="uid://dutq1mvguagp3" path="res://animation/Fly 48.png" id="21_wmnga"]
 [ext_resource type="Texture2D" uid="uid://d181bu2qes1io" path="res://animation/ladder00.png" id="22_3c2l2"]
+[ext_resource type="Texture2D" uid="uid://cpmde6e1dyyii" path="res://animation/Fly 49.png" id="22_aip32"]
 [ext_resource type="Texture2D" uid="uid://bjs8jiq4u5tci" path="res://animation/lookdown 0.png" id="22_vybhp"]
 [ext_resource type="Texture2D" uid="uid://dowxbw5jb2j7q" path="res://animation/ladder01.png" id="23_fsr0j"]
 [ext_resource type="Texture2D" uid="uid://bswnrs5b457lt" path="res://animation/lookdown 1.png" id="23_ul1xb"]
@@ -255,22 +262,34 @@ polygon = PackedVector2Array(85.778336, -211.79834, 188.23581, -191.94226, 200.1
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_606se")
+"texture": ExtResource("3_dpbkd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_u1c27")
+"texture": ExtResource("4_pcxpm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_op7ga")
+"texture": ExtResource("5_1kuvh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_q13i1")
+"texture": ExtResource("6_h8gpj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_pylmc")
+"texture": ExtResource("7_3p3tc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_pbfsw")
+"texture": ExtResource("8_f5nk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xo80u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jefcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3rt5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u884b")
 }],
 "loop": 0,
 "name": &"boost",
@@ -278,29 +297,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_b26j0")
+"texture": ExtResource("13_4u0ps")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_n7ghd")
+"texture": ExtResource("14_nl404")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_nvl01")
+"texture": ExtResource("15_a8mke")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ivps1")
+"texture": ExtResource("16_dsqcv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_urp6f")
+"texture": ExtResource("17_3itql")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_bwjto")
+"texture": ExtResource("18_ats5d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_606se")
+"texture": ExtResource("19_kgwhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_elfpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wmnga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_aip32")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0jqh"]
@@ -1273,10 +1301,12 @@ script = ExtResource("16_u1c27")
 [node name="FlyingSprite" type="AnimatedSprite2D" parent="FlyingMovement" unique_id=319574507]
 visible = false
 z_index = 1
-position = Vector2(39.000004, -29)
-scale = Vector2(0.13527898, 0.13527898)
+position = Vector2(32, -222)
+scale = Vector2(1.167249, 1.167249)
 sprite_frames = SubResource("SpriteFrames_u1c27")
-frame_progress = 0.013647086
+animation = &"boost"
+frame = 9
+frame_progress = 1.0
 speed_scale = 5.0
 
 [node name="GroundMovement" type="Node2D" parent="." unique_id=1863156067]
